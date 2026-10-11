@@ -92,12 +92,29 @@
     }
 
     h1 {
-      max-width: 640px;
-      margin-bottom: 18px;
-      font-size: clamp(42px, 8vw, 68px);
+      max-width: 900px;
+      margin-bottom: 26px;
+      font-size: clamp(54px, 9.2vw, 112px);
       font-weight: 400;
       letter-spacing: -0.045em;
-      line-height: 1.08;
+      line-height: 0.98;
+    }
+
+    .headline-mark {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .headline-mark svg {
+      position: absolute;
+      right: 4%;
+      bottom: -9px;
+      left: 1%;
+      width: 95%;
+      height: 10px;
+      overflow: visible;
+      pointer-events: none;
     }
 
     h2 {
@@ -188,8 +205,7 @@
     }
 
     .offer-box,
-    .tier-box,
-    .example-box {
+    .tier-box {
       border: 1px solid var(--rule);
       border-radius: 0;
       background: var(--box-bg);
@@ -331,6 +347,8 @@
       gap: 48px;
       padding: 48px;
       align-items: start;
+      background: var(--accent);
+      color: var(--bg);
     }
 
     .tier-box--complete h2 {
@@ -344,6 +362,23 @@
       border-top: 1px solid var(--rule);
     }
 
+    .tier-box--complete .price-anchor {
+      border-color: var(--bg);
+    }
+
+    .tier-box--complete .button {
+      background: var(--bg);
+      color: var(--accent);
+    }
+
+    .tier-box--complete .button:focus-visible {
+      outline-color: var(--bg);
+    }
+
+    .tier-box--complete .fine-print {
+      color: var(--bg);
+    }
+
     .current-price {
       margin-bottom: 0;
       font-size: 18px;
@@ -354,26 +389,47 @@
     }
 
     .example-box {
-      padding: 26px;
+      display: grid;
+      gap: 18px;
     }
 
     .prompt-number {
+      display: block;
+      margin-bottom: 8px;
       color: var(--accent);
-      font-size: 31px;
+      font-size: clamp(72px, 9vw, 104px);
       font-weight: 400;
-      line-height: 1;
+      line-height: 0.82;
     }
 
-    .prompt + .prompt {
-      margin-top: 21px;
-      padding-top: 18px;
-      border-top: 1px solid var(--rule);
+    .prompt {
+      min-width: 0;
+      border: 1px solid var(--rule);
+      background: var(--box-bg);
+    }
+
+    .prompt-window-chrome {
+      display: flex;
+      height: 27px;
+      align-items: center;
+      gap: 5px;
+      padding-inline: 10px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--box-bg);
+    }
+
+    .prompt-window-chrome span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    .prompt-content {
+      padding: 20px;
     }
 
     .prompt h3 {
-      display: flex;
-      gap: 12px;
-      align-items: center;
       margin-bottom: 6px;
       font-size: 18px;
       font-weight: 700;
@@ -384,13 +440,16 @@
     }
 
     .faq-item + .faq-item {
-      margin-top: 23px;
+      margin-top: 0;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
     }
 
     .faq-item h3 {
-      margin-bottom: 6px;
-      font-size: 19px;
+      margin-bottom: 12px;
+      font-size: 25px;
       font-weight: 700;
+      line-height: 1.25;
     }
 
     .faq-item p {
@@ -474,7 +533,7 @@
       }
 
       .example-box {
-        padding: 22px;
+        gap: 16px;
       }
 
       .sticky-cta:not([hidden]) {
@@ -502,15 +561,8 @@
 
     @media (min-width: 800px) {
       .example-box {
-        display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 24px;
-      }
-
-      .prompt + .prompt {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: 0;
       }
     }
 
@@ -527,7 +579,7 @@
     <header class="hero" id="top">
       <p class="kicker">THE EXACT METHOD</p>
       <div class="hero-rule" aria-hidden="true"></div>
-      <h1>Stop Getting Generic AI Answers.</h1>
+      <h1>Stop Getting <em class="headline-mark">Generic AI<svg viewBox="0 0 180 12" aria-hidden="true" focusable="false"><path d="M3 8.5 C38 4.5, 72 10, 106 6.5 S151 5, 177 3" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg></em> Answers.</h1>
       <p class="hero-copy">A method for getting precise, reliable results from AI every time — not another list of prompt tricks.</p>
       <a class="button" href="#free-guide">Get the Free Guide</a>
     </header>
@@ -660,16 +712,25 @@
       <p class="proof-intro">No testimonials yet because this just launched — here's a real piece of the method instead, judge it yourself.</p>
       <div class="example-box">
         <div class="prompt">
-          <h3><span class="prompt-number">1</span>Prompt One</h3>
-          <p>“Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each.”</p>
+          <div class="prompt-window-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="prompt-content">
+            <h3><span class="prompt-number">1</span>Prompt One</h3>
+            <p>“Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each.”</p>
+          </div>
         </div>
         <div class="prompt">
-          <h3><span class="prompt-number">2</span>Prompt Two</h3>
-          <p>“Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint].”</p>
+          <div class="prompt-window-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="prompt-content">
+            <h3><span class="prompt-number">2</span>Prompt Two</h3>
+            <p>“Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint].”</p>
+          </div>
         </div>
         <div class="prompt">
-          <h3><span class="prompt-number">3</span>Prompt Three</h3>
-          <p>“Of these, which one specifically should I start with, and why — based on everything you just found?”</p>
+          <div class="prompt-window-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="prompt-content">
+            <h3><span class="prompt-number">3</span>Prompt Three</h3>
+            <p>“Of these, which one specifically should I start with, and why — based on everything you just found?”</p>
+          </div>
         </div>
       </div>
     </section>
