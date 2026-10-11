@@ -188,21 +188,7 @@
       grid-template-columns: 20% minmax(0, 1fr);
       gap: 5%;
       align-items: start;
-      padding-block: 64px;
-    }
-
-    .editorial-section[aria-labelledby="audience-title"] {
-      grid-template-columns: minmax(0, 1fr) 20%;
-    }
-
-    .editorial-section[aria-labelledby="audience-title"] > h2 {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .editorial-section[aria-labelledby="audience-title"] > .editorial-copy {
-      grid-column: 1;
-      grid-row: 1;
+      padding-block: 40px;
     }
 
     .editorial-section h2 {
@@ -229,10 +215,28 @@
     .plain-list {
       margin-bottom: 0;
       padding-left: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .plain-list li::before {
+      position: absolute;
+      top: 0.68em;
+      left: 2px;
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      content: "";
     }
 
     .plain-list li + li {
-      margin-top: 9px;
+      margin-top: 12px;
     }
 
     .offer-box,
@@ -551,6 +555,72 @@
       font-size: 13px;
     }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 8px 0 0;
+    }
+
+    .consent-banner {
+      position: fixed;
+      z-index: 30;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px max(var(--page-gutter), calc((100vw - 1120px) / 2));
+      border-top: 1px solid rgb(251 248 243 / 24%);
+      background: rgb(26 25 23 / 94%);
+      color: #fcfbf9;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .consent-banner[hidden] {
+      display: none;
+    }
+
+    .consent-banner.is-dismissed {
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .consent-banner p {
+      max-width: 780px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .consent-banner a {
+      color: #fcfbf9;
+      text-underline-offset: 3px;
+    }
+
+    .consent-banner button {
+      flex: none;
+      min-height: 44px;
+      padding: 10px 20px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--accent);
+      color: var(--bg);
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .consent-banner button:focus-visible {
+      outline: 2px solid #fcfbf9;
+      outline-offset: 3px;
+    }
+
     .sticky-cta {
       display: none;
     }
@@ -619,6 +689,17 @@
 
       .section[aria-labelledby="faq-title"] {
         grid-template-columns: 1fr;
+      }
+
+      .consent-banner {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px var(--page-gutter);
+      }
+
+      .consent-banner button {
+        width: 100%;
       }
 
       .sticky-cta:not([hidden]) {
@@ -864,12 +945,54 @@
     <!-- TODO: insert final domain here for canonical link and footer copyright line -->
     <footer>
       <p>© 2026 The Exact Method</p>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+      </nav>
     </footer>
   </main>
 
   <aside class="sticky-cta" id="sticky-cta" aria-label="Free guide" hidden>
     <a class="button" href="#free-guide">Get the Free Guide</a>
   </aside>
+
+  <aside class="consent-banner" id="consent-banner" aria-label="Privacy notice">
+    <p>We use essential browser storage to remember your choice. Checkout and download services may process the information needed to complete purchases and deliver files. Read our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a>.</p>
+    <button type="button" id="consent-accept">I Agree</button>
+  </aside>
+
+  <script>
+    (() => {
+      const banner = document.querySelector("#consent-banner");
+      const acceptButton = document.querySelector("#consent-accept");
+      const storageKey = "theExactMethodConsent";
+
+      if (!banner || !acceptButton) {
+        return;
+      }
+
+      try {
+        if (window.localStorage.getItem(storageKey) === "accepted") {
+          banner.hidden = true;
+        }
+      } catch (error) {
+        console.error("Unable to read the consent preference from local storage.", error);
+      }
+
+      acceptButton.addEventListener("click", () => {
+        try {
+          window.localStorage.setItem(storageKey, "accepted");
+        } catch (error) {
+          console.error("Unable to save the consent preference to local storage.", error);
+        }
+
+        banner.classList.add("is-dismissed");
+        window.setTimeout(() => {
+          banner.hidden = true;
+        }, 250);
+      });
+    })();
+  </script>
 
   <script>
     (() => {
