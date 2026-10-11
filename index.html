@@ -64,6 +64,7 @@
     }
 
     .hero {
+      width: min(66vw, 900px);
       padding-block: 88px 72px;
     }
 
@@ -73,15 +74,6 @@
       font-size: 13px;
       letter-spacing: 0.12em;
       line-height: 1.4;
-    }
-
-    .section-kicker {
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      line-height: 1.4;
-      text-transform: uppercase;
     }
 
     .hero-rule {
@@ -162,6 +154,24 @@
       border-top: 1px solid var(--rule);
     }
 
+    .editorial-section {
+      display: grid;
+      grid-template-columns: 20% minmax(0, 1fr);
+      gap: 5%;
+      align-items: start;
+    }
+
+    .editorial-section h2 {
+      margin-bottom: 0;
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+
+    .editorial-copy > :last-child {
+      margin-bottom: 0;
+    }
+
     .section p:last-child,
     .offer-box p:last-child,
     .tier-box p:last-child {
@@ -228,6 +238,15 @@
       margin-bottom: 7px;
     }
 
+    .ladder-item h3::before {
+      width: var(--ladder-rule-width);
+      height: var(--ladder-rule-height);
+      flex: none;
+      align-self: center;
+      background: var(--accent);
+      content: "";
+    }
+
     .ladder-price {
       color: var(--muted);
       font-size: 0.9em;
@@ -240,20 +259,28 @@
     }
 
     .ladder-item--entry h3 {
+      --ladder-rule-height: 16px;
+      --ladder-rule-width: 2px;
       font-size: 20px;
     }
 
     .ladder-item--prompts h3 {
+      --ladder-rule-height: 24px;
+      --ladder-rule-width: 2px;
       font-size: 22px;
       font-weight: 500;
     }
 
     .ladder-item--middle h3 {
+      --ladder-rule-height: 32px;
+      --ladder-rule-width: 3px;
       font-size: 24px;
       font-weight: 600;
     }
 
     .ladder-item--complete h3 {
+      --ladder-rule-height: 44px;
+      --ladder-rule-width: 4px;
       font-size: 27px;
       font-weight: 700;
     }
@@ -267,6 +294,21 @@
       padding: 30px;
     }
 
+    .tier-box--row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .tier-box--row h2 {
+      margin-bottom: 0;
+    }
+
+    .tier-price {
+      display: block;
+    }
+
     .tier-box ul {
       margin-bottom: 18px;
       padding-left: 22px;
@@ -276,11 +318,23 @@
       margin-top: 6px;
     }
 
+    .tier-section--complete {
+      position: relative;
+      left: 50%;
+      width: calc(100vw - (var(--page-gutter) * 2));
+      transform: translateX(-50%);
+    }
+
     .tier-box--complete {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px;
       padding: 48px;
+      align-items: start;
     }
 
     .tier-box--complete h2 {
+      margin-bottom: 18px;
       font-size: clamp(32px, 5vw, 40px);
     }
 
@@ -303,6 +357,13 @@
       padding: 26px;
     }
 
+    .prompt-number {
+      color: var(--accent);
+      font-size: 31px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
     .prompt + .prompt {
       margin-top: 21px;
       padding-top: 18px;
@@ -310,6 +371,9 @@
     }
 
     .prompt h3 {
+      display: flex;
+      gap: 12px;
+      align-items: center;
       margin-bottom: 6px;
       font-size: 18px;
       font-weight: 700;
@@ -357,6 +421,29 @@
 
     .sticky-cta {
       display: none;
+    }
+
+    @media (max-width: 799px) {
+      .hero {
+        width: auto;
+      }
+
+      .editorial-section {
+        display: block;
+      }
+
+      .editorial-section h2 {
+        margin-bottom: 18px;
+      }
+
+      .tier-box--row,
+      .tier-box--complete {
+        display: block;
+      }
+
+      .tier-box--row h2 {
+        margin-bottom: 18px;
+      }
     }
 
     @media (max-width: 760px) {
@@ -413,6 +500,20 @@
       }
     }
 
+    @media (min-width: 800px) {
+      .example-box {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .prompt + .prompt {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -432,37 +533,39 @@
     </header>
 
     <!-- 2. THE PROBLEM -->
-    <section class="section" aria-labelledby="problem-title">
-      <p class="section-kicker">The problem</p>
+    <section class="section editorial-section" aria-labelledby="problem-title">
       <h2 id="problem-title">The problem</h2>
-      <p>You've seen the answer: technically fine, generic, and as if it could have been given to anyone who asked the same thing.</p>
-      <p>That's not the AI being bad at its job. It's being handed a one-line question and asked for a specific answer back.</p>
+      <div class="editorial-copy">
+        <p>You've seen the answer: technically fine, generic, and as if it could have been given to anyone who asked the same thing.</p>
+        <p>That's not the AI being bad at its job. It's being handed a one-line question and asked for a specific answer back.</p>
+      </div>
     </section>
 
     <!-- 3. WHO THIS IS FOR -->
-    <section class="section" aria-labelledby="audience-title">
-      <p class="section-kicker">Who this is for</p>
+    <section class="section editorial-section" aria-labelledby="audience-title">
       <h2 id="audience-title">Who this is for</h2>
-      <ul class="plain-list">
-        <li>You've tried “better prompting” tips that didn't actually change your results.</li>
-        <li>You get answers that are almost right, not exactly right.</li>
-        <li>You're tired of re-explaining context every single time.</li>
-        <li>You want a repeatable method, not a one-off trick.</li>
-      </ul>
+      <div class="editorial-copy">
+        <ul class="plain-list">
+          <li>You've tried “better prompting” tips that didn't actually change your results.</li>
+          <li>You get answers that are almost right, not exactly right.</li>
+          <li>You're tired of re-explaining context every single time.</li>
+          <li>You want a repeatable method, not a one-off trick.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- 4. THE METHOD -->
-    <section class="section" aria-labelledby="method-title">
-      <p class="section-kicker">The method</p>
+    <section class="section editorial-section" aria-labelledby="method-title">
       <h2 id="method-title">The method</h2>
-      <p>The Exact Method is a complete system for asking better questions: narrowing the question, structuring each step so the AI never has to guess, and knowing when to let it ask you questions instead.</p>
-      <p>It also shows you which tool to hand a task to, how to combine more than one tool, and how to catch the AI when it's confidently wrong. The result is fewer prompts, less time stuck, and better work on the first or second try.</p>
+      <div class="editorial-copy">
+        <p>The Exact Method is a complete system for asking better questions: narrowing the question, structuring each step so the AI never has to guess, and knowing when to let it ask you questions instead.</p>
+        <p>It also shows you which tool to hand a task to, how to combine more than one tool, and how to catch the AI when it's confidently wrong. The result is fewer prompts, less time stuck, and better work on the first or second try.</p>
+      </div>
     </section>
 
     <!-- 5. FREE GUIDE OFFER BLOCK -->
     <section class="section" id="free-guide" aria-labelledby="free-guide-title">
       <div class="offer-box">
-        <p class="section-kicker">The Narrowing Method — Free</p>
         <h2 id="free-guide-title">The Narrowing Method — Free</h2>
         <p>Three prompts that stop AI from giving you generic, could-apply-to-anyone answers.</p>
         <!-- TODO: paste Gumroad $0-product overlay embed code here (script + button) -->
@@ -473,7 +576,6 @@
 
     <!-- 6. THE LADDER -->
     <section class="ladder" aria-labelledby="ladder-title">
-      <p class="section-kicker">Choose where to start</p>
       <h2 id="ladder-title">Choose where to start</h2>
       <p class="ladder-intro">Start with one fix or get the complete system.</p>
       <div class="ladder-item ladder-item--entry">
@@ -496,73 +598,77 @@
 
     <!-- 7. TIER BLOCK — $17 -->
     <section class="tier-section" id="tier-17" aria-labelledby="tier-17-title">
-      <div class="tier-box">
-        <p class="section-kicker">10 Zero-Ambiguity Prompts — $17</p>
-        <h2 id="tier-17-title">10 Zero-Ambiguity Prompts — $17</h2>
-        <p>Ten ready-to-copy prompts for common tasks, each already structured so the AI can't fill the gaps with guesswork. For when you want results today, before learning the method behind them.</p>
-        <ul>
-          <li>Ten templates, copy-paste ready</li>
-          <li>Each one pre-built with the one-action-per-step structure</li>
-          <li>No prior reading required</li>
-        </ul>
-        <!-- TODO: paste Gumroad overlay embed for $17 product -->
-        <a class="button" href="#tier-17">Get the Templates — $17</a>
-        <p class="fine-print">Instant digital download. All sales final.</p>
+      <div class="tier-box tier-box--row">
+        <h2 id="tier-17-title">10 Zero-Ambiguity Prompts <span class="tier-price">— $17</span></h2>
+        <div class="tier-details">
+          <p>Ten ready-to-copy prompts for common tasks, each already structured so the AI can't fill the gaps with guesswork. For when you want results today, before learning the method behind them.</p>
+          <ul>
+            <li>Ten templates, copy-paste ready</li>
+            <li>Each one pre-built with the one-action-per-step structure</li>
+            <li>No prior reading required</li>
+          </ul>
+          <!-- TODO: paste Gumroad overlay embed for $17 product -->
+          <a class="button" href="#tier-17">Get the Templates — $17</a>
+          <p class="fine-print">Instant digital download. All sales final.</p>
+        </div>
       </div>
     </section>
 
     <!-- 8. TIER BLOCK — $37 -->
     <section class="tier-section" id="tier-37" aria-labelledby="tier-37-title">
-      <div class="tier-box">
-        <p class="section-kicker">The Specialist Method — $37</p>
-        <h2 id="tier-37-title">The Specialist Method — $37</h2>
-        <p>A condensed guide to choosing the right AI tool for a task, and combining more than one tool on bigger projects, instead of defaulting to one tool for everything.</p>
-        <ul>
-          <li>How to choose between today's AI tools without guessing</li>
-          <li>Three ways to chain tools together on one project</li>
-          <li>A practical, not exhaustive, look at real tool tradeoffs</li>
-        </ul>
-        <!-- TODO: paste Gumroad overlay embed for $37 product -->
-        <a class="button" href="#tier-37">Get the Specialist Method — $37</a>
-        <p class="fine-print">Instant digital download. All sales final.</p>
+      <div class="tier-box tier-box--row">
+        <h2 id="tier-37-title">The Specialist Method <span class="tier-price">— $37</span></h2>
+        <div class="tier-details">
+          <p>A condensed guide to choosing the right AI tool for a task, and combining more than one tool on bigger projects, instead of defaulting to one tool for everything.</p>
+          <ul>
+            <li>How to choose between today's AI tools without guessing</li>
+            <li>Three ways to chain tools together on one project</li>
+            <li>A practical, not exhaustive, look at real tool tradeoffs</li>
+          </ul>
+          <!-- TODO: paste Gumroad overlay embed for $37 product -->
+          <a class="button" href="#tier-37">Get the Specialist Method — $37</a>
+          <p class="fine-print">Instant digital download. All sales final.</p>
+        </div>
       </div>
     </section>
 
     <!-- 9. TIER BLOCK — $127 -->
-    <section class="tier-section" id="tier-127" aria-labelledby="tier-127-title">
+    <section class="tier-section tier-section--complete" id="tier-127" aria-labelledby="tier-127-title">
       <div class="tier-box tier-box--complete">
-        <p class="section-kicker">The Exact Method — $127</p>
-        <h2 id="tier-127-title">The Exact Method — $127</h2>
-        <p>The complete system: precision prompting, tool selection with a way to keep it current yourself, three ways to chain tools together, a method for verifying what AI tells you, and five fully worked examples across coding, e-commerce, content, freelancing, and design.</p>
-        <ul>
-          <li>Everything in the smaller guides, plus the full method behind them</li>
-          <li>Six modules, built from tested, real use — not theory</li>
-          <li>One-time payment, yours to keep</li>
-        </ul>
-        <p class="price-anchor">A freelance prompt engineer charges $95-235 an hour for this kind of guidance — and most people need several sessions to get what's covered here. The Exact Method is a one-time $127. Once the first 30 buyers get it, the price moves to $697, which is closer to what it's actually worth. You're getting the early price, not a fake one.</p>
-        <p class="current-price">Current price: $127 — rises to $697 after the first 30 buyers.</p>
-        <!-- TODO: paste Gumroad overlay embed for $127 product -->
-        <a class="button" href="#tier-127">Get The Exact Method — $127</a>
-        <p class="fine-print">Instant digital download. All sales final.</p>
+        <div class="complete-description">
+          <h2 id="tier-127-title">The Exact Method — $127</h2>
+          <p>The complete system: precision prompting, tool selection with a way to keep it current yourself, three ways to chain tools together, a method for verifying what AI tells you, and five fully worked examples across coding, e-commerce, content, freelancing, and design.</p>
+          <ul>
+            <li>Everything in the smaller guides, plus the full method behind them</li>
+            <li>Six modules, built from tested, real use — not theory</li>
+            <li>One-time payment, yours to keep</li>
+          </ul>
+        </div>
+        <div class="complete-offer">
+          <p class="price-anchor">A freelance prompt engineer charges $95-235 an hour for this kind of guidance — and most people need several sessions to get what's covered here. The Exact Method is a one-time $127. Once the first 30 buyers get it, the price moves to $697, which is closer to what it's actually worth. You're getting the early price, not a fake one.</p>
+          <p class="current-price">Current price: $127 — rises to $697 after the first 30 buyers.</p>
+          <!-- TODO: paste Gumroad overlay embed for $127 product -->
+          <a class="button" href="#tier-127">Get The Exact Method — $127</a>
+          <p class="fine-print">Instant digital download. All sales final.</p>
+        </div>
       </div>
     </section>
 
     <!-- 10. PROOF -->
     <section class="section" aria-labelledby="proof-title">
-      <p class="section-kicker">See the method itself</p>
       <h2 id="proof-title">See the method itself</h2>
       <p class="proof-intro">No testimonials yet because this just launched — here's a real piece of the method instead, judge it yourself.</p>
       <div class="example-box">
         <div class="prompt">
-          <h3>Prompt One</h3>
+          <h3><span class="prompt-number">1</span>Prompt One</h3>
           <p>“Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each.”</p>
         </div>
         <div class="prompt">
-          <h3>Prompt Two</h3>
+          <h3><span class="prompt-number">2</span>Prompt Two</h3>
           <p>“Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint].”</p>
         </div>
         <div class="prompt">
-          <h3>Prompt Three</h3>
+          <h3><span class="prompt-number">3</span>Prompt Three</h3>
           <p>“Of these, which one specifically should I start with, and why — based on everything you just found?”</p>
         </div>
       </div>
@@ -570,7 +676,6 @@
 
     <!-- 11. FAQ -->
     <section class="section" aria-labelledby="faq-title">
-      <p class="section-kicker">Questions</p>
       <h2 id="faq-title">Questions</h2>
       <div class="faq-item">
         <h3>Isn't this just common sense?</h3>
@@ -596,7 +701,6 @@
 
     <!-- 12. POLICY -->
     <section class="section" aria-labelledby="policy-title">
-      <p class="section-kicker">Purchase policy</p>
       <h2 id="policy-title">Purchase policy</h2>
       <p class="policy-copy">All sales are final. Every tier is a digital download delivered immediately on purchase, so refunds aren't offered.</p>
       <!-- TODO: add legal business name and a physical street address here, required for an enforceable no-refund disclosure in several jurisdictions -->
@@ -604,7 +708,6 @@
 
     <!-- 13. FINAL CTA -->
     <section class="final-cta" aria-labelledby="final-cta-title">
-      <p class="section-kicker">Not ready to buy? Start with the free guide.</p>
       <h2 id="final-cta-title">Not ready to buy? Start with the free guide.</h2>
       <a class="button" href="#free-guide">Get It Free</a>
       <p class="fine-print">Digital download, delivered instantly.</p>
