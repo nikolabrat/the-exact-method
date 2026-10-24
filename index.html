@@ -250,6 +250,10 @@
       padding: 30px;
     }
 
+    .offer-box + .offer-box {
+      margin-top: 14px;
+    }
+
     .offer-box h2 {
       margin-bottom: 10px;
       font-size: 29px;
@@ -294,6 +298,7 @@
     }
 
     .ladder-item--complete {
+      grid-column: 1 / -1;
       border: 2px solid var(--accent);
       box-shadow: 0 8px 24px rgb(38 35 32 / 10%);
     }
@@ -327,16 +332,17 @@
     }
 
     .ladder-item--entry h3 {
-      --ladder-rule-height: 16px;
-      --ladder-rule-width: 2px;
-      font-size: 20px;
+      --ladder-rule-height: 32px;
+      --ladder-rule-width: 3px;
+      font-size: 24px;
+      font-weight: 600;
     }
 
     .ladder-item--prompts h3 {
-      --ladder-rule-height: 24px;
-      --ladder-rule-width: 2px;
-      font-size: 22px;
-      font-weight: 500;
+      --ladder-rule-height: 32px;
+      --ladder-rule-width: 3px;
+      font-size: 24px;
+      font-weight: 600;
     }
 
     .ladder-item--middle h3 {
@@ -791,6 +797,14 @@
         <a class="button" href="#free-guide">Get It Free</a>
         <p class="fine-print">Digital download, delivered instantly.</p>
       </div>
+      <div class="offer-box">
+        <h2>Plain Voice — Free</h2>
+        <p>Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that make AI writing sound like a person, not a template.</p>
+        <!-- TODO: paste Gumroad $0-product overlay embed code here (script + button) -->
+        <!-- TODO: replace # with the Plain Voice download link -->
+        <a class="button" href="#">Get It Free</a>
+        <p class="fine-print">Digital download, delivered instantly.</p>
+      </div>
     </section>
 
     <!-- 6. THE LADDER -->
@@ -798,8 +812,12 @@
       <h2 id="ladder-title">Choose where to start</h2>
       <p class="ladder-intro">Start with one fix or get the complete system.</p>
       <div class="ladder-item ladder-item--entry">
-        <h3><span>FREE — The Narrowing Method</span></h3>
+        <h3><span class="ladder-price">FREE</span><span>The Narrowing Method</span></h3>
         <p>Fix one problem: get past generic answers with three prompts.</p>
+      </div>
+      <div class="ladder-item ladder-item--entry">
+        <h3><span class="ladder-price">FREE</span><span>Plain Voice</span></h3>
+        <p>Fix one problem: robotic-sounding AI writing, with ready-to-paste instructions for ChatGPT, Claude and Gemini.</p>
       </div>
       <div class="ladder-item ladder-item--prompts">
         <h3><span class="ladder-price">$17</span><span>10 Zero-Ambiguity Prompts</span></h3>
@@ -810,7 +828,7 @@
         <p>Choose the right AI tool and combine more than one for bigger projects.</p>
       </div>
       <div class="ladder-item ladder-item--complete">
-        <h3><span class="ladder-price">$127</span><span>The Exact Method (complete)</span></h3>
+        <h3><span class="ladder-price">$127</span><span>The Exact Method</span></h3>
         <p>The full system: precision prompting, tool selection, chaining, verification, and five worked examples across coding, e-commerce, content, freelancing, and design.</p>
       </div>
     </section>
@@ -823,11 +841,11 @@
           <p>Ten ready-to-copy prompts for common tasks, each already structured so the AI can't fill the gaps with guesswork. For when you want results today, before learning the method behind them.</p>
           <ul>
             <li>Ten templates, copy-paste ready</li>
-            <li>Each one pre-built with the one-action-per-step structure</li>
+            <li>Each one built one action per step, so the AI never has to guess</li>
             <li>No prior reading required</li>
           </ul>
           <!-- TODO: paste Gumroad overlay embed for $17 product -->
-          <a class="button" href="#tier-17">Get the Templates — $17</a>
+          <a class="button" href="#tier-17">Get the Prompts — $17</a>
           <p class="fine-print">Instant digital download. All sales final.</p>
         </div>
       </div>
@@ -842,7 +860,7 @@
           <ul>
             <li>How to choose between today's AI tools without guessing</li>
             <li>Three ways to chain tools together on one project</li>
-            <li>A practical, not exhaustive, look at real tool tradeoffs</li>
+            <li>A practical look at real tool trade-offs, not an exhaustive list</li>
           </ul>
           <!-- TODO: paste Gumroad overlay embed for $37 product -->
           <a class="button" href="#tier-37">Get the Specialist Method — $37</a>
@@ -864,10 +882,10 @@
           </ul>
         </div>
         <div class="complete-offer">
-          <p class="price-anchor">A freelance prompt engineer charges $95-235 an hour for this kind of guidance — and most people need several sessions to get what's covered here. The Exact Method is a one-time $127. Once the first 30 buyers get it, the price moves to $697, which is closer to what it's actually worth. You're getting the early price, not a fake one.</p>
+          <p class="price-anchor">Freelance AI and prompt engineers typically charge $35–60 an hour on Upwork — and most people need several sessions to get what's covered here. The Exact Method is a one-time $127. Once the first 30 buyers get it, the price moves to $697, which is closer to what it's actually worth. You're getting the early price, not a fake one.</p>
           <p class="current-price">Current price: $127 — rises to $697 after the first 30 buyers.</p>
           <!-- TODO: paste Gumroad overlay embed for $127 product -->
-          <a class="button" href="#tier-127">Get The Exact Method — $127</a>
+          <a class="button" href="#tier-127">Get the Exact Method — $127</a>
           <p class="fine-print">Instant digital download. All sales final.</p>
         </div>
       </div>
@@ -925,12 +943,16 @@
         <h3>Is this a subscription?</h3>
         <p>No. Every tier is a one-time payment, yours to keep.</p>
       </div>
+      <div class="faq-item">
+        <h3>What do I get, and how do I open it?</h3>
+        <p>A PDF. It opens on any phone, tablet or computer, with no special software. Right after you pay, the download page opens and the same link is emailed to you, so you can come back to it.</p>
+      </div>
     </section>
 
     <!-- 12. POLICY -->
     <section class="section" aria-labelledby="policy-title">
       <h2 id="policy-title">Purchase policy</h2>
-      <p class="policy-copy">All sales are final. Every tier is a digital download delivered immediately on purchase, so refunds aren't offered.</p>
+      <p class="policy-copy">All sales are final. Every tier is a digital download delivered immediately on purchase, so refunds aren't offered. By buying, you ask for the download to start immediately and you agree that you lose your 14-day right of withdrawal.</p>
       <!-- TODO: add legal business name and a physical street address here, required for an enforceable no-refund disclosure in several jurisdictions -->
     </section>
 
