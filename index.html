@@ -197,44 +197,46 @@ footer .wrap{padding-bottom:56px}
 .consent-btn:hover{filter:brightness(1.1)}
 .consent-overlay[hidden],.consent-overlay.is-dismissed{display:none}
 
-/* ===== CARD BUTTON HOVER: NARROWING RING (only the 5 buttons inside cards) ===== */
-.free-body .btn,.tier-buy .btn,.flag-buy .btn{position:relative;transition:background-color .2s ease-out,color .2s ease-out,border-color .2s ease-out}
-.free-body .btn::before,.tier-buy .btn::before,.flag-buy .btn::before{content:"";position:absolute;top:-16px;right:-16px;bottom:-16px;left:-16px;border:2px solid #6BE0A0;border-radius:16px;opacity:0;pointer-events:none;transition:top .22s ease-out,right .22s ease-out,bottom .22s ease-out,left .22s ease-out,opacity .22s ease-out}
-.flag-buy .btn::before{border-color:#0C0D0B}
-.free-body .btn:focus-visible::before,.tier-buy .btn:focus-visible::before,.flag-buy .btn:focus-visible::before{top:-5px;right:-5px;bottom:-5px;left:-5px;opacity:1}
+/* ===== BUTTON HOVER: NARROWING RING (8 buttons) ===== */
+.free-body .btn,.tier-buy .btn,.flag-buy .btn,.hero-actions .btn,.final-btn .btn,.nav-btn{--e:cubic-bezier(.16,1,.3,1);--ring:#6BE0A0;--fill:#F3F0E9;--ink:#0C0D0B;--out:16px;--in:5px;--rad:16px;position:relative;background-image:linear-gradient(var(--fill),var(--fill));background-repeat:no-repeat;background-position:left center;background-size:0% 100%;transition:background-size .3s ease-out,color .3s ease-out,border-color .3s ease-out}
+.flag-buy .btn{--ring:#0C0D0B;--fill:#F3EFE4;--ink:#181714}
+.tier-buy .btn{--fill:#6BE0A0}
+.nav-btn{--out:10px;--in:4px;--rad:12px}
+.free-body .btn::before,.tier-buy .btn::before,.flag-buy .btn::before,.hero-actions .btn::before,.final-btn .btn::before,.nav-btn::before,.free-body .btn::after,.tier-buy .btn::after,.flag-buy .btn::after,.hero-actions .btn::after,.final-btn .btn::after,.nav-btn::after{content:"";position:absolute;top:calc(var(--out)*-1);right:calc(var(--out)*-1);bottom:calc(var(--out)*-1);left:calc(var(--out)*-1);border:2px solid var(--ring);border-radius:var(--rad);opacity:0;pointer-events:none;transition:opacity .3s ease-out,top 0s linear .3s,right 0s linear .3s,bottom 0s linear .3s,left 0s linear .3s}
+.free-body .btn::after,.tier-buy .btn::after,.flag-buy .btn::after,.hero-actions .btn::after,.final-btn .btn::after,.nav-btn::after{top:calc(var(--out)*-1 - 12px);right:calc(var(--out)*-1 - 12px);bottom:calc(var(--out)*-1 - 12px);left:calc(var(--out)*-1 - 12px);border-width:1px;border-radius:calc(var(--rad) + 6px)}
 @media (hover:hover){
-.free-body .btn:hover::before,.tier-buy .btn:hover::before,.flag-buy .btn:hover::before{top:-5px;right:-5px;bottom:-5px;left:-5px;opacity:1}
-.free-body .btn:hover{filter:none;background:#F3F0E9;color:#0C0D0B}
-.tier-buy .btn:hover{filter:none;background:#6BE0A0;border-color:#6BE0A0;color:#0C0D0B}
-.flag-buy .btn:hover{filter:none;background:#F3EFE4;color:#181714}
+.free-body .btn:hover,.tier-buy .btn:hover,.flag-buy .btn:hover,.hero-actions .btn:hover,.final-btn .btn:hover,.nav-btn:hover{background-size:100% 100%;color:var(--ink);filter:none;transition:background-size .5s var(--e) .12s,color .25s ease-out .2s,border-color .25s ease-out .2s}
+.tier-buy .btn:hover{border-color:#6BE0A0}
+.free-body .btn:hover::before,.tier-buy .btn:hover::before,.flag-buy .btn:hover::before,.hero-actions .btn:hover::before,.final-btn .btn:hover::before,.nav-btn:hover::before{top:calc(var(--in)*-1);right:calc(var(--in)*-1);bottom:calc(var(--in)*-1);left:calc(var(--in)*-1);opacity:1;transition:top .55s var(--e),right .55s var(--e),bottom .55s var(--e),left .55s var(--e),opacity .25s ease-out}
+.free-body .btn:hover::after,.tier-buy .btn:hover::after,.flag-buy .btn:hover::after,.hero-actions .btn:hover::after,.final-btn .btn:hover::after,.nav-btn:hover::after{top:calc(var(--in)*-1 - 9px);right:calc(var(--in)*-1 - 9px);bottom:calc(var(--in)*-1 - 9px);left:calc(var(--in)*-1 - 9px);opacity:.4;transition:top .7s var(--e) .08s,right .7s var(--e) .08s,bottom .7s var(--e) .08s,left .7s var(--e) .08s,opacity .3s ease-out .08s}
 }
+.free-body .btn:focus-visible,.tier-buy .btn:focus-visible,.flag-buy .btn:focus-visible,.hero-actions .btn:focus-visible,.final-btn .btn:focus-visible,.nav-btn:focus-visible{outline:none;background-size:100% 100%;color:var(--ink)}
+.free-body .btn:focus-visible::before,.tier-buy .btn:focus-visible::before,.flag-buy .btn:focus-visible::before,.hero-actions .btn:focus-visible::before,.final-btn .btn:focus-visible::before,.nav-btn:focus-visible::before{top:calc(var(--in)*-1);right:calc(var(--in)*-1);bottom:calc(var(--in)*-1);left:calc(var(--in)*-1);opacity:1}
 @media (prefers-reduced-motion:reduce){
-.free-body .btn,.tier-buy .btn,.flag-buy .btn,.free-body .btn::before,.tier-buy .btn::before,.flag-buy .btn::before{transition:none}
+.free-body .btn,.tier-buy .btn,.flag-buy .btn,.hero-actions .btn,.final-btn .btn,.nav-btn,.free-body .btn::before,.tier-buy .btn::before,.flag-buy .btn::before,.hero-actions .btn::before,.final-btn .btn::before,.nav-btn::before,.free-body .btn::after,.tier-buy .btn::after,.flag-buy .btn::after,.hero-actions .btn::after,.final-btn .btn::after,.nav-btn::after{transition:none !important}
 }
 
-/* ===== HERO AND FINAL BUTTON HOVER: NARROWING RING (2 buttons) ===== */
-.hero-actions .btn,.final-btn .btn{position:relative;transition:background-color .2s ease-out,color .2s ease-out}
-.hero-actions .btn::before,.final-btn .btn::before{content:"";position:absolute;top:-16px;right:-16px;bottom:-16px;left:-16px;border:2px solid #6BE0A0;border-radius:16px;opacity:0;pointer-events:none;transition:top .22s ease-out,right .22s ease-out,bottom .22s ease-out,left .22s ease-out,opacity .22s ease-out}
-.hero-actions .btn:focus-visible::before,.final-btn .btn:focus-visible::before{top:-5px;right:-5px;bottom:-5px;left:-5px;opacity:1}
-@media (hover:hover){
-.hero-actions .btn:hover::before,.final-btn .btn:hover::before{top:-5px;right:-5px;bottom:-5px;left:-5px;opacity:1}
-.hero-actions .btn:hover,.final-btn .btn:hover{filter:none;background:#F3F0E9;color:#0C0D0B}
-}
-@media (prefers-reduced-motion:reduce){
-.hero-actions .btn,.final-btn .btn,.hero-actions .btn::before,.final-btn .btn::before{transition:none}
-}
-
-/* ===== NAV BUTTON HOVER: NARROWING RING (top-right "Free guides" button) ===== */
-.nav-btn{position:relative;transition:background-color .2s ease-out,color .2s ease-out}
-.nav-btn::before{content:"";position:absolute;top:-10px;right:-10px;bottom:-10px;left:-10px;border:2px solid #6BE0A0;border-radius:12px;opacity:0;pointer-events:none;transition:top .22s ease-out,right .22s ease-out,bottom .22s ease-out,left .22s ease-out,opacity .22s ease-out}
-.nav-btn:focus-visible::before{top:-4px;right:-4px;bottom:-4px;left:-4px;opacity:1}
-@media (hover:hover){
-.nav-btn:hover::before{top:-4px;right:-4px;bottom:-4px;left:-4px;opacity:1}
-.nav-btn:hover{filter:none;background:#F3F0E9;color:#0C0D0B}
-}
-@media (prefers-reduced-motion:reduce){
-.nav-btn,.nav-btn::before{transition:none}
-}
+/* ===== GREEN BOX (flagship) ===== */
+.flag{position:relative;overflow:hidden}
+.flag-rings{position:absolute;left:-454px;top:-424px;width:1200px;height:1200px;max-width:none;pointer-events:none}
+.flag-cover,.flag-body,.flag-buy{position:relative}
+.flag-body{gap:22px}
+.flag-buy{align-self:stretch}
+.flag-stats{display:flex;border-top:1px solid #0C0D0B;border-bottom:1px solid #0C0D0B}
+.flag-stat{flex:1;padding-top:14px;padding-bottom:14px}
+.flag-stat+.flag-stat{border-left:1px solid #0C0D0B;padding-left:20px}
+.flag-stat .n{font-size:56px;line-height:1}
+.flag-stat .l{font-family:'Archivo',Arial,sans-serif;font-size:14px;font-weight:500;margin-top:4px}
+.flag-lead{font-size:24px;line-height:1.4}
+.flag-inside-label{font-family:'Archivo',Arial,sans-serif;font-size:15px;font-weight:500;margin-bottom:6px}
+.flag-inside{flex:1 1 100%;position:relative;margin-top:-8px}
+.flag-chaps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}
+.flag-chaps>div{font-family:'Archivo',Arial,sans-serif;border-top:1px solid rgba(12,13,11,.35);padding:12px 0;font-size:17px;font-weight:600}
+.flag-chaps small{display:block;font-size:13px;font-weight:400;margin-top:2px}
+.flag-spec{align-self:stretch;margin-top:auto;padding-top:20px}
+.flag-spec>div{display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(12,13,11,.35);padding:11px 0;font-size:15px;line-height:1.35}
+.flag-spec span:first-child{font-weight:500}
+.flag-spec span:last-child{text-align:right}
 
 /* ===== MOBILE (screen width 899px and below) ===== */
 @media (max-width:899px){
@@ -355,6 +357,24 @@ footer .wrap{padding-bottom:56px}
   .consent-title{font-size:34px;margin-bottom:12px}
   .consent-text{font-size:19px;margin-bottom:24px}
   .consent-btn{min-height:56px;padding:18px 24px}
+}
+@media (max-width:899px){
+  .flag-rings{left:-510px;top:-479px}
+  .flag-body{gap:0}
+  .flag-body .flag-name{margin-bottom:20px}
+  .flag-stat .n{font-size:44px}
+  .flag-stat+.flag-stat{padding-left:16px}
+  .flag-stat{padding-top:12px;padding-bottom:12px}
+  .flag-lead{font-size:20px;margin:20px 0 24px}
+  .flag-chaps{grid-template-columns:minmax(0,1fr)}
+  .flag-buy{align-self:auto;margin-top:28px}
+  .flag-spec{margin-top:24px;padding-top:0}
+  .flag{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .flag-cover{align-self:flex-start;order:0}
+  .flag-body{order:1}
+  .flag-inside{order:2;margin-top:24px}
+  .flag-buy{order:3}
+  .free-body .btn::before,.free-body .btn::after,.tier-buy .btn::before,.tier-buy .btn::after,.flag-buy .btn::before,.flag-buy .btn::after,.hero-actions .btn::before,.hero-actions .btn::after,.final-btn .btn::before,.final-btn .btn::after,.nav-btn::before,.nav-btn::after{display:none}
 }
 </style>
 </head>
@@ -515,12 +535,13 @@ footer .wrap{padding-bottom:56px}
     </div>
 
     <div class="flag">
+      <svg class="flag-rings" viewBox="0 0 1200 1200" fill="none" stroke="#0C0D0B" stroke-width="1.5" aria-hidden="true"><circle cx="600" cy="600" r="120" stroke-opacity=".13"/><circle cx="600" cy="600" r="200" stroke-opacity=".13"/><circle cx="600" cy="600" r="280" stroke-opacity=".13"/><circle cx="600" cy="600" r="360" stroke-opacity=".13"/><circle cx="600" cy="600" r="440" stroke-opacity=".13"/><circle cx="600" cy="600" r="520" stroke-opacity=".13"/></svg>
       <div class="flag-cover"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.6" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">The Exact Method</div></div>
       <div class="flag-body">
-        <div class="kicker" style="color:#0C0D0B;font-weight:500">The complete system. 58 pages, 6 chapters.</div>
+        <div class="kicker" style="color:#0C0D0B;font-weight:500">The complete system</div>
         <h3 class="flag-name disp">The Exact Method</h3>
-        <p style="font-size:21px;line-height:1.5">Precision prompting, tool selection, chaining, verification, and worked examples across coding, e-commerce, content, freelancing and design.</p>
-        <p style="font-size:19px;line-height:1.5">Everything in the smaller guides, plus the full method behind them. Built from real use. One-time payment, yours to keep.</p>
+        <div class="flag-stats"><div class="flag-stat"><div class="n disp">58</div><div class="l">pages</div></div><div class="flag-stat"><div class="n disp">6</div><div class="l">chapters</div></div><div class="flag-stat"><div class="n disp">1</div><div class="l">payment</div></div></div>
+        <p class="flag-lead">Everything in the smaller guides, plus the full method behind them. Built from real use. One-time payment, yours to keep.</p>
       </div>
       <div class="flag-buy">
         <div style="font-size:15px;font-weight:500">Launch price</div>
@@ -528,8 +549,9 @@ footer .wrap{padding-bottom:56px}
         <div class="early" style="font-size:16px;line-height:1.5">Early price, and a real one. Once the first 30 buyers have it, the price moves to $697.</div>
         <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get the Exact Method for $127 (opens in a new tab)">Get the Exact Method for $127</a>
         <div class="flag-note">Instant digital download. All sales final.</div>
-        <div class="upwork">For scale: freelance AI and prompt engineers typically charge $35–60 an hour on Upwork, and most people need several sessions to get what's covered here.</div>
+        <div class="flag-spec"><div><span>Format</span><span>PDF, opens on any device</span></div><div><span>Delivery</span><span>Instant download</span></div><div><span>Includes</span><span>Sources list for every claim</span></div><div><span>Access</span><span>One-time payment, yours to keep</span></div></div>
       </div>
+    <div class="flag-inside"><div class="flag-inside-label">Inside</div><div class="flag-chaps"><div>Mindset Shift</div><div>Precision Prompting</div><div>Tool Selection</div><div>Chaining AI Tools</div><div>Verifying What AI Tells You</div><div>Applied Examples<small>coding, e-commerce, content, freelancing, design</small></div></div></div>
     </div>
   </div>
 </section>
