@@ -1,987 +1,595 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A practical method for getting precise, reliable results from AI. Start with The Narrowing Method, a free guide.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Exact Method — Stop Getting Generic AI Answers">
-  <meta property="og:description" content="A method for getting precise, reliable results from AI every time — not another list of prompt tricks.">
-  <meta property="og:url" content="https://TODO-your-domain.example">
-  <title>The Exact Method — Stop Getting Generic AI Answers</title>
-  <!-- TODO: paste Meta Pixel base code here -->
-  <!-- TODO: paste TikTok Pixel base code here -->
-  <!-- TODO: wire Purchase event to Gumroad post-purchase redirect -->
-  <!-- TODO: replace this canonical URL with the final domain -->
-  <link rel="canonical" href="https://TODO-your-domain.example">
-  <style>
-    :root {
-      --bg: #FBF8F3;
-      --text: #262320;
-      --accent: #2B5D4C;
-      --rule: #E3DDD1;
-      --muted: #8A8379;
-      --box-bg: #F1EDE3;
-      --content-width: 720px;
-      --page-gutter: 24px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 24px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    .page {
-      width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
-      margin-inline: auto;
-    }
-
-    .hero {
-      width: 100%;
-      padding-block: 88px 72px;
-      text-align: center;
-    }
-
-    .hero-inner {
-      width: min(100%, 840px);
-      margin-inline: auto;
-    }
-
-    .kicker {
-      display: inline-block;
-      margin: 0 0 24px;
-      padding: 7px 13px;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      background: var(--box-bg);
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      line-height: 1.4;
-    }
-
-    h1,
-    h2,
-    h3,
-    p,
-    ul {
-      margin-top: 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    }
-
-    h1 {
-      max-width: 900px;
-      margin-inline: auto;
-      margin-bottom: 26px;
-      font-size: clamp(54px, 9.2vw, 112px);
-      font-weight: 400;
-      letter-spacing: -0.045em;
-      line-height: 0.98;
-    }
-
-    .headline-mark {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .headline-mark svg {
-      position: absolute;
-      right: 4%;
-      bottom: -9px;
-      left: 1%;
-      width: 95%;
-      height: 10px;
-      overflow: visible;
-      pointer-events: none;
-    }
-
-    h2 {
-      margin-bottom: 18px;
-      font-size: clamp(27px, 5vw, 36px);
-      font-weight: 400;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      font-size: 23px;
-      font-weight: 400;
-      line-height: 1.3;
-    }
-
-    .hero-copy {
-      max-width: 590px;
-      margin-inline: auto;
-      margin-bottom: 28px;
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.55;
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 52px;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 22px;
-      border: 0;
-      border-radius: 6px;
-      background: var(--accent);
-      color: var(--bg);
-      font: inherit;
-      line-height: 1.35;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      filter: brightness(0.88);
-    }
-
-    .button:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    .section {
-      padding-block: 52px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .editorial-section {
-      display: grid;
-      grid-template-columns: 20% minmax(0, 1fr);
-      gap: 5%;
-      align-items: start;
-      padding-block: 40px;
-    }
-
-    .editorial-section h2 {
-      margin-bottom: 0;
-      font-size: 21px;
-      font-weight: 500;
-      letter-spacing: -0.015em;
-    }
-
-    .editorial-copy > :last-child {
-      margin-bottom: 0;
-    }
-
-    .section p:last-child,
-    .offer-box p:last-child,
-    .tier-box p:last-child {
-      margin-bottom: 0;
-    }
-
-    .section p {
-      text-align: left;
-    }
-
-    .plain-list {
-      margin-bottom: 0;
-      padding-left: 24px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .plain-list li {
-      position: relative;
-      padding-left: 22px;
-    }
-
-    .plain-list li::before {
-      position: absolute;
-      top: 0.68em;
-      left: 2px;
-      width: 7px;
-      height: 7px;
-      background: var(--accent);
-      content: "";
-    }
-
-    .plain-list li + li {
-      margin-top: 12px;
-    }
-
-    .offer-box,
-    .tier-box {
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      background: var(--box-bg);
-    }
-
-    .offer-box {
-      padding: 30px;
-    }
-
-    .offer-box + .offer-box {
-      margin-top: 14px;
-    }
-
-    .offer-box h2 {
-      margin-bottom: 10px;
-      font-size: 29px;
-    }
-
-    .offer-box .button,
-    .tier-box .button {
-      margin-top: 9px;
-    }
-
-    .fine-print {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .ladder {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      padding-block: 52px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .ladder > h2,
-    .ladder-intro {
-      grid-column: 1 / -1;
-    }
-
-    .ladder-intro {
-      margin-bottom: 24px;
-      color: var(--muted);
-    }
-
-    .ladder-item {
-      min-width: 0;
-      padding: 22px;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      background: var(--box-bg);
-    }
-
-    .ladder-item--complete {
-      grid-column: 1 / -1;
-      border: 2px solid var(--accent);
-      box-shadow: 0 8px 24px rgb(38 35 32 / 10%);
-    }
-
-    .ladder-item h3 {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 12px;
-      align-items: baseline;
-      margin-bottom: 7px;
-    }
-
-    .ladder-item h3::before {
-      width: var(--ladder-rule-width);
-      height: var(--ladder-rule-height);
-      flex: none;
-      align-self: center;
-      background: var(--accent);
-      content: "";
-    }
-
-    .ladder-price {
-      color: var(--muted);
-      font-size: 0.9em;
-      letter-spacing: 0;
-    }
-
-    .ladder-item p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .ladder-item--entry h3 {
-      --ladder-rule-height: 32px;
-      --ladder-rule-width: 3px;
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .ladder-item--prompts h3 {
-      --ladder-rule-height: 32px;
-      --ladder-rule-width: 3px;
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .ladder-item--middle h3 {
-      --ladder-rule-height: 32px;
-      --ladder-rule-width: 3px;
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .ladder-item--complete h3 {
-      --ladder-rule-height: 44px;
-      --ladder-rule-width: 4px;
-      font-size: 27px;
-      font-weight: 700;
-    }
-
-    .tier-section {
-      padding-block: 28px 52px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .tier-box {
-      padding: 30px;
-    }
-
-    .tier-section:not(.tier-section--complete) {
-      border-top: 0;
-    }
-
-    .tier-box--row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-      gap: 36px;
-      align-items: start;
-    }
-
-    .tier-box--row h2 {
-      margin-bottom: 0;
-    }
-
-    .tier-price {
-      display: block;
-    }
-
-    .tier-box ul {
-      margin-bottom: 18px;
-      padding-left: 22px;
-    }
-
-    .tier-box li + li {
-      margin-top: 6px;
-    }
-
-    .tier-section--complete {
-      position: relative;
-      left: 50%;
-      width: calc(100vw - (var(--page-gutter) * 2));
-      transform: translateX(-50%);
-    }
-
-    .tier-box--complete {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 48px;
-      padding: 48px;
-      align-items: start;
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
-      border-radius: 12px;
-    }
-
-    .tier-box--complete h2 {
-      margin-bottom: 18px;
-      font-size: clamp(32px, 5vw, 40px);
-    }
-
-    .price-anchor {
-      margin-block: 24px;
-      padding-top: 18px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .tier-box--complete .price-anchor {
-      border-color: var(--bg);
-    }
-
-    .tier-box--complete .button {
-      background: var(--bg);
-      color: var(--accent);
-    }
-
-    .tier-box--complete .button:focus-visible {
-      outline-color: var(--bg);
-    }
-
-    .tier-box--complete .fine-print {
-      color: var(--bg);
-    }
-
-    .current-price {
-      margin-bottom: 0;
-      font-size: 18px;
-    }
-
-    .proof-intro {
-      margin-bottom: 22px;
-    }
-
-    .example-box {
-      display: grid;
-      gap: 18px;
-    }
-
-    .prompt-number {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--accent);
-      font-size: clamp(72px, 9vw, 104px);
-      font-weight: 700;
-      line-height: 0.82;
-    }
-
-    .prompt {
-      min-width: 0;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      background: var(--box-bg);
-      box-shadow: 0 5px 18px rgb(38 35 32 / 6%);
-    }
-
-    .prompt-window-chrome {
-      display: flex;
-      height: 27px;
-      align-items: center;
-      gap: 5px;
-      padding-inline: 10px;
-      border-bottom: 1px solid var(--rule);
-      border-radius: 9px 9px 0 0;
-      background: var(--box-bg);
-    }
-
-    .prompt-window-chrome span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--muted);
-    }
-
-    .prompt-content {
-      padding: 24px;
-    }
-
-    .prompt h3 {
-      margin-bottom: 6px;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .prompt p {
-      margin-bottom: 0;
-      padding-left: 14px;
-      border-left: 2px solid var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.9em;
-      line-height: 1.65;
-    }
-
-    .faq-item {
-      padding: 22px;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      background: var(--box-bg);
-    }
-
-    .section[aria-labelledby="faq-title"] {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .section[aria-labelledby="faq-title"] > h2 {
-      grid-column: 1 / -1;
-    }
-
-    .faq-item h3 {
-      margin-bottom: 12px;
-      font-size: 25px;
-      font-weight: 700;
-      line-height: 1.25;
-    }
-
-    .faq-item p {
-      margin-bottom: 0;
-    }
-
-    .policy-copy {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .final-cta {
-      padding-block: 44px 52px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .final-cta h2 {
-      margin-bottom: 18px;
-      font-size: 29px;
-    }
-
-    footer {
-      padding-block: 20px 30px;
-      border-top: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 8px 0 0;
-    }
-
-    .consent-banner {
-      position: fixed;
-      z-index: 30;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 18px max(var(--page-gutter), calc((100vw - 1120px) / 2));
-      border-top: 1px solid rgb(251 248 243 / 24%);
-      background: rgb(26 25 23 / 94%);
-      color: #fcfbf9;
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      transition: opacity 220ms ease, transform 220ms ease;
-    }
-
-    .consent-banner[hidden] {
-      display: none;
-    }
-
-    .consent-banner.is-dismissed {
-      transform: translateY(100%);
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .consent-banner p {
-      max-width: 780px;
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .consent-banner a {
-      color: #fcfbf9;
-      text-underline-offset: 3px;
-    }
-
-    .consent-banner button {
-      flex: none;
-      min-height: 44px;
-      padding: 10px 20px;
-      border: 0;
-      border-radius: 6px;
-      background: var(--accent);
-      color: var(--bg);
-      font: inherit;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .consent-banner button:focus-visible {
-      outline: 2px solid #fcfbf9;
-      outline-offset: 3px;
-    }
-
-    .sticky-cta {
-      display: none;
-    }
-
-    @media (max-width: 799px) {
-      .editorial-section {
-        display: block;
-      }
-
-      .editorial-section h2 {
-        margin-bottom: 18px;
-      }
-
-      .tier-box--row,
-      .tier-box--complete {
-        display: block;
-      }
-
-      .ladder {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .tier-box--row h2 {
-        margin-bottom: 18px;
-      }
-    }
-
-    @media (max-width: 760px) {
-      :root {
-        --page-gutter: 22px;
-      }
-
-      body {
-        font-size: 16px;
-      }
-
-      .hero {
-        padding-block: 62px 50px;
-      }
-
-      .ladder {
-        grid-template-columns: 1fr;
-      }
-
-      .editorial-section {
-        padding: 24px;
-      }
-
-      .section,
-      .ladder {
-        padding-block: 40px;
-      }
-
-      .offer-box,
-      .tier-box {
-        padding: 24px;
-      }
-
-      .tier-box--complete {
-        padding: 36px 28px;
-      }
-
-      .example-box {
-        gap: 16px;
-      }
-
-      .section[aria-labelledby="faq-title"] {
-        grid-template-columns: 1fr;
-      }
-
-      .consent-banner {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 12px;
-        padding: 16px var(--page-gutter);
-      }
-
-      .consent-banner button {
-        width: 100%;
-      }
-
-      .sticky-cta:not([hidden]) {
-        position: fixed;
-        z-index: 10;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: block;
-        padding: 12px var(--page-gutter);
-        border-top: 1px solid var(--rule);
-        background: var(--bg);
-      }
-
-      .sticky-cta .button {
-        display: flex;
-        width: 100%;
-        min-height: 48px;
-      }
-
-      body.has-sticky-cta {
-        padding-bottom: 78px;
-      }
-    }
-
-    @media (min-width: 800px) {
-      .example-box {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Exact Method</title>
+<meta name="description" content="A method for getting precise, reliable results from AI every time.">
+<link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* ===== FONTS (self-hosted) ===== */
+@font-face{font-family:'Archivo';src:url('fonts/archivo-variable.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:'Newsreader';src:url('fonts/newsreader-variable.woff2') format('woff2');font-weight:200 800;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('fonts/plex-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url('fonts/plex-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
+
+/* ===== BASE ===== */
+:root{--bg:#0C0D0B;--surface:#131511;--surface2:#1A1D17;--line:#2C3028;--line-soft:#23271F;--text:#F3F0E9;--muted:#B7BBAF;--muted2:#A3A89B;--accent:#6BE0A0;--paper:#F3EFE4;--ink:#181714;--deep:#2B5D4C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Newsreader',Georgia,serif;font-size:21px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.disp{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;letter-spacing:-0.01em}
+.ui{font-family:'Archivo',Arial,sans-serif;font-stretch:100%}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1200px;margin:0 auto;padding-left:40px;padding-right:40px}
+.accent{color:var(--accent)}
+section[id]{scroll-margin-top:16px}
+
+/* buttons */
+.btn{display:inline-block;font-family:'Archivo',Arial,sans-serif;font-weight:600;font-size:17px;line-height:1.2;padding:15px 26px;border-radius:8px;text-align:center;transition:filter .15s ease-out}
+.btn:hover{filter:brightness(1.1)}
+.btn-accent{background:var(--accent);color:#0C0D0B}
+.btn-outline{border:1px solid #6B7062;color:var(--text)}
+.btn-dark{background:#0C0D0B;color:var(--text)}
+.btn-lg{font-size:18px;padding:18px 30px}
+.note{font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2)}
+.textlink{font-family:'Archivo',Arial,sans-serif;font-size:17px;font-weight:500;border-bottom:1px solid #5A5F52;padding-bottom:3px;transition:border-color .15s ease-out}
+.textlink:hover{border-color:var(--text)}
+
+/* ===== NAV ===== */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:26px;padding-bottom:26px}
+.brand{display:flex;align-items:center;gap:10px;font-size:26px;font-stretch:90%}
+.brand svg{width:26px;height:26px;flex:none}
+.nav-right{display:flex;align-items:center;gap:28px;font-family:'Archivo',Arial,sans-serif;font-size:16px;font-weight:500}
+.nav-link{border-bottom:1px solid transparent;padding:6px 0;transition:border-color .15s ease-out}
+.nav-link:hover{border-color:var(--text)}
+.nav-btn{background:var(--accent);color:#0C0D0B;font-weight:600;padding:12px 20px;border-radius:8px;transition:filter .15s ease-out}
+.nav-btn:hover{filter:brightness(1.1)}
+
+/* ===== HERO ===== */
+.hero{display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start;padding-top:56px;padding-bottom:120px}
+.hero-text{flex:1 1 500px;min-width:0;padding-top:16px}
+.hero h1{font-size:clamp(52px,7.2vw,96px);line-height:.94;letter-spacing:-0.005em;margin-bottom:28px}
+.hero-sub{font-size:24px;line-height:1.45;color:var(--muted);max-width:480px;margin-bottom:40px}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px}
+.hero-note{margin-top:24px;font-family:'Archivo',Arial,sans-serif;font-size:15px;color:var(--muted2)}
+.target{flex:1 1 500px;min-width:0;position:relative;height:560px;overflow:hidden}
+.target svg.rings{position:absolute;left:0;top:0;width:560px;height:560px;max-width:none}
+.cv{position:absolute;border-radius:6px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 0 0 3px #0C0D0B;background:var(--surface2);border:1px solid #3A3F35;color:var(--text);width:120px;height:160px;padding:10px}
+.cv .price{font-family:'Archivo',Arial,sans-serif;font-size:13px;font-weight:600}
+.cv .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:20px;line-height:.95;letter-spacing:-0.01em}
+.c1{left:0;top:380px}.c2{left:88px;top:316px}.c3{left:176px;top:252px}.c4{left:264px;top:188px}
+.c5{left:352px;top:70px;width:160px;height:214px;padding:16px;background:var(--accent);color:#0C0D0B;border:none}
+.c5 .price{font-size:16px}.c5 .title{font-size:32px}
+
+/* ===== PROBLEM ===== */
+.problem{border-top:1px solid var(--line-soft)}
+.problem .wrap{display:flex;flex-wrap:wrap;gap:72px;padding-top:128px;padding-bottom:112px}
+.problem-left{flex:1.3 1 520px;min-width:0}
+.problem-right{flex:1 1 360px;min-width:0;padding-top:14px}
+h2.big{font-size:clamp(40px,5.4vw,72px);line-height:.98}
+.problem h2{margin-bottom:32px}
+.lead{font-size:21px;line-height:1.55;color:var(--muted);max-width:560px}
+.lead+.lead{margin-top:18px}
+.mock{margin-top:40px;max-width:560px}
+.mock-input{border:1px solid #3A3F35;border-radius:8px;padding:14px 18px;font-size:17px;background:var(--surface)}
+.cur{display:inline-block;width:2px;height:1.1em;vertical-align:-3px;margin-left:3px;background:var(--accent);animation:blink 1s steps(1) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.mock-lines{margin-top:16px;display:flex;flex-direction:column;gap:9px}
+.mock-lines i{display:block;height:10px;background:#23271F;border-radius:3px}
+.mock-cap{margin-top:14px;font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2)}
+.for-title{font-family:'Archivo',Arial,sans-serif;font-size:16px;font-weight:600;margin-bottom:6px}
+.for-row{border-top:1px solid var(--line);padding:18px 0;font-size:21px;line-height:1.4}
+.for-row:last-child{border-bottom:1px solid var(--line)}
+
+/* ===== METHOD ===== */
+.method{background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.method .wrap{padding-top:112px;padding-bottom:96px}
+.method-head{display:flex;flex-wrap:wrap;gap:32px 72px;margin-bottom:64px;align-items:flex-end}
+.method-head h2{flex:1 1 440px}
+.method-head p{flex:1 1 380px;font-size:21px;line-height:1.55;color:var(--muted)}
+.m-list{border-top:1px solid var(--line)}
+.m-row{padding:30px 12px 0;border-bottom:1px solid var(--line);transition:background .15s ease-out}
+.m-row:hover{background:#11130F}
+.m-top{display:flex;flex-wrap:wrap;gap:12px 48px;align-items:baseline}
+.m-name{flex:1 1 360px;font-size:44px;line-height:1}
+.m-desc{flex:1 1 360px;font-size:21px;line-height:1.5;color:var(--muted)}
+.m-bar{height:3px;background:var(--accent);margin-top:28px}
+
+/* ===== FREE ===== */
+.free .wrap{padding-top:128px;padding-bottom:112px}
+.free h2{margin-bottom:20px}
+.sec-sub{font-size:21px;line-height:1.55;color:var(--muted);max-width:600px;margin-bottom:64px}
+.free-grid{display:flex;flex-wrap:wrap;gap:56px 72px}
+.free-item{flex:1 1 460px;min-width:0;border-top:1px solid var(--line);padding-top:36px;display:flex;flex-wrap:wrap;gap:32px}
+.cover{flex:none;width:150px;height:200px;background:var(--accent);color:#0C0D0B;border-radius:6px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.cover svg{width:22px;height:22px}
+.cover .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:30px;line-height:.95;letter-spacing:-0.01em}
+.free-body{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.kicker{font-family:'Archivo',Arial,sans-serif;font-size:15px;color:var(--muted2)}
+.item-name{font-size:40px;line-height:1}
+.item-desc{font-size:20px;line-height:1.5;color:var(--muted)}
+.item-desc2{font-size:18px;line-height:1.5;color:var(--muted2)}
+
+/* ===== PROMPTS (paper) ===== */
+.prompts{background:var(--paper);color:var(--ink)}
+.prompts .wrap{padding-top:128px;padding-bottom:120px}
+.prompts h2{max-width:900px;margin-bottom:20px}
+.prompts .sec-sub{color:#4A463E;max-width:640px;margin-bottom:72px}
+.pbox{background:#FBF8F3;border:1px solid #D2CAB6;border-radius:8px;padding:28px 32px}
+.pbox .lab{font-family:'Archivo',Arial,sans-serif;font-size:15px;font-weight:600;color:var(--deep);margin-bottom:12px}
+.pbox .txt{font-size:18px;line-height:1.65}
+.p1{width:100%}.p2{width:80%;min-width:min(100%,360px)}.p3{width:60%;min-width:min(100%,360px);border-color:var(--deep)}
+.pline{width:1px;height:28px;background:var(--deep);margin-left:32px}
+
+/* ===== PRICING ===== */
+.pricing .wrap{padding-top:128px;padding-bottom:112px}
+.pricing h2{margin-bottom:20px}
+.tier-list{border-top:1px solid var(--line)}
+.tier{display:flex;flex-wrap:wrap;gap:32px 40px;padding:40px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.mini{flex:none;width:120px;height:160px;background:var(--surface2);border:1px solid #3A3F35;border-radius:6px;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.mini svg{width:18px;height:18px}
+.mini .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:22px;line-height:.95;letter-spacing:-0.01em}
+.tier-body{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.tier-buy{flex:0 1 240px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.price-big{font-size:72px;line-height:.9}
+.flag{margin-top:56px;background:var(--accent);color:#0C0D0B;border-radius:12px;padding:56px;display:flex;flex-wrap:wrap;gap:48px 56px;align-items:flex-start}
+.flag-cover{flex:none;width:180px;height:240px;background:#0C0D0B;color:var(--text);border-radius:6px;padding:20px;display:flex;flex-direction:column;justify-content:space-between}
+.flag-cover svg{width:28px;height:28px}
+.flag-cover .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:40px;line-height:.92;letter-spacing:-0.01em}
+.flag-body{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.flag-name{font-size:clamp(44px,5.6vw,76px);line-height:.95}
+.flag-buy{flex:0 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start;font-family:'Archivo',Arial,sans-serif}
+.flag-price{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.flag-price .disp{font-size:112px;line-height:.85;letter-spacing:-0.02em}
+.flag-buy .btn{align-self:stretch}
+.flag-note{font-size:14px;align-self:stretch;text-align:center}
+.upwork{border-top:1px solid #0C0D0B;padding-top:14px;font-size:15px;line-height:1.5}
+
+/* ===== COUNT ON ===== */
+.count{background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.count .wrap{display:flex;flex-wrap:wrap;gap:48px 72px;padding-top:112px;padding-bottom:112px}
+.count h2{flex:1 1 360px}
+.count-list{flex:1.4 1 480px;min-width:0;border-top:1px solid var(--line)}
+.count-row{padding:26px 0;border-bottom:1px solid var(--line)}
+.count-row h3{font-size:32px;line-height:1.05;margin-bottom:10px}
+.count-row p{font-size:20px;line-height:1.5;color:var(--muted)}
+
+/* ===== FAQ ===== */
+.faq .wrap{padding-top:128px;padding-bottom:96px}
+.faq h2{margin-bottom:64px}
+.faq-cols{display:flex;flex-wrap:wrap;gap:0 72px}
+.faq-col{flex:1 1 440px;min-width:0}
+details{border-top:1px solid var(--line);padding:28px 0 32px}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary .q{font-size:28px;line-height:1.1}
+.plus{flex:none;position:relative;width:20px;height:20px;margin-top:4px;transition:transform .15s ease-out}
+.plus::before,.plus::after{content:"";position:absolute;background:var(--accent)}
+.plus::before{left:0;right:0;top:9px;height:2px}
+.plus::after{top:0;bottom:0;left:9px;width:2px}
+details[open] .plus{transform:rotate(45deg)}
+details .a{font-size:19px;line-height:1.55;color:var(--muted);margin-top:12px;max-width:520px}
+
+/* ===== FINAL CTA ===== */
+.final .wrap{padding-top:48px;padding-bottom:112px}
+.final-in{border-top:1px solid var(--line);padding-top:72px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:40px}
+.final h2{flex:1 1 520px;font-size:clamp(44px,6.4vw,96px);line-height:.94}
+.final-btn{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+
+/* ===== WORDMARK + FOOTER ===== */
+.wordmark{white-space:nowrap;text-align:center;font-size:clamp(64px,13vw,190px);line-height:.9;color:#15170F;padding-bottom:8px;overflow:hidden;user-select:none}
+footer .wrap{padding-bottom:56px}
+.foot{border-top:1px solid var(--line-soft);padding-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-family:'Archivo',Arial,sans-serif;font-size:14px;line-height:1.6;color:var(--muted2)}
+.foot-policy{max-width:560px}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.foot-links a{text-decoration:underline}
+
+/* ===== AGREE POPUP (styles only; the logic stays the old one) ===== */
+.consent-overlay{position:fixed;inset:0;z-index:1000;background:rgba(12,13,11,.82);display:flex;align-items:center;justify-content:center;padding:24px}
+.consent-box{width:100%;max-width:480px;background:var(--surface);border:1px solid #3A3F35;border-radius:12px;padding:36px;color:var(--text)}
+.consent-title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;letter-spacing:-0.01em;font-size:40px;line-height:1;margin:0 0 14px}
+.consent-text{font-size:20px;line-height:1.5;color:var(--muted);margin:0 0 28px}
+.consent-text a{color:var(--text);text-decoration:underline}
+.consent-btn{display:block;width:100%;background:var(--accent);color:#0C0D0B;border:0;border-radius:8px;font-family:'Archivo',Arial,sans-serif;font-weight:600;font-size:18px;padding:17px 24px;cursor:pointer;transition:filter .15s ease-out}
+.consent-btn:hover{filter:brightness(1.1)}
+.consent-overlay[hidden],.consent-overlay.is-dismissed{display:none}
+
+/* ===== MOBILE (screen width 899px and below) ===== */
+@media (max-width:899px){
+  body{font-size:19px}
+  .wrap{padding-left:16px;padding-right:16px}
+  .nav{padding-top:18px;padding-bottom:18px}
+  .brand{font-size:21px;gap:8px}
+  .brand svg{width:22px;height:22px}
+  .nav-link{display:none}
+  .nav-btn{font-size:14px;padding:11px 14px}
+  .hero{display:block;padding-top:36px;padding-bottom:56px}
+  .hero-text{padding-top:0}
+  .hero h1{font-size:54px;margin-bottom:20px}
+  .hero-sub{font-size:20px;margin-bottom:28px}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:16px}
+  .hero-actions .btn{display:block}
+  .hero-actions .textlink{align-self:center}
+  .hero-note{text-align:center;margin-top:16px;font-size:14px}
+  .target{height:400px;margin-top:44px;width:100%;flex:none}
+  .cv{width:76px;height:100px;padding:7px}
+  .cv .price{font-size:11px}.cv .title{font-size:13px}
+  .target svg.rings{width:358px;height:400px}
+  .c1{left:0;top:300px}.c2{left:42px;top:255px}.c3{left:84px;top:210px}.c4{left:126px;top:165px}
+  .c5{left:178px;top:40px;width:108px;height:148px;padding:11px}
+  .c5 .price{font-size:13px}.c5 .title{font-size:22px}
+  .problem .wrap{display:block;padding-top:64px;padding-bottom:64px}
+  .problem-right{padding-top:0}
+  h2.big{font-size:40px;line-height:1}
+  .problem h2{margin-bottom:24px}
+  .lead{font-size:19px}
+  .lead+.lead{margin-top:16px}
+  .mock{margin-top:28px;margin-bottom:48px}
+  .mock-input{font-size:15px}
+  .for-row{font-size:19px;padding:16px 0}
+  .method .wrap{padding-top:64px;padding-bottom:64px}
+  .method-head{display:block;margin-bottom:40px}
+  .method-head h2{margin-bottom:20px}
+  .method-head p{font-size:19px}
+  .m-row{padding:22px 0 0}
+  .m-top{display:block}
+  .m-name{font-size:32px;margin-bottom:8px}
+  .m-desc{font-size:18px}
+  .m-bar{margin-top:22px}
+  .free .wrap{padding-top:64px;padding-bottom:64px}
+  .free h2{margin-bottom:16px}
+  .sec-sub{font-size:19px;margin-bottom:40px}
+  .free-grid{display:block}
+  .free-item{display:block;padding:28px 0 40px}
+  .free-item:last-child{padding-bottom:0}
+  .cover{width:132px;height:176px;padding:14px;margin-bottom:24px}
+  .cover svg{width:20px;height:20px}
+  .cover .title{font-size:26px}
+  .free-body{display:block}
+  .kicker{font-size:14px;margin-bottom:10px}
+  .item-name{font-size:34px;margin-bottom:12px}
+  .item-desc{font-size:19px;margin-bottom:20px}
+  .free-body .btn,.tier-buy .btn{display:block;width:100%}
+  .free-body .note{text-align:center;margin-top:10px;font-size:13px}
+  .prompts .wrap{padding-top:64px;padding-bottom:64px}
+  .prompts .sec-sub{margin-bottom:40px}
+  .pbox{padding:20px}
+  .pbox .lab{font-size:14px;margin-bottom:10px}
+  .pbox .txt{font-size:15px}
+  .p1{width:100%}.p2{width:92%;min-width:0}.p3{width:84%;min-width:0}
+  .pline{height:24px;margin-left:24px}
+  .pricing .wrap{padding-top:64px;padding-bottom:64px}
+  .tier{display:block;padding:28px 0 36px}
+  .tier:last-child{padding-bottom:40px}
+  .mini{display:none}
+  .tier-body{display:block}
+  .tier-body .kicker{font-size:14px;margin-bottom:10px}
+  .tier-body .item-name{font-size:34px;margin-bottom:12px}
+  .tier-body .item-desc{font-size:19px;margin-bottom:12px}
+  .tier-body .item-desc2{font-size:17px;margin-bottom:20px}
+  .tier-buy{display:block}
+  .price-big{font-size:64px;margin-bottom:16px}
+  .tier-buy .note{text-align:center;margin-top:10px;font-size:13px}
+  .flag{margin-top:40px;padding:28px 20px;display:block}
+  .flag-cover{width:140px;height:186px;padding:16px;margin-bottom:24px}
+  .flag-cover svg{width:24px;height:24px}
+  .flag-cover .title{font-size:30px}
+  .flag-body{display:block}
+  .flag-body .kicker{font-size:14px;font-weight:500;color:#0C0D0B;margin-bottom:8px}
+  .flag-name{font-size:46px;margin-bottom:16px}
+  .flag-body p{font-size:19px;line-height:1.5;margin-bottom:12px}
+  .flag-body p+p{font-size:17px;margin-bottom:24px}
+  .flag-buy{display:block}
+  .flag-price{margin-bottom:12px}
+  .flag-price .disp{font-size:88px}
+  .flag-buy .early{font-size:15px;line-height:1.5;margin-bottom:20px}
+  .flag-buy .btn{display:block;width:100%;font-size:17px;padding:18px 16px}
+  .flag-note{margin-top:10px;font-size:13px}
+  .upwork{margin-top:20px;font-size:14px}
+  .count .wrap{display:block;padding-top:64px;padding-bottom:64px}
+  .count h2{margin-bottom:32px}
+  .count-row{padding:22px 0}
+  .count-row h3{font-size:28px;margin-bottom:8px}
+  .count-row p{font-size:18px}
+  .faq .wrap{padding-top:64px;padding-bottom:32px}
+  .faq h2{margin-bottom:32px}
+  .faq-cols{display:block}
+  details{padding:22px 0 26px}
+  summary .q{font-size:25px}
+  details .a{font-size:18px}
+  .final .wrap{padding-top:40px;padding-bottom:64px}
+  .final-in{display:block;border-top:0;padding-top:0}
+  .final h2{font-size:48px;line-height:.96;margin-bottom:28px}
+  .final-btn{display:block}
+  .final-btn .btn{display:block;width:100%;padding:18px 24px}
+  .final-btn .note{text-align:center;margin-top:10px;font-size:13px}
+  .wordmark{font-size:15.5vw}
+  footer .wrap{padding-bottom:40px}
+  .foot{display:block;font-size:13px;padding-top:24px}
+  .foot-policy{margin-bottom:16px}
+  .foot-links{gap:8px 20px}
+  .consent-overlay{align-items:flex-end;padding:0}
+  .consent-box{max-width:none;border-radius:12px 12px 0 0;border-width:1px 0 0 0;padding:28px 20px 32px}
+  .consent-title{font-size:34px;margin-bottom:12px}
+  .consent-text{font-size:19px;margin-bottom:24px}
+  .consent-btn{min-height:56px;padding:18px 24px}
+}
+</style>
 </head>
 <body>
-  <main class="page">
-    <!-- 1. HERO -->
-    <header class="hero" id="top">
-      <div class="hero-inner">
-        <p class="kicker">THE EXACT METHOD</p>
-        <h1>Stop Getting <em class="headline-mark">Generic AI<svg viewBox="0 0 180 12" aria-hidden="true" focusable="false"><path d="M3 8.5 C38 4.5, 72 10, 106 6.5 S151 5, 177 3" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg></em> Answers.</h1>
-        <p class="hero-copy">A method for getting precise, reliable results from AI every time — not another list of prompt tricks.</p>
-        <a class="button" href="#free-guide">Get the Free Guide</a>
-      </div>
-    </header>
 
-    <!-- 2. THE PROBLEM -->
-    <section class="section editorial-section" aria-labelledby="problem-title">
-      <h2 id="problem-title">The problem</h2>
-      <div class="editorial-copy">
-        <p>You've seen the answer: technically fine, generic, and as if it could have been given to anyone who asked the same thing.</p>
-        <p>That's not the AI being bad at its job. It's being handed a one-line question and asked for a specific answer back.</p>
-      </div>
-    </section>
+<!-- ===== NAV ===== -->
+<header class="wrap nav">
+  <a href="#top" class="brand disp">
+    <svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.7" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg>
+    The Exact Method
+  </a>
+  <nav class="nav-right" aria-label="Main">
+    <a class="nav-link" href="#method">Method</a>
+    <a class="nav-btn" href="#free">Free guides</a>
+  </nav>
+</header>
 
-    <!-- 3. WHO THIS IS FOR -->
-    <section class="section editorial-section" aria-labelledby="audience-title">
-      <h2 id="audience-title">Who this is for</h2>
-      <div class="editorial-copy">
-        <ul class="plain-list">
-          <li>You've tried “better prompting” tips that didn't actually change your results.</li>
-          <li>You get answers that are almost right, not exactly right.</li>
-          <li>You're tired of re-explaining context every single time.</li>
-          <li>You want a repeatable method, not a one-off trick.</li>
-        </ul>
-      </div>
-    </section>
+<main id="top">
 
-    <!-- 4. THE METHOD -->
-    <section class="section editorial-section" aria-labelledby="method-title">
-      <h2 id="method-title">The method</h2>
-      <div class="editorial-copy">
-        <p>The Exact Method is a complete system for asking better questions: narrowing the question, structuring each step so the AI never has to guess, and knowing when to let it ask you questions instead.</p>
-        <p>It also shows you which tool to hand a task to, how to combine more than one tool, and how to catch the AI when it's confidently wrong. The result is fewer prompts, less time stuck, and better work on the first or second try.</p>
-      </div>
-    </section>
+<!-- ===== HERO ===== -->
+<section class="wrap hero">
+  <div class="hero-text">
+    <h1 class="disp">Stop getting <span class="accent">generic</span> AI answers.</h1>
+    <p class="hero-sub">A method for getting precise, reliable results from AI every time.</p>
+    <div class="hero-actions">
+      <a class="btn btn-accent btn-lg" href="#free">Get the free guides</a>
+      <a class="textlink" href="#method">See the method</a>
+    </div>
+    <div class="hero-note">Free PDFs, delivered instantly.</div>
+  </div>
+  <div class="target" aria-hidden="true">
+    <svg class="rings" viewBox="0 0 560 560" fill="none" stroke="#6BE0A0" stroke-width="1.5"></svg>
+    <div class="cv c1"><div class="price">Free</div><div class="title">Narrowing Method</div></div>
+    <div class="cv c2"><div class="price">Free</div><div class="title">Plain Voice</div></div>
+    <div class="cv c3"><div class="price">$17</div><div class="title">10 Prompts</div></div>
+    <div class="cv c4"><div class="price">$37</div><div class="title">Specialist Method</div></div>
+    <div class="cv c5"><div class="price">$127</div><div class="title">The Exact Method</div></div>
+  </div>
+</section>
 
-    <!-- 5. FREE GUIDE OFFER BLOCK -->
-    <section class="section" id="free-guide" aria-labelledby="free-guide-title">
-      <div class="offer-box">
-        <h2 id="free-guide-title">The Narrowing Method — Free</h2>
-        <p>Three prompts that stop AI from giving you generic, could-apply-to-anyone answers.</p>
-        <!-- TODO: paste Gumroad $0-product overlay embed code here (script + button) -->
-        <a class="button" href="https://thriftwellstudio.gumroad.com/l/bwydhs" target="_blank" rel="noopener" aria-label="Get It Free, The Narrowing Method (opens in a new tab)">Get It Free</a>
-        <p class="fine-print">Digital download, delivered instantly.</p>
+<!-- ===== PROBLEM ===== -->
+<section class="problem">
+  <div class="wrap">
+    <div class="problem-left">
+      <h2 class="disp big">The AI isn't bad at its job. It was handed a one-line question.</h2>
+      <p class="lead">You've seen the answer: technically fine, generic, and as if it could have been given to anyone who asked the same thing.</p>
+      <p class="lead">A vague question can only get a generic answer back.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="mock-input mono">Write me a workout plan<span class="cur"></span></div>
+        <div class="mock-lines"><i style="width:100%"></i><i style="width:93%"></i><i style="width:97%"></i><i style="width:64%"></i></div>
+        <div class="mock-cap">One line in. An answer that could belong to anyone out.</div>
       </div>
-      <div class="offer-box">
-        <h2>Plain Voice — Free</h2>
-        <p>Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that make AI writing sound like a person, not a template.</p>
-        <!-- TODO: paste Gumroad $0-product overlay embed code here (script + button) -->
-        <a class="button" href="https://thriftwellstudio.gumroad.com/l/vxwyul" target="_blank" rel="noopener" aria-label="Get It Free, Plain Voice (opens in a new tab)">Get It Free</a>
-        <p class="fine-print">Digital download, delivered instantly.</p>
-      </div>
-    </section>
+    </div>
+    <div class="problem-right">
+      <div class="for-title">This is for you if</div>
+      <div class="for-row">you've tried "better prompting" tips that didn't actually change your results,</div>
+      <div class="for-row">you get answers that are almost right, not exactly right,</div>
+      <div class="for-row">you're tired of re-explaining context every single time,</div>
+      <div class="for-row">or you want a repeatable method, not a one-off trick.</div>
+    </div>
+  </div>
+</section>
 
-    <!-- 6. THE LADDER -->
-    <section class="ladder" aria-labelledby="ladder-title">
-      <h2 id="ladder-title">Choose where to start</h2>
-      <p class="ladder-intro">Start with one fix or get the complete system.</p>
-      <div class="ladder-item ladder-item--entry">
-        <h3><span class="ladder-price">FREE</span><span>The Narrowing Method</span></h3>
-        <p>Fix one problem: get past generic answers with three prompts.</p>
-      </div>
-      <div class="ladder-item ladder-item--entry">
-        <h3><span class="ladder-price">FREE</span><span>Plain Voice</span></h3>
-        <p>Fix one problem: robotic-sounding AI writing, with ready-to-paste instructions for ChatGPT, Claude and Gemini.</p>
-      </div>
-      <div class="ladder-item ladder-item--prompts">
-        <h3><span class="ladder-price">$17</span><span>10 Zero-Ambiguity Prompts</span></h3>
-        <p>Ten ready-to-copy prompts, pre-built so you can use them without studying the method.</p>
-      </div>
-      <div class="ladder-item ladder-item--middle">
-        <h3><span class="ladder-price">$37</span><span>The Specialist Method</span></h3>
-        <p>Choose the right AI tool and combine more than one for bigger projects.</p>
-      </div>
-      <div class="ladder-item ladder-item--complete">
-        <h3><span class="ladder-price">$127</span><span>The Exact Method</span></h3>
-        <p>The full system: precision prompting, tool selection, chaining, verification, and five worked examples across coding, e-commerce, content, freelancing, and design.</p>
-      </div>
-    </section>
+<!-- ===== METHOD ===== -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="method-head">
+      <h2 class="disp big">Five habits that change the answer.</h2>
+      <p>The Exact Method is a complete system. Narrow the question, structure each step so the AI never has to guess, and know when to let it ask you questions instead.</p>
+    </div>
+    <div class="m-list">
+      <div class="m-row"><div class="m-top"><div class="m-name disp">Narrow the question</div><div class="m-desc">Go broad on purpose, then ask something sharper, then sharper again.</div></div><div class="m-bar" style="width:100%"></div></div>
+      <div class="m-row"><div class="m-top"><div class="m-name disp">One action per step</div><div class="m-desc">Give every step a single job, so the AI never fills the gaps with guesswork.</div></div><div class="m-bar" style="width:80%"></div></div>
+      <div class="m-row"><div class="m-top"><div class="m-name disp">Pick the right tool</div><div class="m-desc">Choose the AI built for the job instead of whichever tab is already open.</div></div><div class="m-bar" style="width:60%"></div></div>
+      <div class="m-row"><div class="m-top"><div class="m-name disp">Chain tools together</div><div class="m-desc">Split the work by role, work around a known flaw, or bring in a second opinion.</div></div><div class="m-bar" style="width:40%"></div></div>
+      <div class="m-row"><div class="m-top"><div class="m-name disp">Verify what it says</div><div class="m-desc">Check the answer before you rely on it, with a three-step method.</div></div><div class="m-bar" style="width:20%"></div></div>
+    </div>
+  </div>
+</section>
 
-    <!-- 7. TIER BLOCK — $17 -->
-    <section class="tier-section" id="tier-17" aria-labelledby="tier-17-title">
-      <div class="tier-box tier-box--row">
-        <h2 id="tier-17-title">10 Zero-Ambiguity Prompts <span class="tier-price">$17</span></h2>
-        <div class="tier-details">
-          <p>Ten ready-to-copy prompts for common tasks, each already structured so the AI can't fill the gaps with guesswork. For when you want results today, before learning the method behind them.</p>
-          <ul>
-            <li>Ten templates, copy-paste ready</li>
-            <li>Each one built one action per step, so the AI never has to guess</li>
-            <li>No prior reading required</li>
-          </ul>
-          <!-- TODO: paste Gumroad overlay embed for $17 product -->
-          <a class="button" href="https://thriftwellstudio.gumroad.com/l/aoyxea" target="_blank" rel="noopener" aria-label="Get the Prompts — $17 (opens in a new tab)">Get the Prompts — $17</a>
-          <p class="fine-print">Instant digital download. All sales final.</p>
+<!-- ===== FREE GUIDES ===== -->
+<section class="free" id="free">
+  <div class="wrap">
+    <h2 class="disp big">Two free guides.</h2>
+    <p class="sec-sub">Each one fixes a single problem and stands on its own.</p>
+    <div class="free-grid">
+      <div class="free-item">
+        <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Narrowing Method</div></div>
+        <div class="free-body">
+          <div class="kicker">Free, 5 pages</div>
+          <h3 class="item-name disp">The Narrowing Method</h3>
+          <p class="item-desc">Three prompts that stop AI from giving you generic, could-apply-to-anyone answers.</p>
+          <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/bwydhs" target="_blank" rel="noopener" aria-label="Get The Narrowing Method free (opens in a new tab)">Get it free</a>
+          <div class="note">Digital download, delivered instantly.</div>
         </div>
       </div>
-    </section>
-
-    <!-- 8. TIER BLOCK — $37 -->
-    <section class="tier-section" id="tier-37" aria-labelledby="tier-37-title">
-      <div class="tier-box tier-box--row">
-        <h2 id="tier-37-title">The Specialist Method <span class="tier-price">$37</span></h2>
-        <div class="tier-details">
-          <p>A condensed guide to choosing the right AI tool for a task, and combining more than one tool on bigger projects, instead of defaulting to one tool for everything.</p>
-          <ul>
-            <li>How to choose between today's AI tools without guessing</li>
-            <li>Three ways to chain tools together on one project</li>
-            <li>A practical look at real tool trade-offs, not an exhaustive list</li>
-          </ul>
-          <!-- TODO: paste Gumroad overlay embed for $37 product -->
-          <a class="button" href="https://thriftwellstudio.gumroad.com/l/wdcsmi" target="_blank" rel="noopener" aria-label="Get the Specialist Method — $37 (opens in a new tab)">Get the Specialist Method — $37</a>
-          <p class="fine-print">Instant digital download. All sales final.</p>
+      <div class="free-item">
+        <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">Plain Voice</div></div>
+        <div class="free-body">
+          <div class="kicker">Free, 10 pages</div>
+          <h3 class="item-name disp">Plain Voice</h3>
+          <p class="item-desc">Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that make AI writing sound like a person wrote it.</p>
+          <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/vxwyul" target="_blank" rel="noopener" aria-label="Get Plain Voice free (opens in a new tab)">Get it free</a>
+          <div class="note">Digital download, delivered instantly.</div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- 9. TIER BLOCK — $127 -->
-    <section class="tier-section tier-section--complete" id="tier-127" aria-labelledby="tier-127-title">
-      <div class="tier-box tier-box--complete">
-        <div class="complete-description">
-          <h2 id="tier-127-title">The Exact Method $127</h2>
-          <p>The complete system: precision prompting, tool selection with a way to keep it current yourself, three ways to chain tools together, a method for verifying what AI tells you, and five fully worked examples across coding, e-commerce, content, freelancing, and design.</p>
-          <ul>
-            <li>Everything in the smaller guides, plus the full method behind them</li>
-            <li>Six modules, built from tested, real use — not theory</li>
-            <li>One-time payment, yours to keep</li>
-          </ul>
-        </div>
-        <div class="complete-offer">
-          <p class="price-anchor">Freelance AI and prompt engineers typically charge $35–60 an hour on Upwork — and most people need several sessions to get what's covered here. The Exact Method is a one-time $127. Once the first 30 buyers get it, the price moves to $697, which is closer to what it's actually worth. You're getting the early price, not a fake one.</p>
-          <p class="current-price">Current price: $127 — rises to $697 after the first 30 buyers.</p>
-          <!-- TODO: paste Gumroad overlay embed for $127 product -->
-          <a class="button" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get the Exact Method — $127 (opens in a new tab)">Get the Exact Method — $127</a>
-          <p class="fine-print">Instant digital download. All sales final.</p>
-        </div>
-      </div>
-    </section>
+<!-- ===== THREE PROMPTS (paper band) ===== -->
+<section class="prompts">
+  <div class="wrap">
+    <h2 class="disp big">Three prompts, each one sharper than the last.</h2>
+    <p class="sec-sub">Each prompt narrows the one before it. This is the real sequence from the free Narrowing Method guide.</p>
+    <div class="pbox p1"><div class="lab">Prompt one, broad on purpose</div><div class="txt mono">"Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each."</div></div>
+    <div class="pline"></div>
+    <div class="pbox p2"><div class="lab">Prompt two, using what it found</div><div class="txt mono">"Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint]."</div></div>
+    <div class="pline"></div>
+    <div class="pbox p3"><div class="lab">Prompt three, down to one answer</div><div class="txt mono">"Of these, which one specifically should I start with, and why, based on everything you just found?"</div></div>
+  </div>
+</section>
 
-    <!-- 10. PROOF -->
-    <section class="section" aria-labelledby="proof-title">
-      <h2 id="proof-title">See the method itself</h2>
-      <p class="proof-intro">No testimonials yet because this just launched — here's a real piece of the method instead, judge it yourself.</p>
-      <div class="example-box">
-        <div class="prompt">
-          <div class="prompt-window-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="prompt-content">
-            <h3><span class="prompt-number">1</span>Prompt One</h3>
-            <p>“Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each.”</p>
-          </div>
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <h2 class="disp big">Go deeper.</h2>
+    <p class="sec-sub">Start with one fix, or get the complete system. One-time payments, yours to keep.</p>
+    <div class="tier-list">
+      <div class="tier">
+        <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">10 Zero-Ambiguity Prompts</div></div>
+        <div class="tier-body">
+          <div class="kicker">Prompt pack, 7 pages</div>
+          <h3 class="item-name disp">10 Zero-Ambiguity Prompts</h3>
+          <p class="item-desc">Ten ready-to-copy prompts, each already structured so the AI can't fill the gaps with guesswork. For when you want results today, before learning the method behind them.</p>
+          <p class="item-desc2">Ten templates, copy-paste ready. Each built one action per step. No prior reading required.</p>
         </div>
-        <div class="prompt">
-          <div class="prompt-window-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="prompt-content">
-            <h3><span class="prompt-number">2</span>Prompt Two</h3>
-            <p>“Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint].”</p>
-          </div>
-        </div>
-        <div class="prompt">
-          <div class="prompt-window-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="prompt-content">
-            <h3><span class="prompt-number">3</span>Prompt Three</h3>
-            <p>“Of these, which one specifically should I start with, and why — based on everything you just found?”</p>
-          </div>
+        <div class="tier-buy">
+          <div class="price-big disp">$17</div>
+          <a class="btn btn-outline" href="https://thriftwellstudio.gumroad.com/l/aoyxea" target="_blank" rel="noopener" aria-label="Get the Prompts for $17 (opens in a new tab)">Get the Prompts for $17</a>
+          <div class="note">Instant digital download. All sales final.</div>
         </div>
       </div>
-    </section>
+      <div class="tier">
+        <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">The Specialist Method</div></div>
+        <div class="tier-body">
+          <div class="kicker">Tool guide, 8 pages</div>
+          <h3 class="item-name disp">The Specialist Method</h3>
+          <p class="item-desc">A condensed guide to choosing the right AI tool for a task, and combining more than one on bigger projects, instead of defaulting to one tool for everything.</p>
+          <p class="item-desc2">How to choose between today's AI tools without guessing. Three ways to combine tools on one project. A practical look at real tool trade-offs.</p>
+        </div>
+        <div class="tier-buy">
+          <div class="price-big disp">$37</div>
+          <a class="btn btn-outline" href="https://thriftwellstudio.gumroad.com/l/wdcsmi" target="_blank" rel="noopener" aria-label="Get the Specialist Method for $37 (opens in a new tab)">Get the Specialist Method for $37</a>
+          <div class="note">Instant digital download. All sales final.</div>
+        </div>
+      </div>
+    </div>
 
-    <!-- 11. FAQ -->
-    <section class="section" aria-labelledby="faq-title">
-      <h2 id="faq-title">Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <h3>Isn't this just common sense?</h3>
-        <p>The individual ideas are simple. Most people don't apply them consistently, and that gap is what this method closes.</p>
+    <div class="flag">
+      <div class="flag-cover"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.6" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">The Exact Method</div></div>
+      <div class="flag-body">
+        <div class="kicker" style="color:#0C0D0B;font-weight:500">The complete system. 58 pages, 6 chapters.</div>
+        <h3 class="flag-name disp">The Exact Method</h3>
+        <p style="font-size:21px;line-height:1.5">Precision prompting, tool selection, chaining, verification, and worked examples across coding, e-commerce, content, freelancing and design.</p>
+        <p style="font-size:19px;line-height:1.5">Everything in the smaller guides, plus the full method behind them. Built from real use. One-time payment, yours to keep.</p>
       </div>
-      <div class="faq-item">
-        <h3>Does this work with ChatGPT, Claude, Gemini, or any specific tool?</h3>
-        <p>The method is tool-agnostic. It's about how you structure the conversation, not which AI you're using.</p>
+      <div class="flag-buy">
+        <div style="font-size:15px;font-weight:500">Launch price</div>
+        <div class="flag-price"><div class="disp">$127</div><div style="font-size:19px">then <span style="text-decoration:line-through">$697</span></div></div>
+        <div class="early" style="font-size:16px;line-height:1.5">Early price, and a real one. Once the first 30 buyers have it, the price moves to $697.</div>
+        <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get the Exact Method for $127 (opens in a new tab)">Get the Exact Method for $127</a>
+        <div class="flag-note">Instant digital download. All sales final.</div>
+        <div class="upwork">For scale: freelance AI and prompt engineers typically charge $35–60 an hour on Upwork, and most people need several sessions to get what's covered here.</div>
       </div>
-      <div class="faq-item">
-        <h3>What if I'm already decent at prompting?</h3>
-        <p>The complete method goes past prompting into tool selection, chaining, and verification — parts most people never structure at all.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Why does the price go up later?</h3>
-        <p>Because once real results and testimonials exist behind this method, it's priced for what it's actually worth. Early buyers get it before that happens — this isn't a discount that resets.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is this a subscription?</h3>
-        <p>No. Every tier is a one-time payment, yours to keep.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What do I get, and how do I open it?</h3>
-        <p>A PDF. It opens on any phone, tablet or computer, with no special software. Right after you pay, the download page opens and the same link is emailed to you, so you can come back to it.</p>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- 12. POLICY -->
-    <section class="section" aria-labelledby="policy-title">
-      <h2 id="policy-title">Purchase policy</h2>
-      <p class="policy-copy">All sales are final. Every tier is a digital download delivered immediately on purchase, so refunds aren't offered. By buying, you ask for the download to start immediately and you agree that you lose your 14-day right of withdrawal.</p>
-      <!-- TODO: add legal business name and a physical street address here, required for an enforceable no-refund disclosure in several jurisdictions -->
-    </section>
+<!-- ===== WHAT YOU CAN COUNT ON ===== -->
+<section class="count">
+  <div class="wrap">
+    <h2 class="disp big">What you can count on.</h2>
+    <div class="count-list">
+      <div class="count-row"><h3 class="disp">No promise of results by a date</h3><p>Nobody can honestly guarantee that, so this page doesn't.</p></div>
+      <div class="count-row"><h3 class="disp">A sources list you can check</h3><p>The Exact Method ends with the sources behind its claims.</p></div>
+      <div class="count-row"><h3 class="disp">Limits stated up front</h3><p>Each guide says what it leaves out and when it was last current.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- 13. FINAL CTA -->
-    <section class="final-cta" aria-labelledby="final-cta-title">
-      <h2 id="final-cta-title">Not ready to buy? Start with the free guide.</h2>
-      <a class="button" href="#free-guide">Get It Free</a>
-      <p class="fine-print">Digital download, delivered instantly.</p>
-    </section>
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="disp big">Frequently asked questions</h2>
+    <div class="faq-cols">
+      <div class="faq-col">
+        <details open><summary><span class="q disp">Isn't this just common sense?</span><span class="plus"></span></summary><div class="a">The individual ideas are simple. Most people don't apply them consistently, and that gap is what this method closes.</div></details>
+        <details><summary><span class="q disp">Does this work with ChatGPT, Claude, Gemini, or any specific tool?</span><span class="plus"></span></summary><div class="a">The method is tool-agnostic. It's about how you structure the conversation, whichever AI you use.</div></details>
+        <details><summary><span class="q disp">What if I'm already decent at prompting?</span><span class="plus"></span></summary><div class="a">The complete method goes past prompting into tool selection, chaining and verification, which are parts most people never structure at all.</div></details>
+      </div>
+      <div class="faq-col">
+        <details open><summary><span class="q disp">Why does the price go up later?</span><span class="plus"></span></summary><div class="a">The method is priced for what it's worth once more people have used it. Early buyers get in before that. It isn't a discount that resets.</div></details>
+        <details><summary><span class="q disp">Is this a subscription?</span><span class="plus"></span></summary><div class="a">No. Every tier is a one-time payment, yours to keep.</div></details>
+        <details><summary><span class="q disp">What do I get, and how do I open it?</span><span class="plus"></span></summary><div class="a">A PDF. It opens on any phone, tablet or computer, with no special software. Right after you pay, the download page opens and the same link is emailed to you, so you can come back to it.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- 14. FOOTER -->
-    <!-- TODO: insert final domain here for canonical link and footer copyright line -->
-    <footer>
-      <p>© 2026 The Exact Method</p>
-      <nav class="footer-links" aria-label="Legal">
+<!-- ===== FINAL CTA ===== -->
+<section class="final">
+  <div class="wrap">
+    <div class="final-in">
+      <h2 class="disp">Not ready to buy? Start with the free guides.</h2>
+      <div class="final-btn">
+        <a class="btn btn-accent btn-lg" href="#free" style="padding:20px 36px;font-size:19px">Get the free guides</a>
+        <div class="note">Digital downloads, delivered instantly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== WORDMARK + FOOTER ===== -->
+<div class="wordmark disp" aria-hidden="true">The Exact Method</div>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-policy">Purchase policy: all sales are final. Every tier is a digital download delivered immediately on purchase, so refunds aren't offered.</div>
+      <div class="foot-links">
+        <span>© 2026 The Exact Method</span>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms and Conditions</a>
-      </nav>
-    </footer>
-  </main>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <aside class="sticky-cta" id="sticky-cta" aria-label="Free guide" hidden>
-    <a class="button" href="#free-guide">Get the Free Guide</a>
+<!-- ===== AGREE POPUP: STAND-IN (replace with the OLD popup, see instructions) ===== -->
+<!-- CONSENT-START -->
+  <aside class="consent-banner consent-overlay" id="consent-banner" aria-label="Privacy notice">
+    <div class="consent-box">
+      <p class="consent-text">We use essential browser storage to remember your choice. Checkout and download services may process the information needed to complete purchases and deliver files. Read our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a>.</p>
+      <button type="button" class="consent-btn" id="consent-accept">I Agree</button>
+    </div>
   </aside>
+<!-- CONSENT-END -->
 
-  <aside class="consent-banner" id="consent-banner" aria-label="Privacy notice">
-    <p>We use essential browser storage to remember your choice. Checkout and download services may process the information needed to complete purchases and deliver files. Read our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms and Conditions</a>.</p>
-    <button type="button" id="consent-accept">I Agree</button>
-  </aside>
-
+<script>
+/* Draw the target rings in the hero (decorative). */
+(function(){
+  var svg=document.querySelector('.rings');
+  if(!svg)return;
+  var NS='http://www.w3.org/2000/svg';
+  function make(cx,cy,radii,W,H){
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    svg.innerHTML='';
+    function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e}
+    el('line',{x1:cx,y1:0,x2:cx,y2:H,stroke:'#2C3028'});
+    el('line',{x1:0,y1:cy,x2:W,y2:cy,stroke:'#2C3028'});
+    var op=[.1,.18,.3,.5,.9];
+    radii.forEach(function(r,i){el('circle',{cx:cx,cy:cy,r:r,'stroke-opacity':op[i]})});
+    el('circle',{cx:cx,cy:cy,r:5,fill:'#6BE0A0',stroke:'none'});
+  }
+  function draw(){
+    if(window.matchMedia('(max-width:899px)').matches){make(232,114,[190,152,114,76,38],358,400)}
+    else{make(432,177,[290,230,170,110,50],560,560)}
+  }
+  draw();
+  window.matchMedia('(max-width:899px)').addEventListener('change',draw);
+})();
+</script>
   <script>
     (() => {
       const banner = document.querySelector("#consent-banner");
@@ -1012,32 +620,6 @@
           banner.hidden = true;
         }, 250);
       });
-    })();
-  </script>
-
-  <script>
-    (() => {
-      const hero = document.querySelector(".hero");
-      const stickyCta = document.querySelector("#sticky-cta");
-
-      if (!hero || !stickyCta || !("IntersectionObserver" in window)) {
-        return;
-      }
-
-      const mobileQuery = window.matchMedia("(max-width: 760px)");
-      let heroIsVisible = true;
-      const updateStickyCta = () => {
-        const shouldShow = mobileQuery.matches && !heroIsVisible;
-        stickyCta.hidden = !shouldShow;
-        document.body.classList.toggle("has-sticky-cta", shouldShow);
-      };
-      const observer = new IntersectionObserver(([entry]) => {
-        heroIsVisible = entry.isIntersecting;
-        updateStickyCta();
-      });
-
-      observer.observe(hero);
-      mobileQuery.addEventListener("change", updateStickyCta);
     })();
   </script>
 </body>
