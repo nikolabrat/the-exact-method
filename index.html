@@ -53,116 +53,198 @@ section[id]{scroll-margin-top:16px}
 .nav-btn:hover{filter:brightness(1.1)}
 
 /* ===== HERO ===== */
-.hero{display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start;padding-top:56px;padding-bottom:120px}
+.hero{display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start;padding-top:40px;padding-bottom:96px}
 .hero-text{flex:1 1 500px;min-width:0;padding-top:16px}
 .hero h1{font-size:clamp(52px,7.2vw,96px);line-height:.94;letter-spacing:-0.005em;margin-bottom:28px}
-.hero-sub{font-size:24px;line-height:1.45;color:var(--muted);max-width:480px;margin-bottom:40px}
-.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px}
-.hero-note{margin-top:24px;font-family:'Archivo',Arial,sans-serif;font-size:15px;color:var(--muted2)}
-.target{flex:1 1 500px;min-width:0;position:relative;height:560px;overflow:hidden}
-.target svg.rings{position:absolute;left:0;top:0;width:560px;height:560px;max-width:none}
-.cv{position:absolute;border-radius:6px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 0 0 3px #0C0D0B;background:var(--surface2);border:1px solid #3A3F35;color:var(--text);width:120px;height:160px;padding:10px}
-.cv .price{font-family:'Archivo',Arial,sans-serif;font-size:13px;font-weight:600}
-.cv .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:20px;line-height:.95;letter-spacing:-0.01em}
-.c1{left:0;top:380px}.c2{left:88px;top:316px}.c3{left:176px;top:252px}.c4{left:264px;top:188px}
-.c5{left:352px;top:70px;width:160px;height:214px;padding:16px;background:var(--accent);color:#0C0D0B;border:none}
-.c5 .price{font-size:16px}.c5 .title{font-size:32px}
+.hero-sub{font-size:24px;line-height:1.45;color:var(--muted);max-width:520px;margin-bottom:32px}
+.facts{display:flex;flex-wrap:wrap;max-width:560px;margin-bottom:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{flex:1 1 0;min-width:110px;padding:14px 0 14px 18px;border-left:1px solid var(--line)}
+.fact:first-child{padding-left:0;border-left:0}
+.fact .n{font-size:30px;line-height:1}
+.fact .l{font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2);margin-top:4px}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px}
+.hero-note{margin-top:22px;font-family:'Archivo',Arial,sans-serif;font-size:15px;line-height:1.5;color:var(--muted2);max-width:520px}
+.stack{flex:1 1 520px;max-width:560px;min-width:0;position:relative;height:540px;overflow:hidden}
+.stack-rings{position:absolute;left:0;top:0;width:560px;height:540px;max-width:none}
+.sheet{position:absolute;width:290px}
+.sheet img{width:100%;height:auto;display:block;border:1px solid #3A3F35;border-radius:3px;background:#FBF9F5;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.sheet-1{left:230px;top:20px}
+.sheet-2{left:120px;top:78px}
+.sheet-3{left:10px;top:136px}
 
-/* ===== PROBLEM ===== */
-.problem{border-top:1px solid var(--line-soft)}
-.problem .wrap{display:flex;flex-wrap:wrap;gap:72px;padding-top:128px;padding-bottom:112px}
-.problem-left{flex:1.3 1 520px;min-width:0}
-.problem-right{flex:1 1 360px;min-width:0;padding-top:14px}
+/* ===== BUY STRIP ===== */
+.strip{background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.strip .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 48px;padding-top:44px;padding-bottom:44px}
+.strip-id{flex:1 1 360px;min-width:0;display:flex;align-items:center;gap:22px}
+.strip-id img{flex:none;width:72px;height:auto;border:1px solid #3A3F35;border-radius:3px;box-shadow:0 10px 22px rgba(0,0,0,.5)}
+.strip-name{font-size:42px;line-height:1;white-space:nowrap}
+.strip-sub{margin-top:8px;font-family:'Archivo',Arial,sans-serif;font-size:16px;color:var(--muted2)}
+.strip-price{display:flex;align-items:baseline;gap:14px}
+.strip-price .disp{font-size:72px;line-height:.9}
+.strip-price span{font-family:'Archivo',Arial,sans-serif;font-size:15px;line-height:1.35;color:var(--muted);max-width:170px}
+.strip-buy{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.strip-buy .note{text-align:center}
+
+/* ===== PAGES (real pages from the guide) ===== */
 h2.big{font-size:clamp(40px,5.4vw,72px);line-height:.98}
-.problem h2{margin-bottom:32px}
-.lead{font-size:21px;line-height:1.55;color:var(--muted);max-width:560px}
-.lead+.lead{margin-top:18px}
-.mock{margin-top:40px;max-width:560px}
-.mock-input{border:1px solid #3A3F35;border-radius:8px;padding:14px 18px;font-size:17px;background:var(--surface)}
-.cur{display:inline-block;width:2px;height:1.1em;vertical-align:-3px;margin-left:3px;background:var(--accent);animation:blink 1s steps(1) infinite}
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-.mock-lines{margin-top:16px;display:flex;flex-direction:column;gap:9px}
-.mock-lines i{display:block;height:10px;background:#23271F;border-radius:3px}
-.mock-cap{margin-top:14px;font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2)}
-.for-title{font-family:'Archivo',Arial,sans-serif;font-size:16px;font-weight:600;margin-bottom:6px}
-.for-row{border-top:1px solid var(--line);padding:18px 0;font-size:21px;line-height:1.4}
-.for-row:last-child{border-bottom:1px solid var(--line)}
+.sec-sub{font-size:21px;line-height:1.55;color:var(--muted);max-width:620px;margin-bottom:56px}
+.pages .wrap{padding-top:112px;padding-bottom:120px}
+.pages h2{margin-bottom:20px}
+.page-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 36px}
+.pg-img{display:block}
+.pg-img img{width:100%;height:auto;display:block;border:1px solid #3A3F35;border-radius:3px;background:#FBF9F5;box-shadow:0 14px 32px rgba(0,0,0,.45)}
+.pg-cap{margin-top:18px;display:flex;align-items:baseline;gap:10px}
+.pg-cap .p{flex:none;white-space:nowrap;font-size:13px;color:var(--accent)}
+.pg-cap .t{font-size:26px;line-height:1}
+.pg-txt{margin-top:8px;font-size:18px;line-height:1.5;color:var(--muted)}
+.swipe-note{display:none}
 
-/* ===== METHOD ===== */
+/* ===== DIFFERENCE ===== */
+.diff{border-top:1px solid var(--line-soft)}
+.diff .wrap{padding-top:120px;padding-bottom:112px}
+.diff h2{margin-bottom:20px}
+.diff-rows{border-bottom:1px solid var(--line)}
+.drow{border-top:1px solid var(--line);padding:40px 0 48px}
+.drow-h{display:flex;align-items:baseline;gap:16px;margin-bottom:22px}
+.drow-h .num{font-size:14px;color:var(--accent)}
+.drow-h .t{font-size:40px;line-height:1}
+.drow-b{display:flex;flex-wrap:wrap;gap:20px 24px}
+.gcard{flex:1 1 300px;min-width:0;align-self:flex-start;border:1px solid var(--line);border-radius:8px;padding:26px 28px;background:var(--surface)}
+.gcard .lab{font-family:'Archivo',Arial,sans-serif;font-size:14px;font-weight:600;color:var(--muted2);margin-bottom:12px}
+.gcard .mt{font-size:17px;line-height:1.6;color:var(--muted)}
+.cur{display:inline-block;width:8px;height:1.1em;margin-left:3px;vertical-align:text-bottom;background:var(--accent);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cur{animation:none}}
+.gcard .lines{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+.gcard .lines i{display:block;height:9px;background:#23271F;border-radius:3px}
+.gcard .lines i:nth-child(2){width:92%}
+.gcard .lines i:nth-child(3){width:97%}
+.gcard .lines i:nth-child(4){width:58%}
+.gcard .res{margin-top:16px;font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2)}
+.mcard{flex:1.7 1 440px;min-width:0;border:1px solid var(--accent);border-radius:8px;padding:26px 28px;background:#0F110D}
+.mcard .lab{font-family:'Archivo',Arial,sans-serif;font-size:14px;font-weight:600;color:var(--accent);margin-bottom:14px}
+.step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line-soft)}
+.mcard .lab+.step{border-top:0;padding-top:0}
+.step .sn{flex:none;width:24px;font-size:26px;line-height:1;color:var(--accent)}
+.step .st{font-size:16px;line-height:1.6;color:var(--text)}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1px solid #3A3F35;border-radius:20px;padding:5px 12px;font-family:'Archivo',Arial,sans-serif;font-size:13px;color:var(--muted)}
+
+/* ===== FIVE HABITS ===== */
 .method{background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-.method .wrap{padding-top:112px;padding-bottom:96px}
-.method-head{display:flex;flex-wrap:wrap;gap:32px 72px;margin-bottom:64px;align-items:flex-end}
-.method-head h2{flex:1 1 440px}
-.method-head p{flex:1 1 380px;font-size:21px;line-height:1.55;color:var(--muted)}
-.m-list{border-top:1px solid var(--line)}
-.m-row{padding:30px 12px 0;border-bottom:1px solid var(--line);transition:background .15s ease-out}
-.m-row:hover{background:#11130F}
-.m-top{display:flex;flex-wrap:wrap;gap:12px 48px;align-items:baseline}
-.m-name{flex:1 1 360px;font-size:44px;line-height:1}
-.m-desc{flex:1 1 360px;font-size:21px;line-height:1.5;color:var(--muted)}
-.m-bar{height:3px;background:var(--accent);margin-top:28px}
+.method .wrap{padding-top:112px;padding-bottom:112px}
+.method h2{margin-bottom:20px;max-width:900px}
+.method .sec-sub{margin-bottom:64px;max-width:640px}
+.steps5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 28px;position:relative}
+.steps5::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:#3A3F35}
+.s5{position:relative}
+.s5 .dot{width:19px;height:19px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--surface),0 0 0 6px var(--accent);position:relative}
+.s5 .num{margin-top:28px;font-size:84px;line-height:.85;color:var(--accent)}
+.s5 h3{margin-top:20px;font-size:30px;line-height:1}
+.s5 p{margin-top:12px;font-size:18px;line-height:1.5;color:var(--muted)}
 
-/* ===== FREE ===== */
-.free .wrap{padding-top:128px;padding-bottom:112px}
+/* ===== WHAT'S INSIDE ===== */
+.chapters .wrap{padding-top:120px;padding-bottom:112px}
+.chapters h2{margin-bottom:20px}
+.chap-grid{display:flex;flex-wrap:wrap;gap:48px 56px}
+.chap-list{flex:1.7 1 560px;min-width:0;border-top:1px solid var(--line)}
+.chap{display:flex;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.chap .no{flex:none;width:34px;font-size:15px;color:var(--accent)}
+.chap .cb{flex:1;min-width:0}
+.chap .ct{font-size:32px;line-height:1.05}
+.chap .cd{margin-top:8px;font-size:19px;line-height:1.5;color:var(--muted)}
+.chap .pp{flex:none;font-size:14px;color:var(--muted2)}
+.src-card{flex:1 1 320px;min-width:0;align-self:flex-start;position:sticky;top:24px;border:1px solid var(--accent);border-radius:8px;padding:32px;background:#0F110D}
+.src-card svg{width:24px;height:24px;display:block}
+.src-card h3{margin-top:16px;font-size:36px;line-height:1}
+.src-card p{margin-top:14px;font-size:19px;line-height:1.5;color:var(--muted)}
+.src-shot{position:relative;margin-top:22px;height:210px;overflow:hidden;border:1px solid #3A3F35;border-radius:3px;background:#FBF9F5}
+.src-shot img{width:100%;height:auto;display:block}
+.src-shot::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(to bottom,rgba(15,17,13,0),#0F110D)}
+.src-note{margin-top:14px;font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2)}
+
+/* ===== WHY THE COMPLETE SYSTEM ===== */
+.why{background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.why .wrap{display:flex;flex-wrap:wrap;gap:48px 72px;padding-top:112px;padding-bottom:112px}
+.why h2{flex:1 1 360px;align-self:flex-start;position:sticky;top:24px}
+.why-list{flex:1.4 1 480px;min-width:0;border-top:1px solid var(--line)}
+.why-row{padding:26px 0;border-bottom:1px solid var(--line)}
+.why-row .ix{font-size:13px;color:var(--accent);margin-bottom:10px}
+.why-row h3{font-size:32px;line-height:1.05;margin-bottom:10px}
+.why-row p{font-size:20px;line-height:1.5;color:var(--muted)}
+
+/* ===== WHO IT IS FOR ===== */
+.fit .wrap{display:flex;flex-wrap:wrap;gap:48px 72px;padding-top:112px;padding-bottom:104px}
+.fit-col{flex:1 1 400px;min-width:0}
+.fit-col h3{font-size:38px;line-height:1;margin-bottom:18px}
+.fit-yes h3{color:var(--accent)}
+.fit-no h3{color:var(--muted)}
+.fit-row{display:flex;gap:16px;align-items:flex-start;border-top:1px solid var(--line);padding:18px 0;font-size:21px;line-height:1.4}
+.fit-row:last-child{border-bottom:1px solid var(--line)}
+.fit-row svg{flex:none;width:20px;height:20px;margin-top:4px}
+
+/* ===== PRICING ===== */
+.pricing{border-top:1px solid var(--line-soft)}
+.pricing .wrap{padding-top:120px;padding-bottom:112px}
+.pricing h2{margin-bottom:20px}
+.pricing .sec-sub{margin-bottom:56px}
+.flag{position:relative;overflow:hidden;background:var(--accent);color:#0C0D0B;border-radius:12px;padding:56px;display:flex;flex-wrap:wrap;gap:48px 56px;align-items:flex-start}
+.flag-rings{position:absolute;left:-454px;top:-424px;width:1200px;height:1200px;max-width:none;pointer-events:none}
+.flag-cover,.flag-body,.flag-buy{position:relative}
+.flag-cover{flex:none;width:190px}
+.flag-cover img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 14px 30px rgba(12,13,11,.35)}
+.flag-body{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.flag-name{font-size:clamp(44px,5.6vw,76px);line-height:.95}
+.flag-stats{display:flex;border-top:1px solid #0C0D0B;border-bottom:1px solid #0C0D0B}
+.flag-stat{flex:1;padding-top:14px;padding-bottom:14px}
+.flag-stat+.flag-stat{border-left:1px solid #0C0D0B;padding-left:20px}
+.flag-stat .n{font-size:56px;line-height:1}
+.flag-stat .l{font-family:'Archivo',Arial,sans-serif;font-size:14px;font-weight:500;margin-top:4px}
+.flag-lead{font-size:24px;line-height:1.4}
+.flag-inside-label{font-family:'Archivo',Arial,sans-serif;font-size:15px;font-weight:500;margin-bottom:6px}
+.flag-chaps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+.flag-chaps>div{font-family:'Archivo',Arial,sans-serif;border-top:1px solid rgba(12,13,11,.35);padding:12px 0;font-size:17px;font-weight:600}
+.flag-buy{flex:0 1 320px;min-width:0;align-self:stretch;display:flex;flex-direction:column;gap:14px;align-items:flex-start;font-family:'Archivo',Arial,sans-serif}
+.flag-label{font-size:15px;font-weight:500}
+.flag-price{font-size:112px;line-height:.85;letter-spacing:-0.02em}
+.flag-early{font-size:16px;line-height:1.5}
+.flag-buy .btn{align-self:stretch}
+.flag-note{font-size:14px;align-self:stretch;text-align:center}
+.flag-spec{align-self:stretch;margin-top:auto;padding-top:20px}
+.flag-spec>div{display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(12,13,11,.35);padding:11px 0;font-size:15px;line-height:1.35}
+.flag-spec span:first-child{font-weight:500}
+.flag-spec span:last-child{text-align:right}
+.more{margin-top:96px}
+.more h3{font-size:36px;line-height:1;margin-bottom:8px}
+.more .more-sub{font-size:20px;line-height:1.5;color:var(--muted);max-width:600px;margin-bottom:20px}
+.tier-list{border-top:1px solid var(--line)}
+.tier{display:flex;flex-wrap:wrap;gap:28px 40px;padding:36px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.mini{flex:none;width:96px;height:128px;background:var(--surface2);border:1px solid #3A3F35;border-radius:6px;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
+.mini svg{width:16px;height:16px}
+.mini .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:18px;line-height:.95;letter-spacing:-0.01em}
+.tier-body{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.kicker{font-family:'Archivo',Arial,sans-serif;font-size:15px;color:var(--muted2)}
+.item-name{font-size:34px;line-height:1}
+.item-desc{font-size:19px;line-height:1.5;color:var(--muted)}
+.tier-buy{flex:0 1 280px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.price-big{font-size:52px;line-height:.9}
+.tier-buy .btn{font-size:16px;padding:14px 22px}
+
+/* ===== FREE GUIDES ===== */
+.free{background:var(--surface);border-top:1px solid var(--line-soft)}
+.free .wrap{padding-top:120px;padding-bottom:112px}
 .free h2{margin-bottom:20px}
-.sec-sub{font-size:21px;line-height:1.55;color:var(--muted);max-width:600px;margin-bottom:64px}
 .free-grid{display:flex;flex-wrap:wrap;gap:56px 72px}
 .free-item{flex:1 1 460px;min-width:0;border-top:1px solid var(--line);padding-top:36px;display:flex;flex-wrap:wrap;gap:32px}
 .cover{flex:none;width:150px;height:200px;background:var(--accent);color:#0C0D0B;border-radius:6px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
 .cover svg{width:22px;height:22px}
-.cover .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:30px;line-height:.95;letter-spacing:-0.01em}
+.cover .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:26px;line-height:.95;letter-spacing:-0.01em}
 .free-body{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.kicker{font-family:'Archivo',Arial,sans-serif;font-size:15px;color:var(--muted2)}
-.item-name{font-size:40px;line-height:1}
-.item-desc{font-size:20px;line-height:1.5;color:var(--muted)}
-.item-desc2{font-size:18px;line-height:1.5;color:var(--muted2)}
-
-/* ===== PROMPTS (paper) ===== */
-.prompts{background:var(--paper);color:var(--ink)}
-.prompts .wrap{padding-top:128px;padding-bottom:120px}
-.prompts h2{max-width:900px;margin-bottom:20px}
-.prompts .sec-sub{color:#4A463E;max-width:640px;margin-bottom:72px}
-.pbox{background:#FBF8F3;border:1px solid #D2CAB6;border-radius:8px;padding:28px 32px}
-.pbox .lab{font-family:'Archivo',Arial,sans-serif;font-size:15px;font-weight:600;color:var(--deep);margin-bottom:12px}
-.pbox .txt{font-size:18px;line-height:1.65}
-.p1{width:100%}.p2{width:80%;min-width:min(100%,360px)}.p3{width:60%;min-width:min(100%,360px);border-color:var(--deep)}
-.pline{width:1px;height:28px;background:var(--deep);margin-left:32px}
-
-/* ===== PRICING ===== */
-.pricing .wrap{padding-top:128px;padding-bottom:112px}
-.pricing h2{margin-bottom:20px}
-.tier-list{border-top:1px solid var(--line)}
-.tier{display:flex;flex-wrap:wrap;gap:32px 40px;padding:40px 0;border-bottom:1px solid var(--line);align-items:flex-start}
-.mini{flex:none;width:120px;height:160px;background:var(--surface2);border:1px solid #3A3F35;border-radius:6px;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
-.mini svg{width:18px;height:18px}
-.mini .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:22px;line-height:.95;letter-spacing:-0.01em}
-.tier-body{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px}
-.tier-buy{flex:0 1 240px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.price-big{font-size:72px;line-height:.9}
-.flag{margin-top:56px;background:var(--accent);color:#0C0D0B;border-radius:12px;padding:56px;display:flex;flex-wrap:wrap;gap:48px 56px;align-items:flex-start}
-.flag-cover{flex:none;width:180px;height:240px;background:#0C0D0B;color:var(--text);border-radius:6px;padding:20px;display:flex;flex-direction:column;justify-content:space-between}
-.flag-cover svg{width:28px;height:28px}
-.flag-cover .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:40px;line-height:.92;letter-spacing:-0.01em}
-.flag-body{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px}
-.flag-name{font-size:clamp(44px,5.6vw,76px);line-height:.95}
-.flag-buy{flex:0 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start;font-family:'Archivo',Arial,sans-serif}
-.flag-price{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-.flag-price .disp{font-size:112px;line-height:.85;letter-spacing:-0.02em}
-.flag-buy .btn{align-self:stretch}
-.flag-note{font-size:14px;align-self:stretch;text-align:center}
-.upwork{border-top:1px solid #0C0D0B;padding-top:14px;font-size:15px;line-height:1.5}
-
-/* ===== COUNT ON ===== */
-.count{background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-.count .wrap{display:flex;flex-wrap:wrap;gap:48px 72px;padding-top:112px;padding-bottom:112px}
-.count h2{flex:1 1 360px}
-.count-list{flex:1.4 1 480px;min-width:0;border-top:1px solid var(--line)}
-.count-row{padding:26px 0;border-bottom:1px solid var(--line)}
-.count-row h3{font-size:32px;line-height:1.05;margin-bottom:10px}
-.count-row p{font-size:20px;line-height:1.5;color:var(--muted)}
+.free-body .item-name{font-size:40px}
+.free-body .item-desc{font-size:20px}
 
 /* ===== FAQ ===== */
-.faq .wrap{padding-top:128px;padding-bottom:96px}
+.faq .wrap{padding-top:120px;padding-bottom:96px}
 .faq h2{margin-bottom:64px}
 .faq-cols{display:flex;flex-wrap:wrap;gap:0 72px}
 .faq-col{flex:1 1 440px;min-width:0}
@@ -178,12 +260,19 @@ details[open] .plus{transform:rotate(45deg)}
 details .a{font-size:19px;line-height:1.55;color:var(--muted);margin-top:12px;max-width:520px}
 
 /* ===== FINAL CTA ===== */
-.final .wrap{padding-top:48px;padding-bottom:112px}
+.final{position:relative;overflow:hidden}
+.final-rings{position:absolute;right:0;top:0;width:100%;height:100%;pointer-events:none}
+.final .wrap{position:relative;padding-top:48px;padding-bottom:112px}
 .final-in{border-top:1px solid var(--line);padding-top:72px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:40px}
-.final h2{flex:1 1 520px;font-size:clamp(44px,6.4vw,96px);line-height:.94}
-.final-btn{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-
-/* ===== WORDMARK + FOOTER ===== */
+.final-left{flex:1 1 520px}
+.final h2{font-size:clamp(44px,6.4vw,96px);line-height:.94}
+.final-sub{margin-top:24px;font-size:22px;line-height:1.5;color:var(--muted);max-width:560px}
+.final-btn{display:flex;flex-direction:column;gap:12px;align-items:stretch;min-width:320px}
+.final-price{display:flex;align-items:baseline;gap:12px}
+.final-price .disp{font-size:64px;line-height:.9}
+.final-price span{font-family:'Archivo',Arial,sans-serif;font-size:15px;color:var(--muted)}
+.final-btn .note{text-align:center}
+.final-btn .textlink{align-self:center;margin-top:8px;font-size:16px}/* ===== WORDMARK + FOOTER ===== */
 .wordmark{white-space:nowrap;text-align:center;font-size:clamp(64px,13vw,190px);line-height:.9;color:#15170F;padding-bottom:8px;overflow:hidden;user-select:none}
 footer .wrap{padding-bottom:56px}
 .foot{border-top:1px solid var(--line-soft);padding-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-family:'Archivo',Arial,sans-serif;font-size:14px;line-height:1.6;color:var(--muted2)}
@@ -201,47 +290,35 @@ footer .wrap{padding-bottom:56px}
 .consent-btn:hover{filter:brightness(1.1)}
 .consent-overlay[hidden],.consent-overlay.is-dismissed{display:none}
 
-/* ===== BUTTON HOVER: NARROWING RING (8 buttons) ===== */
-.free-body .btn,.tier-buy .btn,.flag-buy .btn,.hero-actions .btn,.final-btn .btn,.nav-btn{--e:cubic-bezier(.16,1,.3,1);--ring:#6BE0A0;--fill:#F3F0E9;--ink:#0C0D0B;--out:16px;--in:5px;--rad:16px;position:relative;background-image:linear-gradient(var(--fill),var(--fill));background-repeat:no-repeat;background-position:left center;background-size:0% 100%;transition:background-size .3s ease-out,color .3s ease-out,border-color .3s ease-out}
-.flag-buy .btn{--ring:#0C0D0B;--fill:#F3EFE4;--ink:#181714}
-.tier-buy .btn{--fill:#6BE0A0}
+/* ===== BUTTON HOVER: NARROWING RING (all buttons) ===== */
+.btn,.nav-btn{--e:cubic-bezier(.16,1,.3,1);--ring:#6BE0A0;--fill:#F3F0E9;--ink:#0C0D0B;--out:16px;--in:5px;--rad:16px;position:relative;background-image:linear-gradient(var(--fill),var(--fill));background-repeat:no-repeat;background-position:left center;background-size:0% 100%;transition:background-size .3s ease-out,color .3s ease-out,border-color .3s ease-out}
+.btn-outline{--fill:#6BE0A0}
+.btn-dark{--ring:#0C0D0B;--fill:#F3EFE4;--ink:#181714}
 .nav-btn{--out:10px;--in:4px;--rad:12px}
-.free-body .btn::before,.tier-buy .btn::before,.flag-buy .btn::before,.hero-actions .btn::before,.final-btn .btn::before,.nav-btn::before,.free-body .btn::after,.tier-buy .btn::after,.flag-buy .btn::after,.hero-actions .btn::after,.final-btn .btn::after,.nav-btn::after{content:"";position:absolute;top:calc(var(--out)*-1);right:calc(var(--out)*-1);bottom:calc(var(--out)*-1);left:calc(var(--out)*-1);border:2px solid var(--ring);border-radius:var(--rad);opacity:0;pointer-events:none;transition:opacity .3s ease-out,top 0s linear .3s,right 0s linear .3s,bottom 0s linear .3s,left 0s linear .3s}
-.free-body .btn::after,.tier-buy .btn::after,.flag-buy .btn::after,.hero-actions .btn::after,.final-btn .btn::after,.nav-btn::after{top:calc(var(--out)*-1 - 12px);right:calc(var(--out)*-1 - 12px);bottom:calc(var(--out)*-1 - 12px);left:calc(var(--out)*-1 - 12px);border-width:1px;border-radius:calc(var(--rad) + 6px)}
+.btn::before,.btn::after,.nav-btn::before,.nav-btn::after{content:"";position:absolute;top:calc(var(--out)*-1);right:calc(var(--out)*-1);bottom:calc(var(--out)*-1);left:calc(var(--out)*-1);border:2px solid var(--ring);border-radius:var(--rad);opacity:0;pointer-events:none;transition:opacity .3s ease-out,top 0s linear .3s,right 0s linear .3s,bottom 0s linear .3s,left 0s linear .3s}
+.btn::after,.nav-btn::after{top:calc(var(--out)*-1 - 12px);right:calc(var(--out)*-1 - 12px);bottom:calc(var(--out)*-1 - 12px);left:calc(var(--out)*-1 - 12px);border-width:1px;border-radius:calc(var(--rad) + 6px)}
 @media (hover:hover){
-.free-body .btn:hover,.tier-buy .btn:hover,.flag-buy .btn:hover,.hero-actions .btn:hover,.final-btn .btn:hover,.nav-btn:hover{background-size:100% 100%;color:var(--ink);filter:none;transition:background-size .5s var(--e) .12s,color .25s ease-out .2s,border-color .25s ease-out .2s}
-.tier-buy .btn:hover{border-color:#6BE0A0}
-.free-body .btn:hover::before,.tier-buy .btn:hover::before,.flag-buy .btn:hover::before,.hero-actions .btn:hover::before,.final-btn .btn:hover::before,.nav-btn:hover::before{top:calc(var(--in)*-1);right:calc(var(--in)*-1);bottom:calc(var(--in)*-1);left:calc(var(--in)*-1);opacity:1;transition:top .55s var(--e),right .55s var(--e),bottom .55s var(--e),left .55s var(--e),opacity .25s ease-out}
-.free-body .btn:hover::after,.tier-buy .btn:hover::after,.flag-buy .btn:hover::after,.hero-actions .btn:hover::after,.final-btn .btn:hover::after,.nav-btn:hover::after{top:calc(var(--in)*-1 - 9px);right:calc(var(--in)*-1 - 9px);bottom:calc(var(--in)*-1 - 9px);left:calc(var(--in)*-1 - 9px);opacity:.4;transition:top .7s var(--e) .08s,right .7s var(--e) .08s,bottom .7s var(--e) .08s,left .7s var(--e) .08s,opacity .3s ease-out .08s}
+.btn:hover,.nav-btn:hover{background-size:100% 100%;color:var(--ink);filter:none;transition:background-size .5s var(--e) .12s,color .25s ease-out .2s,border-color .25s ease-out .2s}
+.btn-outline:hover{border-color:#6BE0A0}
+.btn:hover::before,.nav-btn:hover::before{top:calc(var(--in)*-1);right:calc(var(--in)*-1);bottom:calc(var(--in)*-1);left:calc(var(--in)*-1);opacity:1;transition:top .55s var(--e),right .55s var(--e),bottom .55s var(--e),left .55s var(--e),opacity .25s ease-out}
+.btn:hover::after,.nav-btn:hover::after{top:calc(var(--in)*-1 - 9px);right:calc(var(--in)*-1 - 9px);bottom:calc(var(--in)*-1 - 9px);left:calc(var(--in)*-1 - 9px);opacity:.4;transition:top .7s var(--e) .08s,right .7s var(--e) .08s,bottom .7s var(--e) .08s,left .7s var(--e) .08s,opacity .3s ease-out .08s}
 }
-.free-body .btn:focus-visible,.tier-buy .btn:focus-visible,.flag-buy .btn:focus-visible,.hero-actions .btn:focus-visible,.final-btn .btn:focus-visible,.nav-btn:focus-visible{outline:none;background-size:100% 100%;color:var(--ink)}
-.free-body .btn:focus-visible::before,.tier-buy .btn:focus-visible::before,.flag-buy .btn:focus-visible::before,.hero-actions .btn:focus-visible::before,.final-btn .btn:focus-visible::before,.nav-btn:focus-visible::before{top:calc(var(--in)*-1);right:calc(var(--in)*-1);bottom:calc(var(--in)*-1);left:calc(var(--in)*-1);opacity:1}
+.btn:focus-visible,.nav-btn:focus-visible{outline:none;background-size:100% 100%;color:var(--ink)}
+.btn:focus-visible::before,.nav-btn:focus-visible::before{top:calc(var(--in)*-1);right:calc(var(--in)*-1);bottom:calc(var(--in)*-1);left:calc(var(--in)*-1);opacity:1}
 @media (prefers-reduced-motion:reduce){
-.free-body .btn,.tier-buy .btn,.flag-buy .btn,.hero-actions .btn,.final-btn .btn,.nav-btn,.free-body .btn::before,.tier-buy .btn::before,.flag-buy .btn::before,.hero-actions .btn::before,.final-btn .btn::before,.nav-btn::before,.free-body .btn::after,.tier-buy .btn::after,.flag-buy .btn::after,.hero-actions .btn::after,.final-btn .btn::after,.nav-btn::after{transition:none !important}
+.btn,.nav-btn,.btn::before,.btn::after,.nav-btn::before,.nav-btn::after{transition:none !important}
 }
-
-/* ===== GREEN BOX (flagship) ===== */
-.flag{position:relative;overflow:hidden}
-.flag-rings{position:absolute;left:-454px;top:-424px;width:1200px;height:1200px;max-width:none;pointer-events:none}
-.flag-cover,.flag-body,.flag-buy{position:relative}
-.flag-body{gap:22px}
-.flag-buy{align-self:stretch}
-.flag-stats{display:flex;border-top:1px solid #0C0D0B;border-bottom:1px solid #0C0D0B}
-.flag-stat{flex:1;padding-top:14px;padding-bottom:14px}
-.flag-stat+.flag-stat{border-left:1px solid #0C0D0B;padding-left:20px}
-.flag-stat .n{font-size:56px;line-height:1}
-.flag-stat .l{font-family:'Archivo',Arial,sans-serif;font-size:14px;font-weight:500;margin-top:4px}
-.flag-lead{font-size:24px;line-height:1.4}
-.flag-inside-label{font-family:'Archivo',Arial,sans-serif;font-size:15px;font-weight:500;margin-bottom:6px}
-.flag-inside{flex:1 1 100%;position:relative;margin-top:-8px}
-.flag-chaps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}
-.flag-chaps>div{font-family:'Archivo',Arial,sans-serif;border-top:1px solid rgba(12,13,11,.35);padding:12px 0;font-size:17px;font-weight:600}
-.flag-chaps small{display:block;font-size:13px;font-weight:400;margin-top:2px}
-.flag-spec{align-self:stretch;margin-top:auto;padding-top:20px}
-.flag-spec>div{display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(12,13,11,.35);padding:11px 0;font-size:15px;line-height:1.35}
-.flag-spec span:first-child{font-weight:500}
-.flag-spec span:last-child{text-align:right}
-
+/* ===== PAGE MOTION (hero stack follows the mouse, guide pages tilt) ===== */
+.sheet{transform:translate3d(var(--tx,0px),var(--ty,0px),0) rotate(var(--rot,0deg));will-change:transform}
+.pg-img{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px));transition:transform .6s cubic-bezier(.16,1,.3,1);will-change:transform}
+.pg-img.is-live{transition:transform .12s ease-out}
+.pg-img::after{content:"";position:absolute;inset:0;border-radius:3px;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.28),rgba(255,255,255,0) 55%);transition:opacity .3s ease-out}
+.pg-img{position:relative}
+.pg-img.is-live::after{opacity:1}
+@media (prefers-reduced-motion:reduce){
+.sheet,.pg-img{transform:none !important;transition:none !important}
+.pg-img::after{display:none}
+}
 /* ===== MOBILE (screen width 899px and below) ===== */
 @media (max-width:899px){
   body{font-size:19px}
@@ -250,107 +327,137 @@ footer .wrap{padding-bottom:56px}
   .brand{font-size:21px;gap:8px}
   .brand svg{width:22px;height:22px}
   .nav-link{display:none}
-  .nav-btn{font-size:14px;padding:11px 14px}
-  .hero{display:block;padding-top:36px;padding-bottom:56px}
-  .hero-text{padding-top:0}
-  .hero h1{font-size:54px;margin-bottom:20px}
-  .hero-sub{font-size:20px;margin-bottom:28px}
-  .hero-actions{flex-direction:column;align-items:stretch;gap:16px}
-  .hero-actions .btn{display:block}
-  .hero-actions .textlink{align-self:center}
-  .hero-note{text-align:center;margin-top:16px;font-size:14px}
-  .target{height:400px;margin-top:44px;width:100%;flex:none}
-  .cv{width:76px;height:100px;padding:7px}
-  .cv .price{font-size:11px}.cv .title{font-size:13px}
-  .target svg.rings{width:358px;height:400px}
-  .c1{left:0;top:300px}.c2{left:42px;top:255px}.c3{left:84px;top:210px}.c4{left:126px;top:165px}
-  .c5{left:178px;top:40px;width:108px;height:148px;padding:11px}
-  .c5 .price{font-size:13px}.c5 .title{font-size:22px}
-  .problem .wrap{display:block;padding-top:64px;padding-bottom:64px}
-  .problem-right{padding-top:0}
+  .nav-btn{font-size:14px;padding:14px 16px}
   h2.big{font-size:40px;line-height:1}
-  .problem h2{margin-bottom:24px}
-  .lead{font-size:19px}
-  .lead+.lead{margin-top:16px}
-  .mock{margin-top:28px;margin-bottom:48px}
-  .mock-input{font-size:15px}
-  .for-row{font-size:19px;padding:16px 0}
-  .method .wrap{padding-top:64px;padding-bottom:64px}
-  .method-head{display:block;margin-bottom:40px}
-  .method-head h2{margin-bottom:20px}
-  .method-head p{font-size:19px}
-  .m-row{padding:22px 0 0}
-  .m-top{display:block}
-  .m-name{font-size:32px;margin-bottom:8px}
-  .m-desc{font-size:18px}
-  .m-bar{margin-top:22px}
-  .free .wrap{padding-top:64px;padding-bottom:64px}
-  .free h2{margin-bottom:16px}
-  .sec-sub{font-size:19px;margin-bottom:40px}
-  .free-grid{display:block}
-  .free-item{display:block;padding:28px 0 40px}
-  .free-item:last-child{padding-bottom:0}
-  .cover{width:132px;height:176px;padding:14px;margin-bottom:24px}
-  .cover svg{width:20px;height:20px}
-  .cover .title{font-size:26px}
-  .free-body{display:block}
-  .kicker{font-size:14px;margin-bottom:10px}
-  .item-name{font-size:34px;margin-bottom:12px}
-  .item-desc{font-size:19px;margin-bottom:20px}
-  .free-body .btn,.tier-buy .btn{display:block;width:100%}
-  .free-body .note{text-align:center;margin-top:10px;font-size:13px}
-  .prompts .wrap{padding-top:64px;padding-bottom:64px}
-  .prompts .sec-sub{margin-bottom:40px}
-  .pbox{padding:20px}
-  .pbox .lab{font-size:14px;margin-bottom:10px}
-  .pbox .txt{font-size:15px}
-  .p1{width:100%}.p2{width:92%;min-width:0}.p3{width:84%;min-width:0}
-  .pline{height:24px;margin-left:24px}
-  .pricing .wrap{padding-top:64px;padding-bottom:64px}
-  .tier{display:block;padding:28px 0 36px}
-  .tier:last-child{padding-bottom:40px}
+  .sec-sub{font-size:19px;margin-bottom:36px}
+  .hero{display:block;padding-top:28px;padding-bottom:56px}
+  .hero-text{padding-top:0}
+  .hero h1{font-size:54px;margin-bottom:18px}
+  .hero-sub{font-size:20px;margin-bottom:24px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;margin-bottom:28px}
+  .fact{min-width:0;padding:12px 0 12px 14px;border-bottom:1px solid var(--line)}
+  .fact:nth-child(odd){padding-left:0;border-left:0}
+  .fact:nth-last-child(-n+2){border-bottom:0}
+  .fact .n{font-size:26px}
+  .fact .l{font-size:13px;margin-top:3px}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
+  .hero-actions .btn{display:block;padding:17px 24px}
+  .hero-note{text-align:center;font-size:14px;margin-top:16px}
+  .stack{display:block;flex:none;max-width:none;width:100%;height:330px;margin-top:40px}
+  .stack-rings{width:358px;height:330px}
+  .sheet{width:53%}
+  .sheet-1{left:42%;top:0}
+  .sheet-2{left:22%;top:34px}
+  .sheet-3{left:3%;top:68px}
+  .strip .wrap{display:block;padding-top:32px;padding-bottom:32px}
+  .strip-id{gap:16px}
+  .strip-id img{width:56px}
+  .strip-name{font-size:34px}
+  .strip-sub{font-size:15px;margin-top:6px}
+  .strip-price{margin:18px 0}
+  .strip-price .disp{font-size:56px}
+  .strip-price span{font-size:14px;max-width:none}
+  .strip-buy .btn{display:block;padding:18px 28px}
+  .strip-buy .note{font-size:13px}
+  .pages .wrap{padding-top:56px;padding-bottom:56px}
+  .page-grid{display:flex;gap:14px;overflow-x:auto;margin:0 -16px;padding:0 16px 8px;scroll-snap-type:x mandatory;scroll-padding-left:16px;-webkit-overflow-scrolling:touch}
+  .pg-card{flex:none;width:236px;scroll-snap-align:start}
+  .pg-cap .t{font-size:24px}
+  .pg-txt{font-size:17px}
+  .swipe-note{display:block;margin-top:6px;font-size:13px}
+  .diff .wrap{padding-top:56px;padding-bottom:56px}
+  .drow{padding:28px 0 36px}
+  .drow-h{margin-bottom:18px}
+  .drow-h .t{font-size:30px}
+  .drow-b{display:block}
+  .gcard{padding:20px;margin-bottom:14px}
+  .gcard .mt{font-size:15px}
+  .mcard{padding:20px}
+  .step .st{font-size:14px}
+  .method .wrap{padding-top:56px;padding-bottom:40px}
+  .method .sec-sub{margin-bottom:40px}
+  .steps5{display:block;position:relative;padding-left:34px}
+  .steps5::before{left:8px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
+  .s5{padding-bottom:32px}
+  .s5 .dot{position:absolute;left:-34px;top:2px;width:17px;height:17px;box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--accent)}
+  .s5 .num{margin-top:0;font-size:54px}
+  .s5 h3{margin-top:12px}
+  .s5 p{margin-top:8px}
+  .chapters .wrap{padding-top:56px;padding-bottom:56px}
+  .chap-grid{display:block}
+  .chap{display:block;padding:20px 0}
+  .chap .no{display:inline-block;width:auto;margin-right:10px}
+  .chap .ct{display:inline;font-size:28px}
+  .chap .pp{display:block;margin-top:6px;font-size:13px}
+  .chap .cd{font-size:18px}
+  .src-card{position:static;margin-top:32px;padding:24px}
+  .src-card h3{font-size:30px}
+  .why .wrap{display:block;padding-top:56px;padding-bottom:56px}
+  .why h2{position:static;font-size:40px;margin-bottom:28px}
+  .why-row{padding:22px 0}
+  .why-row h3{font-size:28px}
+  .why-row p{font-size:18px}
+  .fit .wrap{display:block;padding-top:56px;padding-bottom:56px}
+  .fit-col{margin-bottom:36px}
+  .fit-col h3{font-size:32px}
+  .fit-row{font-size:19px;padding:16px 0}
+  .pricing .wrap{padding-top:56px;padding-bottom:56px}
+  .flag{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:28px 20px}
+  .flag-rings{left:-510px;top:-479px}
+  .flag-cover{width:150px;margin-bottom:24px}
+  .flag-body{gap:0}
+  .flag-name{font-size:46px;margin-bottom:20px}
+  .flag-stat .n{font-size:44px}
+  .flag-stat+.flag-stat{padding-left:12px}
+  .flag-stat{padding-top:12px;padding-bottom:12px}
+  .flag-lead{font-size:20px;margin:20px 0 24px}
+  .flag-chaps>div{font-size:16px}
+  .flag-buy{align-self:auto;margin-top:28px;align-items:stretch}
+  .flag-price{font-size:88px}
+  .flag-buy .btn{display:block;width:100%;font-size:17px;padding:18px 16px}
+  .flag-note{margin-top:2px;font-size:13px}
+  .flag-spec{margin-top:8px;padding-top:8px}
+  .more{margin-top:56px}
+  .more h3{font-size:30px}
+  .more .more-sub{font-size:18px}
+  .tier{display:block;padding:28px 0 32px}
   .mini{display:none}
   .tier-body{display:block}
-  .tier-body .kicker{font-size:14px;margin-bottom:10px}
-  .tier-body .item-name{font-size:34px;margin-bottom:12px}
-  .tier-body .item-desc{font-size:19px;margin-bottom:12px}
-  .tier-body .item-desc2{font-size:17px;margin-bottom:20px}
+  .tier-body .kicker{font-size:14px;margin-bottom:8px}
+  .item-name{font-size:30px;margin-bottom:10px}
+  .item-desc{font-size:18px;margin-bottom:16px}
   .tier-buy{display:block}
-  .price-big{font-size:64px;margin-bottom:16px}
-  .tier-buy .note{text-align:center;margin-top:10px;font-size:13px}
-  .flag{margin-top:40px;padding:28px 20px;display:block}
-  .flag-cover{width:140px;height:186px;padding:16px;margin-bottom:24px}
-  .flag-cover svg{width:24px;height:24px}
-  .flag-cover .title{font-size:30px}
-  .flag-body{display:block}
-  .flag-body .kicker{font-size:14px;font-weight:500;color:#0C0D0B;margin-bottom:8px}
-  .flag-name{font-size:46px;margin-bottom:16px}
-  .flag-body p{font-size:19px;line-height:1.5;margin-bottom:12px}
-  .flag-body p+p{font-size:17px;margin-bottom:24px}
-  .flag-buy{display:block}
-  .flag-price{margin-bottom:12px}
-  .flag-price .disp{font-size:88px}
-  .flag-buy .early{font-size:15px;line-height:1.5;margin-bottom:20px}
-  .flag-buy .btn{display:block;width:100%;font-size:17px;padding:18px 16px}
-  .flag-note{margin-top:10px;font-size:13px}
-  .upwork{margin-top:20px;font-size:14px}
-  .count .wrap{display:block;padding-top:64px;padding-bottom:64px}
-  .count h2{margin-bottom:32px}
-  .count-row{padding:22px 0}
-  .count-row h3{font-size:28px;margin-bottom:8px}
-  .count-row p{font-size:18px}
-  .faq .wrap{padding-top:64px;padding-bottom:32px}
+  .price-big{font-size:44px;margin-bottom:14px}
+  .tier-buy .btn{display:block;width:100%}
+  .tier-buy .note{text-align:center;margin-top:8px;font-size:13px}
+  .free .wrap{padding-top:56px;padding-bottom:40px}
+  .free-grid{display:block}
+  .free-item{display:block;padding:28px 0 36px}
+  .cover{width:132px;height:176px;padding:14px;margin-bottom:22px}
+  .cover svg{width:20px;height:20px}
+  .cover .title{font-size:23px}
+  .free-body{display:block}
+  .free-body .kicker{font-size:14px;margin-bottom:10px}
+  .free-body .item-name{font-size:34px;margin-bottom:12px}
+  .free-body .item-desc{font-size:19px;margin-bottom:20px}
+  .free-body .btn{display:block;width:100%}
+  .free-body .note{text-align:center;margin-top:10px;font-size:13px}
+  .faq .wrap{padding-top:56px;padding-bottom:40px}
   .faq h2{margin-bottom:32px}
   .faq-cols{display:block}
   details{padding:22px 0 26px}
-  summary .q{font-size:25px}
+  summary .q{font-size:24px}
   details .a{font-size:18px}
-  .final .wrap{padding-top:40px;padding-bottom:64px}
-  .final-in{display:block;border-top:0;padding-top:0}
-  .final h2{font-size:48px;line-height:.96;margin-bottom:28px}
-  .final-btn{display:block}
-  .final-btn .btn{display:block;width:100%;padding:18px 24px}
-  .final-btn .note{text-align:center;margin-top:10px;font-size:13px}
+  .final .wrap{padding-top:24px;padding-bottom:56px}
+  .final-in{display:block;padding-top:44px}
+  .final h2{font-size:46px;line-height:.96}
+  .final-sub{font-size:19px;margin:16px 0 24px}
+  .final-btn{min-width:0}
+  .final-price .disp{font-size:56px}
+  .final-price span{font-size:14px}
+  .final-btn .btn{display:block;padding:20px 34px}
+  .final-btn .note{font-size:13px}
+  .final-btn .textlink{margin-top:14px}
   .wordmark{font-size:15.5vw}
   footer .wrap{padding-bottom:40px}
   .foot{display:block;font-size:13px;padding-top:24px}
@@ -361,26 +468,8 @@ footer .wrap{padding-bottom:56px}
   .consent-title{font-size:34px;margin-bottom:12px}
   .consent-text{font-size:19px;margin-bottom:24px}
   .consent-btn{min-height:56px;padding:18px 24px}
-}
-@media (max-width:899px){
-  .flag-rings{left:-510px;top:-479px}
-  .flag-body{gap:0}
-  .flag-body .flag-name{margin-bottom:20px}
-  .flag-stat .n{font-size:44px}
-  .flag-stat+.flag-stat{padding-left:16px}
-  .flag-stat{padding-top:12px;padding-bottom:12px}
-  .flag-lead{font-size:20px;margin:20px 0 24px}
-  .flag-chaps{grid-template-columns:minmax(0,1fr)}
-  .flag-buy{align-self:auto;margin-top:28px}
-  .flag-spec{margin-top:24px;padding-top:0}
-  .flag{display:flex;flex-direction:column;align-items:stretch;gap:0}
-  .flag-cover{align-self:flex-start;order:0}
-  .flag-body{order:1}
-  .flag-inside{order:2;margin-top:24px}
-  .flag-buy{order:3}
-  .free-body .btn::before,.free-body .btn::after,.tier-buy .btn::before,.tier-buy .btn::after,.flag-buy .btn::before,.flag-buy .btn::after,.hero-actions .btn::before,.hero-actions .btn::after,.final-btn .btn::before,.final-btn .btn::after,.nav-btn::before,.nav-btn::after{display:none}
-}
-</style>
+  .btn::before,.btn::after,.nav-btn::before,.nav-btn::after{display:none}
+}</style>
 </head>
 <body>
 
@@ -391,7 +480,9 @@ footer .wrap{padding-bottom:56px}
     The Exact Method
   </a>
   <nav class="nav-right" aria-label="Main">
-    <a class="nav-link" href="#method">Method</a>
+    <a class="nav-link" href="#inside">What you get</a>
+<a class="nav-link" href="#examples">Examples</a>
+<a class="nav-link" href="#faq">FAQ</a>
     <a class="nav-btn" href="#free">Free guides</a>
   </nav>
 </header>
@@ -402,59 +493,294 @@ footer .wrap{padding-bottom:56px}
 <section class="wrap hero">
   <div class="hero-text">
     <h1 class="disp">Stop getting <span class="accent">generic</span> AI answers.</h1>
-    <p class="hero-sub">A method for getting precise, reliable results from AI every time.</p>
+    <p class="hero-sub">A 58-page system for getting precise, useful, checkable results from ChatGPT, Claude and Gemini.</p>
+    <div class="facts"><div class="fact"><div class="n disp">58</div><div class="l">pages</div></div><div class="fact"><div class="n disp">6</div><div class="l">chapters</div></div><div class="fact"><div class="n disp">Sources</div><div class="l">listed at the end</div></div><div class="fact"><div class="n disp">1</div><div class="l">payment</div></div></div>
     <div class="hero-actions">
       <a class="btn btn-accent btn-lg" href="#free">Get the free guides</a>
-      <a class="textlink" href="#method">See the method</a>
+      <a class="btn btn-outline btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
     </div>
-    <div class="hero-note">Free PDFs, delivered instantly.</div>
+    <div class="hero-note">The free guides are instant PDFs. The complete system is $127 for the first 30 buyers, then $697.</div>
   </div>
-  <div class="target" aria-hidden="true">
-    <svg class="rings" viewBox="0 0 560 560" fill="none" stroke="#6BE0A0" stroke-width="1.5"></svg>
-    <div class="cv c1"><div class="price">Free</div><div class="title">Narrowing Method</div></div>
-    <div class="cv c2"><div class="price">Free</div><div class="title">Plain Voice</div></div>
-    <div class="cv c3"><div class="price">$17</div><div class="title">10 Prompts</div></div>
-    <div class="cv c4"><div class="price">$37</div><div class="title">Specialist Method</div></div>
-    <div class="cv c5"><div class="price">$127</div><div class="title">The Exact Method</div></div>
+  <div class="stack" aria-hidden="true">
+    <svg class="stack-rings" viewBox="0 0 560 540" fill="none" stroke="#6BE0A0" stroke-width="1.5"><circle cx="440" cy="190" r="290" stroke-opacity=".1"/><circle cx="440" cy="190" r="230" stroke-opacity=".18"/><circle cx="440" cy="190" r="170" stroke-opacity=".3"/><circle cx="440" cy="190" r="110" stroke-opacity=".5"/><circle cx="440" cy="190" r="50" stroke-opacity=".9"/><circle cx="440" cy="190" r="5" fill="#6BE0A0" stroke="none"/></svg>
+    <div class="sheet sheet-1" data-depth="3"><img src="pages/p45.jpg" alt="" width="800" height="1035"></div>
+    <div class="sheet sheet-2" data-depth="2"><img src="pages/p09.jpg" alt="" width="800" height="1035"></div>
+    <div class="sheet sheet-3" data-depth="1"><img src="pages/p01.jpg" alt="" width="800" height="1035"></div>
   </div>
 </section>
 
-<!-- ===== PROBLEM ===== -->
-<section class="problem">
+<!-- ===== BUY STRIP ===== -->
+<section class="strip">
   <div class="wrap">
-    <div class="problem-left">
-      <h2 class="disp big">The AI isn't bad at its job. It was handed a one-line question.</h2>
-      <p class="lead">You've seen the answer: technically fine, generic, and as if it could have been given to anyone who asked the same thing.</p>
-      <p class="lead">A vague question can only get a generic answer back.</p>
-      <div class="mock" aria-hidden="true">
-        <div class="mock-input mono">Write me a workout plan<span class="cur"></span></div>
-        <div class="mock-lines"><i style="width:100%"></i><i style="width:93%"></i><i style="width:97%"></i><i style="width:64%"></i></div>
-        <div class="mock-cap">One line in. An answer that could belong to anyone out.</div>
+    <div class="strip-id">
+      <img src="pages/p01.jpg" alt="Cover of The Exact Method" width="800" height="1035">
+      <div>
+        <div class="strip-name disp">The Exact Method</div>
+        <div class="strip-sub">The complete system. 58 pages, 6 chapters, sources listed.</div>
       </div>
     </div>
-    <div class="problem-right">
-      <div class="for-title">This is for you if</div>
-      <div class="for-row">you've tried "better prompting" tips that didn't actually change your results,</div>
-      <div class="for-row">you get answers that are almost right, not exactly right,</div>
-      <div class="for-row">you're tired of re-explaining context every single time,</div>
-      <div class="for-row">or you want a repeatable method, not a one-off trick.</div>
+    <div class="strip-price"><div class="disp">$127</div><span>launch price, first 30 buyers. Then $697.</span></div>
+    <div class="strip-buy">
+      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+      <div class="note">PDF · one-time payment · instant download</div>
     </div>
   </div>
 </section>
 
-<!-- ===== METHOD ===== -->
+<!-- ===== PAGES FROM THE GUIDE ===== -->
+<section class="pages" id="inside">
+  <div class="wrap">
+    <h2 class="disp big">See what you actually get.</h2>
+    <p class="sec-sub">These are real pages from the 58-page guide, not mockups.</p>
+    <div class="page-grid">
+      <div class="pg-card">
+        <a class="pg-img" href="pages/p09.jpg" target="_blank" rel="noopener" aria-label="Open page 9 of the guide larger (opens in a new tab)"><img src="pages/p09.jpg" alt="One action per step, page 9 of the guide" width="800" height="1035" loading="lazy"></a>
+        <div class="pg-cap"><span class="p mono">p. 9</span><span class="t disp">One action per step</span></div>
+        <p class="pg-txt">The rule that stops the AI from guessing, with the full two-stage process.</p>
+      </div>
+      <div class="pg-card">
+        <a class="pg-img" href="pages/p14.jpg" target="_blank" rel="noopener" aria-label="Open page 14 of the guide larger (opens in a new tab)"><img src="pages/p14.jpg" alt="Staged prompting, page 14 of the guide" width="800" height="1035" loading="lazy"></a>
+        <div class="pg-cap"><span class="p mono">p. 14</span><span class="t disp">Staged prompting</span></div>
+        <p class="pg-txt">A real project split into separate prompts, and why each one stays separate.</p>
+      </div>
+      <div class="pg-card">
+        <a class="pg-img" href="pages/p17.jpg" target="_blank" rel="noopener" aria-label="Open page 17 of the guide larger (opens in a new tab)"><img src="pages/p17.jpg" alt="Tool selection, page 17 of the guide" width="800" height="1035" loading="lazy"></a>
+        <div class="pg-cap"><span class="p mono">p. 17</span><span class="t disp">Tool selection</span></div>
+        <p class="pg-txt">What each main AI model is best at, and where it falls short.</p>
+      </div>
+      <div class="pg-card">
+        <a class="pg-img" href="pages/p39.jpg" target="_blank" rel="noopener" aria-label="Open page 39 of the guide larger (opens in a new tab)"><img src="pages/p39.jpg" alt="Chaining tools, page 39 of the guide" width="800" height="1035" loading="lazy"></a>
+        <div class="pg-cap"><span class="p mono">p. 39</span><span class="t disp">Chaining tools</span></div>
+        <p class="pg-txt">A worked example of one tool checking another tool's work.</p>
+      </div>
+      <div class="pg-card">
+        <a class="pg-img" href="pages/p45.jpg" target="_blank" rel="noopener" aria-label="Open page 45 of the guide larger (opens in a new tab)"><img src="pages/p45.jpg" alt="Verification, page 45 of the guide" width="800" height="1035" loading="lazy"></a>
+        <div class="pg-cap"><span class="p mono">p. 45</span><span class="t disp">Verification</span></div>
+        <p class="pg-txt">The check for when an answer sounds right but the real result doesn't match.</p>
+      </div>
+      <div class="pg-card">
+        <a class="pg-img" href="pages/p56.jpg" target="_blank" rel="noopener" aria-label="Open page 56 of the guide larger (opens in a new tab)"><img src="pages/p56.jpg" alt="Sources, page 56 of the guide" width="800" height="1035" loading="lazy"></a>
+        <div class="pg-cap"><span class="p mono">p. 56</span><span class="t disp">Sources</span></div>
+        <p class="pg-txt">Every outside figure listed with a link, so you can check where it came from.</p>
+      </div>
+    </div>
+    <div class="swipe-note note">Swipe for more pages.</div>
+  </div>
+</section>
+
+<!-- ===== SEE THE DIFFERENCE ===== -->
+<section class="diff" id="examples">
+  <div class="wrap">
+    <h2 class="disp big">Same question. Different method.</h2>
+    <p class="sec-sub">Three situations, taken from the guide.</p>
+    <div class="diff-rows">
+      <div class="drow">
+        <div class="drow-h"><span class="num mono">01</span><h3 class="t disp">Finding an idea</h3></div>
+        <div class="drow-b">
+          <div class="gcard">
+            <div class="lab">Generic request</div>
+            <div class="mt mono">Give me a business idea.<span class="cur"></span></div>
+            <div class="lines"><i></i><i></i><i></i><i></i></div>
+            <div class="res">Result: an answer that could belong to anyone.</div>
+          </div>
+          <div class="mcard">
+            <div class="lab">With the method, three prompts, each built on the last</div>
+        <div class="step"><div class="sn disp">1</div><div class="st mono">Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each.</div></div>
+        <div class="step"><div class="sn disp">2</div><div class="st mono">Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint].</div></div>
+        <div class="step"><div class="sn disp">3</div><div class="st mono">Of these, which one specifically should I start with, and why, based on everything you just found?</div></div>
+            <div class="tags"><span>Broad on purpose</span><span>Then narrower</span><span>Down to one answer</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drow">
+        <div class="drow-h"><span class="num mono">02</span><h3 class="t disp">Building something</h3></div>
+        <div class="drow-b">
+          <div class="gcard">
+            <div class="lab">Generic request</div>
+            <div class="mt mono">Make me a Pinterest pin that will sell this product.<span class="cur"></span></div>
+            <div class="lines"><i></i><i></i><i></i><i></i></div>
+            <div class="res">Result: guesses about the platform, and a look anyone could spot as AI.</div>
+          </div>
+          <div class="mcard">
+            <div class="lab">With the method, separate prompts for separate jobs</div>
+        <div class="step"><div class="sn disp">1</div><div class="st mono">Research the Pinterest algorithm and SEO, and build the most effective design approach based on that research.</div></div>
+        <div class="step"><div class="sn disp">2</div><div class="st mono">Research what makes a design look obviously AI-generated, and identify how to avoid those issues in this one.</div></div>
+        <div class="step"><div class="sn disp">3</div><div class="st mono">Turn this into a step-by-step guide to build it. Every step must contain exactly one action. If a step would require doing two things, split it into two separate steps.</div></div>
+            <div class="tags"><span>One job per prompt</span><span>Research first</span><span>One action per step</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="drow">
+        <div class="drow-h"><span class="num mono">03</span><h3 class="t disp">Checking an answer</h3></div>
+        <div class="drow-b">
+          <div class="gcard">
+            <div class="lab">Generic request</div>
+            <div class="mt mono">Are you sure?<span class="cur"></span></div>
+            <div class="lines"><i></i><i></i><i></i><i></i></div>
+            <div class="res">Result: the same tool confirms what it already said.</div>
+          </div>
+          <div class="mcard">
+            <div class="lab">With the method, a three-step check</div>
+        <div class="step"><div class="sn disp">1</div><div class="st mono">The trigger. A real result doesn't match what you were told. That mismatch is the signal to check.</div></div>
+        <div class="step"><div class="sn disp">2</div><div class="st mono">The check. Ask a different AI tool the exact same question, not the same tool again.</div></div>
+        <div class="step"><div class="sn disp">3</div><div class="st mono">The confirmation. Test the answer against the real world or a named official source, not against which one sounds more convincing.</div></div>
+            <div class="tags"><span>Different tool</span><span>Real-world test</span><span>Named sources</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUY STRIP ===== -->
+<section class="strip">
+  <div class="wrap">
+    <div class="strip-id">
+      <img src="pages/p01.jpg" alt="Cover of The Exact Method" width="800" height="1035">
+      <div>
+        <div class="strip-name disp">The Exact Method</div>
+        <div class="strip-sub">The complete system. 58 pages, 6 chapters, sources listed.</div>
+      </div>
+    </div>
+    <div class="strip-price"><div class="disp">$127</div><span>launch price, first 30 buyers. Then $697.</span></div>
+    <div class="strip-buy">
+      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+      <div class="note">PDF · one-time payment · instant download</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FIVE HABITS ===== -->
 <section class="method" id="method">
   <div class="wrap">
-    <div class="method-head">
-      <h2 class="disp big">Five habits that change the answer.</h2>
-      <p>The Exact Method is a complete system. Narrow the question, structure each step so the AI never has to guess, and know when to let it ask you questions instead.</p>
+    <h2 class="disp big">Five habits. One workflow.</h2>
+    <p class="sec-sub">The Exact Method turns these five habits into a repeatable way of working with AI.</p>
+    <div class="steps5">
+      <div class="s5"><div class="dot"></div><div class="num disp">01</div><h3 class="disp">Narrow the question</h3><p>Go broad on purpose, then ask something sharper, then sharper again.</p></div>
+      <div class="s5"><div class="dot"></div><div class="num disp">02</div><h3 class="disp">One action per step</h3><p>Give every step a single job, so the AI never fills the gaps with guesswork.</p></div>
+      <div class="s5"><div class="dot"></div><div class="num disp">03</div><h3 class="disp">Pick the right tool</h3><p>Choose the AI built for the job instead of whichever tab is already open.</p></div>
+      <div class="s5"><div class="dot"></div><div class="num disp">04</div><h3 class="disp">Chain tools together</h3><p>Split the work by role, work around a known flaw, or bring in a second opinion.</p></div>
+      <div class="s5"><div class="dot"></div><div class="num disp">05</div><h3 class="disp">Verify what it says</h3><p>Check the answer before you rely on it, with a three-step method.</p></div>
     </div>
-    <div class="m-list">
-      <div class="m-row"><div class="m-top"><div class="m-name disp">Narrow the question</div><div class="m-desc">Go broad on purpose, then ask something sharper, then sharper again.</div></div><div class="m-bar" style="width:100%"></div></div>
-      <div class="m-row"><div class="m-top"><div class="m-name disp">One action per step</div><div class="m-desc">Give every step a single job, so the AI never fills the gaps with guesswork.</div></div><div class="m-bar" style="width:80%"></div></div>
-      <div class="m-row"><div class="m-top"><div class="m-name disp">Pick the right tool</div><div class="m-desc">Choose the AI built for the job instead of whichever tab is already open.</div></div><div class="m-bar" style="width:60%"></div></div>
-      <div class="m-row"><div class="m-top"><div class="m-name disp">Chain tools together</div><div class="m-desc">Split the work by role, work around a known flaw, or bring in a second opinion.</div></div><div class="m-bar" style="width:40%"></div></div>
-      <div class="m-row"><div class="m-top"><div class="m-name disp">Verify what it says</div><div class="m-desc">Check the answer before you rely on it, with a three-step method.</div></div><div class="m-bar" style="width:20%"></div></div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INSIDE ===== -->
+<section class="chapters" id="chapters">
+  <div class="wrap">
+    <h2 class="disp big">What's inside.</h2>
+    <p class="sec-sub">Six chapters and a sources list, in the order you'd use them.</p>
+    <div class="chap-grid">
+      <div class="chap-list">
+        <div class="chap"><div class="no mono">01</div><div class="cb"><h3 class="ct disp">The Mindset Shift</h3><p class="cd">Why pushing harder on the prompt is the wrong lever, and what to aim at instead.</p></div><div class="pp mono">pp. 4–5</div></div>
+        <div class="chap"><div class="no mono">02</div><div class="cb"><h3 class="ct disp">Precision Prompting</h3><p class="cd">Narrow the question, give each step one action, and let the AI interview you when you don't know what to ask.</p></div><div class="pp mono">pp. 6–15</div></div>
+        <div class="chap"><div class="no mono">03</div><div class="cb"><h3 class="ct disp">Tool Selection</h3><p class="cd">Which AI to use for which job, with the limits of each stated.</p></div><div class="pp mono">pp. 16–34</div></div>
+        <div class="chap"><div class="no mono">04</div><div class="cb"><h3 class="ct disp">Chaining AI Tools</h3><p class="cd">Split work between tools by role, work around known flaws, and get a second opinion.</p></div><div class="pp mono">pp. 35–41</div></div>
+        <div class="chap"><div class="no mono">05</div><div class="cb"><h3 class="ct disp">Verifying What AI Tells You</h3><p class="cd">A three-step check for answers that sound right and aren't.</p></div><div class="pp mono">pp. 42–48</div></div>
+        <div class="chap"><div class="no mono">06</div><div class="cb"><h3 class="ct disp">Applied Examples</h3><p class="cd">Worked projects in coding, e-commerce, content, freelancing and design.</p></div><div class="pp mono">pp. 49–55</div></div>
+        <div class="chap"><div class="no mono">—</div><div class="cb"><h3 class="ct disp">Sources and Where to Check</h3><p class="cd">Every outside figure listed, with a link to where you can check it.</p></div><div class="pp mono">pp. 56–58</div></div>
+      </div>
+      <aside class="src-card">
+        <svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg>
+        <h3 class="disp">Built with checkable sources.</h3>
+        <p>Important outside claims in the guide come with a source, so you can see where the information came from instead of taking it on trust.</p>
+        <div class="src-shot"><img src="pages/p56.jpg" alt="The sources page of the guide" width="800" height="1035" loading="lazy"></div>
+        <div class="src-note">Pages 56 to 58 of the guide.</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY THE COMPLETE SYSTEM ===== -->
+<section class="why">
+  <div class="wrap">
+    <h2 class="disp big">Not a pile of prompts. One system.</h2>
+    <div class="why-list">
+      <div class="why-row"><div class="ix mono">01</div><h3 class="disp">A method, not a script</h3><p>Copy-and-paste prompts break the moment your task changes. A method you understand still works on a problem nobody wrote an example for.</p></div>
+      <div class="why-row"><div class="ix mono">02</div><h3 class="disp">The order, not just the ideas</h3><p>Each idea is simple on its own. The guide shows when to use which one, and how they fit together into one workflow.</p></div>
+      <div class="why-row"><div class="ix mono">03</div><h3 class="disp">Sources you can check</h3><p>Outside figures are listed on pages 56 to 58, so you can see where each one came from.</p></div>
+      <div class="why-row"><div class="ix mono">04</div><h3 class="disp">Limits stated up front</h3><p>Each guide says what it leaves out and when it was last current. It makes no promise of results by a date, because nobody can honestly make one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO IT IS FOR ===== -->
+<section class="fit">
+  <div class="wrap">
+    <div class="fit-col fit-yes">
+      <h3 class="disp">This is for you if</h3>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You use AI regularly and keep rewriting your requests.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You get answers that are almost right, not exactly right.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You want a repeatable workflow, not random prompt experiments.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You want to check important answers before you rely on them.</span></div>
+    </div>
+    <div class="fit-col fit-no">
+      <h3 class="disp">This is not for you if</h3>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You only want copy-and-paste prompts. The $17 prompt pack is built for that.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You rarely use AI.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want live coaching or a video course.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want a guaranteed result by a date. Nobody can honestly promise that.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <h2 class="disp big">Get the complete system.</h2>
+    <p class="sec-sub">One payment, yours to keep. Everything on this page is in the guide.</p>
+
+    <div class="flag">
+      <svg class="flag-rings" viewBox="0 0 1200 1200" fill="none" stroke="#0C0D0B" stroke-width="1.5" aria-hidden="true"><circle cx="600" cy="600" r="120" stroke-opacity=".13"/><circle cx="600" cy="600" r="200" stroke-opacity=".13"/><circle cx="600" cy="600" r="280" stroke-opacity=".13"/><circle cx="600" cy="600" r="360" stroke-opacity=".13"/><circle cx="600" cy="600" r="440" stroke-opacity=".13"/><circle cx="600" cy="600" r="520" stroke-opacity=".13"/></svg>
+      <div class="flag-cover"><img src="pages/p01.jpg" alt="Cover of The Exact Method" width="800" height="1035"></div>
+      <div class="flag-body">
+        <div class="flag-label ui">The complete system</div>
+        <h3 class="flag-name disp">The Exact Method</h3>
+        <div class="flag-stats"><div class="flag-stat"><div class="n disp">58</div><div class="l">pages</div></div><div class="flag-stat"><div class="n disp">6</div><div class="l">chapters</div></div><div class="flag-stat"><div class="n disp">1</div><div class="l">payment</div></div></div>
+        <p class="flag-lead">Everything in the smaller guides, plus the full method behind them. Built from real use.</p>
+        <div><div class="flag-inside-label">Inside</div><div class="flag-chaps"><div>Mindset Shift</div><div>Precision Prompting</div><div>Tool Selection</div><div>Chaining AI Tools</div><div>Verifying What AI Tells You</div><div>Applied Examples</div></div></div>
+      </div>
+      <div class="flag-buy">
+        <div class="flag-label">Launch price</div>
+        <div class="flag-price disp">$127</div>
+        <div class="flag-early">The first 30 buyers pay $127. After that, the price is $697.</div>
+        <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+        <div class="flag-note">PDF · one-time payment · instant download. All sales final.</div>
+        <div class="flag-spec"><div><span>Format</span><span>PDF, opens on any device</span></div><div><span>Delivery</span><span>Instant download</span></div><div><span>Includes</span><span>Sources list for every claim</span></div><div><span>Access</span><span>One-time payment, yours to keep</span></div><div><span>Checkout</span><span>Secure checkout by Gumroad</span></div></div>
+      </div>
+    </div>
+
+    <div class="more">
+      <h3 class="disp">Not ready for the complete system?</h3>
+      <p class="more-sub">Start with one fix. Each is a one-time payment.</p>
+      <div class="tier-list">
+      <div class="tier">
+        <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">10 Prompts</div></div>
+        <div class="tier-body">
+          <div class="kicker">Prompt pack, 7 pages</div>
+          <h4 class="item-name disp">10 Zero-Ambiguity Prompts</h4>
+          <p class="item-desc">Ten ready-to-copy prompts, each already structured so the AI can't fill the gaps with guesswork.</p>
+        </div>
+        <div class="tier-buy">
+          <div class="price-big disp">$17</div>
+          <a class="btn btn-outline" href="https://thriftwellstudio.gumroad.com/l/aoyxea" target="_blank" rel="noopener" aria-label="Get the Prompts for $17 (opens in a new tab)">Get the Prompts for $17</a>
+          <div class="note">Instant digital download. All sales final.</div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">Specialist</div></div>
+        <div class="tier-body">
+          <div class="kicker">Tool guide, 8 pages</div>
+          <h4 class="item-name disp">The Specialist Method</h4>
+          <p class="item-desc">How to choose the right AI tool for a task, and combine more than one on bigger projects.</p>
+        </div>
+        <div class="tier-buy">
+          <div class="price-big disp">$37</div>
+          <a class="btn btn-outline" href="https://thriftwellstudio.gumroad.com/l/wdcsmi" target="_blank" rel="noopener" aria-label="Get the Specialist Method for $37 (opens in a new tab)">Get the Specialist Method for $37</a>
+          <div class="note">Instant digital download. All sales final.</div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -462,8 +788,8 @@ footer .wrap{padding-bottom:56px}
 <!-- ===== FREE GUIDES ===== -->
 <section class="free" id="free">
   <div class="wrap">
-    <h2 class="disp big">Two free guides.</h2>
-    <p class="sec-sub">Each one fixes a single problem and stands on its own.</p>
+    <h2 class="disp big">Want to try the method first?</h2>
+    <p class="sec-sub">Start with one of these free guides. Each one fixes a single problem. The Exact Method puts all of it into one complete system.</p>
     <div class="free-grid">
       <div class="free-item">
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Narrowing Method</div></div>
@@ -489,103 +815,46 @@ footer .wrap{padding-bottom:56px}
   </div>
 </section>
 
-<!-- ===== THREE PROMPTS (paper band) ===== -->
-<section class="prompts">
-  <div class="wrap">
-    <h2 class="disp big">Three prompts, each one sharper than the last.</h2>
-    <p class="sec-sub">Each prompt narrows the one before it. This is the real sequence from the free Narrowing Method guide.</p>
-    <div class="pbox p1"><div class="lab">Prompt one, broad on purpose</div><div class="txt mono">"Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of each."</div></div>
-    <div class="pline"></div>
-    <div class="pbox p2"><div class="lab">Prompt two, using what it found</div><div class="txt mono">"Research each of these in more depth, and tell me which two or three are the most realistic for someone with [your real constraint]."</div></div>
-    <div class="pline"></div>
-    <div class="pbox p3"><div class="lab">Prompt three, down to one answer</div><div class="txt mono">"Of these, which one specifically should I start with, and why, based on everything you just found?"</div></div>
-  </div>
-</section>
-
-<!-- ===== PRICING ===== -->
-<section class="pricing" id="pricing">
-  <div class="wrap">
-    <h2 class="disp big">Go deeper.</h2>
-    <p class="sec-sub">Start with one fix, or get the complete system. One-time payments, yours to keep.</p>
-    <div class="tier-list">
-      <div class="tier">
-        <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">10 Zero-Ambiguity Prompts</div></div>
-        <div class="tier-body">
-          <div class="kicker">Prompt pack, 7 pages</div>
-          <h3 class="item-name disp">10 Zero-Ambiguity Prompts</h3>
-          <p class="item-desc">Ten ready-to-copy prompts, each already structured so the AI can't fill the gaps with guesswork. For when you want results today, before learning the method behind them.</p>
-          <p class="item-desc2">Ten templates, copy-paste ready. Each built one action per step. No prior reading required.</p>
-        </div>
-        <div class="tier-buy">
-          <div class="price-big disp">$17</div>
-          <a class="btn btn-outline" href="https://thriftwellstudio.gumroad.com/l/aoyxea" target="_blank" rel="noopener" aria-label="Get the Prompts for $17 (opens in a new tab)">Get the Prompts for $17</a>
-          <div class="note">Instant digital download. All sales final.</div>
-        </div>
-      </div>
-      <div class="tier">
-        <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">The Specialist Method</div></div>
-        <div class="tier-body">
-          <div class="kicker">Tool guide, 8 pages</div>
-          <h3 class="item-name disp">The Specialist Method</h3>
-          <p class="item-desc">A condensed guide to choosing the right AI tool for a task, and combining more than one on bigger projects, instead of defaulting to one tool for everything.</p>
-          <p class="item-desc2">How to choose between today's AI tools without guessing. Three ways to combine tools on one project. A practical look at real tool trade-offs.</p>
-        </div>
-        <div class="tier-buy">
-          <div class="price-big disp">$37</div>
-          <a class="btn btn-outline" href="https://thriftwellstudio.gumroad.com/l/wdcsmi" target="_blank" rel="noopener" aria-label="Get the Specialist Method for $37 (opens in a new tab)">Get the Specialist Method for $37</a>
-          <div class="note">Instant digital download. All sales final.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flag">
-      <svg class="flag-rings" viewBox="0 0 1200 1200" fill="none" stroke="#0C0D0B" stroke-width="1.5" aria-hidden="true"><circle cx="600" cy="600" r="120" stroke-opacity=".13"/><circle cx="600" cy="600" r="200" stroke-opacity=".13"/><circle cx="600" cy="600" r="280" stroke-opacity=".13"/><circle cx="600" cy="600" r="360" stroke-opacity=".13"/><circle cx="600" cy="600" r="440" stroke-opacity=".13"/><circle cx="600" cy="600" r="520" stroke-opacity=".13"/></svg>
-      <div class="flag-cover"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.6" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">The Exact Method</div></div>
-      <div class="flag-body">
-        <div class="kicker" style="color:#0C0D0B;font-weight:500">The complete system</div>
-        <h3 class="flag-name disp">The Exact Method</h3>
-        <div class="flag-stats"><div class="flag-stat"><div class="n disp">58</div><div class="l">pages</div></div><div class="flag-stat"><div class="n disp">6</div><div class="l">chapters</div></div><div class="flag-stat"><div class="n disp">1</div><div class="l">payment</div></div></div>
-        <p class="flag-lead">Everything in the smaller guides, plus the full method behind them. Built from real use. One-time payment, yours to keep.</p>
-      </div>
-      <div class="flag-buy">
-        <div style="font-size:15px;font-weight:500">Launch price</div>
-        <div class="flag-price"><div class="disp">$127</div><div style="font-size:19px">then <span style="text-decoration:line-through">$697</span></div></div>
-        <div class="early" style="font-size:16px;line-height:1.5">Early price, and a real one. Once the first 30 buyers have it, the price moves to $697.</div>
-        <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get the Exact Method for $127 (opens in a new tab)">Get the Exact Method for $127</a>
-        <div class="flag-note">Instant digital download. All sales final.</div>
-        <div class="flag-spec"><div><span>Format</span><span>PDF, opens on any device</span></div><div><span>Delivery</span><span>Instant download</span></div><div><span>Includes</span><span>Sources list for every claim</span></div><div><span>Access</span><span>One-time payment, yours to keep</span></div></div>
-      </div>
-    <div class="flag-inside"><div class="flag-inside-label">Inside</div><div class="flag-chaps"><div>Mindset Shift</div><div>Precision Prompting</div><div>Tool Selection</div><div>Chaining AI Tools</div><div>Verifying What AI Tells You</div><div>Applied Examples<small>coding, e-commerce, content, freelancing, design</small></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHAT YOU CAN COUNT ON ===== -->
-<section class="count">
-  <div class="wrap">
-    <h2 class="disp big">What you can count on.</h2>
-    <div class="count-list">
-      <div class="count-row"><h3 class="disp">No promise of results by a date</h3><p>Nobody can honestly guarantee that, so this page doesn't.</p></div>
-      <div class="count-row"><h3 class="disp">A sources list you can check</h3><p>The Exact Method ends with the sources behind its claims.</p></div>
-      <div class="count-row"><h3 class="disp">Limits stated up front</h3><p>Each guide says what it leaves out and when it was last current.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== FAQ ===== -->
-<section class="faq">
+<section class="faq" id="faq">
   <div class="wrap">
     <h2 class="disp big">Frequently asked questions</h2>
     <div class="faq-cols">
       <div class="faq-col">
-        <details open><summary><span class="q disp">Isn't this just common sense?</span><span class="plus"></span></summary><div class="a">The individual ideas are simple. Most people don't apply them consistently, and that gap is what this method closes.</div></details>
-        <details><summary><span class="q disp">Does this work with ChatGPT, Claude, Gemini, or any specific tool?</span><span class="plus"></span></summary><div class="a">The method is tool-agnostic. It's about how you structure the conversation, whichever AI you use.</div></details>
-        <details><summary><span class="q disp">What if I'm already decent at prompting?</span><span class="plus"></span></summary><div class="a">The complete method goes past prompting into tool selection, chaining and verification, which are parts most people never structure at all.</div></details>
+      <details open>
+        <summary><span class="q disp">What exactly do I receive?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">A 58-page PDF. It opens on any phone, tablet or computer, with no special software. Right after you pay, the download page opens and the same link is emailed to you, so you can come back to it.</div>
+      </details>
+      <details>
+        <summary><span class="q disp">Is this a collection of prompts?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">No. It teaches the method behind good prompts, so it still works when your task is different from any example. Prompts appear as worked examples. If you only want ready-to-copy prompts, the $17 pack is built for that.</div>
+      </details>
+      <details>
+        <summary><span class="q disp">Isn't this just common sense?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">Some of the individual ideas are simple. The value is in knowing when to use each one, how to combine them, and the order that makes the workflow repeatable. The examples above show the difference.</div>
+      </details>
+      <details>
+        <summary><span class="q disp">Does this work with ChatGPT, Claude, Gemini, or any specific tool?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">Yes. The method is about how you structure the conversation, whichever AI you use. The Tool Selection chapter compares the main ones and states the limits of each.</div>
+      </details>
       </div>
       <div class="faq-col">
-        <details open><summary><span class="q disp">Why does the price go up later?</span><span class="plus"></span></summary><div class="a">The method is priced for what it's worth once more people have used it. Early buyers get in before that. It isn't a discount that resets.</div></details>
-        <details><summary><span class="q disp">Is this a subscription?</span><span class="plus"></span></summary><div class="a">No. Every tier is a one-time payment, yours to keep.</div></details>
-        <details><summary><span class="q disp">What do I get, and how do I open it?</span><span class="plus"></span></summary><div class="a">A PDF. It opens on any phone, tablet or computer, with no special software. Right after you pay, the download page opens and the same link is emailed to you, so you can come back to it.</div></details>
+      <details open>
+        <summary><span class="q disp">What if I'm already decent at prompting?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">The complete method goes past prompting into tool selection, chaining and verification, which are parts most people never structure at all.</div>
+      </details>
+      <details>
+        <summary><span class="q disp">Do I need to be technical?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">No. It's written in plain language, for anyone who uses AI.</div>
+      </details>
+      <details>
+        <summary><span class="q disp">Why does the price go up later?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">The first 30 buyers get the launch price of $127. After that the price is $697. It isn't a discount that resets.</div>
+      </details>
+      <details>
+        <summary><span class="q disp">Is this a subscription?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">No. Every tier is a one-time payment, yours to keep.</div>
+      </details>
       </div>
     </div>
   </div>
@@ -593,20 +862,24 @@ footer .wrap{padding-bottom:56px}
 
 <!-- ===== FINAL CTA ===== -->
 <section class="final">
+  <svg class="final-rings" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid meet" fill="none" stroke="#6BE0A0" stroke-width="1.5" aria-hidden="true"><circle cx="1160" cy="285" r="250" stroke-opacity=".07"/><circle cx="1160" cy="285" r="200" stroke-opacity=".1"/><circle cx="1160" cy="285" r="150" stroke-opacity=".15"/><circle cx="1160" cy="285" r="100" stroke-opacity=".25"/><circle cx="1160" cy="285" r="50" stroke-opacity=".4"/></svg>
   <div class="wrap">
     <div class="final-in">
-      <h2 class="disp">Not ready to buy? Start with the free guides.</h2>
+      <div class="final-left">
+        <h2 class="disp">Ready to stop guessing at AI prompts?</h2>
+        <p class="final-sub">Get The Exact Method and use the full workflow on your own AI tasks.</p>
+      </div>
       <div class="final-btn">
-        <a class="btn btn-accent btn-lg" href="#free" style="padding:20px 36px;font-size:19px">Get the free guides</a>
-        <div class="note">Digital downloads, delivered instantly.</div>
+        <div class="final-price"><div class="disp">$127</div><span>launch price, first 30 buyers</span></div>
+        <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+        <div class="note">PDF · one-time payment · instant download</div>
+        <a class="textlink" href="#free">Not ready? Start with the free guides</a>
       </div>
     </div>
   </div>
 </section>
 
-</main>
-
-<!-- ===== WORDMARK + FOOTER ===== -->
+</main><!-- ===== WORDMARK + FOOTER ===== -->
 <div class="wordmark disp" aria-hidden="true">The Exact Method</div>
 <footer>
   <div class="wrap">
@@ -631,6 +904,54 @@ footer .wrap{padding-bottom:56px}
   </aside>
 <!-- CONSENT-END -->
 
+<script>
+/* Page motion: hero stack parallax and guide-page tilt. Pointer devices only. */
+(function(){
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)');
+  var calm=window.matchMedia('(prefers-reduced-motion:reduce)');
+  if(!fine.matches||calm.matches)return;
+  var stack=document.querySelector('.stack');
+  if(stack){
+    var sheets=[].slice.call(stack.querySelectorAll('.sheet'));
+    var tx=0,ty=0,cx=0,cy=0,run=false;
+    var hero=stack.closest('.hero')||stack;
+    function frame(){
+      cx+=(tx-cx)*.1;cy+=(ty-cy)*.1;
+      sheets.forEach(function(s){
+        var d=parseFloat(s.getAttribute('data-depth'))||1;
+        s.style.setProperty('--tx',(cx*d*9).toFixed(2)+'px');
+        s.style.setProperty('--ty',(cy*d*7).toFixed(2)+'px');
+        s.style.setProperty('--rot',(cx*d*.7).toFixed(2)+'deg');
+      });
+      if(Math.abs(tx-cx)>.002||Math.abs(ty-cy)>.002){requestAnimationFrame(frame)}else{run=false}
+    }
+    function kick(){if(!run){run=true;requestAnimationFrame(frame)}}
+    hero.addEventListener('mousemove',function(e){
+      var r=stack.getBoundingClientRect();
+      tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(r.width/2)));
+      ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(r.height/2)));
+      kick();
+    });
+    hero.addEventListener('mouseleave',function(){tx=0;ty=0;kick()});
+  }
+  [].forEach.call(document.querySelectorAll('.pg-img'),function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+      el.classList.add('is-live');
+      el.style.setProperty('--ry',((px-.5)*10).toFixed(2)+'deg');
+      el.style.setProperty('--rx',((.5-py)*8).toFixed(2)+'deg');
+      el.style.setProperty('--lift','-6px');
+      el.style.setProperty('--gx',(px*100).toFixed(1)+'%');
+      el.style.setProperty('--gy',(py*100).toFixed(1)+'%');
+    });
+    el.addEventListener('mouseleave',function(){
+      el.classList.remove('is-live');
+      el.style.setProperty('--ry','0deg');el.style.setProperty('--rx','0deg');el.style.setProperty('--lift','0px');
+    });
+  });
+})();
+</script>
 <script>
 /* Draw the target rings in the hero (decorative). */
 (function(){
