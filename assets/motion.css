@@ -3,25 +3,42 @@ html{overflow-x:clip}
    One easing family, short durations, transform/opacity only. Everything is off for reduced motion. */
 :root{--ease-out:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.65,0,.35,1);--ease-pop:cubic-bezier(.34,1.56,.64,1)}
 
-/* ---------- buttons: paper fill sweeps in, a ring narrows onto the button ---------- */
-.btn,.nav-btn{position:relative;isolation:isolate;overflow:visible;
-  transition:translate .35s var(--ease-out),box-shadow .35s var(--ease-out),color .3s var(--ease-out) !important}
-.btn::before,.nav-btn::before{content:"" !important;display:block !important;position:absolute;inset:0;border-radius:inherit;z-index:-1;
-  background:#ECE8DD;transform:scaleX(0);transform-origin:left center;transition:transform .55s var(--ease-io);pointer-events:none;
-  top:0 !important;right:0 !important;bottom:0 !important;left:0 !important;border:0 !important;opacity:1 !important}
-.btn::after,.nav-btn::after{content:"" !important;display:none !important;position:absolute;inset:-12px !important;border-radius:22px !important;
-  border:2px solid #6BE0A0 !important;opacity:0 !important;transform:scale(1.12);transition:opacity .3s ease-out,transform .6s var(--ease-out) !important;pointer-events:none}
-.light .btn::after,.pages .btn::after,.diff .btn::after,.chapters .btn::after,.fit .btn::after,.pricing .btn::after,.faq .btn::after{border-color:#10261C !important}
-.btn .arr{display:inline-block;transition:translate .45s var(--ease-out)}
+/* ---------- buttons (one animation everywhere) ----------
+   Hover: paper fill sweeps in from the left inside the button, two rings narrow onto it.
+   Leave: the fill sweeps back out and the rings widen and fade. The fill is a background,
+   so it can never paint outside the button's rounded edge. Rings animate transform only. */
+html body .btn,html body .nav-btn{
+  --fill:#ECE8DD;--ring:#6BE0A0;--o1:5px;--o2:13px;--r:14px;
+  position:relative !important;isolation:isolate;
+  background-color:#6BE0A0 !important;color:#10261C !important;
+  background-image:linear-gradient(var(--fill),var(--fill)) !important;background-repeat:no-repeat !important;
+  background-position:left center !important;background-size:0% 100% !important;
+  transition:background-size .5s var(--ease-io),translate .4s var(--ease-out),box-shadow .4s var(--ease-out),transform .5s var(--ease-out) !important}
+html body .btn-outline{background-color:transparent !important;color:#ECE8DD !important;--fill:#6BE0A0}
+html body .btn-dark{background-color:#10261C !important;color:#ECE8DD !important;--fill:#6BE0A0}
+html body .nav-btn,html body .nav .btn{--o1:4px;--o2:10px;--r:12px}
+.light .btn,.pages .btn,.diff .btn,.chapters .btn,.fit .btn,.pricing .btn:not(.flag .btn),.faq .btn{--ring:#10261C}
+.pages .btn-outline,.diff .btn-outline,.chapters .btn-outline,.fit .btn-outline,.pricing .btn-outline,.faq .btn-outline{color:#10261C !important}
+html body .btn::before,html body .btn::after,html body .nav-btn::before,html body .nav-btn::after{
+  content:"" !important;display:block !important;position:absolute !important;pointer-events:none;background:none !important;
+  top:calc(var(--o1)*-1) !important;right:calc(var(--o1)*-1) !important;bottom:calc(var(--o1)*-1) !important;left:calc(var(--o1)*-1) !important;
+  border:2px solid var(--ring) !important;border-radius:calc(var(--r) + 4px) !important;
+  opacity:0 !important;transform:scale(1.18,1.4);transform-origin:center;
+  transition:opacity .35s ease-out,transform .6s var(--ease-out) !important}
+html body .btn::after,html body .nav-btn::after{
+  top:calc(var(--o2)*-1) !important;right:calc(var(--o2)*-1) !important;bottom:calc(var(--o2)*-1) !important;left:calc(var(--o2)*-1) !important;
+  border-width:1px !important;border-radius:calc(var(--r) + 10px) !important;transform:scale(1.14,1.35)}
+html body .btn .arr{display:inline-block;transition:translate .45s var(--ease-out)}
 @media (hover:hover) and (pointer:fine){
-  .btn::after,.nav-btn::after{display:block !important}
-  .btn:hover,.nav-btn:hover{translate:-2px -3px !important;color:#10261C !important}
-  .btn:hover::before,.nav-btn:hover::before{transform:scaleX(1)}
-  .btn:hover::after,.nav-btn:hover::after{opacity:.9 !important;transform:scale(1) !important}
-  .btn:hover .arr{translate:6px 0}
+  html body .btn:hover,html body .nav-btn:hover{background-size:100% 100% !important;color:#10261C !important;translate:0 -2px;
+    transition:background-size .55s var(--ease-out),translate .4s var(--ease-out),box-shadow .4s var(--ease-out),transform .5s var(--ease-out) !important}
+  html body .btn:hover::before,html body .nav-btn:hover::before{opacity:1 !important;transform:scale(1);transition:opacity .25s ease-out,transform .55s var(--ease-out) !important}
+  html body .btn:hover::after,html body .nav-btn:hover::after{opacity:.45 !important;transform:scale(1);transition:opacity .3s ease-out .06s,transform .7s var(--ease-out) .06s !important}
+  html body .btn:hover .arr{translate:5px 0}
 }
-.btn:active,.nav-btn:active{translate:2px 2px !important;transition-duration:.12s !important}
-.btn:focus-visible::before,.nav-btn:focus-visible::before{transform:scaleX(1)}
+html body .btn:active,html body .nav-btn:active{translate:2px 2px !important;box-shadow:2px 2px 0 #06140E !important;transition-duration:.1s !important}
+html body .btn:focus-visible,html body .nav-btn:focus-visible{outline:none;background-size:100% 100% !important}
+html body .btn:focus-visible::before,html body .nav-btn:focus-visible::before{opacity:1 !important;transform:scale(1)}
 
 /* ---------- sticker highlight: settles straight on hover ---------- */
 .hl,h1 .accent,h2 .accent{transition:rotate .5s var(--ease-pop),scale .5s var(--ease-pop)}
@@ -95,6 +112,9 @@ html{overflow-x:clip}
 }
 
 /* magnetic pull on big buttons (JS sets --mx/--my) */
-.btn-lg{transform:translate(var(--mx,0px),var(--my,0px));transition:transform .5s var(--ease-out),translate .35s var(--ease-out),box-shadow .35s var(--ease-out),color .3s !important}
+html body .btn-lg{transform:translate(var(--mx,0px),var(--my,0px))}
 /* hidden example rows must not animate in from blur when switched */
 .diff .drow[hidden]{display:none}
+/* outline button: text turns light only after the fill has left */
+html body .btn-outline{transition:background-size .5s var(--ease-io),color .2s ease-out .3s,translate .4s var(--ease-out),box-shadow .4s var(--ease-out),transform .5s var(--ease-out) !important}
+@media (hover:hover) and (pointer:fine){html body .btn-outline:hover{transition:background-size .55s var(--ease-out),color .15s ease-out,translate .4s var(--ease-out),box-shadow .4s var(--ease-out),transform .5s var(--ease-out) !important}}
