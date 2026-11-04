@@ -267,3 +267,19 @@ img{max-width:100%;display:block}
 .hero{padding-bottom:56px}
 .ba ul+p{margin-top:12px}
 .final{padding-top:24px}
+
+/* builder: fields grow with the text, and a detail meter fills as limits are added */
+.panel textarea{display:block;width:100%;resize:none;overflow:hidden;font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.4;padding:12px 14px;
+  border-radius:12px;border:3px solid var(--forest-line);background:var(--forest-2);color:var(--paper);outline:none;min-height:54px;
+  transition:border-color .25s,height .2s var(--e)}
+.panel textarea:focus{border-color:var(--mint)}
+.meter{display:flex;align-items:center;gap:12px;margin-top:14px;font-family:'Archivo',Arial,sans-serif;font-weight:800;font-size:14px;color:var(--mint)}
+.meter-bar{flex:1;height:10px;border-radius:5px;background:var(--forest-2);border:2px solid var(--forest-line);overflow:hidden}
+.meter-bar i{display:block;height:100%;width:0;background:var(--mint);border-radius:3px;transition:width .5s var(--e),background .3s}
+.meter-bar i[data-lvl="0"],.meter-bar i[data-lvl="1"]{background:#E9C46A}
+.builder{align-items:start}
+.panel{position:sticky;top:20px}
+@media (max-width:899px){.panel{position:static}}
+.faq details.closing summary::after{rotate:0deg}
+.faq details.closing p{opacity:0;transition:opacity .15s}
+.brand{min-height:44px}

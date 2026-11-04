@@ -64,10 +64,11 @@
     <div class="panel">
       <span class="live">Live</span>
       <label for="goal">Your goal</label>
-      <input id="goal" value="learn to code" autocomplete="off" maxlength="120">
+      <textarea id="goal" class="grow" rows="1" maxlength="160" autocomplete="off" spellcheck="false">learn to code</textarea>
       <label for="lim">Your real limits</label>
-      <input id="lim" value="about five hours a week and no technical background" autocomplete="off" maxlength="160">
-      <p class="hint">This runs in your browser. Nothing you type leaves this page.</p>
+      <textarea id="lim" class="grow" rows="1" maxlength="320" autocomplete="off" spellcheck="false">about five hours a week and no technical background</textarea>
+      <div class="meter" aria-live="polite"><div class="meter-bar"><i id="mfill"></i></div><span id="mlabel">Good start</span></div>
+      <p class="hint">Time, budget, experience, equipment: every detail you add here is one less thing the AI has to guess. This runs in your browser. Nothing you type leaves this page.</p>
     </div>
     <div class="outs">
       <div class="out"><div class="row"><span class="n">1</span><h3>Go broad</h3><button class="copy" data-c="1" type="button">Copy</button></div><p id="o1"></p></div>
@@ -170,7 +171,13 @@ const draw=()=>{const G=esc(v(g,"[your goal]")),L=esc(v(l,"[your real constraint
 document.getElementById("o1").innerHTML=`"Research realistic ways to <mark>${G}</mark>. Give me a shortlist, with a short explanation of each."`;
 document.getElementById("o2").innerHTML=`"Research each of these in more depth, and tell me which two or three are the most realistic for someone with <mark>${L}</mark>."`;
 document.getElementById("o3").innerHTML=`"Of these, which one specifically should I start with, and why, based on everything you just found?"`;};
-g.addEventListener("input",draw);l.addEventListener("input",draw);draw();
+const grow=el=>{el.style.height="auto";el.style.height=el.scrollHeight+"px"};
+const meter=()=>{const w=(l.value.trim().match(/[^ ]+/g)||[]).length;const d=(l.value.match(/,| and |;/g)||[]).length+(w?1:0);
+const pct=Math.min(100,w*7);document.getElementById("mfill").style.width=pct+"%";
+document.getElementById("mlabel").textContent=!w?"Add your limits":d<2?"Add one more detail":d<3?"Good start":"Specific";
+document.getElementById("mfill").dataset.lvl=!w?0:d<2?1:d<3?2:3;};
+[g,l].forEach(el=>{el.addEventListener("input",()=>{grow(el);draw();meter()});el.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault()}});grow(el)});
+window.addEventListener("resize",()=>[g,l].forEach(grow));draw();meter();
 document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{const t=T()[+b.dataset.c-1];
 try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}
 b.textContent="Copied";b.classList.add("done");setTimeout(()=>{b.textContent="Copy";b.classList.remove("done")},1600)}));})();</script>
