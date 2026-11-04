@@ -72,7 +72,7 @@ html{overflow-x:clip}
 
 /* ---------- small things ---------- */
 .marquee:hover .track{animation-play-state:paused}
-.faq details,details{overflow:hidden}
+.faq details,details{overflow:clip;overflow-clip-margin:10px}
 .copy{transition:background .25s,translate .2s var(--ease-out)}
 @media (hover:hover){.copy:hover{translate:0 -2px}}
 .out mark{transition:background .3s}
