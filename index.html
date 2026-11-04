@@ -7,12 +7,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#0C0D0B">
+<meta name="theme-color" content="#10261C">
 <meta name="description" content="A method for getting precise, reliable results from AI every time.">
 <link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ===== FONTS (self-hosted) ===== */
-@font-face{font-family:'Archivo';src:url('fonts/archivo-variable.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:'Archivo';src:url('fonts/archivo-variable.woff2') format('woff2');font-weight:100 900;font-stretch:100% 112%;font-display:swap}
 @font-face{font-family:'Newsreader';src:url('fonts/newsreader-variable.woff2') format('woff2');font-weight:200 800;font-display:swap}
 @font-face{font-family:'IBM Plex Mono';src:url('fonts/plex-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'IBM Plex Mono';src:url('fonts/plex-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
@@ -470,6 +470,8 @@ footer .wrap{padding-bottom:56px}
   .consent-btn{min-height:56px;padding:18px 24px}
   .btn::before,.btn::after,.nav-btn::before,.nav-btn::after{display:none}
 }</style>
+<link rel="stylesheet" href="/assets/home-g1.css">
+<link rel="stylesheet" href="/assets/motion.css">
 </head>
 <body>
 
@@ -493,19 +495,19 @@ footer .wrap{padding-bottom:56px}
 <section class="wrap hero">
   <div class="hero-text">
     <h1 class="disp">Stop getting <span class="accent">generic</span> AI answers.</h1>
-    <p class="hero-sub">A 58-page system for getting precise, useful, checkable results from ChatGPT, Claude and Gemini.</p>
+    <p class="hero-sub">A 58-page system for getting answers you can actually use, and check, from ChatGPT, Claude and Gemini.</p>
     <div class="facts"><div class="fact"><div class="n disp">58</div><div class="l">pages</div></div><div class="fact"><div class="n disp">6</div><div class="l">chapters</div></div><div class="fact"><div class="n disp">Sources</div><div class="l">listed at the end</div></div><div class="fact"><div class="n disp">1</div><div class="l">payment</div></div></div>
     <div class="hero-actions">
       <a class="btn btn-accent btn-lg" href="#free">Get the free guides</a>
-      <a class="btn btn-outline btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+      <a class="btn btn-outline btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method · $127</a>
     </div>
     <div class="hero-note">The free guides are instant PDFs. The complete system is $127 for the first 30 buyers, then $697.</div>
   </div>
   <div class="stack" aria-hidden="true">
     <svg class="stack-rings" viewBox="0 0 560 540" fill="none" stroke="#6BE0A0" stroke-width="1.5"><circle cx="440" cy="190" r="290" stroke-opacity=".1"/><circle cx="440" cy="190" r="230" stroke-opacity=".18"/><circle cx="440" cy="190" r="170" stroke-opacity=".3"/><circle cx="440" cy="190" r="110" stroke-opacity=".5"/><circle cx="440" cy="190" r="50" stroke-opacity=".9"/><circle cx="440" cy="190" r="5" fill="#6BE0A0" stroke="none"/></svg>
-    <div class="sheet sheet-1" data-depth="3"><img src="pages/p45.jpg" alt="" width="800" height="1035"></div>
-    <div class="sheet sheet-2" data-depth="2"><img src="pages/p09.jpg" alt="" width="800" height="1035"></div>
-    <div class="sheet sheet-3" data-depth="1"><img src="pages/p01.jpg" alt="" width="800" height="1035"></div>
+    <div class="sheet sheet-1" data-depth="3"><img src="pages/p45-800.webp" srcset="pages/p45-480.webp 480w, pages/p45-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="" width="800" height="1035" decoding="async"></div>
+    <div class="sheet sheet-2" data-depth="2"><img src="pages/p09-800.webp" srcset="pages/p09-480.webp 480w, pages/p09-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="" width="800" height="1035" decoding="async"></div>
+    <div class="sheet sheet-3" data-depth="1"><img src="pages/p01-800.webp" srcset="pages/p01-480.webp 480w, pages/p01-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="" width="800" height="1035" decoding="async"></div>
   </div>
 </section>
 
@@ -513,7 +515,7 @@ footer .wrap{padding-bottom:56px}
 <section class="strip">
   <div class="wrap">
     <div class="strip-id">
-      <img src="pages/p01.jpg" alt="Cover of The Exact Method" width="800" height="1035">
+      <img src="pages/p01-800.webp" srcset="pages/p01-480.webp 480w, pages/p01-800.webp 800w" sizes="80px" alt="Cover of The Exact Method" width="800" height="1035" loading="lazy" decoding="async">
       <div>
         <div class="strip-name disp">The Exact Method</div>
         <div class="strip-sub">The complete system. 58 pages, 6 chapters, sources listed.</div>
@@ -521,45 +523,47 @@ footer .wrap{padding-bottom:56px}
     </div>
     <div class="strip-price"><div class="disp">$127</div><span>launch price, first 30 buyers. Then $697.</span></div>
     <div class="strip-buy">
-      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method · $127</a>
       <div class="note">PDF · one-time payment · instant download</div>
     </div>
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true"><div class="track"><ul><li><s>"Great question!"</s></li><li><s>"Here is a comprehensive guide"</s></li><li><s>"It depends on your goals."</s></li><li><s>"Learn Python, it's beginner-friendly."</s></li><li><s>"In conclusion..."</s></li><li><s>"Let me know if you'd like more ideas!"</s></li></ul><ul><li><s>"Great question!"</s></li><li><s>"Here is a comprehensive guide"</s></li><li><s>"It depends on your goals."</s></li><li><s>"Learn Python, it's beginner-friendly."</s></li><li><s>"In conclusion..."</s></li><li><s>"Let me know if you'd like more ideas!"</s></li></ul></div></div>
+
 <!-- ===== PAGES FROM THE GUIDE ===== -->
 <section class="pages" id="inside">
   <div class="wrap">
     <h2 class="disp big">See what you actually get.</h2>
-    <p class="sec-sub">These are real pages from the 58-page guide, not mockups.</p>
+    <p class="sec-sub">Real pages from the 58-page guide. Tap one to look closer.</p>
     <div class="page-grid">
       <div class="pg-card">
-        <a class="pg-img" href="pages/p09.jpg" target="_blank" rel="noopener" aria-label="Open page 9 of the guide larger (opens in a new tab)"><img src="pages/p09.jpg" alt="One action per step, page 9 of the guide" width="800" height="1035" loading="lazy"></a>
+        <a class="pg-img" href="pages/p09.jpg" target="_blank" rel="noopener" aria-label="Open page 9 of the guide larger (opens in a new tab)"><img src="pages/p09-800.webp" srcset="pages/p09-480.webp 480w, pages/p09-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="One action per step, page 9 of the guide" width="800" height="1035" loading="lazy" decoding="async"></a>
         <div class="pg-cap"><span class="p mono">p. 9</span><span class="t disp">One action per step</span></div>
         <p class="pg-txt">The rule that stops the AI from guessing, with the full two-stage process.</p>
       </div>
       <div class="pg-card">
-        <a class="pg-img" href="pages/p14.jpg" target="_blank" rel="noopener" aria-label="Open page 14 of the guide larger (opens in a new tab)"><img src="pages/p14.jpg" alt="Staged prompting, page 14 of the guide" width="800" height="1035" loading="lazy"></a>
+        <a class="pg-img" href="pages/p14.jpg" target="_blank" rel="noopener" aria-label="Open page 14 of the guide larger (opens in a new tab)"><img src="pages/p14-800.webp" srcset="pages/p14-480.webp 480w, pages/p14-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="Staged prompting, page 14 of the guide" width="800" height="1035" loading="lazy" decoding="async"></a>
         <div class="pg-cap"><span class="p mono">p. 14</span><span class="t disp">Staged prompting</span></div>
         <p class="pg-txt">A real project split into separate prompts, and why each one stays separate.</p>
       </div>
       <div class="pg-card">
-        <a class="pg-img" href="pages/p17.jpg" target="_blank" rel="noopener" aria-label="Open page 17 of the guide larger (opens in a new tab)"><img src="pages/p17.jpg" alt="Tool selection, page 17 of the guide" width="800" height="1035" loading="lazy"></a>
+        <a class="pg-img" href="pages/p17.jpg" target="_blank" rel="noopener" aria-label="Open page 17 of the guide larger (opens in a new tab)"><img src="pages/p17-800.webp" srcset="pages/p17-480.webp 480w, pages/p17-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="Tool selection, page 17 of the guide" width="800" height="1035" loading="lazy" decoding="async"></a>
         <div class="pg-cap"><span class="p mono">p. 17</span><span class="t disp">Tool selection</span></div>
         <p class="pg-txt">What each main AI model is best at, and where it falls short.</p>
       </div>
       <div class="pg-card">
-        <a class="pg-img" href="pages/p39.jpg" target="_blank" rel="noopener" aria-label="Open page 39 of the guide larger (opens in a new tab)"><img src="pages/p39.jpg" alt="Chaining tools, page 39 of the guide" width="800" height="1035" loading="lazy"></a>
+        <a class="pg-img" href="pages/p39.jpg" target="_blank" rel="noopener" aria-label="Open page 39 of the guide larger (opens in a new tab)"><img src="pages/p39-800.webp" srcset="pages/p39-480.webp 480w, pages/p39-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="Chaining tools, page 39 of the guide" width="800" height="1035" loading="lazy" decoding="async"></a>
         <div class="pg-cap"><span class="p mono">p. 39</span><span class="t disp">Chaining tools</span></div>
         <p class="pg-txt">A worked example of one tool checking another tool's work.</p>
       </div>
       <div class="pg-card">
-        <a class="pg-img" href="pages/p45.jpg" target="_blank" rel="noopener" aria-label="Open page 45 of the guide larger (opens in a new tab)"><img src="pages/p45.jpg" alt="Verification, page 45 of the guide" width="800" height="1035" loading="lazy"></a>
+        <a class="pg-img" href="pages/p45.jpg" target="_blank" rel="noopener" aria-label="Open page 45 of the guide larger (opens in a new tab)"><img src="pages/p45-800.webp" srcset="pages/p45-480.webp 480w, pages/p45-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="Verification, page 45 of the guide" width="800" height="1035" loading="lazy" decoding="async"></a>
         <div class="pg-cap"><span class="p mono">p. 45</span><span class="t disp">Verification</span></div>
         <p class="pg-txt">The check for when an answer sounds right but the real result doesn't match.</p>
       </div>
       <div class="pg-card">
-        <a class="pg-img" href="pages/p56.jpg" target="_blank" rel="noopener" aria-label="Open page 56 of the guide larger (opens in a new tab)"><img src="pages/p56.jpg" alt="Sources, page 56 of the guide" width="800" height="1035" loading="lazy"></a>
+        <a class="pg-img" href="pages/p56.jpg" target="_blank" rel="noopener" aria-label="Open page 56 of the guide larger (opens in a new tab)"><img src="pages/p56-800.webp" srcset="pages/p56-480.webp 480w, pages/p56-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="Sources, page 56 of the guide" width="800" height="1035" loading="lazy" decoding="async"></a>
         <div class="pg-cap"><span class="p mono">p. 56</span><span class="t disp">Sources</span></div>
         <p class="pg-txt">Every outside figure listed with a link, so you can check where it came from.</p>
       </div>
@@ -573,6 +577,7 @@ footer .wrap{padding-bottom:56px}
   <div class="wrap">
     <h2 class="disp big">Same question. Different method.</h2>
     <p class="sec-sub">Three situations, taken from the guide.</p>
+    <div class="chips" role="tablist" aria-label="Examples"><button type="button" role="tab" aria-selected="true" data-i="0">Finding an idea</button><button type="button" role="tab" aria-selected="false" data-i="1">Building something</button><button type="button" role="tab" aria-selected="false" data-i="2">Checking an answer</button></div>
     <div class="diff-rows">
       <div class="drow">
         <div class="drow-h"><span class="num mono">01</span><h3 class="t disp">Finding an idea</h3></div>
@@ -622,8 +627,8 @@ footer .wrap{padding-bottom:56px}
           <div class="mcard">
             <div class="lab">With the method, a three-step check</div>
         <div class="step"><div class="sn disp">1</div><div class="st mono">The trigger. A real result doesn't match what you were told. That mismatch is the signal to check.</div></div>
-        <div class="step"><div class="sn disp">2</div><div class="st mono">The check. Ask a different AI tool the exact same question, not the same tool again.</div></div>
-        <div class="step"><div class="sn disp">3</div><div class="st mono">The confirmation. Test the answer against the real world or a named official source, not against which one sounds more convincing.</div></div>
+        <div class="step"><div class="sn disp">2</div><div class="st mono">The check. Ask a different AI tool the exact same question. Asking the same tool again only gets you agreement.</div></div>
+        <div class="step"><div class="sn disp">3</div><div class="st mono">The confirmation. Test the answer against the real world or a named official source. How convincing it sounds doesn't count.</div></div>
             <div class="tags"><span>Different tool</span><span>Real-world test</span><span>Named sources</span></div>
           </div>
         </div>
@@ -636,7 +641,7 @@ footer .wrap{padding-bottom:56px}
 <section class="strip">
   <div class="wrap">
     <div class="strip-id">
-      <img src="pages/p01.jpg" alt="Cover of The Exact Method" width="800" height="1035">
+      <img src="pages/p01-800.webp" srcset="pages/p01-480.webp 480w, pages/p01-800.webp 800w" sizes="80px" alt="Cover of The Exact Method" width="800" height="1035" loading="lazy" decoding="async">
       <div>
         <div class="strip-name disp">The Exact Method</div>
         <div class="strip-sub">The complete system. 58 pages, 6 chapters, sources listed.</div>
@@ -644,7 +649,7 @@ footer .wrap{padding-bottom:56px}
     </div>
     <div class="strip-price"><div class="disp">$127</div><span>launch price, first 30 buyers. Then $697.</span></div>
     <div class="strip-buy">
-      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method · $127</a>
       <div class="note">PDF · one-time payment · instant download</div>
     </div>
   </div>
@@ -678,13 +683,13 @@ footer .wrap{padding-bottom:56px}
         <div class="chap"><div class="no mono">04</div><div class="cb"><h3 class="ct disp">Chaining AI Tools</h3><p class="cd">Split work between tools by role, work around known flaws, and get a second opinion.</p></div><div class="pp mono">pp. 35–41</div></div>
         <div class="chap"><div class="no mono">05</div><div class="cb"><h3 class="ct disp">Verifying What AI Tells You</h3><p class="cd">A three-step check for answers that sound right and aren't.</p></div><div class="pp mono">pp. 42–48</div></div>
         <div class="chap"><div class="no mono">06</div><div class="cb"><h3 class="ct disp">Applied Examples</h3><p class="cd">Worked projects in coding, e-commerce, content, freelancing and design.</p></div><div class="pp mono">pp. 49–55</div></div>
-        <div class="chap"><div class="no mono">—</div><div class="cb"><h3 class="ct disp">Sources and Where to Check</h3><p class="cd">Every outside figure listed, with a link to where you can check it.</p></div><div class="pp mono">pp. 56–58</div></div>
+        <div class="chap"><div class="no mono">+</div><div class="cb"><h3 class="ct disp">Sources and Where to Check</h3><p class="cd">Every outside figure listed, with a link to where you can check it.</p></div><div class="pp mono">pp. 56–58</div></div>
       </div>
       <aside class="src-card">
         <svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg>
         <h3 class="disp">Built with checkable sources.</h3>
         <p>Important outside claims in the guide come with a source, so you can see where the information came from instead of taking it on trust.</p>
-        <div class="src-shot"><img src="pages/p56.jpg" alt="The sources page of the guide" width="800" height="1035" loading="lazy"></div>
+        <div class="src-shot"><img src="pages/p56-800.webp" srcset="pages/p56-480.webp 480w, pages/p56-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="The sources page of the guide" width="800" height="1035" loading="lazy" decoding="async"></div>
         <div class="src-note">Pages 56 to 58 of the guide.</div>
       </aside>
     </div>
@@ -694,10 +699,10 @@ footer .wrap{padding-bottom:56px}
 <!-- ===== WHY THE COMPLETE SYSTEM ===== -->
 <section class="why">
   <div class="wrap">
-    <h2 class="disp big">Not a pile of prompts. One system.</h2>
+    <h2 class="disp big">Why it works as one system.</h2>
     <div class="why-list">
-      <div class="why-row"><div class="ix mono">01</div><h3 class="disp">A method, not a script</h3><p>Copy-and-paste prompts break the moment your task changes. A method you understand still works on a problem nobody wrote an example for.</p></div>
-      <div class="why-row"><div class="ix mono">02</div><h3 class="disp">The order, not just the ideas</h3><p>Each idea is simple on its own. The guide shows when to use which one, and how they fit together into one workflow.</p></div>
+      <div class="why-row"><div class="ix mono">01</div><h3 class="disp">A method you understand</h3><p>Copy-and-paste prompts break the moment your task changes. A method you understand still works on a problem nobody wrote an example for.</p></div>
+      <div class="why-row"><div class="ix mono">02</div><h3 class="disp">The order matters</h3><p>Each idea is simple on its own. The guide shows when to use which one, and how they fit together into one workflow.</p></div>
       <div class="why-row"><div class="ix mono">03</div><h3 class="disp">Sources you can check</h3><p>Outside figures are listed on pages 56 to 58, so you can see where each one came from.</p></div>
       <div class="why-row"><div class="ix mono">04</div><h3 class="disp">Limits stated up front</h3><p>Each guide says what it leaves out and when it was last current. It makes no promise of results by a date, because nobody can honestly make one.</p></div>
     </div>
@@ -710,8 +715,8 @@ footer .wrap{padding-bottom:56px}
     <div class="fit-col fit-yes">
       <h3 class="disp">This is for you if</h3>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You use AI regularly and keep rewriting your requests.</span></div>
-        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You get answers that are almost right, not exactly right.</span></div>
-        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You want a repeatable workflow, not random prompt experiments.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>Your answers are almost right, and almost isn't enough.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You're tired of trying random prompts and want a workflow you can repeat.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You want to check important answers before you rely on them.</span></div>
     </div>
     <div class="fit-col fit-no">
@@ -719,7 +724,7 @@ footer .wrap{padding-bottom:56px}
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You only want copy-and-paste prompts. The $17 prompt pack is built for that.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You rarely use AI.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want live coaching or a video course.</span></div>
-        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want a guaranteed result by a date. Nobody can honestly promise that.</span></div>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want a guaranteed result by a date.</span></div>
     </div>
   </div>
 </section>
@@ -732,21 +737,22 @@ footer .wrap{padding-bottom:56px}
 
     <div class="flag">
       <svg class="flag-rings" viewBox="0 0 1200 1200" fill="none" stroke="#0C0D0B" stroke-width="1.5" aria-hidden="true"><circle cx="600" cy="600" r="120" stroke-opacity=".13"/><circle cx="600" cy="600" r="200" stroke-opacity=".13"/><circle cx="600" cy="600" r="280" stroke-opacity=".13"/><circle cx="600" cy="600" r="360" stroke-opacity=".13"/><circle cx="600" cy="600" r="440" stroke-opacity=".13"/><circle cx="600" cy="600" r="520" stroke-opacity=".13"/></svg>
-      <div class="flag-cover"><img src="pages/p01.jpg" alt="Cover of The Exact Method" width="800" height="1035"></div>
-      <div class="flag-body">
+      <div class="flag-cover"><img src="pages/p01-800.webp" srcset="pages/p01-480.webp 480w, pages/p01-800.webp 800w" sizes="(max-width:899px) 70vw, 300px" alt="Cover of The Exact Method" width="800" height="1035" loading="lazy" decoding="async"></div>
+      <span class="flag-badge">Includes everything</span>
+<div class="flag-body">
         <div class="flag-label ui">The complete system</div>
         <h3 class="flag-name disp">The Exact Method</h3>
         <div class="flag-stats"><div class="flag-stat"><div class="n disp">58</div><div class="l">pages</div></div><div class="flag-stat"><div class="n disp">6</div><div class="l">chapters</div></div><div class="flag-stat"><div class="n disp">1</div><div class="l">payment</div></div></div>
-        <p class="flag-lead">Everything in the smaller guides, plus the full method behind them. Built from real use.</p>
+        <p class="flag-lead">Everything in the smaller guides, plus the full method that connects them.</p>
         <div><div class="flag-inside-label">Inside</div><div class="flag-chaps"><div>Mindset Shift</div><div>Precision Prompting</div><div>Tool Selection</div><div>Chaining AI Tools</div><div>Verifying What AI Tells You</div><div>Applied Examples</div></div></div>
       </div>
       <div class="flag-buy">
         <div class="flag-label">Launch price</div>
         <div class="flag-price disp">$127</div>
         <div class="flag-early">The first 30 buyers pay $127. After that, the price is $697.</div>
-        <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+        <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method · $127</a>
         <div class="flag-note">PDF · one-time payment · instant download. All sales final.</div>
-        <div class="flag-spec"><div><span>Format</span><span>PDF, opens on any device</span></div><div><span>Delivery</span><span>Instant download</span></div><div><span>Includes</span><span>Sources list for every claim</span></div><div><span>Access</span><span>One-time payment, yours to keep</span></div><div><span>Checkout</span><span>Secure checkout by Gumroad</span></div></div>
+        <div class="flag-spec"><div><span>Format</span><span>PDF, opens on any device</span></div><div><span>Delivery</span><span>Instant download</span></div><div><span>Includes</span><span>Sources list for outside figures</span></div><div><span>Access</span><span>One-time payment, yours to keep</span></div><div><span>Checkout</span><span>Secure checkout by Gumroad</span></div></div>
       </div>
     </div>
 
@@ -806,7 +812,7 @@ footer .wrap{padding-bottom:56px}
         <div class="free-body">
           <div class="kicker">Free, 10 pages</div>
           <h3 class="item-name disp">Plain Voice</h3>
-          <p class="item-desc">Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that make AI writing sound like a person wrote it.</p>
+          <p class="item-desc">Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that cut the habits that make AI writing easy to spot.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/vxwyul" target="_blank" rel="noopener" aria-label="Get Plain Voice free (opens in a new tab)">Get it free</a>
           <div class="note">Digital download, delivered instantly.</div>
         </div>
@@ -831,7 +837,7 @@ footer .wrap{padding-bottom:56px}
       </details>
       <details>
         <summary><span class="q disp">Isn't this just common sense?</span><span class="plus" aria-hidden="true"></span></summary>
-        <div class="a">Some of the individual ideas are simple. The value is in knowing when to use each one, how to combine them, and the order that makes the workflow repeatable. The examples above show the difference.</div>
+        <div class="a">Some of the individual ideas are simple. What you get is knowing when to use each one, how to combine them, and the order that makes the workflow repeatable. The examples above show the difference.</div>
       </details>
       <details>
         <summary><span class="q disp">Does this work with ChatGPT, Claude, Gemini, or any specific tool?</span><span class="plus" aria-hidden="true"></span></summary>
@@ -871,7 +877,7 @@ footer .wrap{padding-bottom:56px}
       </div>
       <div class="final-btn">
         <div class="final-price"><div class="disp">$127</div><span>launch price, first 30 buyers</span></div>
-        <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method — $127</a>
+        <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method · $127</a>
         <div class="note">PDF · one-time payment · instant download</div>
         <a class="textlink" href="#free">Not ready? Start with the free guides</a>
       </div>
@@ -1008,5 +1014,10 @@ footer .wrap{padding-bottom:56px}
       });
     })();
   </script>
+<script>(()=>{const c=[...document.querySelectorAll('.chips [role=tab]')],r=[...document.querySelectorAll('.diff .drow')];if(!c.length||r.length!==c.length)return;
+document.querySelector('.diff').classList.add('tabbed');
+const sel=k=>{c.forEach((b,i)=>{b.setAttribute('aria-selected',i===k);b.tabIndex=i===k?0:-1});r.forEach((x,i)=>{x.hidden=i!==k;if(i===k){x.classList.remove('show');void x.offsetWidth;x.classList.add('show')}})};
+c.forEach((b,i)=>{b.addEventListener('click',()=>sel(i));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=(i+(e.key==='ArrowRight'?1:c.length-1))%c.length;sel(n);c[n].focus()}})});sel(0);})();</script>
+<script src="/assets/motion.js" defer></script>
 </body>
 </html>
