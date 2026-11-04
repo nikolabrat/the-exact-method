@@ -129,3 +129,25 @@ details{border-color:rgba(16,38,28,.18)}
 .cover{overflow:hidden;padding:16px 14px}
 .cover .title{font-size:21px;line-height:1.02;letter-spacing:-.015em;overflow-wrap:normal;word-break:normal;hyphens:none}
 @media (max-width:899px){.cover .title{font-size:18px !important}.cover{padding:14px 12px}}
+
+/* ===== match the guide pages ===== */
+.kicker{font-family:'Archivo',Arial,sans-serif;font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#B9C4BC;margin-bottom:16px}
+.pages .kicker,.diff .kicker,.chapters .kicker,.fit .kicker,.pricing .kicker,.faq .kicker{color:#4E5E55}
+.why-head{flex:1 1 360px;align-self:flex-start;position:sticky;top:24px}
+.why h2{position:static}
+h2.big{line-height:1.02}
+
+/* FAQ: same mint circle as the guide pages */
+.faq summary .q{font-family:'Archivo',Arial,sans-serif;font-weight:850;font-stretch:100%;font-size:22px;line-height:1.2;letter-spacing:0}
+.faq .plus{width:36px;height:36px;border-radius:18px;background:#6BE0A0;border:3px solid #10261C;margin-top:0;transition:rotate .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1)}
+.faq .plus::before,.faq .plus::after{background:#10261C !important}
+.faq .plus::before{left:8px;right:8px;top:14px;height:2.5px}
+.faq .plus::after{top:8px;bottom:8px;left:14px;width:2.5px}
+details[open] .plus{transform:none;rotate:45deg}
+details.closing .plus{rotate:0deg !important}
+.faq details{padding:22px 0}
+.faq summary{align-items:center}
+@media (max-width:899px){.faq summary .q{font-size:19px}}
+.faq details.closing .a{opacity:0;transition:opacity .15s}
+.brand{min-height:44px}
+.final-btn .textlink{display:inline-flex;align-items:center;min-height:44px}

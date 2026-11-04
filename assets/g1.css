@@ -280,3 +280,6 @@ img{max-width:100%;display:block}
 .builder{align-items:start}
 .panel{position:sticky;top:20px}
 @media (max-width:899px){.panel{position:static}}
+.faq details.closing summary::after{rotate:0deg}
+.faq details.closing p{opacity:0;transition:opacity .15s}
+.brand{min-height:44px}
