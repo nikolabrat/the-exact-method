@@ -471,6 +471,7 @@ footer .wrap{padding-bottom:56px}
   .btn::before,.btn::after,.nav-btn::before,.nav-btn::after{display:none}
 }</style>
 <link rel="stylesheet" href="/assets/home-g1.css">
+<link rel="stylesheet" href="/assets/motion.css">
 </head>
 <body>
 
@@ -1017,5 +1018,6 @@ footer .wrap{padding-bottom:56px}
 document.querySelector('.diff').classList.add('tabbed');
 const sel=k=>{c.forEach((b,i)=>{b.setAttribute('aria-selected',i===k);b.tabIndex=i===k?0:-1});r.forEach((x,i)=>{x.hidden=i!==k;if(i===k){x.classList.remove('show');void x.offsetWidth;x.classList.add('show')}})};
 c.forEach((b,i)=>{b.addEventListener('click',()=>sel(i));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=(i+(e.key==='ArrowRight'?1:c.length-1))%c.length;sel(n);c[n].focus()}})});sel(0);})();</script>
+<script src="/assets/motion.js" defer></script>
 </body>
 </html>

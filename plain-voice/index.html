@@ -11,6 +11,7 @@
 <meta name="theme-color" content="#10261C">
 <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/g1.css">
+<link rel="stylesheet" href="/assets/motion.css">
 </head>
 <body>
 <div class="dark">
@@ -171,8 +172,9 @@
       });
     })();
   </script>
-<script>(()=>{const els=document.querySelectorAll(".rise");if(!("IntersectionObserver" in window)){els.forEach(e=>e.classList.add("in"));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:0,rootMargin:"0px 0px -6% 0px"});els.forEach(e=>io.observe(e))})();</script><script>(()=>{const tabs=[...document.querySelectorAll('.ba-tabs [role=tab]')];if(!tabs.length)return;
+<script>(()=>{const tabs=[...document.querySelectorAll('.ba-tabs [role=tab]')];if(!tabs.length)return;
 const sel=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus()}})});sel(tabs[0]);})();</script>
+<script src="/assets/motion.js" defer></script>
 </body>
 </html>
