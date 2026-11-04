@@ -1,7 +1,7 @@
 /* ===== The Exact Method · G1 theme (forest + paper + mint) =====
    60% forest/paper bases, 30% the other base, 10% mint accent.
    Mint is used only for buttons, one highlighted word, and step numbers. */
-@font-face{font-family:'Archivo';src:url('/fonts/archivo-variable.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:'Archivo';src:url('/fonts/archivo-variable.woff2') format('woff2');font-weight:100 900;font-stretch:100% 112%;font-display:swap}
 @font-face{font-family:'Newsreader';src:url('/fonts/newsreader-variable.woff2') format('woff2');font-weight:200 800;font-display:swap}
 
 :root{
