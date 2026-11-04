@@ -123,3 +123,9 @@ details{border-color:rgba(16,38,28,.18)}
 /* facts row: keep a clear gap between items */
 .facts{gap:0}
 .fact{flex:1 1 auto;min-width:96px;padding-right:18px}
+/* mini covers: titles fit inside the card at the wider font */
+.mini{width:112px;height:144px;padding:12px;overflow:hidden}
+.mini .title{font-size:15px;line-height:1.05;letter-spacing:-.01em}
+.cover{overflow:hidden;padding:16px 14px}
+.cover .title{font-size:21px;line-height:1.02;letter-spacing:-.015em;overflow-wrap:normal;word-break:normal;hyphens:none}
+@media (max-width:899px){.cover .title{font-size:18px !important}.cover{padding:14px 12px}}
