@@ -117,7 +117,7 @@ details{border-color:rgba(16,38,28,.18)}
   .tier-list{grid-template-columns:1fr}
   .flag-badge{right:16px}
 }
-.flag .btn,.flag .btn-dark{background:#6BE0A0 !important;color:#10261C !important;border-color:#10261C !important}
+.flag .btn,.flag .btn-dark{color:#10261C !important;border-color:#10261C !important}
 .final-rings,.stack-rings{display:none}
 .mini .title,.cover .title{font-stretch:100%}
 /* facts row: keep a clear gap between items */
