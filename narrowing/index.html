@@ -10,8 +10,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#10261C">
 <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/g1.css">
-<link rel="stylesheet" href="/assets/motion.css">
+<link rel="stylesheet" href="/assets/g1.css?v=11041833">
+<link rel="stylesheet" href="/assets/motion.css?v=11041833">
 </head>
 <body>
 <div class="dark">
@@ -181,6 +181,6 @@ window.addEventListener("resize",()=>[g,l].forEach(grow));draw();meter();
 document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{const t=T()[+b.dataset.c-1];
 try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}
 b.textContent="Copied";b.classList.add("done");setTimeout(()=>{b.textContent="Copy";b.classList.remove("done")},1600)}));})();</script>
-<script src="/assets/motion.js" defer></script>
+<script src="/assets/motion.js?v=11041833" defer></script>
 </body>
 </html>
