@@ -122,3 +122,5 @@ html body .btn-outline{transition:background-size .5s var(--ease-io),color .2s e
 /* price cards and builder cards: a clean lift instead of tilt (they hold buttons) */
 .tier,.out{transition:translate .5s var(--ease-out),box-shadow .5s var(--ease-out),opacity .8s var(--ease-out) var(--d,0s),filter .8s var(--ease-out) var(--d,0s) !important}
 @media (hover:hover) and (pointer:fine){.tier:hover{box-shadow:10px 10px 0 #10261C !important}}
+/* the $127 card button: mint button, paper sweep, like every other mint button */
+html body .flag .btn,html body .flag .btn-dark{--fill:#ECE8DD;--ring:#6BE0A0;background-color:#6BE0A0 !important;color:#10261C !important}
