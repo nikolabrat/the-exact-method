@@ -78,7 +78,6 @@ html body .btn:focus-visible::before,html body .nav-btn:focus-visible::before{op
   .rise.in{opacity:1;translate:0 0}
 }
 @media (prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
-  .rise{filter:blur(4px)}.rise.in{filter:none}
 }
 
 /* ---------- kicker: a short mint line draws in before the label ---------- */
@@ -112,7 +111,7 @@ html body .btn:focus-visible::before,html body .nav-btn:focus-visible::before{op
 }
 
 /* magnetic pull on big buttons (JS sets --mx/--my) */
-html body .btn-lg{transform:translate(var(--mx,0px),var(--my,0px))}
+
 /* hidden example rows must not animate in from blur when switched */
 .diff .drow[hidden]{display:none}
 /* outline button: text turns light only after the fill has left */

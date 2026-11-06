@@ -8,7 +8,7 @@ body,.strip,.method,.why,.free,.final,footer{background-image:radial-gradient(rg
 .strip,.method,.why,.free{background-color:#163326}
 
 /* light sections: paper with faint ruled lines, ink text */
-.pages,.diff,.chapters,.fit,.pricing,.faq{--text:#10261C;--muted:#4E5E55;--muted2:#5B6A61;--line:rgba(16,38,28,.18);--line-soft:rgba(16,38,28,.12);--surface:#FFFDF7;--accent:#1F8A55;
+.pages,.diff,.chapters,.fit,.pricing,.faq{--text:#10261C;--muted:#4E5E55;--muted2:#5B6A61;--line:rgba(16,38,28,.18);--line-soft:rgba(16,38,28,.12);--surface:#FFFDF7;--accent:#17673F;
   background:#ECE8DD;color:#10261C;background-image:repeating-linear-gradient(to bottom,transparent 0 47px,rgba(16,38,28,.06) 47px 48px);border:0}
 
 /* sticker highlight for the accent word in headlines */
@@ -61,7 +61,7 @@ h1 .accent,h2 .accent{display:inline-block;background:#6BE0A0;color:#10261C;bord
 .cover{border:3px solid #10261C;box-shadow:8px 8px 0 #06140E;border-radius:10px;rotate:-2deg}
 
 /* fit */
-.fit-yes h3{color:#1F8A55}
+.fit-yes h3{color:#17673F}
 
 /* faq */
 details{border-color:rgba(16,38,28,.18)}
@@ -151,3 +151,9 @@ details.closing .plus{rotate:0deg !important}
 .faq details.closing .a{opacity:0;transition:opacity .15s}
 .brand{min-height:44px}
 .final-btn .textlink{display:inline-flex;align-items:center;min-height:44px}
+/* hero facts: three equal columns at every width */
+.hero .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:560px}
+.hero .fact{min-width:0;padding:14px 0 14px 16px;border-left:1px solid var(--line)}
+.hero .fact:first-child{padding-left:0;border-left:0}
+@media (max-width:899px){.hero .fact .n{font-size:24px}.hero .fact .l{font-size:13px}}
+@media (max-width:899px){.hero .fact .n{font-size:21px;letter-spacing:-.01em}}
