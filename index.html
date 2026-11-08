@@ -235,7 +235,7 @@ h2.big{font-size:clamp(40px,5.4vw,72px);line-height:.98}
 .free .wrap{padding-top:120px;padding-bottom:112px}
 .free h2{margin-bottom:20px}
 .free-grid{display:flex;flex-wrap:wrap;gap:56px 72px}
-.free-item{flex:1 1 460px;min-width:0;border-top:1px solid var(--line);padding-top:36px;display:flex;flex-wrap:wrap;gap:32px}
+.free-item{flex:1 1 300px;min-width:0;border-top:1px solid var(--line);padding-top:36px;display:flex;flex-wrap:wrap;gap:32px}
 .cover{flex:none;width:150px;height:200px;background:var(--accent);color:#0C0D0B;border-radius:6px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
 .cover svg{width:22px;height:22px}
 .cover .title{font-family:'Archivo',Arial,sans-serif;font-stretch:75%;font-weight:800;font-size:26px;line-height:.95;letter-spacing:-0.01em}
@@ -452,8 +452,8 @@ footer .wrap{padding-bottom:56px}
   .consent-btn{min-height:56px;padding:18px 24px}
   .btn::before,.btn::after,.nav-btn::before,.nav-btn::after{display:none}
 }</style>
-<link rel="stylesheet" href="/assets/home-g1.css?v=11062132">
-<link rel="stylesheet" href="/assets/motion.css?v=11062132">
+<link rel="stylesheet" href="/assets/home-g1.css?v=11081501">
+<link rel="stylesheet" href="/assets/motion.css?v=11081501">
 </head>
 <body>
 
@@ -799,6 +799,16 @@ footer .wrap{padding-bottom:56px}
           <div class="note">Digital download, delivered instantly.</div>
         </div>
       </div>
+      <div class="free-item">
+        <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Video Brief</div></div>
+        <div class="free-body">
+          <div class="kicker">Free, 19 pages</div>
+          <h3 class="item-name disp">The Video Brief</h3>
+          <p class="item-desc">Make short videos with Claude that don't look AI-made: the setup, a six-block brief, three prompts and the checks for every render.</p>
+          <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get The Video Brief free (opens in a new tab)">Get it free</a>
+          <div class="note">Digital download, delivered instantly.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -999,6 +1009,6 @@ footer .wrap{padding-bottom:56px}
 document.querySelector('.diff').classList.add('tabbed');
 const sel=k=>{c.forEach((b,i)=>{b.setAttribute('aria-selected',i===k);b.tabIndex=i===k?0:-1});r.forEach((x,i)=>{x.hidden=i!==k;if(i===k){x.classList.remove('show');void x.offsetWidth;x.classList.add('show')}})};
 c.forEach((b,i)=>{b.addEventListener('click',()=>sel(i));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=(i+(e.key==='ArrowRight'?1:c.length-1))%c.length;sel(n);c[n].focus()}})});sel(0);})();</script>
-<script src="/assets/motion.js?v=11062132" defer></script>
+<script src="/assets/motion.js?v=11081501" defer></script>
 </body>
 </html>
