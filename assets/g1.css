@@ -315,3 +315,6 @@ html{scroll-padding-top:16px}
 html body .btn{text-wrap:balance}
 @media (max-width:340px){.brand{font-size:15px !important}.brand svg{width:18px;height:18px}}
 .brand{white-space:nowrap}
+/* three "More from" cards */
+@media (min-width:1000px){.more:has(> a:nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}.more:has(> a:nth-child(3)) a{flex-direction:column;align-items:flex-start;gap:16px}}
+@media (min-width:700px) and (max-width:999px){.more > a:nth-child(3):last-child{grid-column:1/-1}}
