@@ -12,6 +12,65 @@
 <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/g1.css?v=11081501">
 <link rel="stylesheet" href="/assets/motion.css?v=11081501">
+<style>
+/* never-list demo */
+.nd{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
+.nd-phone{width:300px;aspect-ratio:9/16;border:3px solid var(--forest);border-radius:34px;padding:10px;background:var(--card);position:relative}
+.nd-screen{position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;background:var(--paper);transition:background .4s var(--e);font-family:'Archivo',Arial,sans-serif;color:var(--ink)}
+.nd[data-s-glow] .nd-screen{background:radial-gradient(120% 80% at 50% 0%,#7b5cff 0%,#2a1a6e 45%,#0d0820 100%);color:#fff}
+.nd-title{position:absolute;left:18px;right:18px;top:46px;font-weight:850;font-size:24px;line-height:1.08;transition:top .5s var(--e),font-size .5s var(--e),color .3s,text-shadow .3s,letter-spacing .3s}
+.nd[data-s-top] .nd-title{top:16px;font-size:15px;text-transform:uppercase;letter-spacing:.06em}
+.nd[data-s-glow] .nd-title{text-shadow:0 0 18px #b9a6ff,0 0 4px #fff}
+.nd-card{position:absolute;left:18px;right:18px;top:128px;background:var(--forest);color:var(--paper);border-radius:16px;padding:10px 14px;font-family:'Newsreader',Georgia,serif;font-size:16.5px;white-space:nowrap;line-height:1.2;border:2px solid var(--forest);transition:box-shadow .3s,top .5s var(--e)}
+.nd[data-s-top] .nd-card{top:112px}
+.nd[data-s-shadow] .nd-card{box-shadow:0 18px 30px rgba(0,0,0,.45),0 4px 8px rgba(0,0,0,.3)}
+.nd-tag{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--mint);margin-bottom:2px}
+.nd-chips{position:absolute;left:18px;right:18px;top:222px;display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+.nd-chips span{background:var(--mint);color:var(--forest);border:2px solid var(--forest);border-radius:10px;padding:3px 10px;font-weight:800;font-size:14px;transition:box-shadow .3s}
+.nd[data-s-shadow] .nd-chips span{box-shadow:0 10px 18px rgba(0,0,0,.45)}
+.nd-cap{position:absolute;left:14px;right:14px;top:350px;font-weight:850;font-size:20px;line-height:1.25}
+.nd-cap span{display:inline-block;padding:0 3px;margin-right:-2px;border-radius:5px}
+.nd-cap span.on{background:var(--mint);color:var(--forest)}
+.nd-link{position:absolute;left:0;right:0;top:432px;text-align:center}
+.nd-link .plain{display:none;font-family:Arial,sans-serif;font-size:14px}
+.nd[data-s-link] .nd-link .plain{display:inline}
+.nd[data-s-link] .nd-link .pill{display:none}
+.nd-link .pill{display:inline-flex;align-items:center;gap:6px;background:var(--forest);color:var(--paper);border-radius:999px;padding:7px 16px 7px 10px;font-weight:850;font-size:16px}
+.nd[data-s-glow] .nd-link .pill{background:#fff;color:#1b1040}
+.nd-scrub{position:absolute;left:24px;right:24px;bottom:-16px;height:4px;border-radius:2px;background:var(--line,#D6CFBF)}
+.nd-scrub i{display:block;height:100%;width:0;background:var(--forest);border-radius:2px}
+.nd-side{max-width:520px}
+.nd-label{display:flex;justify-content:space-between;align-items:baseline;font-family:'Archivo',Arial,sans-serif;font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;gap:12px}
+.nd-count{letter-spacing:0;text-transform:none;font-weight:600;font-size:15px}
+.nd-count b{display:inline-block;min-width:1ch;color:#D9423A;font-size:18px;transition:color .3s}
+.nd-count.zero b{color:var(--mint-deep)}
+.nd-rule{display:flex;align-items:center;gap:14px;min-height:52px;padding:8px 16px;margin-bottom:10px;background:var(--card);border:2px solid var(--forest);border-radius:14px;cursor:pointer;font-family:'Archivo',Arial,sans-serif;font-weight:700;font-size:17px;line-height:1.25;transition:background .25s,color .25s}
+.nd-rule input{position:absolute;opacity:0;width:1px;height:1px}
+.nd-rule .box{flex:none;width:26px;height:26px;border:2px solid var(--forest);border-radius:8px;position:relative;transition:background .2s}
+.nd-rule .box::after{content:"";position:absolute;left:7px;top:2px;width:7px;height:13px;border:solid var(--forest);border-width:0 3px 3px 0;rotate:45deg;scale:0;transition:scale .25s var(--e)}
+.nd-rule input:checked + .box{background:var(--mint)}
+.nd-rule input:checked + .box::after{scale:1}
+.nd-rule input:checked ~ span:last-child{text-decoration:none}
+.nd-rule input:focus-visible + .box{outline:3px solid var(--mint-deep);outline-offset:3px}
+.nd-rule:hover{background:var(--paper-2)}
+.nd-foot{margin-top:18px;min-height:60px}
+.nd-all{font-family:'Archivo',Arial,sans-serif;font-weight:700;font-size:16px;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--ink-soft);padding:6px 0;cursor:pointer;min-height:44px}
+.nd-done p{font-size:18px;margin:0 0 16px;color:var(--ink)}
+.nd-done:not([hidden]){animation:ndIn .5s var(--e)}
+@keyframes ndIn{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media (max-width:899px){
+  .nd{grid-template-columns:1fr;gap:36px;justify-items:center}
+  .nd{gap:20px}
+  .nd-phone{scale:.72;transform-origin:50% 0;margin-bottom:-150px}
+  .nd-side{width:100%}
+  .nd-rules{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .nd-rule{font-size:14.5px;min-height:50px;padding:8px 10px;gap:9px;margin:0;border-radius:12px}
+  .nd-rule .box{width:22px;height:22px}
+  .nd-rule .box::after{left:6px;top:1px;width:6px;height:12px}
+}
+@media (prefers-reduced-motion:reduce){.nd *{transition:none!important;animation:none!important}}
+</style>
+
 </head>
 <body>
 <div class="dark">
@@ -53,6 +112,40 @@
       <p class="q">Eight checks on every render: timing, dead time, overlaps, empty space, the first three seconds muted, phone readability, loudness, resolution.</p>
       <p class="why">Claude runs most of them before you watch.</p></article>
   </div>
+</section>
+<section class="wrap sec" style="padding-top:0" id="demo">
+  <div class="kicker rise">See it work</div>
+  <h2 class="disp rise">Tick the never-list. Watch the slop leave.</h2>
+  <p class="sec-sub soft rise">The same five-second Reel, built from the same script. Each rule you tick is one line of a brief, and one default the AI stops reaching for.</p>
+  <div class="nd rise" data-s-shadow data-s-glow data-s-bounce data-s-late data-s-top data-s-link>
+    <div class="nd-phone" aria-hidden="true">
+      <div class="nd-screen">
+        <div class="nd-title">3 fixes for generic AI answers</div>
+        <div class="nd-card"><span class="nd-tag">You type</span>“Write me a workout plan.”</div>
+        <div class="nd-chips"><span>Your level</span><span>Your schedule</span><span>Your goal</span></div>
+        <div class="nd-cap"><span>Give</span> <span>it</span> <span>your</span> <span>real</span> <span>limits.</span></div>
+        <div class="nd-link"><span class="plain">link in bio</span><span class="pill"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="#6BE0A0" stroke-width="5" stroke-linecap="round"><path d="M20 28 L28 20"/><path d="M22 14 L26 10 a8 8 0 0 1 12 12 L34 26"/><path d="M26 34 L22 38 a8 8 0 0 1 -12 -12 L14 22"/></svg>Link in bio</span></div>
+      </div>
+      <div class="nd-scrub"><i></i></div>
+    </div>
+    <div class="nd-side">
+      <div class="nd-label"><span>Never</span><span class="nd-count" aria-live="polite"><b>6</b> AI habits on screen</span></div>
+      <div class="nd-rules"><label class="nd-rule"><input type="checkbox" data-k="shadow"><span class="box"></span><span>No drop shadows</span></label>
+      <label class="nd-rule"><input type="checkbox" data-k="glow"><span class="box"></span><span>No glows</span></label>
+      <label class="nd-rule"><input type="checkbox" data-k="bounce"><span class="box"></span><span>No bouncing text</span></label>
+      <label class="nd-rule"><input type="checkbox" data-k="late"><span class="box"></span><span>Captions on the word</span></label>
+      <label class="nd-rule"><input type="checkbox" data-k="top"><span class="box"></span><span>No title parked on top</span></label>
+      <label class="nd-rule"><input type="checkbox" data-k="link"><span class="box"></span><span>No plain "link in bio"</span></label></div>
+      <div class="nd-foot">
+        <button type="button" class="nd-all">Tick all six</button>
+        <div class="nd-done" hidden>
+          <p>Six rules, one clean Reel. The guide has the full brief, plus the checks that catch what a rule misses.</p>
+          <a class="btn" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get the full brief free (opens in a new tab)">Get the full brief, free <span class="arr" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="src rise">A demo built for this page, in the browser. Tick the boxes in any order.</p>
 </section>
 <section class="wrap sec" style="padding-top:0" id="try">
   <div class="kicker rise">Try it here</div>
@@ -188,6 +281,36 @@ window.addEventListener("resize",()=>[g,a,n].forEach(grow));draw();meter();
 document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{const t=T()[+b.dataset.c-1];
 try{await navigator.clipboard.writeText(t)}catch(e){const x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();try{document.execCommand("copy")}catch(_){}x.remove()}
 b.textContent="Copied";b.classList.add("done");setTimeout(()=>{b.textContent="Copy";b.classList.remove("done")},1600)}));})();</script>
+<script>(()=>{const d=document.querySelector(".nd");if(!d)return;
+const $=s=>d.querySelector(s),$$=s=>[...d.querySelectorAll(s)];
+const screen=$(".nd-screen"),title=$(".nd-title"),card=$(".nd-card"),chips=$$(".nd-chips span"),words=$$(".nd-cap span"),link=$(".nd-link"),bar=$(".nd-scrub i");
+const cnt=$(".nd-count"),done=$(".nd-done"),boxes=$$(".nd-rule input");
+const L=5.2,rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const on=k=>d.hasAttribute("data-s-"+k);
+const cl=x=>Math.max(0,Math.min(1,x));
+const expo=x=>x>=1?1:1-Math.pow(2,-10*x);
+const back=x=>{const c=2.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+// one arrival: clean = soft rise; slop = drop in with overshoot
+const arrive=(el,t,at,dur)=>{const p=cl((t-at)/dur);if(on("bounce")){const b=p<=0?0:back(p);el.style.opacity=p>0?1:0;el.style.transform=`translateY(${(1-b)*-60}px) scale(${.6+.4*b})`;}
+else{const e=expo(p);el.style.opacity=e;el.style.transform=`translateY(${(1-e)*14}px)`;}};
+const wordAt=[2.2,2.45,2.65,2.9,3.15];
+let t0=performance.now();
+const frame=now=>{let t=((now-t0)/1000)%L;if(rm)t=4.6;
+  arrive(title,t,.15,.6);arrive(card,t,.6,.6);chips.forEach((c,i)=>arrive(c,t,1.2+i*.25,.5));
+  const lag=on("late")?.5:0;
+  words.forEach((w,i)=>{w.style.opacity=t>=wordAt[0]-.15?1:0;w.classList.toggle("on",t>=wordAt[i]+lag&&t<(wordAt[i+1]??3.6)+lag)});
+  arrive(link,t,3.7,.6);
+  const out=cl((t-(L-.35))/.35);screen.style.opacity=1-out*.0;[title,card,link,...chips].forEach(el=>{if(out>0)el.style.opacity=String(Math.min(+el.style.opacity||0,1-out))});
+  bar.style.width=(t/L*100)+"%";
+  if(!rm)requestAnimationFrame(frame);};
+requestAnimationFrame(frame);
+const sync=()=>{let n=0;boxes.forEach(b=>{const k=b.dataset.k;if(b.checked)d.removeAttribute("data-s-"+k);else{d.setAttribute("data-s-"+k,"");n++}});
+  cnt.querySelector("b").textContent=n;cnt.lastChild.textContent=n===1?" AI habit on screen":" AI habits on screen";cnt.classList.toggle("zero",n===0);
+  done.hidden=n!==0;$(".nd-all").hidden=n===0;if(rm)requestAnimationFrame(frame);};
+boxes.forEach(b=>b.addEventListener("change",sync));
+$(".nd-all").addEventListener("click",()=>{boxes.forEach((b,i)=>setTimeout(()=>{b.checked=true;sync()},rm?0:i*140))});
+sync();})();</script>
+
 <script src="/assets/motion.js?v=11081501" defer></script>
 </body>
 </html>
