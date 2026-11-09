@@ -248,6 +248,12 @@ h2.big{font-size:clamp(40px,5.4vw,72px);line-height:.98}
 .free-body{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .free-body .item-name{font-size:40px}
 .free-body .item-desc{font-size:20px}
+.free-body .name-link{color:inherit;text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:0 100%;background-size:0% 2px;transition:background-size .3s ease-out}
+.free-body .name-link:hover{background-size:100% 2px}
+.inside-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-family:'Archivo',Arial,sans-serif;font-size:16px;font-weight:600;color:var(--muted);transition:color .15s ease-out}
+.inside-link span{transition:transform .2s ease-out}
+.inside-link:hover{color:var(--text)}.inside-link:hover span{transform:translateX(3px)}
+.inside-link:focus-visible,.free-body .name-link:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
 
 /* ===== FAQ ===== */
 .faq .wrap{padding-top:120px;padding-bottom:96px}
@@ -431,6 +437,7 @@ footer .wrap{padding-bottom:56px}
   .free-body .item-desc{font-size:19px;margin-bottom:20px}
   .free-body .btn{display:block;width:100%}
   .free-body .note{text-align:center;margin-top:10px;font-size:13px}
+  .inside-link{display:flex;justify-content:center;margin-top:4px}
   .faq .wrap{padding-top:56px;padding-bottom:40px}
   .faq h2{margin-bottom:32px}
   .faq-cols{display:block}
@@ -791,30 +798,33 @@ footer .wrap{padding-bottom:56px}
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Narrowing Method</div></div>
         <div class="free-body">
           <div class="kicker">Free, 5 pages</div>
-          <h3 class="item-name disp">The Narrowing Method</h3>
+          <h3 class="item-name disp"><a class="name-link" href="/narrowing/">The Narrowing Method</a></h3>
           <p class="item-desc">Three prompts that stop AI from giving you generic, could-apply-to-anyone answers.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/bwydhs" target="_blank" rel="noopener" aria-label="Get The Narrowing Method free (opens in a new tab)">Get it free</a>
           <div class="note">Digital download, delivered instantly.</div>
+          <a class="inside-link" href="/narrowing/" aria-label="See what's inside The Narrowing Method">See what's inside <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="free-item">
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">Plain Voice</div></div>
         <div class="free-body">
           <div class="kicker">Free, 10 pages</div>
-          <h3 class="item-name disp">Plain Voice</h3>
+          <h3 class="item-name disp"><a class="name-link" href="/plain-voice/">Plain Voice</a></h3>
           <p class="item-desc">Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that cut the habits that make AI writing easy to spot.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/vxwyul" target="_blank" rel="noopener" aria-label="Get Plain Voice free (opens in a new tab)">Get it free</a>
           <div class="note">Digital download, delivered instantly.</div>
+          <a class="inside-link" href="/plain-voice/" aria-label="See what's inside Plain Voice">See what's inside <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="free-item">
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Video Brief</div></div>
         <div class="free-body">
           <div class="kicker">Free, 19 pages</div>
-          <h3 class="item-name disp">The Video Brief</h3>
+          <h3 class="item-name disp"><a class="name-link" href="/video-brief/">The Video Brief</a></h3>
           <p class="item-desc">Make short videos with Claude that don't look AI-made: the setup, a six-block brief, three prompts and the checks for every render.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get The Video Brief free (opens in a new tab)">Get it free</a>
           <div class="note">Digital download, delivered instantly.</div>
+          <a class="inside-link" href="/video-brief/" aria-label="See what's inside The Video Brief">See what's inside <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
