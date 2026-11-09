@@ -44,6 +44,18 @@
 .nd[data-s-link] .nd-link .pill{opacity:0;scale:.92}
 .nd[data-s-glow] .nd-link .pill{background:#fff;color:#1b1040}
 /* the change you just made gets a brief mint ring, so cause and effect read as one */
+.nd-cam{position:absolute;inset:0;transform-origin:50% 40%}
+.mk{background-image:linear-gradient(var(--mint),var(--mint));background-repeat:no-repeat;background-position:0 88%;background-size:0% 40%;padding:0 3px;margin:0 -3px}
+.nd[data-s-glow] .mk{background-size:0% 40%!important}
+.nd-card .ty{display:inline}
+.nd-card .ty-ghost{display:none}
+.nd-card .caret{display:inline-block;width:2px;height:1em;background:var(--mint);vertical-align:-2px;margin-left:1px}
+.nd-rail{position:absolute;left:10px;top:178px;width:2px;height:120px}
+.nd-rail i{display:block;width:2px;height:100%;background:var(--forest);transform-origin:50% 0;scale:1 0;border-radius:1px}
+.nd[data-s-glow] .nd-rail i{background:#b9a6ff}
+.nd-chips span{position:relative}
+.nd-chips span::before{content:"";position:absolute;left:-10px;top:50%;width:8px;height:2px;background:var(--forest);scale:var(--tick,0) 1;transform-origin:0 50%}
+.nd[data-s-glow] .nd-chips span::before{background:#b9a6ff}
 .nd-ring{position:absolute;pointer-events:none;border:3px solid var(--mint);border-radius:14px;opacity:0;scale:1.06}
 .nd-ring.go{animation:ndRing .9s var(--e) forwards}
 @keyframes ndRing{0%{opacity:0;scale:1.08}25%{opacity:1;scale:1}100%{opacity:0;scale:1}}
@@ -148,11 +160,14 @@
       <div class="nd-phone" aria-hidden="true">
         <div class="nd-screen">
           <div class="nd-glow"></div>
-          <div class="nd-title" data-fx="top glow">3 fixes for generic AI answers</div>
-          <div class="nd-card" data-fx="shadow bounce"><span class="nd-tag">You type</span>“Write me a workout plan.”</div>
+          <div class="nd-cam">
+          <div class="nd-title" data-fx="top glow">3 fixes for <span class="mk">generic</span> AI answers</div>
+          <div class="nd-card" data-fx="shadow bounce"><span class="nd-tag">You type</span><span class="ty">“Write me a workout plan.”</span><span class="ty-ghost" aria-hidden="true">“Write me a workout plan.”</span></div>
+          <div class="nd-rail"><i></i></div>
           <div class="nd-chips" data-fx="shadow bounce"><span>Your level</span><span>Your schedule</span><span>Your goal</span></div>
           <div class="nd-cap" data-fx="late"><span>Give</span> <span>it</span> <span>your</span> <span>real</span> <span>limits.</span></div>
-          <div class="nd-link" data-fx="link"><span class="plain">link in bio</span><span class="pill"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="#6BE0A0" stroke-width="5" stroke-linecap="round"><path d="M20 28 L28 20"/><path d="M22 14 L26 10 a8 8 0 0 1 12 12 L34 26"/><path d="M26 34 L22 38 a8 8 0 0 1 -12 -12 L14 22"/></svg>Link in bio</span></div>
+          <div class="nd-link" data-fx="link"><span class="plain">link in bio</span><span class="pill"><svg class="chain" viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="#6BE0A0" stroke-width="5" stroke-linecap="round"><path pathLength="1" d="M20 28 L28 20"/><path pathLength="1" d="M22 14 L26 10 a8 8 0 0 1 12 12 L34 26"/><path pathLength="1" d="M26 34 L22 38 a8 8 0 0 1 -12 -12 L14 22"/></svg>Link in bio</span></div>
+          </div>
           <div class="nd-sweep"></div>
         </div>
       </div>
@@ -328,7 +343,7 @@ const on=k=>d.hasAttribute("data-s-"+k);
 const cl=x=>Math.max(0,Math.min(1,x));
 const expo=x=>x>=1?1:1-Math.pow(2,-10*x);
 const back=x=>{const c=2.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
-const parts=[title,card,...chips,link];
+const parts=[title,card,...chips,link];const mk=$(".mk"),rail=$(".nd-rail i"),cam=$(".nd-cam"),chainP=$$(".nd-link .chain path");
 // clean: a soft 14px rise; slop: a drop-in with overshoot, the "bounce" the rule bans
 const arrive=(el,t,at,dur,fade)=>{const p=cl((t-at)/dur);let o,tr;
   if(on("bounce")){const b=p<=0?0:back(p);o=p>0?1:0;tr=`translateY(${(1-b)*-60}px) scale(${.6+.4*b})`;}
@@ -339,8 +354,15 @@ let t=0,last=null,paused=false,visible=true,raf=0;
 const draw=()=>{const fade=1-cl((t-(L-.4))/.4);
   arrive(title,t,.15,.6,fade);arrive(card,t,.6,.6,fade);chips.forEach((c,i)=>arrive(c,t,1.2+i*.25,.5,fade));
   const lag=on("late")?.5:0;
-  words.forEach((w,i)=>{w.style.opacity=(t>=wordAt[0]-.15?1:0)*fade;w.classList.toggle("on",t>=wordAt[i]+lag&&t<(wordAt[i+1]??3.6)+lag)});
+  words.forEach((w,i)=>{w.style.opacity=(t>=wordAt[0]-.15?(on("late")||t>=wordAt[i]-.08?1:.28):0)*fade;w.classList.toggle("on",t>=wordAt[i]+lag&&t<(wordAt[i+1]??3.6)+lag)});
   arrive(link,t,3.7,.6,fade);
+  // craft that replaces each default once its rule is in the brief
+  const ty=card.querySelector(".ty"),full="“Write me a workout plan.”";
+  if(!on("bounce")){const n=Math.round(cl((t-.75)/.75)*full.length);ty.innerHTML=full.slice(0,n)+(n<full.length&&t>.6?'<span class="caret"></span>':"")+'<span style="visibility:hidden">'+full.slice(n)+'</span>';}else ty.textContent=full;
+  mk.style.backgroundSize=`${on("glow")?0:expo(cl((t-.9)/.45))*100}% 40%`;
+  const rp=on("shadow")?0:cl((t-1.1)/.9);rail.style.scale=`1 ${expo(rp)}`;chips.forEach((c,i)=>c.style.setProperty("--tick",on("shadow")?0:expo(cl((t-1.3-i*.25)/.3))));
+  cam.style.scale=on("top")?"1":String(1+.045*(t/L));
+  chainP.forEach((pth,i)=>{pth.style.strokeDasharray="1";pth.style.strokeDashoffset=on("link")?"0":String(1-expo(cl((t-3.85-i*.08)/.45)))});
   bar.style.scale=`${t/L} 1`;};
 const loop=now=>{raf=0;if(last!==null)t=(t+(now-last)/1000)%L;last=now;draw();if(!paused&&visible&&!rmq.matches)raf=requestAnimationFrame(loop);};
 const start=()=>{if(!raf&&!paused&&visible&&!rmq.matches){last=null;raf=requestAnimationFrame(loop);}};
