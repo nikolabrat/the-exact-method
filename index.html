@@ -63,6 +63,12 @@ section[id]{scroll-margin-top:16px}
 .fact .n{font-size:30px;line-height:1}
 .fact .l{font-family:'Archivo',Arial,sans-serif;font-size:14px;color:var(--muted2);margin-top:4px}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px}
+.packs-link{flex-basis:100%;display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:'Archivo',Arial,sans-serif;font-size:16px;font-weight:600;color:var(--muted);width:fit-content;transition:color .15s ease-out}
+.packs-link .pk{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;color:var(--accent);border:1px solid #2F5A45;border-radius:999px;padding:3px 10px;line-height:1.2}
+.packs-link svg{width:16px;height:16px;flex:none;transition:transform .2s ease-out}
+.packs-link:hover{color:var(--text)}.packs-link:hover svg{transform:translateY(3px)}
+.packs-link:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+#packs{scroll-margin-top:24px}
 .hero-note{margin-top:22px;font-family:'Archivo',Arial,sans-serif;font-size:15px;line-height:1.5;color:var(--muted2);max-width:520px}
 .stack{flex:1 1 520px;max-width:560px;min-width:0;position:relative;height:540px;overflow:hidden}
 .stack-rings{position:absolute;left:0;top:0;width:560px;height:540px;max-width:none}
@@ -324,6 +330,7 @@ footer .wrap{padding-bottom:56px}
   .fact .l{font-size:13px;margin-top:3px}
   .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
   .hero-actions .btn{display:block;padding:17px 24px}
+  .packs-link{align-self:center;margin-top:2px}
   .hero-note{text-align:center;font-size:14px;margin-top:16px}
   .stack{display:block;flex:none;max-width:none;width:100%;height:330px;margin-top:40px}
   .stack-rings{width:358px;height:330px}
@@ -482,6 +489,7 @@ footer .wrap{padding-bottom:56px}
     <div class="hero-actions">
       <a class="btn btn-accent btn-lg" href="#free">Get the free guides</a>
       <a class="btn btn-outline btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
+      <a class="packs-link" href="#packs" aria-label="See the two smaller packs, from $17">Or start with a smaller pack <span class="pk">$17</span><span class="pk">$37</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></a>
     </div>
     <div class="hero-note">The free guides are instant PDFs. The complete system is $127 for the first 30 buyers, then $697.</div>
   </div>
@@ -738,7 +746,7 @@ footer .wrap{padding-bottom:56px}
       </div>
     </div>
 
-    <div class="more">
+    <div class="more" id="packs">
       <h3 class="disp">Not ready for the complete system?</h3>
       <p class="more-sub">Start with one fix. Each is a one-time payment.</p>
       <div class="tier-list">
@@ -872,6 +880,7 @@ footer .wrap{padding-bottom:56px}
         <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
         <div class="note">PDF · one-time payment · instant download</div>
         <a class="textlink" href="#free">Not ready? Start with the free guides</a>
+        <a class="textlink" href="#packs">Or get a smaller pack, from $17</a>
       </div>
     </div>
   </div>
