@@ -35,7 +35,7 @@
 .nd-chips span{background:var(--mint);color:var(--forest);border:2px solid var(--forest);border-radius:10px;padding:3px 10px;font-weight:800;font-size:14px;transition:box-shadow .45s var(--e)}
 .nd[data-s-shadow] .nd-chips span{box-shadow:0 10px 18px rgba(0,0,0,.45)}
 .nd-cap{position:absolute;left:14px;right:14px;top:350px;font-weight:850;font-size:20px;line-height:1.25}
-.nd-cap span{display:inline-block;padding:0 3px;margin-right:-2px;border-radius:5px;transition:background .12s,color .12s}
+.nd-cap span{display:inline-block;padding:0 3px;margin-right:-2px;border-radius:5px;transition:background .1s linear,color .1s linear,opacity .1s linear}
 .nd-cap span.on{background:var(--mint);color:var(--forest)}
 .nd-link{position:absolute;left:0;right:0;top:432px;height:40px}
 .nd-link > span{position:absolute;left:50%;top:50%;translate:-50% -50%;white-space:nowrap;transition:opacity .4s var(--e),scale .4s var(--e)}
@@ -367,7 +367,7 @@ const stepW=dt=>{let moving=false;for(const k in W){const g=ok(k)?1:0,d0=g-W[k];
 const draw=()=>{const fade=1-cl((t-(L-.4))/.4);
   arrive(title,t,.15,.6,fade);arrive(card,t,.6,.6,fade);chips.forEach((c,i)=>arrive(c,t,1.2+i*.25,.5,fade));
   const lag=on("late")?.5:0;
-  words.forEach((w,i)=>{w.style.opacity=(t>=wordAt[0]-.15?(on("late")||t>=wordAt[i]-.08?1:.28):0)*fade;w.classList.toggle("on",t>=wordAt[i]+lag&&t<(wordAt[i+1]??3.6)+lag)});
+  words.forEach((w,i)=>{const lit=t>=wordAt[i]+lag;w.style.opacity=(t>=wordAt[0]-.15?(on("late")||lit?1:.28):0)*fade;w.classList.toggle("on",lit&&t<(wordAt[i+1]??3.6)+lag)});
   arrive(link,t,3.7,.6,fade);
   // craft that replaces each default once its rule is in the brief
   const ty=card.querySelector(".ty"),full="“Write me a workout plan.”";
