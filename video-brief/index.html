@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Video Brief | Free guide to making AI videos with Claude that don't look AI-made | The Exact Method</title>
+<meta name="description" content="Free guide: make short videos with Claude, Remotion and ElevenLabs. The setup, a six-block brief, three prompts, eight render checks and the anti-slop skills.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#10261C">
+<link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/g1.css?v=11081501">
+<link rel="stylesheet" href="/assets/motion.css?v=11081501">
+<style>
+/* never-list demo */
+#demo{scroll-margin-top:28px}
+.nd{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:start}
+.nd-stage{width:300px}
+.nd-phone{width:300px;aspect-ratio:9/16;border:3px solid var(--forest);border-radius:34px;padding:10px;background:var(--card);scale:calc(var(--ps,1) * var(--st,1));transition:scale .5s var(--e)}
+.nd-phone.settle{--st:1.015}
+.nd-screen{position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;background:var(--paper);font-family:'Archivo',Arial,sans-serif;color:var(--ink);transition:color .45s var(--e)}
+.nd-glow{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,#7b5cff 0%,#2a1a6e 45%,#0d0820 100%);opacity:0;transition:opacity .6s var(--e)}
+.nd[data-s-glow] .nd-glow{opacity:1}
+.nd[data-s-glow] .nd-screen{color:#fff}
+.nd-screen > div:not(.nd-glow):not(.nd-sweep){will-change:transform,opacity}
+.nd-title{position:absolute;left:18px;right:18px;top:46px;font-weight:850;font-size:24px;line-height:1.08;letter-spacing:-.01em;transition:top .55s var(--e),font-size .55s var(--e),letter-spacing .55s var(--e),text-shadow .45s}
+.nd[data-s-top] .nd-title{top:16px;font-size:14px;letter-spacing:.08em}
+.nd[data-s-glow] .nd-title{text-shadow:0 0 18px #b9a6ff,0 0 4px #fff}
+.nd-card{position:absolute;left:18px;right:18px;top:128px;background:var(--forest);color:var(--paper);border-radius:16px;padding:10px 14px;font-family:'Newsreader',Georgia,serif;font-size:16.5px;line-height:1.2;white-space:nowrap;border:2px solid var(--forest);transition:box-shadow .45s var(--e),top .55s var(--e)}
+.nd[data-s-top] .nd-card{top:112px}
+.nd[data-s-shadow] .nd-card{box-shadow:0 18px 30px rgba(0,0,0,.45),0 4px 8px rgba(0,0,0,.3)}
+.nd-tag{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--mint);margin-bottom:2px}
+.nd-chips{position:absolute;left:18px;right:18px;top:222px;display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+.nd-chips span{background:var(--mint);color:var(--forest);border:2px solid var(--forest);border-radius:10px;padding:3px 10px;font-weight:800;font-size:14px;transition:box-shadow .45s var(--e)}
+.nd[data-s-shadow] .nd-chips span{box-shadow:0 10px 18px rgba(0,0,0,.45)}
+.nd-cap{position:absolute;left:14px;right:14px;top:350px;font-weight:850;font-size:20px;line-height:1.25}
+.nd-cap span{display:inline-block;padding:0 3px;margin-right:-2px;border-radius:5px;transition:background .1s linear,color .1s linear,opacity .1s linear}
+.nd-cap span.on{background:var(--mint);color:var(--forest)}
+.nd-link{position:absolute;left:0;right:0;top:432px;height:40px}
+.nd-link > span{position:absolute;left:50%;top:50%;translate:-50% -50%;white-space:nowrap;transition:opacity .4s var(--e),scale .4s var(--e)}
+.nd-link .plain{font-family:Arial,sans-serif;font-size:14px;opacity:0;scale:.96}
+.nd-link .pill{display:inline-flex;align-items:center;gap:6px;background:var(--forest);color:var(--paper);border-radius:999px;padding:7px 16px 7px 10px;font-weight:850;font-size:16px;transition:opacity .4s var(--e),scale .4s var(--e),background .45s,color .45s}
+.nd[data-s-link] .nd-link .plain{opacity:1;scale:1}
+.nd[data-s-link] .nd-link .pill{opacity:0;scale:.92}
+.nd[data-s-glow] .nd-link .pill{background:#fff;color:#1b1040}
+/* the change you just made gets a brief mint ring, so cause and effect read as one */
+.nd-cam{position:absolute;inset:0;transform-origin:50% 40%}
+.mk{background-image:linear-gradient(var(--mint),var(--mint));background-repeat:no-repeat;background-position:0 88%;background-size:0% 40%;padding:0 3px;margin:0 -3px}
+.nd[data-s-glow] .mk{background-size:0% 40%!important}
+.nd-card .ty{display:inline}
+.nd-card .ty-ghost{display:none}
+.nd-card .caret{display:inline-block;width:2px;height:1em;background:var(--mint);vertical-align:-2px;margin-left:1px}
+.nd-rail{position:absolute;left:10px;top:178px;width:2px;height:120px}
+.nd-rail i{display:block;width:2px;height:100%;background:var(--forest);transform-origin:50% 0;scale:1 0;border-radius:1px}
+.nd[data-s-glow] .nd-rail i{background:#b9a6ff}
+.nd-chips span{position:relative}
+.nd-chips span::before{content:"";position:absolute;left:-10px;top:50%;width:8px;height:2px;background:var(--forest);scale:var(--tick,0) 1;transform-origin:0 50%}
+.nd[data-s-glow] .nd-chips span::before{background:#b9a6ff}
+.nd-stage{position:relative}
+.nd-pass{position:absolute;right:-14px;top:-14px;z-index:3;display:inline-flex;align-items:center;gap:6px;background:var(--forest);color:var(--mint);border-radius:999px;padding:6px 12px 6px 10px;font-family:'Archivo',Arial,sans-serif;font-weight:800;font-size:13px;opacity:0;translate:0 8px;scale:.9;transition:opacity .35s var(--e),translate .45s var(--e),scale .45s var(--e);pointer-events:none}
+.nd-pass.on{opacity:1;translate:0 0;scale:1;transition-delay:.35s}
+.nd-screen .peek{outline:2px dashed var(--mint-deep);outline-offset:4px;border-radius:12px}
+.nd[data-s-glow] .nd-screen .peek{outline-color:#b9a6ff}
+.nd-meter i{transition:background .3s,border-color .3s,scale .3s var(--e)}
+.nd-meter i.off{scale:.8}
+.nd-ring{position:absolute;pointer-events:none;border:3px solid var(--mint);border-radius:14px;opacity:0;scale:1.06}
+.nd-ring.go{animation:ndRing .9s var(--e) forwards}
+@keyframes ndRing{0%{opacity:0;scale:1.08}25%{opacity:1;scale:1}100%{opacity:0;scale:1}}
+.nd-sweep{position:absolute;left:0;right:0;top:-30%;height:30%;background:linear-gradient(180deg,rgba(107,224,160,0),rgba(107,224,160,.28),rgba(107,224,160,0));opacity:0;pointer-events:none}
+.nd-sweep.go{animation:ndSweep .9s var(--e)}
+@keyframes ndSweep{0%{opacity:1;top:-30%}100%{opacity:0;top:110%}}
+.nd-ctrl{display:flex;align-items:center;gap:12px;margin-top:14px;padding:0 6px}
+.nd-play{flex:none;width:44px;height:44px;border-radius:22px;border:2px solid var(--forest);background:var(--card);color:var(--forest);display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.nd-play:hover{background:var(--paper-2)}
+.nd-play:focus-visible{outline:3px solid var(--mint-deep);outline-offset:3px}
+.nd-play .i-play{display:none}.nd-play[aria-pressed="true"] .i-play{display:block}.nd-play[aria-pressed="true"] .i-pause{display:none}
+.nd-scrub{flex:1;height:4px;border-radius:2px;background:#D6CFBF;overflow:hidden}
+.nd-scrub i{display:block;height:100%;width:100%;background:var(--forest);transform-origin:0 50%;scale:0 1}
+.nd-side{max-width:540px}
+.nd-label{display:flex;justify-content:space-between;align-items:center;font-family:'Archivo',Arial,sans-serif;font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;gap:12px}
+.nd-count{display:inline-flex;align-items:center;gap:8px;letter-spacing:0;text-transform:none;font-weight:600;font-size:15px;color:var(--ink-soft)}
+.nd-count b{display:inline-block;min-width:1ch;color:#B3352C;font-size:18px;font-variant-numeric:tabular-nums;transition:color .3s}
+.nd-count b.tick{animation:ndTick .35s var(--e)}
+@keyframes ndTick{0%{translate:0 -6px;opacity:0}100%{translate:0 0;opacity:1}}
+.nd-count.zero b{color:#227A4E}
+.nd-meter{display:inline-flex;gap:3px}
+.nd-meter i{width:10px;height:10px;border-radius:3px;border:1.5px solid #B3352C;background:#B3352C;transition:background .3s,border-color .3s}
+.nd-meter i.off{background:transparent;border-color:#9DB3A6}
+.nd-rules{display:flex;flex-direction:column;gap:10px}
+.nd-rule{position:relative;display:flex;align-items:center;gap:14px;min-height:52px;padding:8px 16px;background:var(--card);border:2px solid var(--forest);border-radius:14px;cursor:pointer;font-family:'Archivo',Arial,sans-serif;font-weight:700;font-size:17px;line-height:1.25;transition:background .3s var(--e)}
+.nd-rule:has(input:checked){background:#E3F6EA}
+.nd-rule input{position:absolute;opacity:0;width:1px;height:1px}
+.nd-rule .box{flex:none;width:26px;height:26px;border:2px solid var(--forest);border-radius:8px;position:relative;background:var(--card);transition:background .2s}
+.nd-rule .box::after{content:"";position:absolute;left:7px;top:2px;width:7px;height:13px;border:solid var(--forest);border-width:0 3px 3px 0;rotate:45deg;scale:0;transition:scale .3s var(--e)}
+.nd-rule input:checked + .box{background:var(--mint)}
+.nd-rule input:checked + .box::after{scale:1}
+.nd-rule:has(input:focus-visible){outline:3px solid var(--mint-deep);outline-offset:3px}
+@media (hover:hover){.nd-rule:hover{background:var(--paper-2)}.nd-rule:has(input:checked):hover{background:#D6F1E1}}
+.nd-foot{margin-top:18px;min-height:60px}
+.nd-all,.nd-reset{font-family:'Archivo',Arial,sans-serif;font-weight:700;font-size:16px;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--ink-soft);padding:6px 0;cursor:pointer;min-height:44px}
+.nd-all:focus-visible,.nd-reset:focus-visible{outline:3px solid var(--mint-deep);outline-offset:3px}
+.nd-done p{font-size:18px;margin:0 0 16px;color:var(--ink)}
+.nd-done-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
+.nd-done:not([hidden]){animation:ndIn .55s var(--e)}
+@keyframes ndIn{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media (max-width:899px){
+  .nd{grid-template-columns:1fr;gap:16px;justify-items:center}
+  .nd-stage{width:216px}
+  .nd-phone{--ps:.72;transform-origin:0 0;margin-bottom:-149px}
+  .nd-pass{right:-10px;top:-12px}
+  .nd-side{width:100%}
+  .nd-rules{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .nd-rule{font-size:14.5px;min-height:50px;padding:8px 10px;gap:9px;border-radius:12px}
+  .nd-rule .box{width:22px;height:22px}
+  .nd-rule .box::after{left:6px;top:1px;width:6px;height:12px}
+  .nd-done-row .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.nd *,.nd-phone{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<div class="dark">
+<header class="wrap nav">
+  <a href="/" class="brand"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg> The Exact Method</a>
+  <a class="btn" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get The Video Brief free (opens in a new tab)">Get it free</a>
+</header>
+<main id="top">
+<section class="wrap hero">
+  <div>
+    <div class="kicker">Free guide · 19 pages</div>
+    <h1 class="disp">Make AI videos that don't look <span class="hl">AI-made</span>.</h1>
+    <p class="hero-sub soft">Give Claude a script, voice files and a precise brief. It builds the video in code, renders it and checks every frame. <b>You judge the result.</b></p>
+    <a class="btn btn-lg" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get the free Video Brief (opens in a new tab)">Get the free Video Brief <span class="arr" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></a>
+    <a class="jump" href="#demo">Or watch the slop leave, live <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="stack" aria-hidden="true">
+    <div class="pcard"><div class="t"><span class="n">1</span>The brief</div><p>"Never: nothing covers the presenter's hand. No text over <i class="fill">busy screen text</i>."</p></div>
+    <div class="pcard"><div class="t"><span class="n">2</span>The build</div><p>"Time every cue to the word it belongs to, using the word timings."</p></div>
+    <div class="pcard"><div class="t"><span class="n">3</span>The check</div><p>"Any frame that pops, flashes or goes black..."</p></div>
+  </div>
+</section>
+<section class="wrap" style="padding-bottom:84px"><div class="meta-line">Free PDF · 19 pages · for Claude, Remotion and ElevenLabs</div></section>
+</main>
+</div>
+<div class="marquee" aria-hidden="true"><div class="track"><ul><li><s>drop shadows on every card</s></li><li><s>text that pops in</s></li><li><s>glowing gradients</s></li><li><s>bouncing titles</s></li><li><s>a slide that never moves</s></li><li><s>a sound on every landing</s></li><li><s>"make me a cool video"</s></li></ul><ul><li><s>drop shadows on every card</s></li><li><s>text that pops in</s></li><li><s>glowing gradients</s></li><li><s>bouncing titles</s></li><li><s>a slide that never moves</s></li><li><s>a sound on every landing</s></li><li><s>"make me a cool video"</s></li></ul></div></div>
+<div class="light">
+<section class="wrap sec">
+  <h2 class="disp rise">Every blank gets a default.</h2>
+  <p class="sec-sub soft rise">Ask for "a cool video" and AI fills each blank with its default: the font, the colours, the way text appears, the pacing. Defaults are why AI videos look alike. The brief closes the blanks in six blocks.</p>
+  <div class="steps">
+    <article class="step rise"><div class="top"><span class="n">1</span><h3>Say exactly what you want</h3></div>
+      <p class="q">Goal and viewer, the script line by line, the look in hex codes, timing from the real voice files, a never-list and the export settings.</p>
+      <p class="why">The never-list does the most work. It's where your taste goes.</p></article>
+    <article class="step rise"><div class="top"><span class="n">2</span><h3>Let Claude build it</h3></div>
+      <p class="q">Storyboard first, with a reason for every shot. Then stills of the busiest moments, then one full render.</p>
+      <p class="why">A still shows most problems in seconds. A full render takes minutes.</p></article>
+    <article class="step rise"><div class="top"><span class="n">3</span><h3>Check what you get</h3></div>
+      <p class="q">Eight checks on every render: timing, dead time, overlaps, empty space, the first three seconds muted, phone readability, loudness, resolution.</p>
+      <p class="why">Claude runs most of them before you watch.</p></article>
+  </div>
+</section>
+<section class="wrap sec" style="padding-top:0" id="demo">
+  <div class="kicker rise">See it work</div>
+  <h2 class="disp rise">Tick the never-list. Watch the slop leave.</h2>
+  <p class="sec-sub soft rise">The same five-second Reel, built from the same script. Each rule you tick is one line of a brief, and one default the AI stops reaching for.</p>
+  <div class="nd rise" data-s-shadow data-s-glow data-s-bounce data-s-late data-s-top data-s-link>
+    <div class="nd-stage">
+      <div class="nd-pass" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>Checks passed</div>
+      <div class="nd-phone" aria-hidden="true">
+        <div class="nd-screen">
+          <div class="nd-glow"></div>
+          <div class="nd-cam">
+          <div class="nd-title" data-fx="top glow">3 fixes for <span class="mk">generic</span> AI answers</div>
+          <div class="nd-card" data-fx="shadow bounce"><span class="nd-tag">You type</span><span class="ty">“Write me a workout plan.”</span><span class="ty-ghost" aria-hidden="true">“Write me a workout plan.”</span></div>
+          <div class="nd-rail"><i></i></div>
+          <div class="nd-chips" data-fx="shadow bounce"><span>Your level</span><span>Your schedule</span><span>Your goal</span></div>
+          <div class="nd-cap" data-fx="late"><span>Give</span> <span>it</span> <span>your</span> <span>real</span> <span>limits.</span></div>
+          <div class="nd-link" data-fx="link"><span class="plain">link in bio</span><span class="pill"><svg class="chain" viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="#6BE0A0" stroke-width="5" stroke-linecap="round"><path pathLength="1" d="M20 28 L28 20"/><path pathLength="1" d="M22 14 L26 10 a8 8 0 0 1 12 12 L34 26"/><path pathLength="1" d="M26 34 L22 38 a8 8 0 0 1 -12 -12 L14 22"/></svg>Link in bio</span></div>
+          </div>
+          <div class="nd-sweep"></div>
+        </div>
+      </div>
+      <div class="nd-ctrl">
+        <button type="button" class="nd-play" aria-label="Pause the demo" aria-pressed="false"><svg class="i-pause" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><rect x="5" y="4" width="3.4" height="12" rx="1" fill="currentColor"/><rect x="11.6" y="4" width="3.4" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M6 4.2v11.6a.8.8 0 0 0 1.2.7l9.4-5.8a.8.8 0 0 0 0-1.4L7.2 3.5A.8.8 0 0 0 6 4.2z" fill="currentColor"/></svg></button>
+        <div class="nd-scrub" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+    <div class="nd-side">
+      <div class="nd-label"><span>Never</span><span class="nd-count" aria-live="polite"><span class="nd-meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><b>6</b> <span class="nd-word">AI habits on screen</span></span></div>
+      <div class="nd-rules">
+        <label class="nd-rule"><input type="checkbox" data-k="shadow"><span class="box"></span><span>No drop shadows</span></label>
+        <label class="nd-rule"><input type="checkbox" data-k="glow"><span class="box"></span><span>No glows</span></label>
+        <label class="nd-rule"><input type="checkbox" data-k="bounce"><span class="box"></span><span>No bouncing text</span></label>
+        <label class="nd-rule"><input type="checkbox" data-k="late"><span class="box"></span><span>Captions on the word</span></label>
+        <label class="nd-rule"><input type="checkbox" data-k="top"><span class="box"></span><span>No title parked on top</span></label>
+        <label class="nd-rule"><input type="checkbox" data-k="link"><span class="box"></span><span>No plain "link in bio"</span></label>
+      </div>
+      <div class="nd-foot">
+        <button type="button" class="nd-all">Tick all six</button>
+        <div class="nd-done" hidden>
+          <p>Six rules, one clean Reel. The guide has the full brief, plus the checks that catch what a rule misses.</p>
+          <div class="nd-done-row">
+            <a class="btn" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get the full brief free (opens in a new tab)">Get the full brief, free <span class="arr" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></a>
+            <button type="button" class="nd-reset">Show the slop again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="src rise">A demo built for this page, running in your browser. Tick the boxes in any order.</p>
+</section>
+<section class="wrap sec" style="padding-top:0" id="try">
+  <div class="kicker rise">Try it here</div>
+  <h2 class="disp rise">Start your brief.</h2>
+  <p class="sec-sub soft rise">Fill in the viewer and your never-list. The brief fills itself in, ready to paste into Claude with your script and voice files.</p>
+  <div class="builder rise">
+    <div class="panel">
+      <span class="live">Live</span>
+      <label for="vg">Who it's for</label>
+      <textarea id="vg" class="grow" rows="1" maxlength="160" autocomplete="off" spellcheck="false">people who use ChatGPT for everyday decisions</textarea>
+      <label for="va">What they should do after watching</label>
+      <textarea id="va" class="grow" rows="1" maxlength="160" autocomplete="off" spellcheck="false">get the free PDF from the bio</textarea>
+      <label for="vn">Your never-list</label>
+      <textarea id="vn" class="grow" rows="1" maxlength="400" autocomplete="off" spellcheck="false">no text over busy screen text; no drop shadows or bouncing text</textarea>
+      <div class="meter" aria-live="polite"><div class="meter-bar"><i id="mfill"></i></div><span id="mlabel">Good start</span></div>
+      <p class="hint">Separate rules with a semicolon. Every rule you add is one less default the AI falls back on. This runs in your browser. Nothing you type leaves this page.</p>
+    </div>
+    <div class="outs">
+      <div class="out"><div class="row"><span class="n">1</span><h3>Goal and viewer</h3><button class="copy" data-c="1" type="button">Copy</button></div><p id="o1"></p></div>
+      <div class="out"><div class="row"><span class="n">2</span><h3>Never</h3><button class="copy" data-c="2" type="button">Copy</button></div><p id="o2"></p></div>
+      <div class="out"><div class="row"><span class="n">3</span><h3>Export</h3><button class="copy" data-c="3" type="button">Copy</button></div><p id="o3"></p></div>
+    </div>
+  </div>
+  <p class="src rise">Three of the six blocks. The full template in the guide adds the script, the look and the timing.</p>
+</section>
+<section class="wrap sec" style="padding-top:0">
+  <h2 class="disp rise">The anti-slop toolkit.</h2>
+  <p class="sec-sub soft rise">Skills are instruction sets Claude loads for one job. These are the ones that catch the habits people now spot in a second.</p>
+  <div class="habits">
+    <div class="habit rise"><h3>A banned list</h3><p class="ex"><s>Shadows on every box, glow, text parked at the top</s></p><p class="fix">no-slop-motion: 13 AI-video habits, banned</p></div>
+    <div class="habit rise"><h3>A pop and flash scan</h3><p class="ex"><s>A title that appears in one frame, a cut to black</s></p><p class="fix">Scans every frame of the render</p></div>
+    <div class="habit rise"><h3>A design detector</h3><p class="ex"><s>The default fonts, colours and layouts of AI design</s></p><p class="fix">Impeccable: 62 fixed rules, no API key</p></div>
+    <div class="habit rise"><h3>Frame-by-frame sheets</h3><p class="ex"><s>A small underline that pops in and slips past the scan</s></p><p class="fix">A sheet around every moment something appears</p></div>
+  </div>
+  <p class="src rise">Every skill in the guide comes with its GitHub link, plus the license warnings that matter if you sell anything.</p>
+</section>
+</div>
+<div class="dark">
+<section class="wrap sec">
+  <div class="inside">
+    <img class="cover-img rise" src="/assets/cover-videobrief.webp" alt="Cover of The Video Brief free guide" width="640" height="828" loading="lazy" decoding="async">
+    <div>
+      <h2 class="disp rise">Nineteen pages. Set up once.</h2>
+      <ul class="list rise">
+        <li>The setup: what you need, what it costs and a one-time setup prompt.</li>
+        <li>ElevenLabs connected to Claude with a restricted key, and the license explained in plain words.</li>
+        <li>The six-block brief, three prompts and the eight checks.</li>
+        <li>The core and anti-slop skills, with links and license notes, plus a plain-text copy of every prompt.</li>
+      </ul>
+      <a class="btn" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get the free Video Brief (opens in a new tab)">Get the free Video Brief <span class="arr" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></a>
+    </div>
+  </div>
+</section>
+</div>
+<div class="light">
+<section class="wrap sec">
+  <h2 class="disp rise">Before you download.</h2>
+  <div class="faq"><details class="rise"><summary>Do I need to know how to code?</summary><p>No. Claude writes and runs the code. You describe the video precisely and judge the result.</p></details><details class="rise"><summary>What do I need?</summary><p>Claude on a Pro, Max or Ultra plan with Claude Code, plus ElevenLabs for the voice. Claude installs Remotion and ffmpeg itself.</p></details><details class="rise"><summary>Can I use the free ElevenLabs plan?</summary><p>Not for videos that promote anything you sell. The free plan has no commercial license. The Starter plan includes it for $6 a month.</p></details><details class="rise"><summary>Will my videos go viral?</summary><p>The guide doesn't promise views. A precise brief makes a better video, and the checks catch the habits that make it look AI-made.</p></details></div>
+</section>
+</div>
+<div class="dark">
+<section class="wrap sec">
+  <h2 class="disp rise" style="margin-bottom:36px">More from The Exact Method</h2>
+  <div class="more"><a class="rise" href="/narrowing/"><img src="/assets/cover-narrowing.webp" alt="" width="640" height="828" loading="lazy" decoding="async"><div><div class="k2">Free guide</div><h3>The Narrowing Method</h3><p>Three prompts that turn a generic AI answer into one starting point that fits you.</p></div></a><a class="rise" href="/plain-voice/"><img src="/assets/cover-plainvoice.webp" alt="" width="640" height="828" loading="lazy" decoding="async"><div><div class="k2">Free guide</div><h3>Plain Voice</h3><p>Custom instructions that cut the habits that make AI writing easy to spot.</p></div></a><a class="rise" href="/#pricing"><img src="/assets/cover-exact.webp" alt="" width="640" height="828" loading="lazy" decoding="async"><div><div class="k2">The complete system</div><h3>The Exact Method</h3><p>58 pages: narrowing, one action per step, picking the right tool, chaining tools and checking answers.</p></div></a></div>
+</section>
+<section class="wrap sec final">
+  <div class="box">
+    <h2 class="disp rise">Write the brief. Check the render.</h2>
+    <div><a class="btn btn-lg" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get it free (opens in a new tab)">Get it free <span class="arr" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></a><div class="note">Free digital download, delivered instantly.</div></div>
+  </div>
+</section>
+<footer class="wrap foot">
+  <div class="foot-policy">Purchase policy: all sales are final. Every tier is a digital download delivered immediately on purchase, so refunds aren't offered.</div>
+  <div class="foot-links"><span>© 2026 The Exact Method</span><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms and Conditions</a></div>
+</footer>
+</div>
+<!-- CONSENT-START -->
+  <aside class="consent-banner consent-overlay" id="consent-banner" aria-label="Privacy notice">
+    <div class="consent-box">
+      <p class="consent-text">We use essential browser storage to remember your choice. Checkout and download services may process the information needed to complete purchases and deliver files. Read our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms and Conditions</a>.</p>
+      <button type="button" class="consent-btn" id="consent-accept">I Agree</button>
+    </div>
+  </aside>
+<!-- CONSENT-END -->
+  <script>
+    (() => {
+      const banner = document.querySelector("#consent-banner");
+      const acceptButton = document.querySelector("#consent-accept");
+      const storageKey = "theExactMethodConsent";
+
+      if (!banner || !acceptButton) {
+        return;
+      }
+
+      try {
+        if (window.localStorage.getItem(storageKey) === "accepted") {
+          banner.hidden = true;
+        }
+      } catch (error) {
+        console.error("Unable to read the consent preference from local storage.", error);
+      }
+
+      acceptButton.addEventListener("click", () => {
+        try {
+          window.localStorage.setItem(storageKey, "accepted");
+        } catch (error) {
+          console.error("Unable to save the consent preference to local storage.", error);
+        }
+
+        banner.classList.add("is-dismissed");
+        window.setTimeout(() => {
+          banner.hidden = true;
+        }, 250);
+      });
+    })();
+  </script>
+<script>(()=>{const g=document.getElementById("vg"),a=document.getElementById("va"),n=document.getElementById("vn");if(!g)return;
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const v=(el,ph)=>el.value.trim().replace(/[.;\s]+$/,"")||ph;
+const T=()=>[`Goal and viewer. Who it's for: ${v(g,"[who it's for]")}. What they should do after watching: ${v(a,"[the action]")}.`,
+`Never. ${v(n,"[your rules]")}.`,
+`Export. 1080x1920, 30 fps, voice at about -14 LUFS, peaks under -1 dB.`];
+const draw=()=>{document.getElementById("o1").innerHTML=`"Goal and viewer. Who it's for: <mark>${esc(v(g,"[who it's for]"))}</mark>. What they should do after watching: <mark>${esc(v(a,"[the action]"))}</mark>."`;
+document.getElementById("o2").innerHTML=`"Never. <mark>${esc(v(n,"[your rules]"))}</mark>."`;
+document.getElementById("o3").innerHTML=`"Export. 1080x1920, 30 fps, voice at about -14 LUFS, peaks under -1 dB."`;};
+const grow=el=>{const cs=getComputedStyle(el);el.style.height="auto";el.style.height=(el.scrollHeight+parseFloat(cs.borderTopWidth)+parseFloat(cs.borderBottomWidth))+"px"};
+const meter=()=>{const r=n.value.split(/;|\n/).map(x=>x.trim()).filter(x=>x.length>3).length;
+document.getElementById("mfill").style.width=Math.min(100,r*25)+"%";
+document.getElementById("mlabel").textContent=!r?"Add your first rule":r<2?"Add one more rule":r<4?"Good start":"Specific";
+document.getElementById("mfill").dataset.lvl=!r?0:r<2?1:r<4?2:3;};
+[g,a,n].forEach(el=>{el.addEventListener("input",()=>{grow(el);draw();meter()});el.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault()}});grow(el)});
+window.addEventListener("resize",()=>[g,a,n].forEach(grow));draw();meter();
+document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{const t=T()[+b.dataset.c-1];
+try{await navigator.clipboard.writeText(t)}catch(e){const x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();try{document.execCommand("copy")}catch(_){}x.remove()}
+b.textContent="Copied";b.classList.add("done");setTimeout(()=>{b.textContent="Copy";b.classList.remove("done")},1600)}));})();</script>
+<script>(()=>{const d=document.querySelector(".nd");if(!d)return;
+const $=s=>d.querySelector(s),$$=s=>[...d.querySelectorAll(s)];
+const phone=$(".nd-phone"),screen=$(".nd-screen"),title=$(".nd-title"),card=$(".nd-card"),chips=$$(".nd-chips span"),words=$$(".nd-cap span"),link=$(".nd-link"),bar=$(".nd-scrub i"),sweep=$(".nd-sweep");
+const cnt=$(".nd-count"),num=cnt.querySelector("b"),word=$(".nd-word"),meter=$$(".nd-meter i"),done=$(".nd-done"),boxes=$$(".nd-rule input"),play=$(".nd-play"),all=$(".nd-all");
+const L=5.4,rmq=matchMedia("(prefers-reduced-motion: reduce)");
+const on=k=>d.hasAttribute("data-s-"+k);
+const cl=x=>Math.max(0,Math.min(1,x));
+const expo=x=>x>=1?1:1-Math.pow(2,-10*x);
+const back=x=>{const c=2.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const parts=[title,card,...chips,link];const mk=$(".mk"),rail=$(".nd-rail i"),cam=$(".nd-cam"),chainP=$$(".nd-link .chain path");
+// clean: a soft 14px rise; slop: a drop-in with overshoot, the "bounce" the rule bans
+const arrive=(el,t,at,dur,fade)=>{const p=cl((t-at)/dur);let o,tr;
+  if(on("bounce")){const b=p<=0?0:back(p);o=p>0?1:0;tr=`translateY(${(1-b)*-60}px) scale(${.6+.4*b})`;}
+  else{const e=expo(p);o=e;tr=`translateY(${(1-e)*14}px)`;}
+  el.style.opacity=o*fade;el.style.transform=tr;};
+const wordAt=[2.2,2.45,2.65,2.9,3.15];
+let t=0,last=null,paused=false,visible=true,raf=0,easeUntil=0;
+const W={shadow:0,glow:0,bounce:0,late:0,top:0,link:0};const ok=k=>!on(k);
+const stepW=dt=>{let moving=false;for(const k in W){const g=ok(k)?1:0,d0=g-W[k];if(Math.abs(d0)>.002){W[k]+=d0*Math.min(1,dt*7);moving=true}else W[k]=g}return moving};
+const draw=()=>{const fade=1-cl((t-(L-.4))/.4);
+  arrive(title,t,.15,.6,fade);arrive(card,t,.6,.6,fade);chips.forEach((c,i)=>arrive(c,t,1.2+i*.25,.5,fade));
+  const lag=on("late")?.5:0;
+  words.forEach((w,i)=>{const lit=t>=wordAt[i]+lag;w.style.opacity=(t>=wordAt[0]-.15?(on("late")||lit?1:.28):0)*fade;w.classList.toggle("on",lit&&t<(wordAt[i+1]??3.6)+lag)});
+  arrive(link,t,3.7,.6,fade);
+  // craft that replaces each default once its rule is in the brief
+  const ty=card.querySelector(".ty"),full="“Write me a workout plan.”";
+  if(!on("bounce")){const n=Math.round(cl((t-.75)/.75)*full.length);ty.innerHTML=full.slice(0,n)+(n<full.length&&t>.6?'<span class="caret"></span>':"")+'<span style="visibility:hidden">'+full.slice(n)+'</span>';}else ty.textContent=full;
+  mk.style.backgroundSize=`${W.glow*expo(cl((t-.9)/.45))*100}% 40%`;
+  const rp=cl((t-1.1)/.9);rail.style.scale=`1 ${expo(rp)*W.shadow}`;rail.style.opacity=W.shadow;chips.forEach((c,i)=>c.style.setProperty("--tick",W.shadow*expo(cl((t-1.3-i*.25)/.3))));
+  cam.style.scale=String(1+.045*(t/L)*W.top);
+  chainP.forEach((pth,i)=>{pth.style.strokeDasharray="1";pth.style.strokeDashoffset=String((1-expo(cl((t-3.85-i*.08)/.45)))*W.link)});
+  bar.style.scale=`${t/L} 1`;};
+const loop=now=>{raf=0;const dt=last===null?0:(now-last)/1000;if(!paused)t=(t+dt)%L;last=now;const moving=stepW(rmq.matches?99:dt);draw();if(((!paused&&visible)||moving)&&!rmq.matches)raf=requestAnimationFrame(loop);};
+const start=(force)=>{if(!raf&&(force||(!paused&&visible))&&!rmq.matches){last=null;raf=requestAnimationFrame(loop);}};
+const stop=()=>{if(raf)cancelAnimationFrame(raf);raf=0;};
+for(const k in W)W[k]=ok(k)?1:0;
+if(rmq.matches){t=4.6;paused=true;play.setAttribute("aria-pressed","true");play.setAttribute("aria-label","Play the demo");}
+draw();
+// only animate while on screen
+new IntersectionObserver(es=>{visible=es[0].isIntersecting;visible?start():stop();},{threshold:.15}).observe(phone);
+play.addEventListener("click",()=>{paused=!paused;play.setAttribute("aria-pressed",String(paused));play.setAttribute("aria-label",paused?"Play the demo":"Pause the demo");paused?stop():start();});
+// cause and effect: ring the element the rule just changed
+const ring=el=>{const r=document.createElement("div");r.className="nd-ring";const a=el.getBoundingClientRect(),s=screen.getBoundingClientRect(),k=s.width/screen.offsetWidth;
+  r.style.left=((a.left-s.left)/k-6)+"px";r.style.top=((a.top-s.top)/k-6)+"px";r.style.width=(a.width/k+12)+"px";r.style.height=(a.height/k+12)+"px";
+  screen.appendChild(r);requestAnimationFrame(()=>r.classList.add("go"));setTimeout(()=>r.remove(),1000);};
+const pass=$(".nd-pass");
+const peek=(k,v)=>(target[k]||[]).forEach(el=>el.classList.toggle('peek',v));
+boxes.forEach(b=>{const r=b.closest('.nd-rule');r.addEventListener('mouseenter',()=>peek(b.dataset.k,true));r.addEventListener('mouseleave',()=>peek(b.dataset.k,false));b.addEventListener('focus',()=>peek(b.dataset.k,true));b.addEventListener('blur',()=>peek(b.dataset.k,false));});
+const target={shadow:[card,$(".nd-chips")],glow:[title],bounce:[card],late:[$(".nd-cap")],top:[title],link:[$(".nd-link .pill")]};
+const sync=(changed,quiet)=>{let n=0;boxes.forEach(b=>{const k=b.dataset.k;if(b.checked)d.removeAttribute("data-s-"+k);else{d.setAttribute("data-s-"+k,"");n++}});
+  if(num.textContent!==String(n)){num.textContent=n;num.classList.remove("tick");void num.offsetWidth;num.classList.add("tick");}
+  word.textContent=n===1?"AI habit on screen":"AI habits on screen";cnt.classList.toggle("zero",n===0);
+  meter.forEach((m,i)=>m.classList.toggle("off",i>=n));
+  done.hidden=n!==0;all.hidden=n===0;
+  if(changed&&!quiet&&!rmq.matches){setTimeout(()=>{const vis=(target[changed]||[]).filter(el=>{const o=+getComputedStyle(el.closest('.nd-screen > div')||el).opacity;return o>.5&&+getComputedStyle(el).opacity>.5});if(vis.length)vis.forEach(ring);else{sweep.classList.remove('go');void sweep.offsetWidth;sweep.classList.add('go');}},120);
+    if(n===0){sweep.classList.remove("go");void sweep.offsetWidth;sweep.classList.add("go");phone.classList.add("settle");setTimeout(()=>phone.classList.remove("settle"),500);}}
+  if(rmq.matches){stepW(99);draw();}else start(true);
+  if(changed&&navigator.vibrate&&matchMedia('(pointer:coarse)').matches){try{navigator.vibrate(8)}catch(e){}}
+  pass.classList.toggle('on',n===0);};
+boxes.forEach(b=>b.addEventListener("change",()=>sync(b.checked?b.dataset.k:null)));
+all.addEventListener("click",()=>{const left=boxes.filter(b=>!b.checked);left.forEach((b,i)=>setTimeout(()=>{b.checked=true;sync(i===left.length-1?b.dataset.k:null,i!==left.length-1)},rmq.matches?0:i*160));});
+$(".nd-reset").addEventListener("click",()=>{boxes.forEach(b=>b.checked=false);sync(null);boxes[0].focus({preventScroll:true});});
+sync(null);})();</script>
+
+<script src="/assets/motion.js?v=11081501" defer></script>
+</body>
+</html>
