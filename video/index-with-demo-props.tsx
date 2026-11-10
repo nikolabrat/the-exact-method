@@ -1,8 +1,10 @@
 import React from 'react';
 import {Composition, registerRoot} from 'remotion';
+const C1 = {mint: '#6BE0A0', gold: '#F2B632', sage: '#9CC9B0', paper: '#ECE8DD'};
 import {PileUp, PileUpProps, T} from './PileUp';
 import {PhoneFilm, PhoneFilmProps, PT} from './PhoneFilm';
 import {PileUp2, PileUp2Props, T2} from './PileUp2';
+import {PhoneFilm2, PhoneFilm2Props, PF} from './PhoneFilm2';
 
 // Demo content = V-5. The 13 labels are the 13 "Banned by default" bullets in
 // github.com/ferndesk/no-slop-motion SKILL.md, shortened.
@@ -89,8 +91,44 @@ export const pile2: PileUp2Props = {
   endWord: 'The Exact Method', endLine: ['The Video Brief.', 'Free PDF.'], endPills: ['link in bio', 'Get the PDF →'],
 };
 
+// Demo = The Narrowing Method. The 25 ideas and the 25 → 8 → 1 flow are from the approved phone
+// reference; the limit counts per line (cut 9 / 5 / 3) are demo numbers: replace with a real run.
+const w = (t: string, a?: 1 | 2) => ({t, a});
+export const phone2: PhoneFilm2Props = {
+  h: [
+    [[w('AI'), w('that'), w('narrows')], [w('25 ideas', 1)], [w('to'), w('one.')]],
+    [[w('It'), w('takes')], [w('three', 1), w('prompts.')]],
+    [[w('Your'), w('limits')], [w('do the work.', 1)]],
+    [[w('Then'), w('you')], [w('pick one.', 2)]],
+    [[w('Less'), w('guessing.', 1)]],
+    [[w('The'), w('Narrowing')], [w('Method.', 1)]],
+  ],
+  phone: {app: 'Chat', sub: 'your AI tool', ask: 'Give me business ideas I could start', intro: 'Here are 25 ideas to consider:',
+    list: ['Pet sitting and dog walking', 'Online tutoring', 'Etsy print shop', 'Bookkeeping for cafés', 'Social media help', 'Meal prep', 'Bike repair',
+      'Course creation', 'Virtual assistant', 'House cleaning', 'Dropshipping', 'Photo editing', 'Plant care', 'Resume writing', 'Language lessons',
+      'Garden care', 'Event setup', 'Pet grooming', 'Moving help', 'Phone repair', 'Baby-sitting', 'Translation', 'Window cleaning', 'Car washing', 'Errand running']},
+  result: {kicker: 'Prompt 3 · pick one', title: 'Start here', rows: [['Idea', 'Pet sitting and dog walking'], ['Fits', '10 h a week · €0 · beginner']], badge: 'picked'},
+  toast: {avatars: ['P1', 'P2', 'P3'], text: '25 ideas → 1 to start'},
+  helpers: [
+    {init: 'P1', title: 'Go broad', sub: 'A long list of real options', tone: C1.mint},
+    {init: 'P2', title: 'Add your limits', sub: 'Time, budget, skills', tone: C1.gold},
+    {init: 'P3', title: 'Pick one', sub: 'And say why', tone: C1.sage},
+    {init: 'You', title: 'Make the call', sub: 'It is a suggestion to test', tone: C1.paper},
+  ],
+  notif: {app: 'Your AI tool', title: 'Prompt 3', body: 'Start with pet sitting and dog walking. It fits your 10 hours a week.'},
+  thread: {title: 'Your limits', sub: 'none added yet', counter: 'limits in', message: 'I have 10 hours a week, €0 to start, and I am a beginner.',
+    joins: [{init: 'h', text: '10 h a week — cut 9 ideas', tone: C1.mint}, {init: '€', text: '€0 to start — cut 5 ideas', tone: C1.gold}, {init: 'B', text: 'beginner — cut 3 ideas', tone: C1.sage}]},
+  listCard: {title: 'Shortlist · 8 left', rows: [['01', 'Pet sitting and dog walking'], ['02', 'Online tutoring'], ['03', 'Plant care']], chip: 'fits'},
+  fan: [{label: 'Pet sitting', icon: 'paw'}, {label: 'Tutoring', icon: 'book'}, {label: 'Bike repair', icon: 'bike'}],
+  check: {title: 'First week', items: ['Tell 5 neighbours', 'Post in the local group', 'Set a price', 'Book the first walk'], button: 'Start this week', done: 'Started'},
+  benefits: ['One idea that fits your time', 'Nothing to buy first', 'Your limits, not a guru’s', 'You make the call'],
+  foot: ['More time to', 'actually start.'],
+  end: {chip: 'Free PDF · link in bio'},
+};
+
 const Root: React.FC = () => (
   <>
+  <Composition id="PhoneFilm2" component={PhoneFilm2 as any} durationInFrames={PF.total} fps={30} width={1080} height={1920} defaultProps={phone2} />
   <Composition id="PileUp2" component={PileUp2 as any} durationInFrames={T2.total} fps={30} width={1080} height={1920} defaultProps={pile2} />
   <Composition id="PhoneFilm" component={PhoneFilm as any} durationInFrames={PT.total} fps={30} width={1080} height={1920} defaultProps={phoneDemo} />
   <Composition id="PileUp" component={PileUp as any} durationInFrames={T.total} fps={30} width={1080} height={1920} defaultProps={demo} />
