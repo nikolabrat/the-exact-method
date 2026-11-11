@@ -38,7 +38,7 @@ Script:
 9. It's someone else's code, so read it before you install.
 10. The Video Brief, a free PDF, lists it with the rest of the toolkit.
 11. Get it before your next AI video. Link in bio.
-Assets: logo mark video/tem-mark.svg; repo screen recording of github.com/ferndesk/no-slop-motion is in the chat attachments of the 10 Nov cloud chat (crop to the page only). Scan rows in the live-scan card must be real pop-scan output.
+Assets: logo mark video/tem-mark.svg; screen recording of github.com/ferndesk/no-slop-motion at assets/no-slop-motion-repo.mp4 (crop to the page only, the browser tabs must not show). Scan rows in the live-scan card must be real pop-scan output.
 
 ## Sun 15 Nov · N-6 · The cheapest plan that wasn't
 Format: Brick & Sage, Proof. Guide: The Narrowing Method. Needs a real AI run with web search on, done on Thu 12 Nov; the final script was lost in a workspace reset, so write it from that run.
