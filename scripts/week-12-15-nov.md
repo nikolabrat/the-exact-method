@@ -1,5 +1,7 @@
 # Reels 12–15 Nov 2026 (build each on its posting day, post at 20:00 Sofia)
 
+Update 13 Nov: N-2 posted 12 Nov. Fri 13 skipped (exam). W-6 → Sat 14, V-5 → Sun 15, N-6 → Fri 27 Nov (real run 25 Nov).
+
 Every script gets the full hook and script audit before recording (instagram-agent skills + content-principles). Voices: ElevenLabs (key in the workspace settings file; voices Sage / Brick, eleven_v4, stability 0.5, similarity 0.75, save word timings). Loudness -14 LUFS, 1080x1920, 30 fps, last frame ~1 s after the last word, video loops from the last line to the first. Apply the no-slop-motion banned list. Instagram via Composio: the container expires after 24 h, so create it on the posting day, then publish at 20:00 and read the caption back.
 
 Account: Instagram @theexactmethod (ig user id 17841445152046754). Media hosting: push mp4 + cover to the ig-media branch and use the raw.githubusercontent link.
@@ -20,11 +22,11 @@ Script (one line per voice file):
 11. So before you spend anything: (loops back to line 1)
 Compare its watch time with W-2, V-1 and P-1.
 
-## Fri 13 Nov · W-6 · The resume that says "spearheaded"
+## Sat 14 Nov (moved from Fri 13) · W-6 · The resume that says "spearheaded"
 Format: Sage walkthrough (index-card design, Sage alone in the corner). Guide: 10 Zero-Ambiguity Prompts ($17); end card for the $17 pack. Teach.
 The final script was lost in a workspace reset. Write it fresh from the pack's prompt 10 (tailoring a resume to one specific job), then run the full audit. Walkthrough rules: longer than 45 s, smooth transitions, creative first 2–3 s, designed "link in bio", nothing over Sage's hand, no empty stretches.
 
-## Sat 14 Nov · V-5 · The skill I install first
+## Sun 15 Nov (moved from Sat 14) · V-5 · The skill I install first
 Format: pile-up → one (template video/PileUp2Template.tsx, reference video/PileUp-reference.mp4) for the first section, then the real proof. Guide: The Video Brief (free PDF). Hook score 80. About 36 s.
 Script:
 1. Install this before your next AI video.
@@ -40,7 +42,7 @@ Script:
 11. Get it before your next AI video. Link in bio.
 Assets: logo mark video/tem-mark.svg; screen recording of github.com/ferndesk/no-slop-motion at assets/no-slop-motion-repo.mp4 (crop to the page only, the browser tabs must not show). Scan rows in the live-scan card must be real pop-scan output.
 
-## Sun 15 Nov · N-6 · The cheapest plan that wasn't
+## Fri 27 Nov (moved from Sun 15) · N-6 · The cheapest plan that wasn't
 Format: Brick & Sage, Proof. Guide: The Narrowing Method. Needs a real AI run with web search on, done on Thu 12 Nov; the final script was lost in a workspace reset, so write it from that run.
 Rules from the stress test: don't present the word "research" as a switch; say web search has to be on; give the country, data needs, calls, roaming and contract preferences; ask for official provider pages with date-stamped prices and open them to check; no promise that the next plan "will be the right one" (end with "at least you'll compare the real prices and limits before you switch"). Target 35–45 s.
 If usage is tight on Friday night (under ~20% left), move N-6 to next week.
