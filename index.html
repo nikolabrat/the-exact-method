@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#10261C">
-<meta name="description" content="A method for getting precise, reliable results from AI every time.">
+<meta name="description" content="A step-by-step system for getting specific, checkable output from ChatGPT, Claude and Gemini, for your business, content or side project.">
 <link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ===== FONTS (self-hosted) ===== */
@@ -235,6 +235,26 @@ h2.big{font-size:clamp(40px,5.4vw,72px);line-height:.98}
 .tier-buy{flex:0 1 280px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .price-big{font-size:52px;line-height:.9}
 .tier-buy .btn{font-size:16px;padding:14px 22px}
+
+/* bundle row */
+.bundle{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;margin-top:24px;padding:26px 28px;background:#DDF3E5;border:3px solid #10261C;border-radius:20px;box-shadow:6px 6px 0 #10261C}
+.bundle-txt{flex:1 1 320px;min-width:0}
+.bundle-name{font-size:28px;line-height:1.05;color:#10261C}
+.bundle-sub{margin-top:8px;font-family:'Archivo',Arial,sans-serif;font-size:16px;color:#2E4A3C}
+.bundle-sub strong{color:#10261C;font-weight:800}
+.bundle-was{text-decoration:line-through;color:#4E5E55}
+.bundle-btn{font-size:16px;padding:14px 22px}
+.hero-free{color:var(--text);border-bottom:1px solid #5A5F52;padding-bottom:1px}
+.hero-free:hover{border-color:var(--text)}
+
+/* ===== MADE BY ===== */
+.maker{border-top:1px solid var(--line-soft)}
+.maker .wrap{display:flex;flex-wrap:wrap;gap:32px 56px;align-items:flex-start;padding-top:104px;padding-bottom:104px}
+.maker-mark{flex:none;width:120px;height:120px}
+.maker-body{flex:1 1 480px;min-width:0;max-width:720px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.maker-body h2{font-size:clamp(36px,4.6vw,56px);line-height:1}
+.maker-body p{font-size:21px;line-height:1.55;color:var(--muted)}
+@media (max-width:899px){.maker .wrap{padding-top:64px;padding-bottom:64px}.maker-mark{width:64px;height:64px}.bundle{padding:22px 20px}.bundle-btn{width:100%}}
 
 /* ===== FREE GUIDES ===== */
 .free{background:var(--surface);border-top:1px solid var(--line-soft)}
@@ -490,15 +510,14 @@ footer .wrap{padding-bottom:56px}
 <!-- ===== HERO ===== -->
 <section class="wrap hero">
   <div class="hero-text">
-    <h1 class="disp">Get AI answers that <span class="accent">fit</span> your situation.</h1>
-    <p class="hero-sub">A 76-page system for getting answers you can actually use, and check, from ChatGPT, Claude and Gemini.</p>
+    <h1 class="disp">Get AI output that <span class="accent">fits</span> what you're building.</h1>
+    <p class="hero-sub">A step-by-step system for getting specific work you can check from ChatGPT, Claude and Gemini, for your business, your content or your side project.</p>
     <div class="facts"><div class="fact"><div class="n disp">76</div><div class="l">pages</div></div><div class="fact"><div class="n disp">8</div><div class="l">chapters</div></div><div class="fact"><div class="n disp">Sources</div><div class="l">listed at the end</div></div></div>
     <div class="hero-actions">
-      <a class="btn btn-accent btn-lg" href="#free">Get the free guides</a>
-      <a class="btn btn-outline btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
+      <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
       <a class="packs-link" href="#packs" aria-label="See the two smaller packs, from $17">Or start with a smaller pack <span class="pk">$17</span><span class="pk">$37</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></a>
     </div>
-    <div class="hero-note">The free guides are instant PDFs. The complete system is $127 for the first 30 buyers, then $697.</div>
+    <div class="hero-note">One-time payment, instant PDF. Not sure yet? <a class="hero-free" href="#free">Start with a free guide</a>.</div>
   </div>
   <div class="stack" aria-hidden="true">
     <svg class="stack-rings" viewBox="0 0 560 540" fill="none" stroke="#6BE0A0" stroke-width="1.5"><circle cx="440" cy="190" r="290" stroke-opacity=".1"/><circle cx="440" cy="190" r="230" stroke-opacity=".18"/><circle cx="440" cy="190" r="170" stroke-opacity=".3"/><circle cx="440" cy="190" r="110" stroke-opacity=".5"/><circle cx="440" cy="190" r="50" stroke-opacity=".9"/><circle cx="440" cy="190" r="5" fill="#6BE0A0" stroke="none"/></svg>
@@ -518,7 +537,7 @@ footer .wrap{padding-bottom:56px}
         <div class="strip-sub">The complete system. 76 pages, 8 chapters, sources listed.</div>
       </div>
     </div>
-    <div class="strip-price"><div class="disp">$127</div><span>launch price, first 30 buyers. Then $697.</span></div>
+    <div class="strip-price"><div class="disp">$127</div><span>one-time payment, yours to keep.</span></div>
     <div class="strip-buy">
       <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
       <div class="note">PDF · one-time payment · instant download</div>
@@ -644,7 +663,7 @@ footer .wrap{padding-bottom:56px}
         <div class="strip-sub">The complete system. 76 pages, 8 chapters, sources listed.</div>
       </div>
     </div>
-    <div class="strip-price"><div class="disp">$127</div><span>launch price, first 30 buyers. Then $697.</span></div>
+    <div class="strip-price"><div class="disp">$127</div><span>one-time payment, yours to keep.</span></div>
     <div class="strip-buy">
       <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
       <div class="note">PDF · one-time payment · instant download</div>
@@ -713,6 +732,7 @@ footer .wrap{padding-bottom:56px}
   <div class="wrap">
     <div class="fit-col fit-yes">
       <h3 class="disp">This is for you if</h3>
+        <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You use AI to build something: a business, content or a side project.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You use AI regularly and keep rewriting your requests.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>Your answers are almost right, and almost isn't enough.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="3.2" fill="#6BE0A0"/></svg><span>You're tired of trying random prompts and want a workflow you can repeat.</span></div>
@@ -724,6 +744,20 @@ footer .wrap{padding-bottom:56px}
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You rarely use AI.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want live coaching or a video course.</span></div>
         <div class="fit-row"><svg viewBox="0 0 26 26" fill="none" stroke="#6B7062" stroke-width="2" aria-hidden="true"><circle cx="13" cy="13" r="11"/><line x1="8.5" y1="8.5" x2="17.5" y2="17.5"/><line x1="17.5" y1="8.5" x2="8.5" y2="17.5"/></svg><span>You want a guaranteed result by a date.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MADE BY ===== -->
+<section class="maker" id="maker">
+  <div class="wrap">
+    <svg class="maker-mark" viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.4" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg>
+    <div class="maker-body">
+      <div class="kicker">Who made this</div>
+      <h2 class="disp">Made by Nikola, using the method itself.</h2>
+      <p>I'm 19, and I use AI to build this whole project. Since November, the Reels on Instagram are made without opening a video editor: Claude writes the code, I watch every render and write back exactly what's wrong.</p>
+      <p>The Exact Method is the system I follow to get that kind of specific output instead of generic answers. The Reels are the proof, made in public, several a week.</p>
+      <a class="textlink" href="https://www.instagram.com/theexactmethod/" target="_blank" rel="noopener">See the Reels on @theexactmethod <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -746,9 +780,9 @@ footer .wrap{padding-bottom:56px}
         <div><div class="flag-inside-label">Inside</div><div class="flag-chaps"><div>Mindset Shift</div><div>Precision Prompting</div><div>Tool Selection</div><div>Chaining AI Tools</div><div>Verifying What AI Tells You</div><div>Applied Examples</div><div>Making Videos With Claude</div><div>Connecting Claude to Your Apps</div></div></div>
       </div>
       <div class="flag-buy">
-        <div class="flag-label">Launch price</div>
+        <div class="flag-label">One payment</div>
         <div class="flag-price disp">$127</div>
-        <div class="flag-early">The first 30 buyers pay $127. After that, the price is $697.</div>
+        <div class="flag-early">Both smaller packs are already inside.</div>
         <a class="btn btn-dark btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
         <div class="flag-note">PDF · one-time payment · instant download. All sales final.</div>
         <div class="flag-spec"><div><span>Format</span><span>PDF, opens on any device</span></div><div><span>Delivery</span><span>Instant download</span></div><div><span>Includes</span><span>Sources list for outside figures</span></div><div><span>Access</span><span>One-time payment, yours to keep</span></div><div><span>Checkout</span><span>Secure checkout by Gumroad</span></div></div>
@@ -762,7 +796,7 @@ footer .wrap{padding-bottom:56px}
       <div class="tier">
         <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">10 Prompts</div></div>
         <div class="tier-body">
-          <div class="kicker">Prompt pack, 7&nbsp;pages</div>
+          <div class="kicker">Prompt pack · ready to copy</div>
           <h4 class="item-name disp">10 Zero-Ambiguity Prompts</h4>
           <p class="item-desc">Ten ready-to-copy prompts, each already structured so the AI can't fill the gaps with guesswork.</p>
         </div>
@@ -775,7 +809,7 @@ footer .wrap{padding-bottom:56px}
       <div class="tier">
         <div class="mini"><svg viewBox="0 0 26 26" fill="none" stroke="#6BE0A0" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#6BE0A0"/></svg><div class="title">Specialist</div></div>
         <div class="tier-body">
-          <div class="kicker">Tool guide, 8&nbsp;pages</div>
+          <div class="kicker">Tool guide · which AI for which job</div>
           <h4 class="item-name disp">The Specialist Method</h4>
           <p class="item-desc">How to choose the right AI tool for a task, and combine more than one on bigger projects.</p>
         </div>
@@ -785,6 +819,13 @@ footer .wrap{padding-bottom:56px}
           <div class="note">Instant digital download. All sales final.</div>
         </div>
       </div>
+      </div>
+      <div class="bundle">
+        <div class="bundle-txt">
+          <div class="bundle-name disp">Want both? Get the two packs together.</div>
+          <div class="bundle-sub"><span class="bundle-was">$54</span> <strong>$44</strong> · you save $10 on buying them one by one.</div>
+        </div>
+        <a class="btn btn-dark bundle-btn" href="https://thriftwellstudio.gumroad.com/l/both-packs" target="_blank" rel="noopener" aria-label="Get both packs as a bundle for $44 (opens in a new tab)">Or get both packs · $44</a>
       </div>
     </div>
   </div>
@@ -799,7 +840,7 @@ footer .wrap{padding-bottom:56px}
       <div class="free-item">
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Narrowing Method</div></div>
         <div class="free-body">
-          <div class="kicker">Free, 5 pages</div>
+          <div class="kicker">Free guide · three prompts</div>
           <h3 class="item-name disp"><a class="name-link" href="/narrowing/">The Narrowing Method</a></h3>
           <p class="item-desc">Three prompts that stop AI from giving you generic, could-apply-to-anyone answers.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/bwydhs" target="_blank" rel="noopener" aria-label="Get The Narrowing Method free (opens in a new tab)">Get it free</a>
@@ -810,7 +851,7 @@ footer .wrap{padding-bottom:56px}
       <div class="free-item">
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">Plain Voice</div></div>
         <div class="free-body">
-          <div class="kicker">Free, 10 pages</div>
+          <div class="kicker">Free guide · ChatGPT, Claude and Gemini</div>
           <h3 class="item-name disp"><a class="name-link" href="/plain-voice/">Plain Voice</a></h3>
           <p class="item-desc">Ready-to-paste custom instructions for ChatGPT, Claude and Gemini that cut the habits that make AI writing easy to spot.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/vxwyul" target="_blank" rel="noopener" aria-label="Get Plain Voice free (opens in a new tab)">Get it free</a>
@@ -821,7 +862,7 @@ footer .wrap{padding-bottom:56px}
       <div class="free-item">
         <div class="cover"><svg viewBox="0 0 26 26" fill="none" stroke="#0C0D0B" stroke-width="1.8" aria-hidden="true"><circle cx="13" cy="13" r="11"/><circle cx="13" cy="13" r="6.5"/><circle cx="13" cy="13" r="1.8" fill="#0C0D0B"/></svg><div class="title">The Video Brief</div></div>
         <div class="free-body">
-          <div class="kicker">Free, 22 pages</div>
+          <div class="kicker">Free guide · videos with Claude</div>
           <h3 class="item-name disp"><a class="name-link" href="/video-brief/">The Video Brief</a></h3>
           <p class="item-desc">Make short videos with Claude that don't look AI-made: the setup, a six-block brief, three prompts, the checks for every render, reference videos and AI footage made inside Claude.</p>
           <a class="btn btn-accent" href="https://thriftwellstudio.gumroad.com/l/atnqas" target="_blank" rel="noopener" aria-label="Get The Video Brief free (opens in a new tab)">Get it free</a>
@@ -866,8 +907,8 @@ footer .wrap{padding-bottom:56px}
         <div class="a">No. It's written in plain language, for anyone who uses AI.</div>
       </details>
       <details>
-        <summary><span class="q disp">Why does the price go up later?</span><span class="plus" aria-hidden="true"></span></summary>
-        <div class="a">The first 30 buyers get the launch price of $127. After that the price is $697. It isn't a discount that resets.</div>
+        <summary><span class="q disp">What's the difference between the packs and The Exact Method?</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="a">Each pack fixes one thing. The $17 pack gives you ten ready-to-copy prompts, and the $37 Specialist Method shows which AI to use for which job. You can get both together for $44. The Exact Method has both inside, plus the full workflow that connects them, so if you get it, you don't need the packs.</div>
       </details>
       <details>
         <summary><span class="q disp">Is this a subscription?</span><span class="plus" aria-hidden="true"></span></summary>
@@ -888,7 +929,7 @@ footer .wrap{padding-bottom:56px}
         <p class="final-sub">Get The Exact Method and use the full workflow on your own AI tasks.</p>
       </div>
       <div class="final-btn">
-        <div class="final-price"><div class="disp">$127</div><span>launch price, first 30 buyers</span></div>
+        <div class="final-price"><div class="disp">$127</div><span>one-time payment</span></div>
         <a class="btn btn-accent btn-lg" href="https://thriftwellstudio.gumroad.com/l/zwxqfq" target="_blank" rel="noopener" aria-label="Get The Exact Method for $127 (opens in a new tab)">Get The Exact Method <span class="nw">· $127</span></a>
         <div class="note">PDF · one-time payment · instant download</div>
         <a class="textlink" href="#free">Not ready? Start with the free guides</a>
