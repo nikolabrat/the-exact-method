@@ -1,0 +1,1 @@
+{"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission forced_alignment to execute this operation.","status":"missing_permissions","request_id":"1c2fbd51e3f7914c16e504999f485db4"}}

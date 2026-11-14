@@ -1,3 +1,7 @@
+# Skills
+
+Run `bash setup.sh` from the repo root: it installs every skill listed below, the sound libraries and the plugins.
+
 # Skills to reinstall in a new workspace (copy into ~/.claude/skills)
 
 - content-principles: this branch, skills/content-principles

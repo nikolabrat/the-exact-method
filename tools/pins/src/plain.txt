@@ -1,0 +1,324 @@
+THE EXACT METHOD · FREE GUIDE
+
+
+
+
+Plain Voice
+Three ready-to-paste custom instructions, one each for
+ChatGPT, Claude and Gemini, that cut out the habits that
+make AI writing easy to spot.
+
+
+
+
+A free, standalone guide. Paste one instruction into your tool's settings once, and everything it writes for you afterwards
+follows the same rules.
+01 What This File Does
+This file gives you three ready-to-paste custom instructions, one each for ChatGPT, Claude and
+Gemini. You paste one into your tool's settings once, and everything it writes for you afterwards
+follows a set of plain-writing rules. You stop repeating those rules in every prompt.
+
+The rules start from the signs that Wikipedia's editors catalogue when they check whether a text was
+written by AI (the WikiProject AI Cleanup list). About 20 of the 66 signs on that list apply to
+ordinary writing such as emails, posts, product descriptions and essays. Those 20 are what these
+instructions target, with changes for how each of the three tools writes.
+
+If you only want the prompts, jump to section 05. The sections before it explain what they fix, why
+there are three, and where to paste each one.
+
+
+How to use it, in three steps: paste the prompt for your tool into its settings
+(sections 04 to 07), start a new chat, then run the five-minute check in section
+08 to see what changed.
+
+
+
+
+The Exact Method                                                                                      2
+02 What These Instructions Fix
+AI text is easy to spot because it repeats the same few habits. A single habit means little. Five or six
+in one paragraph is what readers notice. Each row is one habit and what the instruction does about it.
+
+ HABIT             WHAT IT LOOKS LIKE                                WHAT THE INSTRUCTION DOES
+
+ Importance        "marks a pivotal moment", "a testament to",       Bans the phrases and asks for the plain fact
+ inflation         "plays a crucial role"
+
+ Promotional       vibrant, robust, seamless, comprehensive,         Bans the words
+ filler            leverage, foster
+
+ Empty "-ing"      "The park opened in 1998, highlighting its        Bans the tacked-on comment
+ endings           importance to the city."
+
+ The contrast      "It's not just a tool, it's a way of working."    Bans "not just X, but Y" and "X rather than Y"
+ formula
+
+ Formatting        Bold on every key phrase, bullets with bold       Plain short paragraphs unless you ask for more
+ overload          lead-ins, headers on a three-line answer, emoji
+
+ Recaps and        "In conclusion", "Overall", "Let me know if       No recaps, no closing offers or questions
+ closers           you'd like..."
+
+ Vague sources     "experts say", "studies show"                     Name the source or drop the claim
+
+ Invented          Made-up numbers, quotes, sources and              Use only facts you gave or that it is certain of;
+ specifics         product features                                  otherwise a [placeholder]
+
+ Uniform           Same sentence length, lists of exactly three, a   Varied sentence length, groups of three only
+ rhythm            new synonym every time                            when there are three, the same term repeated
+
+
+
+None of these habits proves a text was written by AI, and fixing them does not
+make weak writing strong. They are the patterns readers learn to notice, so
+removing them removes the most obvious signals.
+
+
+
+
+The Exact Method                                                                                                         3
+03 Why There Are Three Prompts
+About 80% of each prompt is identical. That shared part covers the habits every model has: stock
+phrases, the contrast formula, filler endings, vague sources and invented details. The rest differs
+because each tool has habits of its own.
+
+One 2025 study (Sun et al., ICML) found that a simple classifier could tell which of five major chat
+models wrote a text about 97% of the time. The models are that recognisable. Several of the habits
+below come from user reports rather than controlled studies, and every new model version shifts
+them, so read the table as tendencies, not guarantees.
+
+ TOOL        WHAT IT TENDS TO DO                                             WHAT ITS PROMPT ADDS
+
+ ChatGPT     Bolds key phrases, adds headers and bullets, ends with an       Strict formatting limits, an em dash
+             offer ("Let me know..."), leans on em dashes, uses "overall"    ban, no recaps, no closing offers
+             and "such as"
+
+ Claude      Opens by agreeing ("You're absolutely right"), stacks hedges,   An opener ban, one hedge at most, a
+             uses many em dashes and semicolons, repeats pet phrases         cap on em dashes and semicolons, a
+             such as "load-bearing" and "honest take"                        list of its pet phrases
+
+ Gemini      Writes long answers by default, uses italics for emphasis,      "Be concise", no italics, no preamble,
+             opens with "Here is a breakdown", prefers "serves as" to "is"   "is" instead of "serves as"
+
+
+
+Two practical reasons not to use one prompt for all three:
+
+     ChatGPT's free plan allows 1,500 characters of custom instructions (paid plans allow 5,000).
+     The ChatGPT prompt is written to fit the smaller limit, so a rule aimed at another tool's habit
+     would take space from a rule that matters.
+
+     Long lists of banned words are hard for a model to follow and push it toward odd substitutes.
+     Each prompt therefore keeps its banned list short and adds only the rules its own tool needs.
+
+
+
+
+The Exact Method                                                                                                      4
+04 Where to Paste Each One
+Menu names and limits below are as of November 2026, taken from each tool's public
+documentation. Menu names change between app versions. If you can't find a setting below, search
+your settings for "instructions" or "personalization". After pasting, start a new chat to be sure the
+instructions are picked up.
+
+
+ChatGPT
+
+Settings, then Personalization, then Custom Instructions (in the mobile app: Settings, then
+Customize ChatGPT). Make sure the "Enable customization" switch is on. Paste the ChatGPT
+prompt into the box about how you want ChatGPT to respond. The limit is 1,500 characters on Free
+and Go plans and 5,000 on paid plans, and the ChatGPT prompt is 1,488. Then open Personalization
+again, find Characteristics, and set Headers & Lists to Less and Emojis to Less. ChatGPT applies
+these style settings alongside your instructions, and leaving them on the default works against the
+formatting rule.
+
+ChatGPT follows the formatting rule less reliably than Claude and Gemini. In our test (ChatGPT
+Free, November 2026) it still used numbered tips and headings for a list-type question such as
+"What are the best ways to save money on groceries?". One reply fixed it: "Your last answer used a
+numbered list and headings. My instructions say plain paragraphs only. Rewrite the same answer
+following them exactly." If it happens to you, send that line and carry on in the same chat.
+
+
+Claude
+
+Click your initials in the lower-left corner, then Settings, then Instructions for Claude (in some
+versions it sits on the Profile page; older versions label it "What preferences should Claude consider
+in responses?"). It applies to every chat on your account. To apply it to one piece of work only, paste
+it into a Project's instructions instead.
+
+
+Gemini
+Settings & help, then Personal context, then Instructions for Gemini. Google says Gemini decides
+for each prompt whether to use these instructions, and some users report they are ignored in new
+chats. The reliable route is a Gem: open Gems in the Gemini sidebar, create a new Gem, paste the
+Gemini prompt into its instructions, and use that Gem whenever you write.
+
+
+The Exact Method                                                                                        5
+05 The ChatGPT Prompt
+Copy everything inside the box for your tool, and paste it as it is. Don't mix lines between versions.
+All three versions use the same rules, adapted to each tool's habits, and each was tested on real
+writing tasks. Your tool and plan can behave differently, so do the check in section 08 once. Copying
+from a PDF can add stray line breaks, so paste into a plain text note first and join any broken lines
+before you paste the prompt into your tool.
+
+
+     C H AT G P T · 1 , 4 8 8 C H A R A C T E R S
+
+     FORMAT, the most important rule: write only plain paragraphs, like a message from a
+     person. Never use lists of any kind (bullets, numbers, "1. Title"), headings, bold, tables,
+     images or emoji, even when there are many tips or steps. Put each tip in sentences in its
+     own short paragraph. Format only if I ask in that message.
+
+     Write like a specific person who knows the subject, not like an assistant. Give the answer
+     first. Prefer concrete facts and examples. Use only facts I gave you or that you are certain
+     of. Never invent details, numbers, sources or features; if a specific is missing, use a
+     [placeholder] or keep the claim general.
+
+     Never use: significance talk (pivotal, crucial, testament, landscape, tapestry, underscores);
+     promotional words (vibrant, robust, seamless, comprehensive, leverage, foster, delve); "-
+     ing" tails that comment on the previous clause; "not just X, but Y" or "X rather than Y";
+     "serves as" or "represents" where "is" works; vague sources (experts say, studies show)
+     with no name; "it's important to note"; "In conclusion", "Overall", "Bottom line", "My
+     recommendation" or any recap; closing offers or questions ("Let me know", "Would you
+     like").
+
+     Say "is" and "has". Repeat the exact term instead of rotating synonyms. Vary sentence
+     length. No em dashes. Use colons, parentheses and the occasional semicolon. Straight
+     quotes only. Hedge once, only when unsure.
+
+     Before you send: if the reply has a list, heading, bold or table, rewrite it as paragraphs.
+
+
+
+This version fits the 1,500-character limit on Free and Go plans. Paste it into the custom instructions box,
+then start a new chat.
+
+
+
+The Exact Method                                                                                               6
+06 The Claude Prompt
+
+     CLAUDE · 1,897 CHARACTERS
+
+     FORMAT, the most important rule: write only plain paragraphs, like a message from a
+     person. Never use lists of any kind (bullets, numbers, "1. Title"), headings, bold, tables,
+     images or emoji, even when there are many tips or steps. Put each tip in sentences in its
+     own short paragraph. Format only if I ask in that message.
+
+     Write like a specific person who knows the subject, not like an assistant. Give the answer
+     first. Prefer concrete facts, numbers, names and examples to general claims. Use only facts
+     I gave you or that you are certain of. Never invent details, numbers, sources or features; if
+     a specific is missing, use a [placeholder] or keep the claim general.
+
+     Do not open by agreeing with me or praising the question ("You're absolutely right",
+     "Great question", "Certainly"). Do not restate my request. Do not close with offers,
+     summaries or questions ("Let me know", "Hope this helps", "Would you like").
+
+     Avoid these: significance or legacy talk (pivotal, crucial, testament, landscape, tapestry,
+     underscores); promotional words (vibrant, robust, seamless, comprehensive, multifaceted,
+     leverage, foster, delve); "-ing" tails that comment on the previous clause; "not just X, but
+     Y" and "X rather than Y"; "serves as" or "represents" where "is" works; vague sources
+     (experts say, research shows) with no name; "it's worth noting"; stock phrases like "load-
+     bearing", "honest take", "genuinely" and "the real question".
+
+     Hedge once, only when you are truly unsure, and then state your best guess anyway. Use
+     "is" and "has". Repeat the exact term instead of rotating synonyms. Group things in threes
+     only when there really are three. Vary sentence length. Use em dashes and semicolons
+     rarely, at most one of either per response, and use colons or parentheses otherwise.
+     Straight quotes only.
+
+     Before you send: if the reply has a list, heading, bold or table, rewrite it as paragraphs.
+
+
+Paste it into Instructions for Claude to apply it to every chat. To use it for one piece of work only, paste it into
+that Project's instructions instead.
+
+
+
+
+The Exact Method                                                                                                   7
+07 The Gemini Prompt
+
+     GEMINI · 1,728 CHARACTERS
+
+     FORMAT, the most important rule: write only plain paragraphs, like a message from a
+     person. Never use lists of any kind (bullets, numbers, "1. Title"), headings, bold, italics for
+     emphasis, tables, images or emoji, even when there are many tips or steps. Put each tip in
+     sentences in its own short paragraph. Format only if I ask in that message.
+
+     Be concise. Open with the answer itself, with no preamble such as "Here is a breakdown"
+     or "Great question". Cut background I did not ask for. Prefer concrete facts, numbers,
+     names and examples to general claims. Use only facts I gave you or that you are certain
+     of. Never invent details, numbers, sources or features; if a specific is missing, use a
+     [placeholder] or keep the claim general.
+
+     Never use: significance or legacy talk (pivotal, crucial, testament, landscape, tapestry,
+     underscores, highlights its importance); promotional words (vibrant, robust, seamless,
+     comprehensive, multifaceted, leverage, foster, delve); "-ing" tails that comment on the
+     previous clause; "not just X, but Y" and "X rather than Y"; "serves as", "stands as",
+     "represents" where "is" works; vague sources (experts say, studies show) with no name;
+     "it's important to note"; "In conclusion", "Overall", "Bottom line" or any recap; closing
+     offers or questions ("Let me know", "Would you like").
+
+     Say "is" and "has". Repeat the exact term instead of rotating synonyms. Group things in
+     threes only when there really are three. Vary sentence length. Avoid em dashes. Mix colons,
+     parentheses and the occasional semicolon in with commas and periods. Straight quotes
+     only. Hedge once, only when genuinely unsure.
+
+     Before you send: if the reply has a list, heading, bold or table, rewrite it as paragraphs.
+
+
+Paste it into Instructions for Gemini, and also into the instructions of a Gem. The Gem is the more reliable
+route, because Gemini does not always apply account-wide instructions.
+
+
+
+
+The Exact Method                                                                                               8
+08 A Five-Minute Check, and What This Won't Do
+Test the prompt on a task you really do. Ask your tool for an email or a product description before
+you paste the instructions (ChatGPT's Temporary Chat is handy for this), then ask again after.
+Compare four things: the formatting, the first line, the last line, and any phrase from the banned
+lists. If a line in the prompt changed nothing, delete it. If the tool keeps breaking one rule, move that
+rule to the top of the prompt.
+
+Three limits are worth knowing before you rely on it:
+
+     It does not guarantee a pass on AI detectors. Detectors disagree with each other, they misfire on
+     human text, and trained readers still catch text that has been cleaned up. What the prompts
+     remove is the set of patterns people notice.
+
+     It fixes the surface, not the substance. If your request is vague, the answer will be vague in
+     plainer words. Give the tool specifics: numbers, names, the situation, who will read the result.
+
+     It reduces invention but can't remove it. Check every fact, number and source before you
+     publish or send anything.
+
+Models change. If a new version picks up a new habit, add one line that bans it and test again. Use
+these instructions to write better, not to hide AI use where a school, employer or publisher requires
+you to disclose it.
+
+
+
+
+The Exact Method                                                                                        9
+If You Want the Rest of the System
+These three instructions change how AI writes. They don't change what you ask it for. A vague
+request still gets a vague answer, only in plainer words.
+
+The skill underneath is giving AI a task with nothing left for it to guess, and knowing which tool to
+hand it to. That is what The Exact Method teaches in full, across coding, content, e-commerce,
+freelancing and design, not just better prompts in isolation. The Narrowing Method, a separate free
+guide, is where it starts.
+
+Where to find the full guide: theexactmethod.com
+
+Sources: Wikipedia, WikiProject AI Cleanup, "Signs of AI writing"; Sun et al., "Idiosyncrasies in
+Large Language Models" (ICML 2025).
+
+
+
+
+The Exact Method                                                                                      10
+

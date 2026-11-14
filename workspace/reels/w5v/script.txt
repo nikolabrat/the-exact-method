@@ -1,0 +1,11 @@
+You told ChatGPT "no bullet points" three chats ago. New chat, and they're back.
+Because a rule you type in a chat only lasts for that chat.
+So put your rules where every chat reads them. Once.
+In ChatGPT, tap your profile, then Personalization, then Custom instructions.
+Paste your rules into the box about how it should respond.
+Then, under Characteristics, set Headers and Lists to less. Leave it on default and it fights your rules.
+In Claude, it's Settings, then Your Claude, then Instructions.
+Now start a new chat. Chats you already had won't pick them up.
+If it still slips into a list, one reply fixes it: "My instructions say plain paragraphs only. Rewrite it."
+My rules for ChatGPT, Claude and Gemini are in a free guide, ready to paste. Comment PLAIN and I'll send it to you.
+Then you never type "no bullet points" again.

@@ -1,0 +1,147 @@
+THE EXACT METHOD · FREE GUIDE
+
+
+
+
+The Narrowing Method
+Three prompts that stop AI from giving you generic, could-
+apply-to-anyone answers, and start getting you ones built
+from your actual situation.
+
+
+
+
+A free, standalone guide. Nothing in it depends on anything else.
+01 Why Your AI Answers Keep Coming Back Generic
+There's a particular kind of AI answer almost everyone has gotten at some point: technically fine,
+nothing wrong with it exactly, and somehow still not useful. The kind of answer that could've been
+handed to literally anyone who asked the same question, because that's exactly what happened.
+
+What's going on has nothing to do with the AI being bad at its job.
+
+Picture calling a doctor's office and telling the nurse, "I don't feel well." That's all you give them.
+What happens? You get something generic: drink water, get some rest, come in if it doesn't improve
+in a few days. Not wrong, necessarily. Just not useful, because there isn't enough there to be useful
+with. The nurse doesn't know where it hurts, since when, or what you've already tried.
+
+Now picture describing it properly: where it hurts, how long it's been going on, what makes it
+worse, what you've already taken for it. Suddenly you're getting something specific, because the
+advice is only as good as what it was built from.
+
+
+AI behaves exactly like that first phone call, by default. It is capable. Most
+people just hand it the one-line version and expect the detailed answer back.
+
+
+Type "write me a workout plan" into an AI tool, and it has nothing to work with except those four
+words. It doesn't know your fitness level, your schedule, your equipment, or what you're trying to
+achieve, so it hands back something generic enough to apply to anyone. Adding "please be specific"
+to that same question won't fix it. The problem is the missing information, not your tone.
+
+
+
+
+The Exact Method                                                                                          2
+02 The Fix: Narrow Before You Ask
+The fix is to treat the whole exchange like a conversation that gets narrower every time you speak:
+you go broad on purpose first, then use what comes back to ask something sharper, then sharper
+again.
+
+This is how it played out in a real case, step by step, with the actual prompts used.
+
+The first prompt wasn't "what programming language should I learn." It was: "Research the most
+common paths beginners take into programming right now, and what each one is useful for." Still
+broad, on purpose. Its only job was to produce a real, researched shortlist to work from, not a final
+answer. It came back with half a dozen real paths, each with a short explanation of what it's typically
+used for.
+
+The second prompt took that exact list and narrowed it: "Given that I have about five hours a week,
+no technical background, and I want to eventually build small tools for myself rather than work as a
+developer, which of these would you recommend, and why?" A completely different kind of question.
+The AI isn't guessing anymore. It's working from material it already gathered, and being asked to
+weigh it against real constraints, not invent an answer from nothing.
+
+That two-step process is what produced something usable: one specific path, chosen for a reason
+that holds up, instead of a generic "learn Python, it's beginner-friendly" answer that ignores the five
+hours a week and the actual goal entirely.
+
+Notice what each step did that the other couldn't. The first prompt's whole job was to generate real
+material. The second prompt's whole job was to narrow that material using details only you could
+supply. Skip the first step, and there's nothing real for the second step to narrow. Skip the second,
+and you're left with a broad list and no way to tell which item on it is yours to pick.
+
+
+
+
+The Exact Method                                                                                          3
+03 The Three-Prompt Template
+That same structure, turned into a template you can reuse for anything, not just business ideas. Copy
+these three prompts, fill in your own situation, and run them in order, one at a time, waiting for each
+answer before sending the next. Turn on web search, or the tool's deep research mode, before you
+start: the word "research" in these prompts only means research if the tool can look things up. With
+search off, it answers from memory.
+
+
+     PROMPT ONE: GO BROAD, ON PURPOSE
+
+     "Research realistic ways to [your goal]. Give me a shortlist, with a short explanation of
+     each."
+
+
+This prompt's only job is to generate real material. Don't expect, or ask for, a final answer yet.
+
+
+
+     PROMPT TWO: NARROW USING YOUR REAL CONSTRAINTS
+
+     "Research each of these in more depth, and tell me which two or three are the most
+     realistic for someone with [your real constraint: time, budget, experience, equipment,
+     etc.]."
+
+
+This is where you hand over the specific details a stranger wouldn't know, the way a knowledgeable friend
+would ask for them.
+
+
+
+     PROMPT THREE: NARROW TO ONE, SPECIFIC CHOICE
+
+     "Of these, which one specifically should I start with, and why, based on everything you just
+     found?"
+
+
+By now the AI is reasoning from real, researched material instead of guessing from a one-line question.
+
+
+
+
+The Exact Method                                                                                            4
+04 One Piece of a Larger Method
+The rule underneath all three prompts, in one sentence: if answering your question well would
+require someone to already know two or three things about your specific situation, don't hand AI
+that question in one shot. Go broad first, then narrow using what it gives you back.
+
+That rule solves exactly one problem: finding the right idea or direction instead of a generic one. It
+doesn't solve the next problem: turning that idea into something built correctly, with zero guesswork
+left for the AI to fill in on its own. That's a different skill, with its own method, and it's usually
+where things quietly go wrong even after the idea itself was good.
+
+That's also where most people stop improving. They learn to ask better questions, get a better idea
+out of it, and assume the rest (building the thing, picking the right tool for it, catching it when the AI
+is confidently wrong) will sort itself out. It doesn't. That's why someone can ask a great question and
+still end up with a mediocre result.
+
+
+This narrowing method is the first tool out of a complete system called The
+Exact Method, built to get precise, reliable results out of AI step by step, across
+coding, content, e-commerce, freelancing, and design, not just better prompts in
+isolation.
+
+
+Where to find the rest: theexactmethod.com
+
+
+
+
+The Exact Method                                                                                         5
+

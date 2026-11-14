@@ -1,0 +1,356 @@
+{
+ "video": "/home/claude/rm2/out/W5-ig-raw.mp4",
+ "keep_audio": "yes",
+ "cues": [
+  {
+   "t": 0.267,
+   "label": "+ chat 1 lights",
+   "id": 57,
+   "role": "click",
+   "gain_db": -7
+  },
+  {
+   "t": 3.067,
+   "label": "+ bullets wipe",
+   "id": 9,
+   "role": "whoosh",
+   "slice": [
+    0,
+    0.5
+   ],
+   "gain_db": -7
+  },
+  {
+   "t": 4.033,
+   "label": "bullets back",
+   "file": "/home/claude/sfx-library/elevenlabs/tick.wav",
+   "role": "click",
+   "gain_db": -8
+  },
+  {
+   "t": 4.233,
+   "label": "bullets back",
+   "id": 35,
+   "role": "click",
+   "slice": "first",
+   "gain_db": -10
+  },
+  {
+   "t": 4.3,
+   "label": "stamp BACK AGAIN",
+   "file": "/home/claude/sfx-library/elevenlabs/stamp.wav",
+   "role": "hit",
+   "gain_db": -7,
+   "slice": [
+    0,
+    0.3
+   ],
+   "highpass": 140
+  },
+  {
+   "t": 4.967,
+   "label": "card: rule lives",
+   "id": 46,
+   "role": "paper",
+   "gain_db": -8
+  },
+  {
+   "t": 5.367,
+   "label": "rule chip",
+   "file": "/home/claude/sfx-library/elevenlabs/pop.wav",
+   "role": "pop",
+   "gain_db": -7
+  },
+  {
+   "t": 7.267,
+   "label": "+ NOT RELIABLE",
+   "id": 41,
+   "role": "foley",
+   "gain_db": -7
+  },
+  {
+   "t": 9.233,
+   "label": "card: settings",
+   "id": 48,
+   "role": "paper",
+   "gain_db": -8
+  },
+  {
+   "t": 10.033,
+   "label": "chip into settings",
+   "role": "click",
+   "gain_db": -7,
+   "pitch": 2,
+   "file": "/home/claude/sfx-library/elevenlabs/tick.wav"
+  },
+  {
+   "t": 10.533,
+   "label": "ink arrow",
+   "file": "/home/claude/sfx-library/elevenlabs/scratch.wav",
+   "role": "foley",
+   "gain_db": -9
+  },
+  {
+   "t": 11.1,
+   "label": "tick chat 1",
+   "id": 35,
+   "role": "click",
+   "slice": "first",
+   "gain_db": -6
+  },
+  {
+   "t": 11.233,
+   "label": "tick chat 2",
+   "id": 36,
+   "role": "click",
+   "gain_db": -6
+  },
+  {
+   "t": 11.367,
+   "label": "tick chat 3",
+   "file": "/home/claude/sfx-library/elevenlabs/click.wav",
+   "role": "click",
+   "gain_db": -6
+  },
+  {
+   "t": 12.233,
+   "label": "stamp ONCE",
+   "file": "/home/claude/sfx-library/elevenlabs/stack.wav",
+   "role": "foley",
+   "gain_db": -6
+  },
+  {
+   "t": 12.367,
+   "label": "squiggle under ONCE",
+   "id": 18,
+   "role": "foley",
+   "gain_db": -9,
+   "pitch": 2
+  },
+  {
+   "t": 13.667,
+   "label": "card: ChatGPT",
+   "id": 11,
+   "role": "whoosh",
+   "gain_db": -4
+  },
+  {
+   "t": 14.767,
+   "label": "step profile",
+   "id": 32,
+   "role": "click",
+   "slice": "first",
+   "gain_db": -5
+  },
+  {
+   "t": 15.633,
+   "label": "step personalization",
+   "id": 36,
+   "role": "click",
+   "gain_db": -5,
+   "pitch": 1
+  },
+  {
+   "t": 16.833,
+   "label": "step custom instructions",
+   "role": "click",
+   "gain_db": -5,
+   "id": 57
+  },
+  {
+   "t": 18.167,
+   "label": "paste",
+   "file": "/home/claude/sfx-library/elevenlabs/slide.wav",
+   "role": "foley",
+   "gain_db": -6
+  },
+  {
+   "t": 19.167,
+   "label": "card: characteristics",
+   "id": 46,
+   "role": "paper",
+   "gain_db": -8,
+   "pitch": -1
+  },
+  {
+   "t": 20.233,
+   "label": "stamp MOST PEOPLE MISS",
+   "role": "foley",
+   "gain_db": -6,
+   "id": 44,
+   "slice": "first"
+  },
+  {
+   "t": 23.167,
+   "label": "marker circle",
+   "id": 18,
+   "role": "foley",
+   "gain_db": -4
+  },
+  {
+   "t": 24.567,
+   "label": "flip Default to Less",
+   "file": "/home/claude/sfx-library/elevenlabs/click.wav",
+   "role": "click",
+   "gain_db": -1
+  },
+  {
+   "t": 26.7,
+   "label": "+ FIGHTS stamp",
+   "id": 45,
+   "role": "foley",
+   "gain_db": -7,
+   "highpass": 140
+  },
+  {
+   "t": 28.0,
+   "label": "card: Claude",
+   "id": 10,
+   "role": "whoosh",
+   "gain_db": -6
+  },
+  {
+   "t": 29.167,
+   "label": "step settings",
+   "id": 36,
+   "role": "click",
+   "gain_db": -5
+  },
+  {
+   "t": 30.133,
+   "label": "step your claude",
+   "file": "/home/claude/sfx-library/elevenlabs/click.wav",
+   "role": "click",
+   "gain_db": -5,
+   "pitch": 1
+  },
+  {
+   "t": 31.1,
+   "label": "step instructions",
+   "id": 35,
+   "role": "click",
+   "slice": "first",
+   "gain_db": -5
+  },
+  {
+   "t": 32.367,
+   "label": "card: new chat",
+   "id": 48,
+   "role": "paper",
+   "gain_db": -8,
+   "pitch": 1
+  },
+  {
+   "t": 32.967,
+   "label": "press New chat",
+   "id": 32,
+   "role": "click",
+   "slice": "first",
+   "gain_db": -2
+  },
+  {
+   "t": 34.8,
+   "label": "list slips in",
+   "role": "whoosh",
+   "gain_db": -6,
+   "id": 8
+  },
+  {
+   "t": 35.533,
+   "label": "+ A LIST",
+   "id": 58,
+   "role": "click",
+   "gain_db": -15
+  },
+  {
+   "t": 36.833,
+   "label": "crumple",
+   "id": 16,
+   "role": "foley",
+   "gain_db": -10
+  },
+  {
+   "t": 37.1,
+   "label": "toss",
+   "id": 51,
+   "role": "whoosh",
+   "gain_db": -15
+  },
+  {
+   "t": 37.1,
+   "label": "+ reply bubble",
+   "id": 25,
+   "role": "whoosh",
+   "gain_db": -9
+  },
+  {
+   "t": 37.867,
+   "label": "end card",
+   "id": 27,
+   "role": "whoosh",
+   "gain_db": -6
+  },
+  {
+   "t": 39.033,
+   "label": "+ chip ChatGPT",
+   "file": "/home/claude/sfx-library/elevenlabs/tick.wav",
+   "role": "click",
+   "gain_db": -6
+  },
+  {
+   "t": 40.067,
+   "label": "+ chip Claude",
+   "role": "click",
+   "gain_db": -6,
+   "pitch": 2,
+   "id": 57
+  },
+  {
+   "t": 40.733,
+   "label": "+ chip Gemini",
+   "role": "click",
+   "gain_db": -6,
+   "pitch": 3,
+   "id": 58
+  },
+  {
+   "t": 42.333,
+   "label": "+ prompt preview",
+   "id": 47,
+   "role": "paper",
+   "slice": [
+    0,
+    0.6
+   ],
+   "gain_db": -7
+  },
+  {
+   "t": 43.833,
+   "label": "PLAIN drops in",
+   "file": "/home/claude/sfx-library/elevenlabs/pop.wav",
+   "role": "pop",
+   "gain_db": -5
+  },
+  {
+   "t": 44.033,
+   "label": "press Post/Send",
+   "id": 36,
+   "role": "click",
+   "gain_db": -1
+  },
+  {
+   "t": 44.233,
+   "label": "sent bell",
+   "id": 22,
+   "role": "ui",
+   "gain_db": -9
+  },
+  {
+   "t": 45.2,
+   "label": "back to the hook",
+   "id": 50,
+   "role": "paper",
+   "gain_db": -6
+  }
+ ]
+}

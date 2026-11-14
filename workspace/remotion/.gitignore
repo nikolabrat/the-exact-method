@@ -1,0 +1,5 @@
+node_modules
+out
+.browser
+public/*v/
+public/*.wav

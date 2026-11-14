@@ -1,0 +1,486 @@
+{
+ "video": "/home/claude/rm2/out/V5-ig.mp4",
+ "keep_audio": "auto",
+ "cues": [
+  {
+   "t": 1.4,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.4,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0
+  },
+  {
+   "t": 4.58,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.3,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": -2
+  },
+  {
+   "t": 5.62,
+   "label": "stamp",
+   "_g": 1.0,
+   "pick": {
+    "role": "hit",
+    "punchy": true,
+    "max_dur": 1.3
+   },
+   "gain_db": 0.0
+  },
+  {
+   "t": 6.52,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.3,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": 2
+  },
+  {
+   "t": 7.02,
+   "label": "stamp",
+   "_g": 1.0,
+   "pick": {
+    "role": "hit",
+    "punchy": true,
+    "max_dur": 1.3
+   },
+   "gain_db": 0.0,
+   "pitch": -2
+  },
+  {
+   "t": 7.46,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.3,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": -3
+  },
+  {
+   "t": 8.02,
+   "label": "pop",
+   "_g": 1.0,
+   "pick": {
+    "role": "pop",
+    "max_dur": 0.6,
+    "onsets_max": 1
+   },
+   "gain_db": 0.0
+  },
+  {
+   "t": 8.09,
+   "label": "stamp",
+   "_g": 1.0,
+   "pick": {
+    "role": "hit",
+    "punchy": true,
+    "max_dur": 1.3
+   },
+   "gain_db": 0.0,
+   "pitch": 2
+  },
+  {
+   "t": 10.95,
+   "label": "hit",
+   "_g": 1.0,
+   "pick": {
+    "role": "hit",
+    "punchy": true,
+    "max_dur": 1.3
+   },
+   "gain_db": 0.0,
+   "pitch": -3
+  },
+  {
+   "t": 13.25,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.5,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": 1
+  },
+  {
+   "t": 14.6,
+   "label": "click",
+   "_g": 1.0,
+   "slice": "first",
+   "anchor": "start",
+   "pick": {
+    "role": "click",
+    "max_dur": 0.7,
+    "onsets_max": 3,
+    "tier": "main"
+   },
+   "same_source": true,
+   "gain_db": 0.0
+  },
+  {
+   "t": 16.4,
+   "label": "click",
+   "_g": 1.0,
+   "slice": "first",
+   "anchor": "start",
+   "pick": {
+    "role": "click",
+    "max_dur": 0.7,
+    "onsets_max": 3,
+    "tier": "main"
+   },
+   "same_source": true,
+   "gain_db": 0.0
+  },
+  {
+   "t": 17.49,
+   "label": "click",
+   "_g": 1.0,
+   "slice": "first",
+   "anchor": "start",
+   "pick": {
+    "role": "click",
+    "max_dur": 0.7,
+    "onsets_max": 3,
+    "tier": "main"
+   },
+   "same_source": true,
+   "gain_db": 0.0
+  },
+  {
+   "t": 19.12,
+   "label": "click",
+   "_g": 1.0,
+   "slice": "first",
+   "anchor": "start",
+   "pick": {
+    "role": "click",
+    "max_dur": 0.7,
+    "onsets_max": 3,
+    "tier": "main"
+   },
+   "same_source": true,
+   "gain_db": 0.0
+  },
+  {
+   "t": 20.0,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.4,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": -1
+  },
+  {
+   "t": 22.22,
+   "label": "error",
+   "_g": 1.0,
+   "uisfx": "error",
+   "pack": "studio",
+   "gain_db": 0.0
+  },
+  {
+   "t": 24.65,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    0.299,
+    0.071
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -2.7
+  },
+  {
+   "t": 24.771,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    1.739,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -5.4
+  },
+  {
+   "t": 24.892,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    2.859,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -6.0
+  },
+  {
+   "t": 25.1,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    1.504,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -6.1
+  },
+  {
+   "t": 25.242,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    0.144,
+    0.046
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -2.9
+  },
+  {
+   "t": 25.373,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    3.304,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -3.4
+  },
+  {
+   "t": 25.508,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    1.334,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -6.2
+  },
+  {
+   "t": 25.635,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    0.544,
+    0.071
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -5.8
+  },
+  {
+   "t": 26.6,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.5,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0
+  },
+  {
+   "t": 27.384,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    1.664,
+    0.071
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": 0.8
+  },
+  {
+   "t": 27.454,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    0.299,
+    0.071
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -3.3
+  },
+  {
+   "t": 27.547,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    1.739,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -5.0
+  },
+  {
+   "t": 27.619,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    2.859,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -5.7
+  },
+  {
+   "t": 27.672,
+   "label": "key",
+   "_g": 1.0,
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "slice": [
+    1.504,
+    0.085
+   ],
+   "role": "click",
+   "anchor": "start",
+   "same_source": true,
+   "gain_db": -3.9
+  },
+  {
+   "t": 28.7,
+   "label": "click",
+   "_g": 1.0,
+   "slice": "first",
+   "anchor": "start",
+   "pick": {
+    "role": "click",
+    "max_dur": 0.7,
+    "onsets_max": 3,
+    "tier": "main"
+   },
+   "same_source": true,
+   "gain_db": 0.0
+  },
+  {
+   "t": 30.1,
+   "label": "whoosh",
+   "_g": 1.0,
+   "pick": {
+    "role": "whoosh",
+    "target_dur": 0.8,
+    "max_dur": 1.3,
+    "prefer_tag": "whoosh"
+   },
+   "gain_db": -2.0,
+   "pitch": -2
+  }
+ ],
+ "_draft": {
+  "source": "/home/claude/v5sfx/work/events.json",
+  "events": 33,
+  "thinned": 0,
+  "thinned_by_kind": {},
+  "fused": 0,
+  "routed": {
+   "whoosh": 8,
+   "hit": 4,
+   "pop": 1,
+   "click": 5,
+   "error": 1,
+   "key": 13
+  },
+  "unmapped": {
+   "riser (no matching sound in the library)": 1
+  },
+  "sync": {
+   "verdict": "ok",
+   "total": 4,
+   "matched": 4,
+   "median_offset_s": -0.053,
+   "within_tol": 0.75,
+   "within_after_shift": 0.75,
+   "quarters": [],
+   "drift": false
+  },
+  "stems": null,
+  "voice": null,
+  "retimed": null,
+  "baked": {
+   "share": 0.18,
+   "chance": 0.14,
+   "at_db": 6.63,
+   "shifted_db": 8.82,
+   "quiet": 0.18
+  },
+  "baked_strong": false,
+  "keep_audio_decision": null,
+  "declared": 22,
+  "voiced": 32,
+  "clamped_quiet": 0,
+  "layer_lufs": null,
+  "base_kind": null,
+  "screen_rec": false,
+  "music_ref": [],
+  "reference_layer": [],
+  "typing_runs": [],
+  "first_event_t": 1.4,
+  "time_map": null,
+  "unlisted_synth_onsets": [],
+  "kinds_user": {
+   "stamp": "hit"
+  }
+ }
+}

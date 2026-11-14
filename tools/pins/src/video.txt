@@ -1,0 +1,650 @@
+THE EXACT METHOD · FREE GUIDE
+
+
+
+
+The Video Brief
+Tell AI exactly how to make your video, then check what it
+gives you. The setup, the brief, the checks and the skills
+that keep AI video from looking AI-made.
+
+
+
+
+A free, standalone guide. Set it up once, and every video after that starts from a script, voice files and one written brief.
+01 What This File Does
+This guide shows how to make short vertical videos (Reels, Shorts, TikToks) by giving Claude a
+script, voice files and a written brief. Claude builds the video in code, renders it, checks it and sends
+you the file. You never open an editing app.
+
+You don't need to know how to code. Claude writes and runs it. Your job is to describe the video
+precisely and judge the result. That's the work that makes it your video and not a template.
+
+The guide has five parts: the setup (sections 02 to 05), the brief and the prompts (06 to 09), the
+checks (10), the skills and plugins that keep the result from looking AI-made (11 to 14), and two
+outside sources: reference videos to borrow motion from, and AI footage made from inside Claude
+(15 and 16).
+
+
+How to use it, in three steps: do the setup once, fill in the brief for each video, then send
+the three prompts in order and review what comes back.
+
+
+
+
+The Exact Method                                                                                        2
+02 What You Need
+
+ WHAT              WHAT IT DOES                COST, AS OF NOVEMBER 2026
+
+ Claude with       Writes the video as code,   Included in the Pro, Max and Ultra plans
+ Claude Code       renders it and checks the
+                   render
+
+ Remotion          Turns the code into an      Free for individuals and for companies of three people or fewer.
+                   MP4 file                    Larger companies need a Company License, from $25 a month
+                                               per person writing Remotion code
+
+ ffmpeg            Handles audio, loudness,    Free
+                   cutting and export
+
+ ElevenLabs        Makes the voiceover         Starter plan: $6 a month for 30,000 credits
+
+ Higgsfield        Makes AI footage and        A paid plan is needed to use it from Claude. Plans start at $9 a
+ (optional)        images from inside          month for 120 credits (October 2026)
+                   Claude
+
+
+
+Claude installs Remotion and ffmpeg itself (section 05). You only need two accounts: Claude and
+ElevenLabs. Higgsfield is only for videos that use AI footage (section 16).
+
+
+
+
+The Exact Method                                                                                                  3
+03 The Voice: License and Cost
+ElevenLabs' free plan has no commercial license. Their help center says it directly: "The free plan
+does not include a commercial license and cannot be used for any commercial purpose." Audio from
+the free plan that you publish also has to credit ElevenLabs.
+
+If your videos promote anything you sell (a product, a service, your own business), that's
+commercial use, so you need a paid plan.
+
+In practice it costs very little. The Starter plan is $6 a month, includes the commercial license and
+comes with 30,000 credits. On the Eleven v4 model one character of script costs one credit, and a
+45-second Reel script runs about 600 to 1,000 characters. That makes 30,000 credits enough for
+more than 30 Reels a month.
+
+
+
+
+The Exact Method                                                                                        4
+04 Connecting ElevenLabs to Claude
+Claude makes the voice files through an API key. A restricted key can only do what you allow and
+only spend what you allow, so set it up this way.
+
+
+Create the key
+
+  1. Go to elevenlabs.io/app/developers/api-keys and click Create API key.
+
+  2. Name it, for example claude-voiceovers.
+  3. Turn on Restrict Key.
+
+  4. Set a credit limit below your plan's total, for example 20,000 on Starter. The rest stays free for
+     anything you make by hand.
+  5. Under Endpoints, set Text to Speech to Access, Voices to Read and Models to Access. Leave
+     every other endpoint on No Access.
+
+  6. Leave Restrict by IP address off. Cloud workspaces change their address, and the key would
+     stop working.
+
+  7. Keep Auto-disable if leaked on.
+
+  8. Click Create Key and copy the key. ElevenLabs shows it only once.
+
+
+Copy the voice IDs
+
+Open Voices, then My Voices. Click the three dots next to each voice you use and choose Copy
+voice ID. Note which voice belongs to which speaker, plus the settings you use for each: model,
+stability and similarity.
+
+
+
+
+The Exact Method                                                                                          5
+Hand it to Claude
+
+
+     PROMPT · HAND OVER THE KEY
+
+     Save this ElevenLabs API key and these voice IDs in a private settings file that only you
+     read. Never put the key in a command, a log or a message.
+
+     API key: [paste]
+     [Speaker 1] voice ID: [paste]
+     [Speaker 2] voice ID: [paste]
+     Model: [for example eleven_v4]. Stability: [for example 0.5]. Similarity: [for example
+     0.75].
+
+     Whenever you make a voice file, also save its word timings (ElevenLabs returns them with
+     the audio), so every cue can land on its word.
+
+     Then test it: confirm both voices exist on my account, make one short line in each voice
+     and send me the two files.
+
+
+If both test files sound right, the setup is finished. From then on a full voiceover takes one sentence from you.
+
+Two things can go wrong here. If Claude reports that it can't reach ElevenLabs, its workspace is
+blocking the connection: open Settings, then Capabilities, turn on Allow network egress, wait a
+minute and ask Claude to try again. And a key you paste into a chat stays in that chat's history,
+which is why the restrictions and the credit limit matter. You can delete the key in ElevenLabs at any
+time and create a new one with the same settings.
+
+
+
+
+The Exact Method                                                                                                    6
+05 The Setup Prompt
+Send this once, in the same workspace you'll make videos in.
+
+
+     PROMPT · SETUP
+
+     Set up this workspace for making vertical videos with Remotion.
+
+     First, check for a Node.js version the current Remotion supports, plus ffmpeg and ffprobe.
+     Install anything missing and tell me what you installed.
+
+     Then create a blank Remotion project for 1080x1920 video at 30 fps. Render a two-second
+     test video with one line of text, and confirm the file plays and is 1080x1920 at 30 fps. If
+     Remotion can't download its browser for rendering, use a Chromium that is already
+     installed instead.
+
+     Finally, tell me in a few lines what is ready and what still needs me.
+
+
+Run it once per workspace. If the workspace resets, run it again.
+
+
+
+
+The Exact Method                                                                                   7
+06 Why "Make Me a Cool Video" Gets a Template
+Leave a blank, and AI fills it with its default. Ask for "a cool video" and every blank gets one: the
+font, the colours, the way text appears, the pacing, the ending. Defaults are what AI-made videos
+share, and that's why so many of them look the same.
+
+A better tool won't fix this. Fewer blanks will.
+
+It's the same idea behind all of The Exact Method: say exactly what you want, then check what you
+get. For video, saying exactly what you want is the brief in section 07. Checking is the review in
+section 10.
+
+
+
+
+The Exact Method                                                                                        8
+07 The Brief
+Fill this in once per video. Send it together with the voice files, or put both in the project folder and
+tell Claude where they are.
+
+
+     TEMPLATE · THE BRIEF
+
+     Goal and viewer. Who it's for, in one line: [for example, people who use ChatGPT for
+     everyday decisions]. What they should do after watching: [for example, get the free PDF
+     from the bio].
+
+     Script. One line per voice file: [file name] · [speaker] · [the exact line]. Words that must
+     appear on screen: [list them exactly, or write "your choice"].
+
+     Look. Colours as hex codes: background [ ], text [ ], accent [ ], mistakes [ ]. Fonts, by
+     name: headlines [ ], body [ ]. References: [two or three frames or videos, and what to take
+     from each].
+
+     Timing. Time everything to the real voice files, never to an estimate. Pauses: [for example
+     0.3 s between lines, 0.5 s before the call to action]. Hold the last frame [about 1 s] after
+     the last word.
+
+     Never. [for example: nothing covers the presenter's hand; no text over busy screen text; no
+     stretch of empty screen; no drop shadows, glows or bouncing text; nothing that appears in
+     a single frame; "link in bio" never as plain text].
+
+     Export. 1080x1920, 30 fps, voice at about -14 LUFS, peaks under -1 dB.
+
+
+Each block closes a blank. The never-list does the most work: it's where your taste goes.
+
+Each block exists because leaving it out causes a specific problem:
+
+     Without an export block, a video can go out at 720x1280 with the voice at -20 LUFS, quieter
+     than everything around it in the feed.
+
+     Without a timing rule, captions drift. Half a second late is enough to feel wrong.
+     Without a never-list, the AI places elements wherever there's space, including on top of a
+     character's hand.
+
+
+
+The Exact Method                                                                                            9
+08 Prompt 1: From Brief to Storyboard
+
+     PROMPT · BRIEF TO STORYBOARD
+
+     Here's my brief. Before building anything, write a storyboard: one row per shot, with start
+     and end times taken from the real lengths of the voice files; what's on screen and how it
+     enters and leaves; and one sentence per shot on why it is there at that moment.
+
+     Check every shot against the never-list. If anything in the brief is unclear, ask instead of
+     guessing. Don't build anything until I approve the storyboard.
+
+
+Read the "why" column first. A shot that can't say why it's there is usually filler.
+
+
+
+
+The Exact Method                                                                                    10
+09 Prompt 2: Build, Render, Check
+
+     PROMPT · BUILD AND CHECK
+
+     The storyboard is approved. Build the video in Remotion.
+
+     Time every cue to the word it belongs to, using the word timings. Before the full render,
+     render stills of the three busiest moments and check them against the never-list. Fix
+     anything that fails, then render the full video.
+
+     After the render, check it yourself before you show me: the timing against the voice at
+     every cut; any frame that pops, flashes or goes black, including frame-by-frame sheets
+     around every moment something appears; empty stretches, overlaps and cut-off text; the
+     loudness and the resolution.
+
+     Send me the video, a contact sheet of frames and a short list of what you checked and what
+     you fixed.
+
+
+Stills first saves time. A full render takes minutes, and a still shows most problems in seconds.
+
+
+
+
+The Exact Method                                                                                    11
+10 The Eight Checks, and the Fix Message
+Watch every render on your phone, once with sound and once without, and check these eight things.
+
+ CHECK                            WHAT TO LOOK FOR
+
+ Timing                           Every caption and card lands on its word, not after it
+
+ Dead time                        Any pause where nothing moves and nobody speaks
+
+ Overlaps                         Text or cards on top of a face, a hand or other text
+
+ Empty space                      Large areas with nothing in them, especially at the end
+
+ The first three seconds          The hook works with the sound off
+
+ Readability                      Small text that's fine on a laptop and unreadable on a phone
+
+ Loudness                         About -14 LUFS. Quieter voices sound weak next to other videos
+
+ Resolution                       1080x1920 at 30 fps
+
+
+
+With the skills in section 13 installed, Claude runs most of these checks before you watch.
+Automatic pop scans catch large jumps; a small element that appears in one frame (a strike-through,
+an underline) can slip past them. That's what frame-by-frame sheets around each cue are for.
+
+
+Prompt 3: the fix message
+
+Vague feedback gets you a guess. Precise feedback gets you a fix.
+
+ VAGUE                     PRECISE
+
+ "Make it better."         "0:22: the card covers the presenter's hand. Move the cards up so the hand is clear."
+
+ "The ending drags."       "The end card holds for about 7 s. Cut it to 1 s after the last word."
+
+ "Fix the captions."       "From 0:19 the captions are about 0.5 s late. Time them to the word timestamps."
+
+
+
+The pattern is the same every time: where it happens (the timestamp), what is wrong, and what to do
+instead. Put every note in one message so Claude fixes them all in one pass.
+
+
+
+
+The Exact Method                                                                                                   12
+11 Skills and Plugins, Explained
+A skill is a folder of instructions Claude loads for one kind of job, such as building in Remotion,
+avoiding certain visual habits or checking a render. A plugin bundles several skills, sometimes with
+tools.
+
+Without them, Claude falls back on its defaults, and that's where AI slop comes from. With them, it
+follows rules someone's already tested on real videos.
+
+
+     PROMPT · INSTALL A SKILL
+
+     Install this skill from [GitHub link] into ~/.claude/skills/. Before you install anything, read
+     its README and SKILL.md and tell me in one line whether anything looks unsafe or
+     needs an API key. Install only the parts I name.
+
+
+You can install part of a repository. Many contain several skills and you may need only one or two.
+
+A skill is someone else's instructions, and often someone else's code. Read what it does before it
+runs, and check the license: some free skills forbid commercial use.
+
+
+
+
+The Exact Method                                                                                       13
+12 The Core Skills
+These handle the building and the planning.
+
+ SKILL             WHAT IT DOES                                                 WHERE TO GET IT
+
+ Remotion skills   How to build, animate, caption and render in Remotion.       github.com/remotion-dev/skills
+ (official)        Maintained by the Remotion team, about 6,500 GitHub
+                   stars
+
+ ffmpeg-llm        Accurate ffmpeg commands for audio, cutting, loudness        github.com/rendi-api/ffmpeg-llm
+                   and export, plus an ffmpeg troubleshooting agent
+
+ storyboard-       Turns a brief into a shot list with timing, on-screen text   github.com/whystrohm/shotkit
+ architect         and a reason for every shot, then validates it
+
+ brand-lock-       Turns your colours, fonts and visual rules into one brand    github.com/whystrohm/shotkit
+ extractor         file that every video follows
+
+ content-          The psychology of short-form scripts: one viewer, every      github.com/aiwithremy/content-
+ principles        line earning the next, specific words over vague ones        principles
+
+ watch             Lets Claude watch a video from a link or a file, through     github.com/bradautomates/claude-
+                   frames and a transcript. Useful for studying videos you      video
+                   want to learn from
+
+
+
+shotkit contains five skills. storyboard-architect and brand-lock-extractor are the two that matter for
+this workflow.
+
+
+
+
+The Exact Method                                                                                                   14
+13 The Anti-Slop Toolkit
+"AI slop" is the look people now recognise in a second: shadows on every box, text that pops in,
+glowing gradients, slides that never move. These skills exist to remove it. They work in different
+ways, so they're worth combining.
+
+
+no-slop-motion
+
+github.com/ferndesk/no-slop-motion
+
+A banned list, standing rules and a step-by-step approval process for animated videos. Its scripts
+scan a render for pops, flashes and black frames, and make contact sheets of frames for review. The
+rules work with any engine; its own build tools use HyperFrames (section 14).
+
+Its default banned list, in plain words:
+
+  1. Drop shadows on boxes and cards. Only buttons get depth.
+  2. Glows, round colour gradients, dark frame edges and coloured "world" backgrounds.
+
+  3. Grids of cards or lists of icons in place of an actual explanation.
+
+  4. A screen that just sits there with nothing moving, like a slide.
+  5. Text parked at the top of the frame while the action happens below.
+
+  6. Anything that appears, vanishes or flashes within one or two frames, and cuts to black between
+     shots.
+  7. Glitch and shader transitions picked for "energy".
+
+  8. Movement at a constant speed, and bouncy overshoot on interface elements.
+  9. Colour filters that fake a look in place of chosen colours.
+
+10. Customer quotes shown as tweet or chat screenshots.
+ 11. More than one call-to-action button in the brand colour in one frame.
+
+12. A sound effect on every landing.
+
+13. A voice stitched together from one-line clips, or cut in the middle of a word.
+
+
+
+
+The Exact Method                                                                                     15
+Impeccable
+
+github.com/pbakaus/impeccable
+
+The most widely used design-quality skill, with about 105,000 GitHub stars. Its slop detector applies
+62 fixed rules to flag the usual AI design habits and needs no API key. It also has critique and audit
+commands that rank what to fix first. It's built for interfaces, so it suits the look of scenes built from
+web code (Remotion and HyperFrames scenes are), not timing or editing.
+
+
+claude-motion-design
+
+github.com/howseen-ai/claude-motion-design
+
+Motion design in plain code (HTML, Playwright and ffmpeg) with no Remotion license. You
+approve four stills before the full render, and a pop scan runs after it. About 790 stars. A security-
+graded skills directory flags that it installs packages while it runs, so read what it installs first.
+
+
+Claude Video 2.0
+
+github.com/ItsssssJack/claude-video-2
+
+You pick one of 21 visual styles from a gallery and answer five questions. It shows three stills for
+approval, renders, then checks its own frames. MIT license. Optional AI clips use a paid Higgsfield
+key.
+
+
+video-use
+
+github.com/browser-use/video-use
+
+Made for raw footage, not animation. It cuts filler words and dead space, adds 30-millisecond audio
+fades so cuts never click, and checks every cut in the render before showing you anything. MIT
+license. It needs an ElevenLabs key, which it uses for transcription.
+
+
+
+
+The Exact Method                                                                                         16
+14 More Proven Skills
+
+ SKILL             WHAT IT IS                                             WHERE TO GET IT
+
+ HyperFrames       An open-source engine that turns HTML and              github.com/heygen-com/hyperframes
+ (HeyGen)          animation into MP4, built for AI agents. Apache 2.0
+                   license, no per-render fees
+
+ IT Reelsmaker     For talking-head footage: cuts pauses and retakes by   github.com/itpartypattaya/reels-
+                   the audio, adds word-timed subtitles, keeps text off   montage
+                   faces and masters the sound to -14 LUFS
+
+ claude-code-      A complete video workspace covering script,            github.com/digitalsamba/claude-code-
+ video-toolkit     voiceover, music, visuals and render. MIT license      video-toolkit
+
+ /brag             Turns a project you built into a short launch video    github.com/latent-spaces/brag
+                   with music and share copy
+
+ apple-design      A design review grounded in Apple's Human              github.com/dickwu/apple-design-skill
+                   Interface Guidelines, with a check for templated
+                   looks
+
+
+
+Check the license before you use these two commercially. video-editor-skills (editing in DaVinci
+Resolve) uses CC BY-NC 4.0, which rules out commercial use. motion-graphics-skills has a strong
+banned list but is published as "All Rights Reserved".
+
+To browse further, agentskillshub.top keeps a list of 430 video skills, security-graded and re-checked
+daily.
+
+
+
+
+The Exact Method                                                                                              17
+15 Reference Videos: Prompt Motion
+The hardest part of the brief to put into words is the motion: how things enter, move and leave.
+"Smooth" or "dynamic" leaves a blank, and Claude fills it with its default. A reference video closes
+that blank.
+
+prompt-motion.com is a free gallery of motion videos made with Claude, each shown with the
+prompt or skill behind it. You can filter by type (Product UI, Phone, Charts, Kinetic type, Diagrams
+and more), and every entry links to the person who made it.
+
+
+How to borrow a reference
+
+  1. Pick a video for its motion, not for its colours or its brand.
+
+  2. Record your screen while it plays and send the recording to Claude. Claude studies a video
+     through its frames, and the watch skill in section 12 helps.
+
+  3. Send the prompt below.
+
+  4. Keep the result as a reference video. Every later video that uses this animation starts from it, so
+     your look stays the same from video to video.
+
+
+     PROMPT · REBUILD A REFERENCE
+
+     Here is a screen recording of a reference video. First, list every motion and feature in it, in
+     order, with rough timings: how each element enters, moves and leaves, and every
+     transition. Then rebuild it as a short reference video in my brief's colours, fonts and words.
+     Copy the idea, the motion and the pace. Don't copy the colours, the shapes, the brand or
+     the text. Check the remake against my never-list and replace anything on it.
+
+
+Ask for the list first and check it. Anything missing from the list will be missing from the remake.
+
+Two cautions. Videos and prompts belong to their creators, so borrow the motion, leave the rest of
+their work alone, and credit the creator if you share their prompt. And popular entries often use
+habits from the banned list in section 13, such as letter-by-letter typing or glows. Your never-list
+decides what stays.
+
+
+
+
+The Exact Method                                                                                       18
+16 AI Footage Inside Claude: Higgsfield
+Remotion draws everything with code: text, shapes, layouts, screens. It can't film a person, a product
+on a table or a street at night. Higgsfield can generate that. It's a paid platform with many image and
+video models (Kling, Seedance, Veo and Nano Banana among them), and its connector lets Claude
+use them from the chat: Claude picks a model, sets it up, makes the clip and shows it to you.
+
+Use it for the shots code can't draw, and keep code for everything else: text, captions, timing and the
+end card. The clip goes into the Remotion project like any other video file.
+
+
+Connect it
+
+  1. In Claude, open Settings, then Connectors, and click Add custom connector.
+
+  2. Name it Higgsfield and paste this address: https://mcp.higgsfield.ai/mcp
+
+  3. Click Connect, sign in to Higgsfield and approve access.
+
+  4. In Claude Code, run these three commands instead: npm i -g @higgsfield/cli, then higgsfield
+     auth login, then npx skills add higgsfield-ai/skills.
+
+
+What it costs
+
+You need an active paid Higgsfield plan. Every clip Claude makes spends credits. The unlimited
+offers on Higgsfield's website don't apply to clips made through Claude. As of October 2026, plans
+start at $9 a month for 120 credits. A 5-second Kling 3.0 clip costs about 8 credits, and a 4-second
+Veo 3.1 clip about 40. Prices changed several times in 2026, so check the pricing page before you
+pick a plan.
+
+There's no hard spending limit for Claude. You can name a limit in your prompt, but Claude can still
+go over it, so the prompt on the next page makes Claude ask before it spends anything.
+
+
+
+
+The Exact Method                                                                                       19
+Ask before it spends
+
+
+     PROMPT · ONE AI CLIP
+
+     Using Higgsfield, make one [5]-second vertical clip: [the shot: subject, setting, camera,
+     light]. Before you make anything, tell me which model you'll use, the settings and the credit
+     cost, and wait for my yes. Stay under [N] credits in this chat. Then add the clip to the video
+     at [timestamp] and run the eight checks again.
+
+
+Describe the shot like a camera operator would: what's in frame, where the camera is, how it moves, what the
+light is like.
+
+
+
+Before you post a clip
+
+     License. The free plan has restricted commercial rights. Check Higgsfield's terms for your plan
+     before you use a clip in a video that sells something.
+
+     Files. Claude can't pass files from the chat to Higgsfield. Upload reference images in
+     Higgsfield, or give Claude a direct link.
+
+     Checks. AI footage gets the same eight checks as everything else, plus one more: look for
+     warped hands, faces and lettering in every clip.
+
+     Labels. Platforms have rules for labelling AI-made footage. Check the rule where you post.
+
+
+
+
+The Exact Method                                                                                         20
+17 What This Won't Do
+It won't give you taste. Claude follows the brief and the rules; whether the result is good is your call.
+
+It can't catch what it doesn't check, so ask for the contact sheet and the check list with every render.
+
+Skills are other people's work. Read them before you install them and check their licenses. The same
+goes for reference videos and their prompts.
+
+A reference video or an AI clip won't save a weak script.
+
+A precise brief makes a better video. It doesn't guarantee views.
+
+
+
+
+The Exact Method                                                                                       21
+If You Want the Rest of the System
+The Video Brief applies one idea to one job: precise input, then a careful check of the output. The
+Exact Method teaches that idea in full, across coding, content, e-commerce, freelancing and design,
+from the first prompt to the final check, and gives video its own chapter.
+
+Where to find the full guide: theexactmethod.com
+
+Sources, checked November 2026: ElevenLabs pricing page and help center ("Can I publish the content I
+generate on the platform?"); ElevenLabs API authentication docs; Claude Help Center ("Use Claude Code
+with your Pro, Max or Ultra plan" and "Create and edit files with Claude"); Remotion license FAQ and Agent
+Skills docs; star-history.com for Impeccable; agentskillshub.top for remotion-dev/skills and claude-motion-
+design; prompt-motion.com; Higgsfield help center ("How to Connect Higgsfield to Claude or ChatGPT")
+and blog ("How to Generate AI Videos in Claude With the Higgsfield MCP Connector"); Higgsfield plan
+prices and credit costs as reported by AI Eating the World ("Higgsfield AI Pricing", October 2026).
+
+
+
+
+The Exact Method                                                                                              22
+

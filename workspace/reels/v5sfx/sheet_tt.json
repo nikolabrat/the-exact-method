@@ -1,0 +1,319 @@
+{
+ "video": "/home/claude/rm2/out/V5-tt.mp4",
+ "keep_audio": "yes",
+ "cues": [
+  {
+   "t": 1.4,
+   "label": "pill rides up",
+   "id": 54,
+   "role": "whoosh",
+   "gain_db": -4
+  },
+  {
+   "t": 4.58,
+   "label": "cut SHADOWS",
+   "id": 28,
+   "role": "whoosh",
+   "gain_db": 1
+  },
+  {
+   "t": 5.62,
+   "label": "stamp BANNED",
+   "file": "/home/claude/sfx-library/elevenlabs/stamp.wav",
+   "role": "hit",
+   "gain_db": -3,
+   "slice": [
+    0,
+    0.3
+   ]
+  },
+  {
+   "t": 6.52,
+   "label": "cut GLOWS",
+   "id": 52,
+   "role": "whoosh",
+   "gain_db": 1,
+   "pitch": 2
+  },
+  {
+   "t": 7.02,
+   "label": "stamp BANNED",
+   "file": "/home/claude/sfx-library/elevenlabs/stamp.wav",
+   "role": "hit",
+   "gain_db": -4,
+   "slice": [
+    0,
+    0.3
+   ],
+   "pitch": -1
+  },
+  {
+   "t": 7.46,
+   "label": "cut POP-INS",
+   "id": 24,
+   "role": "whoosh",
+   "gain_db": 1,
+   "pitch": -2,
+   "highpass": 140
+  },
+  {
+   "t": 8.02,
+   "label": "pop demo",
+   "file": "/home/claude/sfx-library/elevenlabs/pop.wav",
+   "role": "pop",
+   "gain_db": -2
+  },
+  {
+   "t": 8.14,
+   "label": "stamp BANNED",
+   "file": "/home/claude/sfx-library/elevenlabs/stamp.wav",
+   "role": "hit",
+   "gain_db": -4,
+   "slice": [
+    0,
+    0.3
+   ],
+   "pitch": 1
+  },
+  {
+   "t": 10.95,
+   "label": "collapse swell",
+   "id": 54,
+   "role": "whoosh",
+   "reverse": true,
+   "anchor": "end",
+   "gain_db": -6
+  },
+  {
+   "t": 10.95,
+   "label": "shockwave",
+   "id": 43,
+   "role": "hit",
+   "gain_db": -10,
+   "layers": [
+    {
+     "dt": 0.0,
+     "id": 25,
+     "role": "whoosh",
+     "gain_db": -12
+    }
+   ],
+   "highpass": 140
+  },
+  {
+   "t": 13.25,
+   "label": "iris",
+   "id": 27,
+   "role": "whoosh",
+   "gain_db": -5
+  },
+  {
+   "t": 14.6,
+   "label": "hub card",
+   "role": "click",
+   "gain_db": 5,
+   "file": "/home/claude/sfx-library/elevenlabs/tick.wav"
+  },
+  {
+   "t": 16.4,
+   "label": "hub card",
+   "role": "click",
+   "gain_db": 5,
+   "id": 36
+  },
+  {
+   "t": 17.49,
+   "label": "hub card",
+   "role": "click",
+   "gain_db": 5,
+   "file": "/home/claude/sfx-library/elevenlabs/click.wav"
+  },
+  {
+   "t": 19.12,
+   "label": "hub card",
+   "role": "click",
+   "gain_db": 5,
+   "id": 57
+  },
+  {
+   "t": 20.0,
+   "label": "light wipe",
+   "id": 11,
+   "role": "whoosh",
+   "gain_db": -3
+  },
+  {
+   "t": 22.22,
+   "label": "red row flag",
+   "role": "foley",
+   "gain_db": -3,
+   "id": 44,
+   "slice": "first"
+  },
+  {
+   "t": 24.62,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    0.299,
+    0.071
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 24.787,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    1.739,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 24.953,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    2.859,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 25.12,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    1.504,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 25.287,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    0.144,
+    0.046
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 25.453,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    3.304,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 25.62,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    1.334,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 25.787,
+   "label": "key filmstrip",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    0.544,
+    0.071
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 26.6,
+   "label": "slat wipe",
+   "id": 26,
+   "role": "whoosh",
+   "gain_db": -2
+  },
+  {
+   "t": 27.38,
+   "label": "key VIDEO",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    1.504,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 27.46,
+   "label": "key VIDEO",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    0.144,
+    0.046
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 27.54,
+   "label": "key VIDEO",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    3.304,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 27.62,
+   "label": "key VIDEO",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    1.334,
+    0.085
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 27.7,
+   "label": "key VIDEO",
+   "file": "/home/claude/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+   "role": "click",
+   "slice": [
+    0.544,
+    0.071
+   ],
+   "gain_db": 0
+  },
+  {
+   "t": 28.7,
+   "label": "click Post",
+   "id": 35,
+   "role": "click",
+   "slice": "first",
+   "gain_db": -2
+  },
+  {
+   "t": 30.1,
+   "label": "return to hook",
+   "id": 11,
+   "role": "whoosh",
+   "gain_db": -5
+  }
+ ]
+}
