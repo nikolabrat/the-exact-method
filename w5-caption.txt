@@ -1,10 +1,10 @@
-Comment PLAIN and I'll send you the free guide with my rules for ChatGPT, Claude and Gemini, ready to paste.
+Comment PLAIN and I'll send you the free guide with my tested rules for ChatGPT, Claude and Gemini, ready to paste.
 
-A rule you type in a chat only lasts for that chat. Put your rules in the settings once, and every new chat reads them.
+A rule you type into one chat doesn't reliably carry to the next. Put your rules in the settings once, and every new chat reads them.
 
 ChatGPT: profile, Personalization, Custom instructions. Then, under Characteristics, set Headers & Lists to less.
 Claude: Settings, Your Claude, Instructions.
 
-Start a new chat after you save. If it still slips into a list, one reply fixes it.
+Start a new chat after you save. If it still slips into a list, one reply fixes it. The reply is in the guide.
 
 #chatgpttips #custominstructions #claudeai
