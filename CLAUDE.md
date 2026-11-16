@@ -12,6 +12,21 @@ does not: IDs, file locations, tools and step-by-step workflows.
    libraries, the plugins and the Remotion project, and checks the ElevenLabs key.
 3. Use the Caveman skill (terse voice) and AgentOne Token Compression (compress large pastes) before output.
 4. Only do what the chat asks. Don't rebuild finished Reels or touch scheduled tasks unless asked.
+5. **STATUS.md is the shared to-do list and calendar.** Read it at the start. Before a chat ends, update it
+   (tick done items, add new ones, move dates, log Reel stats and outreach replies) and push it to `references`.
+   If you change the Reel calendar, also update the schedule page.
+
+## "What's up today?"
+
+When the user asks what's up (today, tomorrow, this week), answer from live data, not from memory alone:
+1. Today's date in Europe/Sofia (current_time tool).
+2. STATUS.md: today's calendar row, the daily routine, open to-dos, outreach.
+3. `list_triggers`: which scheduled tasks run today; flag any whose last run FAILED.
+4. Instagram: yesterday's Reel stats (log them in STATUS.md); new comments on recent Reels that are not
+   keyword comments (questions, possible buyers) to reply to by hand.
+5. Gumroad sales since the last check (`/v2/sales`).
+Reply with a short ordered list: what you will do today, what the user does (with exact files/prompts),
+and what runs on its own. Then wait for the go-ahead.
 
 Secrets: never print or commit keys. The ElevenLabs key comes from the env var `ELEVENLABS_API_KEY`
 (set in the environment's settings). If it is missing, ask the user once, then save it to `~/.private/el_key`
