@@ -9,7 +9,7 @@ does not: IDs, file locations, tools and step-by-step workflows.
 
 1. This repo is cloned with `-b references` and registered (see the project instructions).
 2. Run `bash setup.sh` once per chat (skips what is already there). It installs the skills, the sound
-   libraries, the plugins and the Remotion project, and checks the ElevenLabs key.
+   libraries, the plugins and the Remotion project.
 3. Use the Caveman skill (terse voice) and AgentOne Token Compression (compress large pastes) before output.
 4. Only do what the chat asks. Don't rebuild finished Reels or touch scheduled tasks unless asked.
 5. **STATUS.md is the shared to-do list and calendar.** Read it at the start. Before a chat ends, update it
@@ -28,9 +28,9 @@ When the user asks what's up (today, tomorrow, this week), answer from live data
 Reply with a short ordered list: what you will do today, what the user does (with exact files/prompts),
 and what runs on its own. Then wait for the go-ahead.
 
-Secrets: never print or commit keys. The ElevenLabs key comes from the env var `ELEVENLABS_API_KEY`
-(set in the environment's settings). If it is missing, ask the user once, then save it to `~/.private/el_key`
-(chmod 600) for that chat only.
+Secrets: never print or commit keys. ElevenLabs needs no key in the chat: the user's own ElevenLabs account
+is connected in Composio (toolkit `elevenlabs`, account `elevenlabs_garava-dinero`, alias own-key). Never use
+Composio's "instant account" for ElevenLabs (paid per use, stock voices only, no v4).
 
 ## 1. Accounts and IDs
 
@@ -98,9 +98,14 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    Hook 90+. Structure from memory: hook opens the question from word 1 with text on frame 0; something new
    every ~3 s, first value by s 5-10; the end answers it, CTA after. Show the user results before building.
 2. **Two versions**: Instagram ends "Comment KEYWORD", TikTok "DM me KEYWORD". Caption starts with the CTA.
-3. **Voice**: put `ID|text` lines in `public/<id>v/lines.txt`, copy `tools/voice/gen.sh` and `tools/voice/mix.py`
-   there, edit ids/gaps in mix.py, run both. Output: `f<id>.wav`, `mix_ig.wav`, `mix_tt.wav`,
-   `timing_*.json`, `align_*.json` (per-line forced alignment = word timings for captions).
+3. **Voice** (in `workspace/remotion/public/<id>v/`, with `lines.txt` as `ID|text` per line):
+   for each line call COMPOSIO_PROXY_EXECUTE: toolkit `elevenlabs`, POST `/v1/text-to-speech/<voice_id>`,
+   body `{"text": ..., "model_id": "eleven_v4", "voice_settings": {"stability": 0.5, "similarity_boost": 0.75}}`.
+   The result has `binary_data.url`: `curl -sS -o raw_<ID>.mp3 "<url>"` (link lasts 1 h).
+   Then `bash ../../../../tools/voice/process.sh` (trim + atempo 1.07 → `f<ID>.wav`), copy
+   `tools/voice/mix.py`, set IDS/GAP, run it → `mix_ig.wav`, `mix_tt.wav`, `timing_*.json`, `align_*.json`
+   (word timings from faster-whisper, within ~0.04 s of ElevenLabs alignment). Sound effects the same way:
+   POST `/v1/sound-generation` with `{"text": ..., "duration_seconds": ...}`.
 4. **Check speech = captions**: transcribe each line with faster_whisper `small.en`; decode audio with
    `ffmpeg -f f32le -ar 16000 -ac 1` (av.open fails). Re-record any line that differs from the text.
 5. **Build** the composition (copy the closest example). On-screen captions max 3 words, balanced chunks.
@@ -108,7 +113,7 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    Nothing overlaps Sage's hand. Loop: last frame = frame 0.
 6. **Sound**: real-sfx skill. A sound on everything new that appears. Sheets like `workspace/reels/w5sfx/`.
    `python3 scripts/mix.py sheet.json --out ... --voice-safe --voice-depth light --no-match-layer --sfx-trim-db -1.5`
-   then `critique.py RESOLVED WAV`. New sounds: ElevenLabs Sound Effects API into ~/sfx-library/elevenlabs.
+   then `critique.py RESOLVED WAV`. New sounds: ElevenLabs sound-generation via Composio (step 3) into ~/sfx-library/elevenlabs.
 7. **Render**: `npx remotion render src/index.tsx <Comp> out/<file>.mp4 --concurrency=2 --log=error --browser-executable=$(cat .browser)`,
    then loudnorm to -14 LUFS, true peak < -1 dB. Cover: still of the cover composition.
 8. **QA before showing anything**: frame sheets every 12 frames, `pop-scan.py` (no-slop-motion qa), loop seam,

@@ -84,9 +84,7 @@ python3 -c "import pymupdf" 2>/dev/null || pip install -q --break-system-package
 python3 -c "import faster_whisper" 2>/dev/null || pip install -q --break-system-packages faster-whisper >/dev/null 2>&1
 python3 -c "import faster_whisper" 2>/dev/null && ok "faster-whisper (caption check)" || warn "faster-whisper not installed"
 
-# 5. ElevenLabs key ----------------------------------------------------------
-if [ -n "${ELEVENLABS_API_KEY:-}" ] || [ -s "$HOME/.private/el_key" ]; then ok "ElevenLabs key found"
-else warn "No ElevenLabs key: set ELEVENLABS_API_KEY in the environment settings, or ask the user once"; fi
+ok "ElevenLabs: through Composio (no key needed in the chat)"
 
 rm -rf "$TMP"
 echo "Setup done."
