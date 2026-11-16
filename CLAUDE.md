@@ -76,7 +76,8 @@ Use `list_triggers` before making a new one.
 Folder: `workspace/remotion` (Remotion 4.0.380, 1080x1920, 30 fps, no music). Fonts in `public/`.
 Examples to copy from: `src/W5.tsx` (Sage walkthrough, the latest system), `src/V5.tsx` (pile-up format),
 `src/W6.tsx`, `src/N2.tsx`, `src/PhoneFilm2.tsx`. Formats with a reference video in `video/` are built from it.
-Per-Reel sources (scripts, lines, timing, sound sheets) of past Reels: `workspace/reels/`.
+Per-Reel sources (scripts, lines, timing, sound sheets) of past Reels: `workspace/reels/`. Voice files are not
+in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen.sh + mix.py again.
 
 1. **Script audit** (skills: ig-reel hookscore/beats, content-principles, marketing skills, ig-human).
    Hook 90+. Structure from memory: hook opens the question from word 1 with text on frame 0; something new

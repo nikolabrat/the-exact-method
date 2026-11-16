@@ -43,7 +43,7 @@ if [ ! -d "$SK/real-sfx" ]; then
   clone https://github.com/Clipwing/skills.git "$TMP/cw" && cp -R "$TMP/cw/skills/real-sfx" "$SK/"
 fi
 if [ -d "$SK/real-sfx" ]; then
-  mkdir -p "$HOME/sfx-library" && cp -Rn "$REPO/assets/sfx-library/"* "$HOME/sfx-library/"
+  mkdir -p "$HOME/sfx-library" && cp -R --update=none "$REPO/assets/sfx-library/"* "$HOME/sfx-library/"
   ( cd "$SK/real-sfx" && [ -f library_index.json ] || {
       python3 scripts/setup.py init --uisfx >/dev/null 2>&1
       python3 scripts/setup.py add-library main "$HOME/sfx-library/openverse-cc0" --tier main >/dev/null 2>&1
