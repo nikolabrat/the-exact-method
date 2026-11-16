@@ -15,6 +15,10 @@ does not: IDs, file locations, tools and step-by-step workflows.
 5. **STATUS.md is the shared to-do list and calendar.** Read it at the start. Before a chat ends, update it
    (tick done items, add new ones, move dates, log Reel stats and outreach replies) and push it to `references`.
    If you change the Reel calendar, also update the schedule page.
+6. **Copy-ready text goes in code boxes.** Anything the user will copy and paste (captions, DMs, comments,
+   prompts for another chat, settings values, commands) goes in its own fenced code block, so it copies with
+   one click. One box per destination: if texts go to different places (e.g. Instagram caption, TikTok caption,
+   a DM), each gets its own box with a one-line label above it saying where it goes. Nothing else inside a box.
 
 ## "What's up today?"
 
