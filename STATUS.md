@@ -1,7 +1,7 @@
 # Status and calendar (keep this current)
 
 Every chat that finishes or changes something updates this file and pushes it (branch `references`).
-Dates are Europe/Sofia. Last updated: 16 Nov 2026.
+Dates are Europe/Sofia. Last updated: 17 Nov 2026.
 
 ## Daily routine (every day)
 
@@ -18,7 +18,7 @@ Dates are Europe/Sofia. Last updated: 16 Nov 2026.
 | Day | Reel (20:00) | Also that day |
 | --- | --- | --- |
 | Mon 16 Nov | W-5 · Stop typing the same rules (PLAIN), scheduled | Plain Voice PDF switch (laptop chat) before 20:00; TikTok upload of W-5 |
-| Tue 17 Nov | A-1 v4 full version (81 s), Offer | Rebuild/re-audit under the new rules first (hook 90+, structure, sound on everything new). If the A-1 full file isn't in `ig-media`, ask the user for it. **N-7 real run** (AI run for Thu's Reel) |
+| Tue 17 Nov | A-1 · Stop asking "are you sure?" (METHOD → The Narrowing Method), rebuilt from scratch, 58.7 s, scheduled | TikTok upload of A-1 (laptop: Videos/TikTok versions). **N-7 real run** (AI run for Thu's Reel) |
 | Wed 18 Nov | V-2 · The voice you can sell with (VIDEO) | Script in `scripts/video-brief-reels-scripts.md`; re-audit to the new rules |
 | Thu 19 Nov | N-7 · The first thing to sell (NARROW) | Uses the 17 Nov real run. **P-4 real run**. Run /ig-audit on the first two weeks of Reels |
 | Fri 20 Nov | P-6 · The formatting rules test, reworked (PLAIN) | Script from the real 4 Nov runs |
@@ -43,7 +43,14 @@ from the title, the guide it points to, and the rules in memory.
 - [ ] Remove unused connectors from the keyword DM task (user, in the task's settings)
 - [ ] Publish the 3 Gumroad email workflows once earnings pass $100 and a payout has happened
 - [ ] Check that theexactmethod.com/plain-voice/ shows "Settings, then Your Claude, then Instructions" (merged 16 Nov, PR #15)
-- [ ] Plain Voice PDF: laptop chat switches `product-files/ready/2-Plain-Voice-Free-Guide.pdf` into the folder and Gumroad (MANIFEST row "ready 2026-11-16")
+- [x] Plain Voice PDF switched into the folder and Gumroad (16 Nov)
+- [ ] Re-run /ig-viral about monthly (next ~16 Dec) and update the project doc `claude/viral-formats.md`
+
+## Notes (17 Nov)
+
+- Script audits now also check the script matches a viral format (project doc `claude/viral-formats.md`, research in `workspace/research/`).
+- Every video also goes into the laptop folder `The Exact Method/Videos/` (manual §4 step 10).
+- METHOD keyword added to the DM task: sends The Narrowing Method (habit one). Offer Reels point to a free guide, with the paid product as "link in bio".
 
 ## Outreach (week of 16 Nov: talk to possible buyers)
 

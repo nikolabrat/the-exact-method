@@ -101,6 +101,8 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
 1. **Script audit** (skills: ig-reel hookscore/beats, content-principles, marketing skills, ig-human).
    Hook 90+. Structure from memory: hook opens the question from word 1 with text on frame 0; something new
    every ~3 s, first value by s 5-10; the end answers it, CTA after. Show the user results before building.
+   **Viral-format match**: the script must match one of the formats in the project doc `claude/viral-formats.md`
+   (F1-F5, from the ig-viral research). Name the format and its reference reel; if none fits, rewrite first.
 2. **Two versions**: Instagram ends "Comment KEYWORD", TikTok "DM me KEYWORD". Caption starts with the CTA.
 3. **Voice** (in `workspace/remotion/public/<id>v/`, with `lines.txt` as `ID|text` per line):
    for each line call COMPOSIO_PROXY_EXECUTE: toolkit `elevenlabs`, POST `/v1/text-to-speech/<voice_id>`,
@@ -127,6 +129,10 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    (media_type REELS, video_url, cover_url, caption, share_to_feed true), poll `status_code` until FINISHED.
    Then a one-shot scheduled task at 20:00 that only calls `media_publish` and returns the permalink.
    Update the schedule page. Remind the user to upload the TikTok version.
+10. **Laptop video folder** (every video, from 17 Nov): `~/The Exact Method/Videos/` on the user's laptop (connected
+   folder, write with device_commit_files). Subfolders: `Raw footage` (real AI run recordings), `Reference videos`
+   (every reference video), `Insta versions` and `TikTok versions`. In the last two, one subfolder per video named
+   after it (e.g. `A-1 Stop asking are you sure`) holding `<name>.mp4`, `<name> - thumbnail.jpg`, `<name> - caption.txt`.
 
 Reel stats: `GET /<media_id>/insights?metric=reach,views,likes,comments,saved,shares,ig_reels_avg_watch_time,reels_skip_rate`.
 

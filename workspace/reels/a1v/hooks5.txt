@@ -1,0 +1,4 @@
+Stop asking ChatGPT "are you sure?" You just get the same answer twice.
+Stop asking ChatGPT "are you sure?" You only get its answer twice.
+Stop asking ChatGPT "are you sure?" You get the same answer, 2 times.
+Stop asking ChatGPT "are you sure?" It checks nothing. Do this instead.
