@@ -48,6 +48,8 @@ from the title, the guide it points to, and the rules in memory.
 
 ## Notes (17 Nov)
 
+- **Short-Reel test starts 18 Nov** (manual §4 step 1): V-2 (18), N-7 (19) and P-6 (20) are built at 15-25 s with the payoff by second 5. Read the results on 21 Nov against the baseline and decide whether to keep the short format.
+
 - Script audits now also check the script matches a viral format (project doc `claude/viral-formats.md`, research in `workspace/research/`).
 - Every video also goes into the laptop folder `The Exact Method/Videos/` (manual §4 step 10).
 - METHOD keyword added to the DM task: sends The Narrowing Method (habit one). Offer Reels point to a free guide, with the paid product as "link in bio".

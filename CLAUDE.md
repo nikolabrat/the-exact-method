@@ -103,6 +103,11 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    every ~3 s, first value by s 5-10; the end answers it, CTA after. Show the user results before building.
    **Viral-format match**: the script must match one of the formats in the project doc `claude/viral-formats.md`
    (F1-F5, from the ig-viral research). Name the format and its reference reel; if none fits, rewrite first.
+   **Short-Reel test (from 18 Nov, every Reel until the user ends it)**: 15-25 s total (about 45-65 spoken words
+   at Mike's pace), one idea, the payoff or result ON SCREEN by second 5, then the "how/why" for the rest, one thing
+   worth saving (the prompt, the list) on screen, CTA in the last ~3 s, loop. This replaces "keep the main answer
+   open past second 6": the open loop is now how it works, not what the answer is. Log length, reach, skip rate and
+   avg watch in STATUS; compare with the 17 Nov baseline (avg watch ~7 s, skip 52-66%, reach 100-250).
 2. **Two versions**: Instagram ends "Comment KEYWORD", TikTok "DM me KEYWORD". Caption starts with the CTA.
 3. **Voice** (in `workspace/remotion/public/<id>v/`, with `lines.txt` as `ID|text` per line):
    for each line call COMPOSIO_PROXY_EXECUTE: toolkit `elevenlabs`, POST `/v1/text-to-speech/<voice_id>`,
