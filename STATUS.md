@@ -73,11 +73,16 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | Reel | Posted | Length | Reach | Skip rate | Avg watch | Saves | Shares |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | V-5 | 15 Nov | 32.4 s | 209 | 66.5% | 6.9 s | 4 | 1 |
+| W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |
+| A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
 Finding (16 Nov): views stop after Instagram's first test group; 2 of 3 viewers leave in the first 3 s, so
 the hook is the main problem. Not caused by posting from Bulgaria.
+Finding (17 Nov): skip rate improved (60% and 52% vs 66-95% before), but average watch stays at ~7 s on every Reel
+whatever its length (32-59 s), so viewers leave right after the hook. With 0 shares and 0-1 saves, no Reel gets past the
+first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in the first 5 s.
 
 ## Sales
 
