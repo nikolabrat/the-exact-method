@@ -192,7 +192,7 @@ const Bubble: React.FC<{text: string; p?: number; me?: boolean; size?: number}> 
 );
 
 // ---------- card A: the hook chat (also the loop end, equal to frame 0) ----------
-const HookChat: React.FC<{f: number; m: MT; loop?: number}> = ({f, m, loop}) => {
+const HookChat: React.FC<{f: number; m: MT; loop?: number; legacy?: boolean}> = ({f, m, loop, legacy}) => {
   const isLoop = loop !== undefined;
   const rep1 = isLoop ? 0 : r(f, m.reply1, m.reply1 + 8);
   const rep2 = isLoop ? 0 : r(f, m.reply2, m.reply2 + 8);
@@ -210,6 +210,15 @@ const HookChat: React.FC<{f: number; m: MT; loop?: number}> = ({f, m, loop}) => 
           )}
         </span>
       </div>
+      {legacy ? (
+      <div style={{position: 'relative', marginTop: 26, minHeight: 200}}>
+        <div style={{fontFamily: 'Newsreader', fontSize: 40, color: C.ink, opacity: rep1}}>Yes, I'm sure. Video editing.</div>
+        <div style={{fontFamily: 'Newsreader', fontSize: 40, color: C.ink, opacity: rep2 * 0.55, transform: 'translate(14px, 8px)'}}>Yes, I'm sure. Video editing.</div>
+        <div style={{position: 'absolute', right: 0, top: 118, display: 'flex', alignItems: 'center', gap: 14, opacity: rep2}}>
+          <Mono size={26}>same answer</Mono>
+          <span style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 52, background: C.gold, border: `4px solid ${C.ink}`, borderRadius: 14, padding: '0 14px', minWidth: 80, height: 66, display: 'inline-flex', alignItems: 'center'}}>×2</span>
+        </div>
+      </div>) : (
       <div style={{position: 'relative', marginTop: 26}}>
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', opacity: rep1, transform: `translateY(${(1 - rep1) * 18}px)`}}>
           <span style={{fontFamily: 'Newsreader', fontSize: 40, color: C.ink}}>Yes, I'm sure. Video editing.</span>
@@ -218,13 +227,13 @@ const HookChat: React.FC<{f: number; m: MT; loop?: number}> = ({f, m, loop}) => 
           </span>
         </div>
         <div style={{fontFamily: 'Newsreader', fontSize: 40, color: C.ink, opacity: rep2 * 0.55, transform: `translate(${(1 - rep2) * -10 + 14}px, 8px)`}}>Yes, I'm sure. Video editing.</div>
-      </div>
+      </div>)}
     </>
   );
 };
 
 // ---------- the composition ----------
-export const A1: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
+export const A1: React.FC<{platform: 'ig' | 'tt'; legacy?: boolean}> = ({platform, legacy}) => {
   const f = useCurrentFrame();
   const z = Z[platform];
   const m = MM[platform];
@@ -240,7 +249,7 @@ export const A1: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
 
       {/* A: the hook chat, on screen at frame 0 */}
       <Card f={f} inAt={0} outAt={A_OUT} first zoom={1.4} title="ChatGPT" tag={<Mono>example</Mono>}>
-        <HookChat f={f} m={m} />
+        <HookChat f={f} m={m} legacy={legacy} />
       </Card>
 
       {/* B: five habits, slot 5 is the real check */}
@@ -339,7 +348,7 @@ export const A1: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                     border: `4px solid ${C.ink}`, borderLeftWidth: i === 1 ? lerp(0, 4, sp) : 4, borderRightWidth: i === 0 ? lerp(0, 4, sp) : 4,
                     borderTopRightRadius: i === 0 ? lerp(0, 26, sp) : 26, borderBottomRightRadius: i === 0 ? lerp(0, 26, sp) : 26,
                     borderTopLeftRadius: i === 1 ? lerp(0, 26, sp) : 26, borderBottomLeftRadius: i === 1 ? lerp(0, 26, sp) : 26, background: C.card, opacity: r(f, m.D_in + 6, m.D_in + 16)}}>
-                    <span style={{opacity: i === 0 ? 1 : sp}}><Mono size={26}>{i === 0 ? 'Step 1' : 'Step 2'}</Mono></span>
+                    {legacy ? <Mono size={26}>{i === 0 ? 'Step 1' : sp > 0.5 ? 'Step 2' : ''}</Mono> : <span style={{opacity: i === 0 ? 1 : sp}}><Mono size={26}>{i === 0 ? 'Step 1' : 'Step 2'}</Mono></span>}
                     <div style={{marginTop: 40, display: 'flex', alignItems: 'center', gap: 16}}>
                       <span style={{position: 'relative', display: 'inline-block'}}>
                         <span style={{position: 'absolute', inset: 0, border: `4px dashed ${C.line}`, borderRadius: 18, opacity: 1 - (i === 0 ? j1 : j2)}} />

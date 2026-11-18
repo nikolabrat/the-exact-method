@@ -19,7 +19,7 @@ Dates are Europe/Sofia. Last updated: 17 Nov 2026.
 | --- | --- | --- |
 | Mon 16 Nov | W-5 · Stop typing the same rules (PLAIN), scheduled | Plain Voice PDF switch (laptop chat) before 20:00; TikTok upload of W-5 |
 | Tue 17 Nov | A-1 · Stop asking "are you sure?" (METHOD → The Narrowing Method), rebuilt from scratch, 58.7 s, scheduled | TikTok upload of A-1 (laptop: Videos/TikTok versions). **N-7 real run** (AI run for Thu's Reel) |
-| Wed 18 Nov | V-2 · The voice you can sell with (VIDEO) | Script in `scripts/video-brief-reels-scripts.md`; re-audit to the new rules |
+| Wed 18 Nov | V-2 · Stop hunting for mistakes (VIDEO → The Video Brief, section 10 p12), new script, 28.1 s, first short-Reel test, scheduled (container 18079389593505069) | TikTok upload of V-2 (laptop: Videos/TikTok versions). Log V-2 stats 19 Nov |
 | Thu 19 Nov | N-7 · The first thing to sell (NARROW) | Uses the 17 Nov real run. **P-4 real run**. Run /ig-audit on the first two weeks of Reels |
 | Fri 20 Nov | P-6 · The formatting rules test, reworked (PLAIN) | Script from the real 4 Nov runs |
 | Sat 21 Nov | none | |
@@ -77,6 +77,7 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | V-5 | 15 Nov | 32.4 s | 209 | 66.5% | 6.9 s | 4 | 1 |
 | W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |
 | A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |
+| V-2 | 18 Nov | 28.1 s | | | | | |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
@@ -90,3 +91,11 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 
 - The Narrowing Method: 1 free claim (2 Nov, Sofia, from gumroad.com; probably the user or a friend), 2 downloads.
 - All other products: 0 (16 Nov).
+
+## Notes (18 Nov)
+
+- V-2 rebuilt from a new script ("Stop hunting for mistakes": paste the phone-check line before watching a Claude video; proof = the two real A-1 bugs it caught). Sources: `workspace/reels/v2v/`, `workspace/reels/v2sfx/make_sheet.py`, `src/V2.tsx`.
+- Caption timing: word times now come from ElevenLabs forced alignment (Composio tool ELEVENLABS_ALIGN_AUDIO_AND_TRANSCRIPT on each processed line file; `el_align.json` + `totiming_el.py`). Whisper word times ran 2-3 frames late and got pauses wrong. Use this for every new Reel. Words light 1 frame before they are spoken; caption breaks set by hand (max 3 words, by meaning).
+- New V2 building blocks reusable for the next Reels: card transitions (crash zoom, fly-off, push, page turn, whip, pull back), a loop-safe camera (drift, punch-ins, impact shakes), the 8-chip pile-up from the pile-up reference.
+- Sound: user wants effects clearly audible. V-2 mix used `--voice-depth normal --sfx-trim-db 9` (effects about 9 dB louder than before, ducked harder under speech); big hits as role "hit" with highpass 150. New ElevenLabs sounds in ~/sfx-library/elevenlabs: riser, impact, zoomwhoosh, cardfly, scan, stampthunk, cardpile, notif.
+- DM keyword task: added the V-2 pointer (caption contains "like you're on your phone" → section 10, page 12).
