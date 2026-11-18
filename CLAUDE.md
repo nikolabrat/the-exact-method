@@ -106,7 +106,11 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    **Short-Reel test (from 18 Nov, every Reel until the user ends it)**: 15-25 s total (about 45-65 spoken words
    at Mike's pace), one idea, the payoff or result ON SCREEN by second 5, then the "how/why" for the rest, one thing
    worth saving (the prompt, the list) on screen, CTA in the last ~3 s, loop. This replaces "keep the main answer
-   open past second 6": the open loop is now how it works, not what the answer is. Log length, reach, skip rate and
+   open past second 6": the open loop is now how it works, not what the answer is.
+   **Frame-0 test (from 19 Nov, after V-2 lost most viewers at 0:01)**: (1) the full hook sentence as a big headline
+   readable in under 1 s, spoken captions below it; (2) a real, recognisable result or face on frame 0, not a diagram
+   of one; (3) the first words speak to a problem anyone using ChatGPT/Claude has, narrowing to the guide's niche only
+   after second 3; (4) the screen filled, no large empty areas. Log length, reach, skip rate and
    avg watch in STATUS; compare with the 17 Nov baseline (avg watch ~7 s, skip 52-66%, reach 100-250).
 2. **Two versions**: Instagram ends "Comment KEYWORD", TikTok "DM me KEYWORD". Caption starts with the CTA.
 3. **Voice** (in `workspace/remotion/public/<id>v/`, with `lines.txt` as `ID|text` per line):
