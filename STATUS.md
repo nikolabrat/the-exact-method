@@ -72,13 +72,13 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 
 ## Reel results log
 
-| Reel | Posted | Length | Reach | Skip rate | Avg watch | Saves | Shares |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| V-5 | 15 Nov | 32.4 s | 209 | 66.5% | 6.9 s | 4 | 1 |
-| W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |
-| A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |
-| V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |
-| N-7 | 19 Nov | 30.0 s | | | | | |
+| Reel | Posted | Length | Reach | Skip rate | Avg watch | Saves | Shares | Follows | Keyword comments | Free downloads |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| V-5 | 15 Nov | 32.4 s | 209 | 66.5% | 6.9 s | 4 | 1 |  |  |  |
+| W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |  |  |  |
+| A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |
+| V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |
+| N-7 | 19 Nov | 30.0 s | | | | | |  |  |  |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
@@ -108,3 +108,4 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Sound on everything: 50 cues, 49 distinct (library + uisfx + 6 new ElevenLabs sounds: markersq, cardfan, focussnap, coin, clocktick, emptythud). Critique flags pacing (13/10 s), accepted on purpose.
 - /home/claude/dl.sh now takes the signing date from the X-Amz-Date argument (it was fixed to 18 Nov).
 - DM keyword task: NARROW + caption "what should i sell online first" → section 03, page 4.
+- New skill `skills/growth-system` (from the Short Form Growth System emails): Game 5, buyer-pool relevance gate, trust = minutes × relevance × usefulness, trust metrics in the results log (follows, keyword comments, free downloads added). Updated after each email the user sends.

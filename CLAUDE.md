@@ -11,6 +11,9 @@ does not: IDs, file locations, tools and step-by-step workflows.
 2. Run `bash setup.sh` once per chat (skips what is already there). It installs the skills, the sound
    libraries, the plugins and the Remotion project.
 3. Use the Caveman skill (terse voice) and AgentOne Token Compression (compress large pastes) before output.
+   For anything made for the audience (scripts, captions, pins, DMs, emails, offers, topic plans), apply the
+   **growth-system** skill (`skills/growth-system/SKILL.md`, installed by setup.sh). Update it after every email
+   of the Short Form Growth System course the user sends, and log the email in its source table.
 4. Only do what the chat asks. Don't rebuild finished Reels or touch scheduled tasks unless asked.
 5. **STATUS.md is the shared to-do list and calendar.** Read it at the start. Before a chat ends, update it
    (tick done items, add new ones, move dates, log Reel stats and outreach replies) and push it to `references`.
@@ -98,7 +101,7 @@ Examples to copy from: `src/W5.tsx` (Sage walkthrough, the latest system), `src/
 Per-Reel sources (scripts, lines, timing, sound sheets) of past Reels: `workspace/reels/`. Voice files are not
 in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen.sh + mix.py again.
 
-1. **Script audit** (skills: ig-reel hookscore/beats, content-principles, marketing skills, ig-human).
+1. **Script audit** (skills: ig-reel hookscore/beats, content-principles, marketing skills, ig-human, **growth-system**).
    Hook 90+. Structure from memory: hook opens the question from word 1 with text on frame 0; something new
    every ~3 s, first value by s 5-10; the end answers it, CTA after. Show the user results before building.
    **Viral-format match**: the script must match one of the formats in the project doc `claude/viral-formats.md`
@@ -109,8 +112,8 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    open past second 6": the open loop is now how it works, not what the answer is.
    **Frame-0 test (from 19 Nov, after V-2 lost most viewers at 0:01)**: (1) the full hook sentence as a big headline
    readable in under 1 s, spoken captions below it; (2) a real, recognisable result or face on frame 0, not a diagram
-   of one; (3) the first words speak to a problem anyone using ChatGPT/Claude has, narrowing to the guide's niche only
-   after second 3; (4) the screen filled, no large empty areas. Log length, reach, skip rate and
+   of one; (3) the first words speak to a problem anyone in the buyer pool has (people who use AI to build,
+   sell or create something; see growth-system), narrowing to the guide's niche only after second 3; (4) the screen filled, no large empty areas. Log length, reach, skip rate and
    avg watch in STATUS; compare with the 17 Nov baseline (avg watch ~7 s, skip 52-66%, reach 100-250).
 2. **Two versions**: Instagram ends "Comment KEYWORD", TikTok "DM me KEYWORD". Caption starts with the CTA.
 3. **Voice** (in `workspace/remotion/public/<id>v/`, with `lines.txt` as `ID|text` per line):

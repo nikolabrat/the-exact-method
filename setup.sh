@@ -14,6 +14,7 @@ clone(){ git clone -q --depth 1 "$1" "$2" 2>/dev/null || warn "could not clone $
 
 # 1. Skills ---------------------------------------------------------------
 [ -d "$SK/content-principles" ] || cp -R "$REPO/skills/content-principles" "$SK/" && ok "content-principles"
+rm -rf "$SK/growth-system"; cp -R "$REPO/skills/growth-system" "$SK/" && ok "growth-system (always refreshed)"
 
 if [ ! -d "$SK/ig-reel" ]; then
   clone https://github.com/Jakeschincariol/instagram-agent-skill.git "$TMP/ig" && cp -R "$TMP/ig/skills/"* "$SK/"
