@@ -5,6 +5,9 @@ description: Rules from the Short Form Growth System emails, filtered for The Ex
 
 # Growth System: what we apply
 
+**Internal use only.** If we ever sell or share this, rebuild it first: own names, own structure, own words,
+only claims our numbers back, credit to the source.
+
 Distilled from a 7-day email course ("Short Form Growth System", same creator as the Triple Hook).
 Only what is useful and applicable to The Exact Method is kept here; hype, income claims and
 unverified stories are left out. Updated after every email (log at the bottom).
