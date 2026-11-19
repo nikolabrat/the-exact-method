@@ -72,13 +72,13 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 
 ## Reel results log
 
-| Reel | Posted | Length | Reach | Skip rate | Avg watch | Saves | Shares | Follows | Keyword comments | Free downloads |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| V-5 | 15 Nov | 32.4 s | 209 | 66.5% | 6.9 s | 4 | 1 |  |  |  |
-| W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |  |  |  |
-| A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |
-| V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |
-| N-7 | 19 Nov | 30.0 s | | | | | |  |  |  |
+| Reel | Posted | Length | Reach | Skip rate | Avg watch | Saves | Shares | Follows | Keyword comments | Free downloads | Test (hypothesis) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| V-5 | 15 Nov | 32.4 s | 209 | 66.5% | 6.9 s | 4 | 1 |  |  |  |  |
+| W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |  |  |  |  |
+| A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |  |
+| V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |  |
+| N-7 | 19 Nov | 30.0 s | | | | | |  |  |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%) |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).

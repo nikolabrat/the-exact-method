@@ -10,7 +10,47 @@ Only what is useful and applicable to The Exact Method is kept here; hype, incom
 unverified stories are left out. Updated after every email (log at the bottom).
 
 **How to use:** apply silently inside the normal audit (with ig-reel, content-principles and the
-marketing skills). In the audit results, add one line per rule below that the piece passes or fails.
+marketing skills). In the audit results, add one line per rule below that the piece passes or fails,
+and break the piece into its 11 bricks (section 0).
+
+---
+
+## 0. Content is data + psychology: the 11 bricks
+
+Data says which videos already worked; psychology predicts which will work again. Replace guessing
+with a loop: study what works → build → measure → change one brick → repeat.
+
+Every short video is a stack of **11 bricks in 5 categories**, decided in this order:
+
+| Category | Bricks | Our sources |
+| --- | --- | --- |
+| Format | Format (the canvas: breakdown, scenario, hero's journey, result-first…) | `claude/viral-formats.md` (F1-F5) |
+| Idea | Topic · **Seed** (the one-line premise) · **Substance** (facts, takes, examples that drive emotion) | relevance gate (section 3), real runs |
+| Hook | **Text hook · Visual hook · Spoken hook**, in that order of importance | frame-0 rules, hookscore |
+| Script | Story structure · CTA · retention | ig-reel beats, content-principles |
+| Edit | Visual style, layout, pacing, captions, signature elements | Remotion system, no-slop-motion, real-sfx |
+
+**In every audit:** write the 11 bricks out in one short table for the piece. When a Reel
+underperforms, diagnose by brick (which brick failed?), not by "the video was bad".
+
+**Hook order matters:** the on-screen text hook is judged first, then the visual hook, then the
+spoken hook. Score and rewrite the text hook (frame-0 headline) first; hookscore only rates the
+spoken line, so it is the last check, not the main one.
+
+**You don't need originality:** take brick combinations already working in the niche and remix them.
+Keep most bricks, change about 3, add our own spin (real runs, the Exact Method angle). This is the
+same idea as the viral-format match, applied brick by brick.
+
+## 0b. The 4 "cannot lose" conditions
+
+1. **Post consistently:** at least 3 a week, ideally 4-7. We post 4-5 a week. Keep it.
+2. **Get measurably better each rep:** every Reel carries one **improvement hypothesis** ("testing a
+   text hook that names a number", "switching the layout to X"). Write it in the audit and in the
+   STATUS results log (Test column), then read it against the numbers.
+3. **Funnel on-target traffic into an aligned offer:** the free guide must match what the Reel
+   promised, and the guide must lead to the paid ladder. See sections 1 and 7.
+4. **Never stop:** the core skills lock in around rep 50; most people quit around rep 25. We are at
+   about 14 Instagram Reels (19 Nov 2026). Results lag skills early on; judge the system at rep 50.
 
 ---
 
@@ -89,7 +129,13 @@ the course as tests, not rules, until our numbers confirm them.
 
 | Email | Date received | What it added |
 | --- | --- | --- |
+| Email 0: Introduction (Lego Bricks, 4 conditions) | 19 Nov 2026 | Sections 0, 0b; hook order (text > visual > spoken); improvement hypothesis per Reel |
 | Day 1: The 5 Content Games | 19 Nov 2026 | Sections 1-7, 8 (copy patterns), 9 |
 
-Coming: email 0 (introduction, the "Lego Bricks" framework), day 2 ("6 Idea Pipes", ranked sources
-of validated video ideas), and the rest of the 7 days.
+Coming: day 2 "6 Idea Pipes" (ranked sources of validated ideas), day 3 "3 Hook Components",
+day 4 "Buyer Activation Flow" (viewer to buyer), day 5 "First 3 Reps", day 6 "11-Point Video
+Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend section 0's audit table.
+
+Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
+"1M business owners making $1M" mission, and the tool and academy he sells (Sandcastles, Short Form
+Academy). Expect a pitch for those at the end of the series.
