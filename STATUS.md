@@ -15,6 +15,8 @@ Dates are Europe/Sofia. Last updated: 17 Nov 2026.
 
 ## Calendar
 
+Rhythm (from 19 Nov): 5 Reels a week, Mon-Fri. Weekends: no Reels; strategy and content-quality work. Sunday builds Monday's Reel.
+
 | Day | Reel (20:00) | Also that day |
 | --- | --- | --- |
 | Mon 16 Nov | W-5 · Stop typing the same rules (PLAIN), scheduled | Plain Voice PDF switch (laptop chat) before 20:00; TikTok upload of W-5 |
@@ -22,8 +24,8 @@ Dates are Europe/Sofia. Last updated: 17 Nov 2026.
 | Wed 18 Nov | V-2 · Stop hunting for mistakes (VIDEO → The Video Brief, section 10 p12), new script, 28.1 s, first short-Reel test, scheduled (container 18079389593505069) | TikTok upload of V-2 (laptop: Videos/TikTok versions). Log V-2 stats 19 Nov |
 | Thu 19 Nov | N-7 · Never sell ChatGPT's first idea (NARROW → section 03 p4), new script, hook 100, 30.0 s, real run 19 Nov, scheduled (container 18079790555505069) | TikTok upload of N-7 (laptop: Videos/TikTok versions). **P-4 real run**. Log N-7 stats 20 Nov |
 | Fri 20 Nov | P-6 · The formatting rules test, reworked (PLAIN) | Script from the real 4 Nov runs |
-| Sat 21 Nov | none | |
-| Sun 22 Nov | none | **N-8 real run** |
+| Sat 21 Nov | none | **Strategy day**: next Short Form Growth System emails → update growth-system, decide tactic/rule changes for content quality |
+| Sun 22 Nov | none | **Build Mon's W-7 today** with the new rules, schedule for Mon 20:00 (container valid 24 h: create it after ~20:00 Sun). **N-8 real run** |
 | Mon 23 Nov | W-7 · Make AI interview you first ($17 pack) | New format on the day: one prompt from the pack, comment PROMPT → prompt in the DM (under 1,000 bytes) + "more prompts like that" link to the $17 pack. Add the PROMPT rule to the DM task |
 | Tue 24 Nov | N-8 · Which AI tool to pay for (NARROW) | |
 | Wed 25 Nov | V-3 · Stop asking for a cool video (VIDEO) | Script in `scripts/video-brief-reels-scripts.md`. **N-9 real run (web search on)** |
