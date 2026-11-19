@@ -86,7 +86,7 @@ Commit as `git -c user.email=nblazarov07@gmail.com -c user.name=nikolabrat commi
 
 | Task | When | Notes |
 | --- | --- | --- |
-| Instagram comment keywords → DM the guide | `CRON_TZ=Europe/Sofia 48 0,8-22/2 * * *` | NARROW/PLAIN/VIDEO; DM + pointer line per Reel caption. Add a pointer rule when a new Reel's caption needs one. **PAUSED 19 Nov: IG link restriction until 19 Dec. Don't re-enable, and don't put links in IG DMs, until the user says it's lifted** |
+| Instagram comment keywords → DM the guide | `CRON_TZ=Europe/Sofia 48 0,8-22/2 * * *` | NARROW/PLAIN/VIDEO; DM + pointer line per Reel caption. Add a pointer rule when a new Reel's caption needs one. |
 | Daily pins 16-30 Nov | 20:17 Sofia, 16-30 Nov | reads pin-media/b45/pins.json. Switch off after 30 Nov |
 | One-shot Reel publish | the Reel's day, 20:00 Sofia | only calls media_publish on a container made the day before or same day (valid 24 h) |
 

@@ -39,7 +39,7 @@ from the title, the guide it points to, and the rules in memory.
 
 ## Open to-dos
 
-- [ ] **Instagram link restriction until 19 Dec 2026** ("You can't share links", prohibited commercial practices). User: submit Request review (29 days left). Comment-keyword DM task PAUSED 19 Nov 20:15. Until lifted: no links in IG DMs/comments/captions, check the bio link still works, CTAs → "link in bio" or TikTok. Rethink W-7 PROMPT format (relies on a DM link)
+- [x] Instagram link restriction (19 Nov 20:14) lifted after review 20:24 same day ("our technology made a mistake"). DM task re-enabled
 
 - [ ] Delete GitHub branch `plain-voice-claude-path` (user, on GitHub)
 - [ ] Remove unused connectors from the keyword DM task (user, in the task's settings)
@@ -110,5 +110,5 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Sound on everything: 50 cues, 49 distinct (library + uisfx + 6 new ElevenLabs sounds: markersq, cardfan, focussnap, coin, clocktick, emptythud). Critique flags pacing (13/10 s), accepted on purpose.
 - /home/claude/dl.sh now takes the signing date from the X-Amz-Date argument (it was fixed to 18 Nov).
 - DM keyword task: NARROW + caption "what should i sell online first" → section 03, page 4.
-- 20:14 Instagram restricted @theexactmethod from sharing links until 19 Dec (reason: "may deceive others to take their money…"). No keyword DMs had gone out yet (only 1 test DM to the user's own account), so not a DM-volume issue. Likely trigger: an automated classifier on a 5-follower account that posted 20 Reels via API in a short time, with 'Comment X and I'll DM you a free guide' captions + 'free guides / instant PDF downloads' bio + external link. DM task paused. N-7 (NARROW CTA) went out at 20:00: keyword commenters get no auto-DM until resolved.
+- 20:14 Instagram restricted @theexactmethod from sharing links until 19 Dec (reason: "may deceive others to take their money…"). No keyword DMs had gone out yet (only 1 test DM to the user's own account), so not a DM-volume issue. Likely trigger: an automated classifier on a 5-follower account that posted 20 Reels via API in a short time, with 'Comment X and I'll DM you a free guide' captions + 'free guides / instant PDF downloads' bio + external link. User requested review; Instagram removed it at 20:24 ("our technology made a mistake"). DM task paused 20:15, re-enabled 20:24, back to normal.
 - New skill `skills/growth-system` (from the Short Form Growth System emails): Game 5, buyer-pool relevance gate, trust = minutes × relevance × usefulness, trust metrics in the results log (follows, keyword comments, free downloads added). Updated after each email the user sends.
