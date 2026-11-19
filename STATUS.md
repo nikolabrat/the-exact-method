@@ -20,7 +20,7 @@ Dates are Europe/Sofia. Last updated: 17 Nov 2026.
 | Mon 16 Nov | W-5 · Stop typing the same rules (PLAIN), scheduled | Plain Voice PDF switch (laptop chat) before 20:00; TikTok upload of W-5 |
 | Tue 17 Nov | A-1 · Stop asking "are you sure?" (METHOD → The Narrowing Method), rebuilt from scratch, 58.7 s, scheduled | TikTok upload of A-1 (laptop: Videos/TikTok versions). **N-7 real run** (AI run for Thu's Reel) |
 | Wed 18 Nov | V-2 · Stop hunting for mistakes (VIDEO → The Video Brief, section 10 p12), new script, 28.1 s, first short-Reel test, scheduled (container 18079389593505069) | TikTok upload of V-2 (laptop: Videos/TikTok versions). Log V-2 stats 19 Nov |
-| Thu 19 Nov | N-7 · The first thing to sell (NARROW) | Uses the 17 Nov real run. **P-4 real run**. Run /ig-audit on the first two weeks of Reels |
+| Thu 19 Nov | N-7 · Never sell ChatGPT's first idea (NARROW → section 03 p4), new script, hook 100, 30.0 s, real run 19 Nov, scheduled (container 18079790555505069) | TikTok upload of N-7 (laptop: Videos/TikTok versions). **P-4 real run**. Log N-7 stats 20 Nov |
 | Fri 20 Nov | P-6 · The formatting rules test, reworked (PLAIN) | Script from the real 4 Nov runs |
 | Sat 21 Nov | none | |
 | Sun 22 Nov | none | **N-8 real run** |
@@ -78,6 +78,7 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |
 | A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |
 | V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |
+| N-7 | 19 Nov | 30.0 s | | | | | |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
@@ -100,3 +101,10 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Sound: user wants effects clearly audible. V-2 mix used `--voice-depth normal --sfx-trim-db 9` (effects about 9 dB louder than before, ducked harder under speech); big hits as role "hit" with highpass 150. New ElevenLabs sounds in ~/sfx-library/elevenlabs: riser, impact, zoomwhoosh, cardfly, scan, stampthunk, cardpile, notif.
 - DM keyword task: added the V-2 pointer (caption contains "like you're on your phone" → section 10, page 12).
 - V-2 results (4 h, final): IG reach 125, skip 72%, avg watch 6.0 s, 0 likes, 1 save. TikTok 67 views, avg 2.5 s, 1.5% full watch, most left at 0:01. Shorter did not raise watch time (6-7 s at 28, 50 and 59 s): viewers decide in the first second. Frame 0 shows an abstract phone mock-up and two words ("Stop hunting"), the hook assumes the viewer already makes videos with Claude, and half the screen is empty. Next Reels: full hook as a big headline on frame 0, a real result or face on frame 0, a broader audience in the first words.
+
+## Notes (19 Nov)
+
+- N-7 built with the frame-0 test: full hook as a headline (outside the camera layer so a push-in never moves it out of the safe zone), real ChatGPT answers re-typeset word for word in large text ("excerpt · real run" label), since 1920-wide screen recordings are unreadable on a phone. Real footage kept for the shortlist scroll. Raw runs in the laptop's Videos/Raw footage.
+- Sound on everything: 50 cues, 49 distinct (library + uisfx + 6 new ElevenLabs sounds: markersq, cardfan, focussnap, coin, clocktick, emptythud). Critique flags pacing (13/10 s), accepted on purpose.
+- /home/claude/dl.sh now takes the signing date from the X-Amz-Date argument (it was fixed to 18 Nov).
+- DM keyword task: NARROW + caption "what should i sell online first" → section 03, page 4.

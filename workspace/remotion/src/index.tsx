@@ -11,6 +11,7 @@ import {W6, W6_TOTAL, W6Cover} from './W6';
 import {W5, W5_TOTAL, W5Cover} from './W5';
 import {A1, A1_TOTAL, A1Cover} from './A1';
 import {V2, V2_TOTAL, V2Cover} from './V2';
+import {N7, N7_TOTAL, N7Cover} from './N7';
 
 // Demo content = V-5. The 13 labels are the 13 "Banned by default" bullets in
 // github.com/ferndesk/no-slop-motion SKILL.md, shortened.
@@ -141,6 +142,9 @@ const Root: React.FC = () => (
   <Composition id="V2ig" component={V2 as any} durationInFrames={V2_TOTAL.ig} fps={30} width={1080} height={1920} defaultProps={{platform: 'ig'}} />
   <Composition id="V2tt" component={V2 as any} durationInFrames={V2_TOTAL.tt} fps={30} width={1080} height={1920} defaultProps={{platform: 'tt'}} />
   <Composition id="V2Cover" component={V2Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
+  <Composition id="N7ig" component={N7 as any} durationInFrames={N7_TOTAL.ig} fps={30} width={1080} height={1920} defaultProps={{platform: 'ig'}} />
+  <Composition id="N7tt" component={N7 as any} durationInFrames={N7_TOTAL.tt} fps={30} width={1080} height={1920} defaultProps={{platform: 'tt'}} />
+  <Composition id="N7Cover" component={N7Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="A1Cover" component={A1Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="W5Cover" component={W5Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="W6Cover" component={W6Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
