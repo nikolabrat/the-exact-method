@@ -32,8 +32,8 @@ Rhythm (from 19 Nov): 5 Reels a week, Mon-Fri. Weekends: no Reels; strategy and 
 | Thu 26 Nov | P-5 · Three tools, three habits (PLAIN) | |
 | Fri 27 Nov | N-9 · Where the first 100 visitors come from (NARROW) | |
 | Sat 28 Nov | none | |
-| Sun 29 Nov | P-4 · The number nobody could source (PLAIN) | |
-| Mon 30 Nov | none | Last pins day. **Switch off the pins task** and plan the next pin batch |
+| Sun 29 Nov | none | Build Mon's P-4 (create the container after ~20:00) |
+| Mon 30 Nov | P-4 · The number nobody could source (PLAIN), moved from Sun 29 | Last pins day. **Switch off the pins task** and plan the next pin batch |
 
 The live schedule page (https://claude.ai/artifact/FJ7UGJZBNgN7mehAp4hE9Y) has the same Reels with notes;
 update it too when a date moves. Reels without a script in `scripts/` get their script written on the day,
