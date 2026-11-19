@@ -80,7 +80,7 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |  |  |  |  |
 | A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |  |
 | V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |  |
-| N-7 | 19 Nov | 30.0 s | | | | | |  |  |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%) |
+| N-7 | 19 Nov | 30.0 s | 23 (2 h) | 66.7% | 8.0 s | 1 | 0 |  | 0 |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%) |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
@@ -110,5 +110,5 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Sound on everything: 50 cues, 49 distinct (library + uisfx + 6 new ElevenLabs sounds: markersq, cardfan, focussnap, coin, clocktick, emptythud). Critique flags pacing (13/10 s), accepted on purpose.
 - /home/claude/dl.sh now takes the signing date from the X-Amz-Date argument (it was fixed to 18 Nov).
 - DM keyword task: NARROW + caption "what should i sell online first" → section 03, page 4.
-- 20:14 Instagram restricted @theexactmethod from sharing links until 19 Dec (reason: "may deceive others to take their money…"). No keyword DMs had gone out yet (only 1 test DM to the user's own account), so not a DM-volume issue. Likely trigger: an automated classifier on a 5-follower account that posted 20 Reels via API in a short time, with 'Comment X and I'll DM you a free guide' captions + 'free guides / instant PDF downloads' bio + external link. User requested review; Instagram removed it at 20:24 ("our technology made a mistake"). DM task paused 20:15, re-enabled 20:24, back to normal.
+- 20:14 Instagram restricted @theexactmethod from sharing links until 19 Dec (reason: "may deceive others to take their money…"). No keyword DMs had gone out yet (only 1 test DM to the user's own account), so not a DM-volume issue. Likely trigger: an automated classifier on a 5-follower account that posted 20 Reels via API in a short time, with 'Comment X and I'll DM you a free guide' captions + 'free guides / instant PDF downloads' bio + external link. N-7 at 2 h: reach 23, 33 views, avg watch 8.0 s (best yet), skip 66.7%. Reach likely cut by the integrity flag that hit 14 min after posting (first test batch). Recheck at 24 h and check Account status → recommendations. User requested review; Instagram removed it at 20:24 ("our technology made a mistake"). DM task paused 20:15, re-enabled 20:24, back to normal.
 - New skill `skills/growth-system` (from the Short Form Growth System emails): Game 5, buyer-pool relevance gate, trust = minutes × relevance × usefulness, trust metrics in the results log (follows, keyword comments, free downloads added). Updated after each email the user sends.
