@@ -96,7 +96,7 @@ Use `list_triggers` before making a new one.
 ## 4. Building a Reel (built on its posting day)
 
 Folder: `workspace/remotion` (Remotion 4.0.380, 1080x1920, 30 fps, no music). Fonts in `public/`.
-Examples to copy from: `src/W5.tsx` (Sage walkthrough, the latest system), `src/V5.tsx` (pile-up format),
+Examples to copy from: `src/P6.tsx` (talking-bust Sage with lip sync, the latest system), `src/W5.tsx` (Sage walkthrough), `src/V5.tsx` (pile-up format),
 `src/W6.tsx`, `src/N2.tsx`, `src/PhoneFilm2.tsx`. Formats with a reference video in `video/` are built from it.
 Per-Reel sources (scripts, lines, timing, sound sheets) of past Reels: `workspace/reels/`. Voice files are not
 in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen.sh + mix.py again.

@@ -23,7 +23,7 @@ Rhythm (from 19 Nov): 5 Reels a week, Mon-Fri. Weekends: no Reels; strategy and 
 | Tue 17 Nov | A-1 · Stop asking "are you sure?" (METHOD → The Narrowing Method), rebuilt from scratch, 58.7 s, scheduled | TikTok upload of A-1 (laptop: Videos/TikTok versions). **N-7 real run** (AI run for Thu's Reel) |
 | Wed 18 Nov | V-2 · Stop hunting for mistakes (VIDEO → The Video Brief, section 10 p12), new script, 28.1 s, first short-Reel test, scheduled (container 18079389593505069) | TikTok upload of V-2 (laptop: Videos/TikTok versions). Log V-2 stats 19 Nov |
 | Thu 19 Nov | N-7 · Never sell ChatGPT's first idea (NARROW → section 03 p4), new script, hook 100, 30.0 s, real run 19 Nov, scheduled (container 18079790555505069) | TikTok upload of N-7 (laptop: Videos/TikTok versions). **P-4 real run**. Log N-7 stats 20 Nov |
-| Fri 20 Nov | P-6 · The formatting rules test, reworked (PLAIN) | Script from the real 4 Nov runs |
+| Fri 20 Nov | P-6 · Never send ChatGPT's first draft (PLAIN → sections 04 + 05), new script, hook 92.6, 24.1 s, 3 real runs 20 Nov, scheduled (container 18080082737505069) | TikTok upload of P-6 (laptop: Videos/TikTok versions). Log N-7 stats (24 h) and P-6 stats 21 Nov |
 | Sat 21 Nov | none | **Strategy day**: next Short Form Growth System emails → update growth-system, decide tactic/rule changes for content quality |
 | Sun 22 Nov | none | **Build Mon's W-7 today** with the new rules, schedule for Mon 20:00 (container valid 24 h: create it after ~20:00 Sun). **N-8 real run** |
 | Mon 23 Nov | W-7 · Make AI interview you first ($17 pack) | New format on the day: one prompt from the pack, comment PROMPT → prompt in the DM (under 1,000 bytes) + "more prompts like that" link to the $17 pack. Add the PROMPT rule to the DM task |
@@ -40,6 +40,9 @@ update it too when a date moves. Reels without a script in `scripts/` get their 
 from the title, the guide it points to, and the rules in memory.
 
 ## Open to-dos
+
+- [ ] Plain Voice section 04: add a line that ChatGPT's email-draft view mostly ignores the formatting rule (P-6 run: rules alone 9 → 7 marks), and that the follow-up line fixes it (7 → 0). New PDF version via product-files
+- [ ] Sage lip sync: works (mouth patch + drawn mouth per word), but the user wants it improved later. Best fix: real open-mouth variants of each pose (e.g. made in Gemini) instead of drawn mouths
 
 - [x] Instagram link restriction (19 Nov 20:14) lifted after review 20:24 same day ("our technology made a mistake"). DM task re-enabled
 
@@ -83,6 +86,7 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |  |
 | V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |  |
 | N-7 | 19 Nov | 30.0 s | 23 (2 h) | 66.7% | 8.0 s | 1 | 0 |  | 0 |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%) |
+| P-6 | 20 Nov | 24.1 s | | | | | |  |  |  | two real answers side by side on frame 0 + a running giveaway counter; first talking-bust Sage with lip sync |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
@@ -105,6 +109,14 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Sound: user wants effects clearly audible. V-2 mix used `--voice-depth normal --sfx-trim-db 9` (effects about 9 dB louder than before, ducked harder under speech); big hits as role "hit" with highpass 150. New ElevenLabs sounds in ~/sfx-library/elevenlabs: riser, impact, zoomwhoosh, cardfly, scan, stampthunk, cardpile, notif.
 - DM keyword task: added the V-2 pointer (caption contains "like you're on your phone" → section 10, page 12).
 - V-2 results (4 h, final): IG reach 125, skip 72%, avg watch 6.0 s, 0 likes, 1 save. TikTok 67 views, avg 2.5 s, 1.5% full watch, most left at 0:01. Shorter did not raise watch time (6-7 s at 28, 50 and 59 s): viewers decide in the first second. Frame 0 shows an abstract phone mock-up and two words ("Stop hunting"), the hook assumes the viewer already makes videos with Claude, and half the screen is empty. Next Reels: full hook as a big headline on frame 0, a real result or face on frame 0, a broader audience in the first words.
+
+## Notes (20 Nov)
+
+- P-6 rebuilt from 3 real ChatGPT runs (20 Nov, same prompt, candle-shop email): A default = 9 marks (1 emoji, 3 bold, 5 "!"); B with Plain Voice instructions + Headers & Lists/Emojis on Less = 7; C after the follow-up line "Your last answer used bold and exclamation marks. My instructions say plain paragraphs only. Rewrite the same answer following them exactly." = 0. C still has hype wording, so the Reel only claims the visible marks went to 0. ChatGPT opened its email-draft view ("Connect email") in every run.
+- Build: `src/P6.tsx`. remocn used: SmashCount (7 → 0, Google-font load removed for offline render), ScanBand (from scan-fix, A → C), CrumpleToss, ScribbleCircle, InkArrow, TrimBurst, Caret. Swinging counter hang-tag, "+1" per mark, tape on cards.
+- Sage is now a talking bust (reference: thomassmithai Reel): instant pose swaps with a small pop, 13 poses by content, lip sync = per-word open/close cycles scaled by voice loudness (`src/p6mouth_*.json`), drawn mouth over a painted-out patch of the original mouth (`public/sage/<pose>-patch.png`, measured mouth positions in P6.tsx). Copy this for future Sage Reels.
+- Voice: extra atempo 1.08 (like N-7), ElevenLabs forced alignment for word timings. Sound: 50 cues, 47 distinct, 4 new ElevenLabs sounds (matchstrike, vertigo, numslam, puff). -14.2 LUFS.
+- DM task: PLAIN + caption "candle shop" → sections 05 (p6) and 04 (p5) with the follow-up line.
 
 ## Notes (19 Nov)
 
