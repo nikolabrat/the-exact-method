@@ -126,6 +126,51 @@ Use them in captions, DMs and the future email sequence. Our claims must stay tr
 Change one thing per Reel, log it in STATUS, read it against the baseline. Treat new formulas from
 the course as tests, not rules, until our numbers confirm them.
 
+## 10. Ideas: where they come from and how to pick them (day 2)
+
+An idea = **Topic + Seed + Substance**. A video outperforms when two things are true:
+(1) the **topic** is relevant to our buyer (section 3), and (2) the **seed and substance** are
+genuinely interesting or valuable to that buyer. "Lots of people like this topic" is not a reason:
+views from the wrong audience don't become sales.
+
+**The 6 idea pipes, ranked by hit rate.** Use them in this order:
+
+| # | Pipe | What it means for us |
+| --- | --- | --- |
+| 1 | Our own outliers | Remake our best Reels with a new seed or substance. Judge "best" by the Game 5 signals (avg watch, saves, keyword comments), not views alone. Today: N-7 (8.0 s avg watch, best so far) |
+| 2 | Competitor short-form outliers | **The main source: 80%+ of research time.** Reels that beat their own account's normal views, in our niche. Vet each for buyer relevance before remaking |
+| 3 | Outliers in other media | Long YouTube videos, podcasts, newsletters, X posts with proven interest, translated into a Reel |
+| 4 | Category news | New AI features and releases. No proof of interest, but can be big. Only when it serves the buyer, not AI-news viewers |
+| 5 | Competitor non-outliers | Good ideas that were badly executed. Riskier |
+| 6 | Originals | Our own ideas with no data. Highest risk, highest reward. Keep these rare until the eye is trained |
+
+**Idea Mining, every 2 weeks** (our free version of his paid-tool process, run with the ig-viral skill):
+1. **Watchlist:** 10-15 accounts serving our buyer (people using AI to build, sell or create), 10K-1M
+   followers, on Instagram, TikTok or YouTube Shorts. The same list doubles as the engagement-round list.
+2. **Outliers:** their Reels from the last 30 days, ranked by outlier score = views ÷ that account's
+   median views over the 90 days before the post (3x = three times normal). A useful floor for "worth a
+   look": outlier score ≥ 1, ≥ 25,000 views, engagement ≥ 2% (engagement = (likes + comments) ÷ views).
+3. **Topics:** scan the top 50-100, write down the 5-7 topics that keep winning. Those are the focus areas.
+4. **Seeds:** for each winner in those topics, write its one-line non-obvious takeaway. Then ask: do we
+   have something more interesting, different or better (usually a real run)? If yes, that is our new
+   seed on a proven topic. If no, or if it's off-topic for our buyer, skip it.
+5. **Shortlist:** 10-20 ideas per batch in one running doc: topic + new seed + link to the original
+   outlier. Build Reels from this list, not from blank-page brainstorming.
+
+**Analyse each outlier on the shortlist with 5 questions** (from his tool's idea analysis):
+- Positioning: what is the unique angle?
+- Format: which storytelling format, and why does it work here? (match to F1-F5)
+- Contrast: what common belief does it flip, and what is the contrarian reality?
+- Hook alignment: does the hook promise exactly what the video delivers?
+- Personalise: 3 ways to adapt it for our buyer and our method.
+
+**Remix rule:** keep 8-10 of the 11 bricks that worked, change 1-3 (usually topic, seed, substance).
+The more bricks you keep, the higher the chance it works. Inside our niche, the topic often carries over;
+outside it, borrow only the format, hook, script or visuals.
+
+Example: "the 3 levels of toothpaste" → a dental surgeon makes "the 3 levels of veneers" with the same
+format, hook words, script and layout. Ours: a winning "3 levels of X" Reel → "3 levels of a ChatGPT prompt".
+
 ---
 
 ## Source log
@@ -134,11 +179,14 @@ the course as tests, not rules, until our numbers confirm them.
 | --- | --- | --- |
 | Email 0: Introduction (Lego Bricks, 4 conditions) | 19 Nov 2026 | Sections 0, 0b; hook order (text > visual > spoken); improvement hypothesis per Reel |
 | Day 1: The 5 Content Games | 19 Nov 2026 | Sections 1-7, 8 (copy patterns), 9 |
+| Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
 
-Coming: day 2 "6 Idea Pipes" (ranked sources of validated ideas), day 3 "3 Hook Components",
+Coming: day 3 "3 Hook Components",
 day 4 "Buyer Activation Flow" (viewer to buyer), day 5 "First 3 Reps", day 6 "11-Point Video
 Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend section 0's audit table.
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
 "1M business owners making $1M" mission, and the tool and academy he sells (Sandcastles, Short Form
-Academy). Expect a pitch for those at the end of the series.
+Academy). Expect a pitch for those at the end of the series. Day 2's tutorials were help pages for
+Sandcastles (paid: plan limits, credits, buttons); only the method behind them is kept in section 10.
+Not yet read: the 18 Nov email "Short-Form Storytelling (Scriptwriting Guide)".
