@@ -24,8 +24,8 @@ Rhythm (from 19 Nov): 5 Reels a week, Mon-Fri. Weekends: no Reels; strategy and 
 | Wed 18 Nov | V-2 · Stop hunting for mistakes (VIDEO → The Video Brief, section 10 p12), new script, 28.1 s, first short-Reel test, scheduled (container 18079389593505069) | TikTok upload of V-2 (laptop: Videos/TikTok versions). Log V-2 stats 19 Nov |
 | Thu 19 Nov | N-7 · Never sell ChatGPT's first idea (NARROW → section 03 p4), new script, hook 100, 30.0 s, real run 19 Nov, scheduled (container 18079790555505069) | TikTok upload of N-7 (laptop: Videos/TikTok versions). **P-4 real run**. Log N-7 stats 20 Nov |
 | Fri 20 Nov | P-6 · Never send ChatGPT's first draft (PLAIN → sections 04 + 05), new script, hook 92.6, 24.1 s, 3 real runs 20 Nov, scheduled (container 18080082737505069) | TikTok upload of P-6 (laptop: Videos/TikTok versions). Log N-7 stats (24 h) and P-6 stats 21 Nov |
-| Sat 21 Nov | none | **Strategy day**: next Short Form Growth System emails → update growth-system, decide tactic/rule changes for content quality |
-| Sun 22 Nov | none | **Build Mon's W-7 today** with the new rules, schedule for Mon 20:00 (container valid 24 h: create it after ~20:00 Sun). **N-8 real run** |
+| Sat 21 Nov | none | **Strategy day**: next Short Form Growth System emails → update growth-system. **First Idea Mining** (growth-system §10, ig-viral skill): watchlist of 10-15 accounts serving our buyer, their Reels from the last 30 days with outlier score ≥ 1, ≥ 25,000 views, engagement ≥ 2%; top 5-7 winning topics; shortlist of 10-20 ideas (topic + our new seed from a real run + link to the outlier) in `scripts/idea-shortlist.md`. Analyse each with the 5 questions |
+| Sun 22 Nov | none | **Build Mon's W-7 today** with the new rules: pick its idea from the outlier shortlist (remix: keep 8-10 of the outlier's 11 bricks, change 1-3), full §11 structure at 40-60 s (hook, lock-in, body 1 with 3-5 sentences of proof, rehook, body 2 with 3-5 sentences of proof, CTA); each body block states its surprising point out loud and explains why it works, schedule for Mon 20:00 (container valid 24 h: create it after ~20:00 Sun). **N-8 real run** |
 | Mon 23 Nov | W-7 · Make AI interview you first ($17 pack) | New format on the day: one prompt from the pack, comment PROMPT → prompt in the DM (under 1,000 bytes) + "more prompts like that" link to the $17 pack. Add the PROMPT rule to the DM task |
 | Tue 24 Nov | N-8 · Which AI tool to pay for (NARROW) | |
 | Wed 25 Nov | V-3 · Stop asking for a cool video (VIDEO) | Script in `scripts/video-brief-reels-scripts.md`. **N-9 real run (web search on)** |
@@ -55,7 +55,9 @@ from the title, the guide it points to, and the rules in memory.
 
 ## Notes (17 Nov)
 
-- **Short-Reel test starts 18 Nov** (manual §4 step 1): V-2 (18), N-7 (19) and P-6 (20) are built at 15-25 s with the payoff by second 5. Read the results on 21 Nov against the baseline and decide whether to keep the short format.
+- **Short-Reel test: ended 20 Nov, verdict: drop it.** V-2 6.0 s, N-7 7.3 s, P-6 6.0 s average watch vs ~7 s before; skip 58-72%. Shorter Reels did not keep people longer, they only gave them less. From W-7: 40-60 s with the full growth-system §11 structure (two real body blocks + one rehook). Keep: frame-0 headline, real result on frame 0, payoff teased by s 5.
+- **Never done yet (found 20 Nov, from the growth-system emails):** (1) no Reel idea has ever come from a proven outlier (all ours were originals, pipe 6) → Idea Mining every 2 weeks from 21 Nov; (2) two full body blocks + rehook never had room → 40-60 s from W-7; (3) lock-in methods other than teasing proof (magic box, clarifying contrast) never tried; (4) never an open loop to the next Reel ("tomorrow: …") or a quick self-check for the viewer; (5) Follows / Keyword comments / Free downloads columns never filled → fill them for every Reel from now (follows: account insights; downloads: Gumroad /v2/sales).
+- **P-6 diagnosis by brick (20 Nov):** text hook unclear ("giveaways" of what?); lock-in gave the end result by s 4; body 1 was only evidence (no point); body 2 one sentence, the line shown but never explained. The real surprises from the run (email-draft view ignores formatting rules; quoting its own mistakes back fixes it) were never said.
 
 - Script audits now also check the script matches a viral format (project doc `claude/viral-formats.md`, research in `workspace/research/`).
 - Every video also goes into the laptop folder `The Exact Method/Videos/` (manual §4 step 10).
@@ -86,7 +88,7 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |  |
 | V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |  |
 | N-7 | 19 Nov | 30.0 s | 23 (2 h) | 66.7% | 8.0 s | 1 | 0 |  | 0 |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%) |
-| P-6 | 20 Nov | 24.1 s | | | | | |  |  |  | two real answers side by side on frame 0 + a running giveaway counter; first talking-bust Sage with lip sync |
+| P-6 | 20 Nov | 24.1 s | 15 (2 h) | 70.6% | 6.0 s | 1 | 0 |  | 0 |  | two real answers side by side on frame 0 + a running giveaway counter; first talking-bust Sage with lip sync |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
