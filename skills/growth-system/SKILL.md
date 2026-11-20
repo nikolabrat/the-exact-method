@@ -171,6 +171,49 @@ outside it, borrow only the format, hook, script or visuals.
 Example: "the 3 levels of toothpaste" → a dental surgeon makes "the 3 levels of veneers" with the same
 format, hook words, script and layout. Ours: a winning "3 levels of X" Reel → "3 levels of a ChatGPT prompt".
 
+## 11. Script structure (Short-Form Storytelling guide)
+
+Every script is built from these parts, in this order:
+
+| Part | Length | Job |
+| --- | --- | --- |
+| Hook | 1-2 sentences | Name the subject and open curiosity |
+| Lock-in zone | 2-4 sentences | Convince them the rest is worth it ("I have to keep listening") |
+| Body block 1 | 3-5 sentences | One non-obvious point + 2-4 sentences of proof (facts, example, reason) |
+| Rehook | 1 sentence | Reset attention: contrast with block 1 and open a new loop |
+| Body block 2 | 3-5 sentences | A second non-obvious point + proof |
+| (Rehook 2 + body block 3) | optional | Only if the length needs it |
+| Closing | 1-2 sentences | Optional; skip it when there's a CTA (we always have one) |
+| CTA | 1 sentence | A value ramp tied to the topic: our free guide (lead magnet) |
+
+**Hook = the 4 S's:** Subject named in the first sentence · Stakes (why the buyer must keep watching) ·
+Simple words · Superclear, punchy sentence structure. Use it alongside the frame-0 rules and hookscore.
+
+**Lock-in zone, 6 ways** (pick one per Reel and name it in the audit):
+teasing proof (a real result) · teasing a transformation or feeling · clarifying contrast (why this is
+different from the common belief) · a "magic box" (a named method or term they want to know, e.g.
+"The Narrowing Method") · objection handling · doubling down on the hook's claim.
+Our default is **teasing proof**: the real run's result on screen by second 5.
+
+**Two hits of value:** aim for at least two body blocks, each with its own non-obvious point. Two
+"huh, I didn't know that" moments make people follow at a much higher rate than one.
+
+**Rehooks:** viewers have about 20-25 s of attention even when interested; one rehook between the
+blocks buys another stretch. Make it a real contrast ("…but that's not even the strange part"), never a
+corny filler line. In our 15-25 s Reels there is room for exactly one.
+
+**Principles:** cut all fluff; as short as possible (don't add length unless needed); every sentence
+either continues the last one or clearly starts a new thread; tease the value as early as possible;
+simplest words; clarity over everything.
+
+**Length note:** his ideal is 45-90 s. We're running the short-Reel test (15-25 s) until our numbers say
+otherwise; the structure fits both. If a Reel needs 2 full body blocks + rehook, it may run past 25 s:
+decide per Reel and log it as that Reel's test.
+
+Example, P-6 mapped: hook "Never send ChatGPT's first draft. This one has nine giveaways." · lock-in
+(teasing proof) "This one has zero. Same request, same ChatGPT." · body 1: the nine marks · rehook
+"My plain-writing rules alone still left seven." · body 2: the one line that took it to zero · CTA.
+
 ---
 
 ## Source log
@@ -179,6 +222,7 @@ format, hook words, script and layout. Ours: a winning "3 levels of X" Reel → 
 | --- | --- | --- |
 | Email 0: Introduction (Lego Bricks, 4 conditions) | 19 Nov 2026 | Sections 0, 0b; hook order (text > visual > spoken); improvement hypothesis per Reel |
 | Day 1: The 5 Content Games | 19 Nov 2026 | Sections 1-7, 8 (copy patterns), 9 |
+| Short-Form Storytelling (Writing Guide PDF, from the 18 Nov email) | 20 Nov 2026 | Section 11: script parts and lengths, the 4 S's of hooks, 6 lock-in methods, two body blocks, rehooks, principles |
 | Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
 
 Coming: day 3 "3 Hook Components",
@@ -188,5 +232,5 @@ Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
 "1M business owners making $1M" mission, and the tool and academy he sells (Sandcastles, Short Form
 Academy). Expect a pitch for those at the end of the series. Day 2's tutorials were help pages for
-Sandcastles (paid: plan limits, credits, buttons); only the method behind them is kept in section 10.
-Not yet read: the 18 Nov email "Short-Form Storytelling (Scriptwriting Guide)".
+Sandcastles (paid: plan limits, credits, buttons); only the method behind them is kept in section 10. His 1.5 h hooks video (paid academy
+material linked in the guide) is not included.

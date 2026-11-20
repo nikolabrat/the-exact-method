@@ -102,7 +102,7 @@ Per-Reel sources (scripts, lines, timing, sound sheets) of past Reels: `workspac
 in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen.sh + mix.py again.
 
 1. **Script audit** (skills: ig-reel hookscore/beats, content-principles, marketing skills, ig-human, **growth-system**).
-   Hook 90+. Structure from memory: hook opens the question from word 1 with text on frame 0; something new
+   Hook 90+. Script parts per growth-system section 11 (hook, lock-in, body 1, rehook, body 2, CTA; name the lock-in type). Structure from memory: hook opens the question from word 1 with text on frame 0; something new
    every ~3 s, first value by s 5-10; the end answers it, CTA after. Show the user results before building.
    **Viral-format match**: the script must match one of the formats in the project doc `claude/viral-formats.md`
    (F1-F5, from the ig-viral research). Name the format and its reference reel; if none fits, rewrite first.
