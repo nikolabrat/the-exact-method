@@ -214,6 +214,43 @@ Example, P-6 mapped: hook "Never send ChatGPT's first draft. This one has nine g
 (teasing proof) "This one has zero. Same request, same ChatGPT." · body 1: the nine marks · rehook
 "My plain-writing rules alone still left seven." · body 2: the one line that took it to zero · CTA.
 
+## 12. Hooks: alignment, clarity, contrast (day 3)
+
+If a viewer leaves at second 4, the rest might as well be a black screen. Short-form has no thumbnail,
+title or description: the hook is all of them. **Spend 30-40% of a Reel's creation time on the hook**
+(text, visual and spoken), not 5%.
+
+**Order of importance** (as in section 0): text hook > visual hook > spoken hook. About 85% of short
+videos are watched without sound, so the text and the picture must work on mute. A good spoken line can't
+save weak text and visuals.
+
+**Max alignment:** all three hook parts must say the *same thing*. Any split second of "wait, what is
+this?" makes people leave, even when the content is good. His two examples, same creator and quality,
+350x apart in views:
+- 14M views, aligned: spoken "These are called Lifesize Floor Plans. You can walk through your home before
+  you build it." · visual: people walking through a full-size floor plan · text: "LIFESIZE PLANS".
+- 40K views, misaligned: spoken "This company is sending shipping containers into space" · visual: a cartoon
+  of a brand name, then a pipe in a workshop · text: "LONGSHOT" (a brand name nobody knows).
+Check in every audit: write the text hook, the frame-0 visual and the spoken hook in one line each. Do all
+three point at one idea a stranger understands in 1 s? A name the viewer doesn't know yet (product, method,
+term) is not a text hook on its own.
+
+**Every hook needs two things:**
+1. **On-target clarity:** after the first sentence the viewer knows what it's about and whether it's for them.
+   Simple words (about a 10-year-old's reading level), short direct sentences.
+2. **A curiosity loop = contrast:** the gap between what the viewer believes now and what you're about to
+   show. The bigger the gap, the stronger the hook. His example: "stop putting money in your 401K; open a
+   [new account type] instead". Ours: "Never sell ChatGPT's first idea. Its third one costs €0." (belief:
+   the first answer is fine → reality: the third is better). Clarity gets them in; contrast keeps them.
+
+**Finding hooks:** don't invent from scratch. In the idea-mining pass (section 10), note each outlier's
+text, visual and spoken hook, and remix the structure for our topic. Keep a running list of hook
+structures that won in our niche.
+
+**Layout seen in both his example Reels (worth testing):** split screen. Top half: the thing itself (product
+footage, real result); bottom half: the presenter talking; one short caption line in yellow at the seam.
+Our version: the real AI result on top, Sage talking below.
+
 ---
 
 ## Source log
@@ -223,6 +260,7 @@ Example, P-6 mapped: hook "Never send ChatGPT's first draft. This one has nine g
 | Email 0: Introduction (Lego Bricks, 4 conditions) | 19 Nov 2026 | Sections 0, 0b; hook order (text > visual > spoken); improvement hypothesis per Reel |
 | Day 1: The 5 Content Games | 19 Nov 2026 | Sections 1-7, 8 (copy patterns), 9 |
 | Short-Form Storytelling (Writing Guide PDF, from the 18 Nov email) | 20 Nov 2026 | Section 11: script parts and lengths, the 4 S's of hooks, 6 lock-in methods, two body blocks, rehooks, principles |
+| Day 3: Hooks (text > visual > spoken, max alignment, clarity + contrast) + its 2 example Reels (14M vs 40K views) | 21 Nov 2026 | Section 12: hook time budget, muted viewing, the alignment check, the 2 things every hook needs, hook research, split-screen layout |
 | Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
 
 Coming: day 3 "3 Hook Components",
@@ -231,6 +269,6 @@ Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend 
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
 "1M business owners making $1M" mission, and the tool and academy he sells (Sandcastles, Short Form
-Academy). Expect a pitch for those at the end of the series. Day 2's tutorials were help pages for
+Academy, Hooks Masterclass). Expect a pitch for those at the end of the series. Day 2's tutorials were help pages for
 Sandcastles (paid: plan limits, credits, buttons); only the method behind them is kept in section 10. His 1.5 h hooks video (paid academy
 material linked in the guide) is not included.
