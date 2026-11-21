@@ -115,7 +115,7 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 ## Notes (21 Nov)
 
 - First Idea Mining done: `scripts/idea-shortlist.md` (10 accounts, ~170 Reels, 26 outliers ≥3x, 12 relevant, 12 ideas). Picks: W-7 = idea 3 (one prompt builds a real thing + "comment PROMPT for the exact prompt"), N-8 = idea 6 (which AI for which job, as a map). Next mining ~5 Dec.
-- Engagement list updated 21 Nov (schedule page too): Reach = okaashish, stm_fast, trywithmark, cracked.artificial, rubenhassid · Peers = saib.tech, ernestosoftware, adam.kelada.media · Buyers = each round reply to 2 commenters on those outliers who asked a real build/sell-with-AI question, never pitch. Dropped: growthwithhardik, ai_indiaaa, ai_prompt.s, ai.prompts.lab, ai.promptstu, nobleejohnson, emv710.
+- Engagement list updated 21 Nov (schedule page too): Reach = okaashish, stm_fast, trywithmark, cracked.artificial, rubenhassid · Peers = saib.tech, ernestosoftware, adam.kelada.media · Buyers = each round reply to 2 commenters on those outliers who asked a real build/sell-with-AI question, never pitch. Dropped: growthwithhardik, ai_indiaaa, ai_prompt.s, ai.prompts.lab, ai.promptstu, nobleejohnson, emv710. Follows synced 21 Nov as theexactmethod: followed cracked.artificial, rubenhassid, saib.tech, ernestosoftware, adam.kelada.media; unfollowed the dropped 6 (ai_indiaaa gone).
 - 2 unread DMs on @theexactmethod (seen 21 Nov, not opened).
 
 ## Notes (20 Nov)
