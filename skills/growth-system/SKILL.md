@@ -263,8 +263,7 @@ Our version: the real AI result on top, Sage talking below.
 | Day 3: Hooks (text > visual > spoken, max alignment, clarity + contrast) + its 2 example Reels (14M vs 40K views) | 21 Nov 2026 | Section 12: hook time budget, muted viewing, the alignment check, the 2 things every hook needs, hook research, split-screen layout |
 | Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
 
-Coming: day 3 "3 Hook Components",
-day 4 "Buyer Activation Flow" (viewer to buyer), day 5 "First 3 Reps", day 6 "11-Point Video
+Coming: day 4 "Buyer Activation Flow" (viewer to buyer), day 5 "First 3 Reps", day 6 "11-Point Video
 Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend section 0's audit table.
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
