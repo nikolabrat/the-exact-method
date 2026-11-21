@@ -87,8 +87,8 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | W-5 | 16 Nov | 49.8 s | 166 | 52% | 7.3 s | 1 | 0 |  |  |  |  |
 | A-1 | 17 Nov | 58.7 s | 125 | 60% | 7.2 s | 1 | 0 |  |  |  |  |
 | V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |  |
-| N-7 | 19 Nov | 30.0 s | 23 (2 h) | 66.7% | 8.0 s | 1 | 0 |  | 0 |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%) |
-| P-6 | 20 Nov | 24.1 s | 15 (2 h) | 70.6% | 6.0 s | 1 | 0 |  | 0 |  | two real answers side by side on frame 0 + a running giveaway counter; first talking-bust Sage with lip sync |
+| N-7 | 19 Nov | 30.0 s | 95 | 58.9% | 7.3 s | 1 | 0 | 0 (5 total) | 0 |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%). 2 h: reach 23 (flag); 48 h: 95, lowest skip of the 3 |
+| P-6 | 20 Nov | 24.1 s | 22 | 64.0% | 6.5 s | 1 | 0 | 0 | 0 |  | two real answers side by side on frame 0 + giveaway counter; first talking-bust Sage. 24 h: reach 22 only (N-7 was 95 at 48 h): distribution problem, not the video (skip and watch in line) |
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
@@ -111,6 +111,12 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Sound: user wants effects clearly audible. V-2 mix used `--voice-depth normal --sfx-trim-db 9` (effects about 9 dB louder than before, ducked harder under speech); big hits as role "hit" with highpass 150. New ElevenLabs sounds in ~/sfx-library/elevenlabs: riser, impact, zoomwhoosh, cardfly, scan, stampthunk, cardpile, notif.
 - DM keyword task: added the V-2 pointer (caption contains "like you're on your phone" → section 10, page 12).
 - V-2 results (4 h, final): IG reach 125, skip 72%, avg watch 6.0 s, 0 likes, 1 save. TikTok 67 views, avg 2.5 s, 1.5% full watch, most left at 0:01. Shorter did not raise watch time (6-7 s at 28, 50 and 59 s): viewers decide in the first second. Frame 0 shows an abstract phone mock-up and two words ("Stop hunting"), the hook assumes the viewer already makes videos with Claude, and half the screen is empty. Next Reels: full hook as a big headline on frame 0, a real result or face on frame 0, a broader audience in the first words.
+
+## Notes (21 Nov)
+
+- First Idea Mining done: `scripts/idea-shortlist.md` (10 accounts, ~170 Reels, 26 outliers ≥3x, 12 relevant, 12 ideas). Picks: W-7 = idea 3 (one prompt builds a real thing + "comment PROMPT for the exact prompt"), N-8 = idea 6 (which AI for which job, as a map). Next mining ~5 Dec.
+- Engagement list for the next round = the mining watchlist's relevant accounts (okaashish, stm_fast, trywithmark, rubenhassid, cracked.artificial, ernestosoftware).
+- 2 unread DMs on @theexactmethod (seen 21 Nov, not opened).
 
 ## Notes (20 Nov)
 
