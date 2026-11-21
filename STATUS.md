@@ -115,12 +115,12 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 ## Notes (21 Nov)
 
 - First Idea Mining done: `scripts/idea-shortlist.md` (10 accounts, ~170 Reels, 26 outliers ≥3x, 12 relevant, 12 ideas). Picks: W-7 = idea 3 (one prompt builds a real thing + "comment PROMPT for the exact prompt"), N-8 = idea 6 (which AI for which job, as a map). Next mining ~5 Dec.
-- Engagement list for the next round = the mining watchlist's relevant accounts (okaashish, stm_fast, trywithmark, rubenhassid, cracked.artificial, ernestosoftware).
+- Engagement list updated 21 Nov (schedule page too): Reach = okaashish, stm_fast, trywithmark, cracked.artificial, rubenhassid · Peers = saib.tech, ernestosoftware, adam.kelada.media · Buyers = each round reply to 2 commenters on those outliers who asked a real build/sell-with-AI question, never pitch. Dropped: growthwithhardik, ai_indiaaa, ai_prompt.s, ai.prompts.lab, ai.promptstu, nobleejohnson, emv710.
 - 2 unread DMs on @theexactmethod (seen 21 Nov, not opened).
 
 ## Notes (20 Nov)
 
-- Engagement round 20 Nov (Chrome, as theexactmethod, ~3 min apart): commented on stm_fast (Google History reel), okaashish (new-laptop VRAM reel), trywithmark (stickman AI video). Engagement list needs a refresh: ai_indiaaa account gone; ai_prompt.s, ai.prompts.lab, ai.promptstu post AI portrait prompts (off-topic for builders); growthwithhardik no new reels in 12 weeks; nobleejohnson and emv710 post personal content.
+- Engagement round 20 Nov (Chrome, as theexactmethod, ~3 min apart): commented on stm_fast (Google History reel), okaashish (new-laptop VRAM reel), trywithmark (stickman AI video). Engagement list refreshed 21 Nov (reasons: ai_indiaaa account gone; ai_prompt.s, ai.prompts.lab, ai.promptstu post AI portrait prompts (off-topic for builders); growthwithhardik no new reels in 12 weeks; nobleejohnson and emv710 post personal content).
 
 - P-6 rebuilt from 3 real ChatGPT runs (20 Nov, same prompt, candle-shop email): A default = 9 marks (1 emoji, 3 bold, 5 "!"); B with Plain Voice instructions + Headers & Lists/Emojis on Less = 7; C after the follow-up line "Your last answer used bold and exclamation marks. My instructions say plain paragraphs only. Rewrite the same answer following them exactly." = 0. C still has hype wording, so the Reel only claims the visible marks went to 0. ChatGPT opened its email-draft view ("Connect email") in every run.
 - Build: `src/P6.tsx`. remocn used: SmashCount (7 → 0, Google-font load removed for offline render), ScanBand (from scan-fix, A → C), CrumpleToss, ScribbleCircle, InkArrow, TrimBurst, Caret. Swinging counter hang-tag, "+1" per mark, tape on cards.
