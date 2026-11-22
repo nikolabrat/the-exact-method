@@ -1,0 +1,4 @@
+Never ask AI to just build your app. 2 prompts built this.
+Stop asking AI to build your app. 2 prompts built this one.
+2 prompts built this calculator. You never touch the code.
+Don't ask AI to build it yet. 2 prompts built this calculator.

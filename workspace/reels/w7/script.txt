@@ -1,0 +1,12 @@
+2 prompts built this pricing calculator. No code. You never touch it.
+First try. And neither prompt asks AI to build anything.
+Prompt one wants a build plan: one task per number.
+If a number hides two jobs, it has to split it.
+Mine had "enter ingredients and work out the cost". It split that in two.
+One step doing two jobs is exactly where AI builds break.
+But that plan is written for you, not for the AI.
+Prompt two turns it into orders for a coding assistant.
+Nothing merged. Nothing skipped. Nothing reordered.
+I pasted that into ChatGPT. It built this.
+This cake costs me 14 euros to make. It tells me to sell it at 38.
+Comment PROMPT and I'll send you both prompts, word for word.
