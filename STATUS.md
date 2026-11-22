@@ -33,7 +33,7 @@ Rhythm (from 19 Nov): 5 Reels a week, Mon-Fri. Weekends: no Reels; strategy and 
 | Fri 27 Nov | N-9 · Where the first 100 visitors come from (NARROW) | |
 | Sat 28 Nov | none | |
 | Sun 29 Nov | none | Build Mon's P-4 (create the container after ~20:00) |
-| Mon 30 Nov | P-4 · The number nobody could source (PLAIN), moved from Sun 29 | Last pins day. **Switch off the pins task** and plan the next pin batch |
+| Mon 30 Nov | P-4 · The number nobody could source (PLAIN), moved from Sun 29 | Last pins day. **Switch off the pins task** and plan the next pin batch (with the cheat-sheet test, see scripts/pin-ideas.md) |
 
 The live schedule page (https://claude.ai/artifact/FJ7UGJZBNgN7mehAp4hE9Y) has the same Reels with notes;
 update it too when a date moves. Reels without a script in `scripts/` get their script written on the day,
@@ -118,7 +118,7 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - Engagement list updated 21 Nov (schedule page too): Reach = okaashish, stm_fast, trywithmark, cracked.artificial, rubenhassid · Peers = saib.tech, ernestosoftware, adam.kelada.media · Buyers = each round reply to 2 commenters on those outliers who asked a real build/sell-with-AI question, never pitch. Dropped: growthwithhardik, ai_indiaaa, ai_prompt.s, ai.prompts.lab, ai.promptstu, nobleejohnson, emv710. Follows synced 21 Nov as theexactmethod: followed cracked.artificial, rubenhassid, saib.tech, ernestosoftware, adam.kelada.media; unfollowed the dropped 6 (ai_indiaaa gone).
 - Idea mining batch 2 (21 Nov evening): 161 Reels from the 5 new accounts, 17 relevant outliers, ideas 13-18 in scripts/idea-shortlist.md. saib.tech = no idea source (PC tricks). Priority: W-7 idea 3, N-8 ideas 6+18, then 15 (tier list) and 14 (warning + 3 prompts).
 - Hook mining round 1 done 22 Nov: 22 outliers → 11 hook structures in scripts/hook-bank.md. Result-first confirmed (15/22 by 1.5 s); new gap = short save-able silent loops 6-13 s (H4). W-7 hook: text "One prompt built this", frame 0 = finished pricing sheet, spoken "Look at this pricing calculator. One prompt built it. No edits."
-- Pinterest idea mining round 1 done 22 Nov: scripts/pin-ideas.md (596 pins over 12 keywords + our 55). Dense cheat sheets/carousels win saves; Plain Voice topic proven on Pinterest (10K saves). 7 pin ideas P1-P7. OPEN DECISION: pin standard (6) 'max 3 items, one idea per pin' vs data → recommended: test one dense cheat-sheet pin type for 3 weeks.
+- Pinterest idea mining round 1 done 22 Nov: scripts/pin-ideas.md (596 pins over 12 keywords + our 55). Dense cheat sheets/carousels win saves; Plain Voice topic proven on Pinterest (10K saves). 7 pin ideas P1-P7. Decided 22 Nov: test a dense cheat-sheet pin type next to the standard pins for 3 weeks. b45 already fills 23-30 Nov, so nothing new is scheduled now: the next pin batch (from 1 Dec, planned on 30 Nov) includes the cheat-sheet pins (P1-P7 in scripts/pin-ideas.md).
 - 2 unread DMs on @theexactmethod (seen 21 Nov, not opened).
 
 ## Notes (20 Nov)
