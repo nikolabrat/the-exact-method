@@ -42,7 +42,7 @@ from the title, the guide it points to, and the rules in memory.
 ## Open to-dos
 
 - [ ] Plain Voice section 04: add a line that ChatGPT's email-draft view mostly ignores the formatting rule (P-6 run: rules alone 9 → 7 marks), and that the follow-up line fixes it (7 → 0). New PDF version via product-files
-- [ ] Sage lip sync: works (mouth patch + drawn mouth per word), but the user wants it improved later. Best fix: real open-mouth variants of each pose (e.g. made in Gemini) instead of drawn mouths
+- [ ] Sage lip sync: real open-mouth poses made in Gemini 22 Nov (`public/sage/<pose>-mid.jpg` and `-open.jpg`, same 848x1264 framing as the originals): **all 16 Sage done**, Brick 1 of 18 (`brick-mid`). Gemini daily image limit hit; Brick resumes after the reset (same prompts, one new chat per image, download → ~/Downloads → stage). Then switch P6-style lip sync from drawn mouths to swapping closed/mid/open images
 
 - [x] Instagram link restriction (19 Nov 20:14) lifted after review 20:24 same day ("our technology made a mistake"). DM task re-enabled
 
