@@ -109,7 +109,7 @@ signals. Views without these mean the wrong audience or no usefulness.
 ## 7. Every piece feeds the funnel
 
 Every piece ends in a capture step: comment keyword → DM → free guide on Gumroad (email captured).
-Known gap: no nurture after the download until the Gumroad email workflows unlock ($100 earnings).
+Known gap: no nurture after the download until the Gumroad email workflows unlock ($100 earnings). Section 13 has the full funnel and the per-Reel conversion metric.
 When writing those emails, use the email-course structure as the model (section 8).
 
 ## 8. Copy patterns worth copying (from how the emails are written)
@@ -251,6 +251,35 @@ structures that won in our niche.
 footage, real result); bottom half: the presenter talking; one short caption line in yellow at the seam.
 Our version: the real AI result on top, Sage talking below.
 
+## 13. The funnel: views → emails → sales (day 4)
+
+**The goal of a Reel is trust and an email address, not a sale.** Selling happens later, in email.
+Judge Reels by **conversions per view**: how many free-guide signups (emails) each Reel drives. A Reel with
+5K views and 50 signups beats one with 50K views and 5. Make more of what drives signups.
+
+**The Buyer Activation Flow (his funnel, ours mapped):**
+Reel → comment KEYWORD → auto-DM → on-target free resource → page with one email field → delivery →
+email sequence → offer.
+Ours: Reel → comment NARROW/PLAIN/VIDEO → DM (scheduled task, later OpenReply) → Gumroad $0 product
+(email captured at checkout) → PDF → **email sequence: missing** (Gumroad workflows drafted, locked until
+$100 earnings) → $17 / $37 / $127.
+
+**7 lead magnet types** (weakest to strongest fit for us): newsletter signup page; single doc download
+(easiest, start here; = our free PDFs); email course (drip); free community; waitlist form; free trial /
+account page; sales page. A keyword that sends people straight to a sales page skips the email step.
+
+**Which lead magnet:** the closer it is to the Reel's content, the higher the uptake
+("content ↔ audience ↔ lead magnet fit"). Three options: a light version of the paid product, a deep doc
+on one painful step (ideally the one the Reel covered), or the written-up version of the Reel itself
+(saves them taking notes). Aim for 3-5 anchor lead magnets, rotated by Reel topic (we have 3).
+
+**The page (30-45 min max, never over-engineer):** headline = the outcome they want; subheadline = what
+they get, specifically; 3 bullets of what's inside; one field (email); button "Send me the [thing]".
+A plain page that exists beats a beautiful one that doesn't.
+
+**Log per Reel (STATUS):** keyword DMs sent and free-guide downloads in the 48 h after posting, next to
+reach. Downloads per 1,000 reach is the number to compare Reels by.
+
 ---
 
 ## Source log
@@ -262,8 +291,9 @@ Our version: the real AI result on top, Sage talking below.
 | Short-Form Storytelling (Writing Guide PDF, from the 18 Nov email) | 20 Nov 2026 | Section 11: script parts and lengths, the 4 S's of hooks, 6 lock-in methods, two body blocks, rehooks, principles |
 | Day 3: Hooks (text > visual > spoken, max alignment, clarity + contrast) + its 2 example Reels (14M vs 40K views) | 21 Nov 2026 | Section 12: hook time budget, muted viewing, the alignment check, the 2 things every hook needs, hook research, split-screen layout |
 | Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
+| Day 4: The Buyer Activation Flow (views → leads) | 22 Nov 2026 | Section 13: the funnel, conversions per view, 7 lead magnet types, lead magnet fit, the simple landing page |
 
-Coming: day 4 "Buyer Activation Flow" (viewer to buyer), day 5 "First 3 Reps", day 6 "11-Point Video
+Coming: day 5 "First 3 Reps", day 6 "11-Point Video
 Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend section 0's audit table.
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
