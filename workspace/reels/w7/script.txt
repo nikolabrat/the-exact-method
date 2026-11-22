@@ -2,11 +2,12 @@
 First try. And neither prompt asks AI to build anything.
 Prompt one wants a build plan: one task per number.
 If a number hides two jobs, it has to split it.
-Mine had "enter ingredients and work out the cost". It split that in two.
-One step doing two jobs is exactly where AI builds break.
+So "add ingredients" became four: price paid, pack size, amount used, then the cost.
+Forty-four steps, each doing one job.
+It even caught a pricing mistake most people make: a 30% margin means dividing by 0.70, not adding 30%.
 But that plan is written for you, not for the AI.
 Prompt two turns it into orders for a coding assistant.
 Nothing merged. Nothing skipped. Nothing reordered.
-I pasted that into ChatGPT. It built this.
-This cake costs me 14 euros to make. It tells me to sell it at 38.
+I pasted that into Claude. It built this, tested its own math, and fixed a rounding bug by itself.
+The example cake: 58.52 euros to make, 83.59 to sell.
 Comment PROMPT and I'll send you both prompts, word for word.
