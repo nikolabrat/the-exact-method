@@ -1,0 +1,11 @@
+Here are both prompts, word for word. Run them in order, in the same chat:
+
+1. "I want to build [what you want to build, in plain language]. Give me a numbered build plan where each number is a single, indivisible task. Anywhere a number would secretly cover two different jobs, break it into two separate numbers instead."
+
+2. "Rewrite the plan above as direct instructions for an AI coding assistant to carry out, one number at a time, in order. Keep the one-task-per-number structure exactly as it is: nothing merged, nothing skipped, nothing reordered."
+
+Then paste what prompt 2 gives you into a new chat or your coding tool.
+
+If you want more prompts like that, there are 10 in the pack: https://theexactmethod.gumroad.com/l/aoyxea
+
+Follow so you don't miss the next one.
