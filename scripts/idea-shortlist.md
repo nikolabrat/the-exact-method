@@ -160,3 +160,108 @@ frame-0 test (5).
 2. N-8 Tue: idea 6 + 18 merged ("Send this to someone who pays for 3 AI tools").
 3. Next: idea 15 (tier list, no new run) and idea 14 (warning + 3 prompts, sells the $17 pack directly).
 4. Needs runs: 13 and 16 (strongest "proof" angle for NARROW).
+
+## Batch 3 · 23 Nov 2026 · wide mining (topics beyond our PDFs)
+
+**Why:** Kit + OpenReply let any Reel offer a non-PDF freebie (a prompt, a skill, a checklist), so topics no
+longer have to fit NARROW / PLAIN / VIDEO.
+**Sources (3 pipes):**
+- **IG competitor outliers (pipe 2):** 12 keyword searches (claude code, chatgpt prompts, ai tools, vibe coding,
+  ai automation, make money with ai, claude ai, ai agent, ai side hustle, gemini ai, ai video editing) → 300+ top
+  posts read; then 24 accounts' last ~28 Reels (11 old watchlist + 13 new) → median views → **92 outliers ≥3x,
+  ≥25K views, last 35 days**. Read from @theexactmethod via Chrome, reading only.
+- **Other media (pipe 3):** Reddit top posts of the week in 20 subs (ClaudeAI, ClaudeCode, ChatGPT,
+  PromptEngineering, vibecoding, SideProject, SaaS, n8n, AI_Agents, …), ~770 posts, with top comments on 14.
+- **Category news (pipe 4):** GPT-6.2 Astra + Sol (17 Nov), Gemini 4 Neon (18 Nov), Businesses in ChatGPT /
+  Business Hub beta (10 Nov).
+Confidence: medium (one pass, but the same 5 topics showed up in all three pipes).
+
+New watchlist candidates (median views): mrcreates.ai 12K, breakingbreach 7K, ai.zygis 4K, murphmaxxing 19K,
+adilet.fndr 33K, justyn.ai 16K, david_knowsai 64K, auraguy.ai 133K, charles.unemployed 172K, duncanrogoff 12K,
+alextsoi_ai 5K, opusjake 23K, ashutoshwithclaude 83K. (Small ones are the most copyable: ai.zygis, breakingbreach,
+alextsoi_ai, mrcreates.ai.)
+
+### The evidence (top outliers, x = views ÷ account median)
+
+| x | Account | Reel | Views | Topic · their seed | CTA |
+| --- | --- | --- | --- | --- | --- |
+| 115.7 | mrcreates.ai | /reel/DfKFK7RJdjl | 1.4M | AI video editing · "stop paying for AI editing tutorials, my whole setup" | 27.8K comments |
+| 70.3 | breakingbreach | /reel/DfMYnLZyQOE | 459K | Vibe-coded app · slow app? performance prompts | comment APP |
+| 64.5 | ai.zygis | /reel/DfP7aS-OWqG | 283K | Privacy · erase your digital footprint on ChatGPT | none |
+| 56.6 | duncanrogoff | /reel/Df9VMkRiml0 | 685K | Agents · "MCP isn't dead", Cloudflare Code Mode | news |
+| 56.4 | alextsoi_ai | /reel/Dfphrw3griE | 269K | Building · "things I built with Claude Code, part 1" | follow for part 2 |
+| 53.0 | breakingbreach | /reel/DfEpwT9SRHe | 346K | Vibe-coded app · pre-launch security toolkit | comment VIBE |
+| 38.9 | breakingbreach | /reel/DfKH360zRG4 | 254K | Vibe-coded app · launch checklist | comment SAFE |
+| 33.6 | adilet.fndr | /reel/De_3hwXIBYi | 1.1M | AI video · AI-animated Reels with Claude Code, step by step | 34.5K comments |
+| 29.7 | justyn.ai | /reel/Dfcr8TJMKCV | 475K | AI video · video edits with Claude & ChatGPT | comment EDIT |
+| 24.8 | ai.zygis | /reel/DgARIEYO2tD | 109K | Claude Code odd jobs · "speed up your internet" | none |
+| 20.4 | murphmaxxing | /reel/DfsWbkrB6vN | 387K | Vibe-coded app · "be a shame if someone tried these on your app" | — |
+| 17.3 | david_knowsai | /reel/Dfkwl3HRHMa | 1.1M | AI video (Instagram content) | comment GRAM · 54.9K comments |
+| 15.7 | murphmaxxing | /reel/Dff39V1vpj7 | 298K | Cheap setup · "Opus plans, Haiku does the work at 1/40 the price" | comment PROMPT |
+| 15.4 | murphmaxxing | /reel/DfAnKQgB8U1 | 292K | Vibe-coded app · AI code security flaws (Veracode 45%) | — |
+| 13.7 | okaashish | /reel/DfuNtfIv3DH | 116K | Cheap setup · Claude thinks, cheaper model codes | comment ANIMATE |
+| 9.8 | auraguy.ai | /reel/De7V3pbTWX6 | 1.3M | Claude skills · "13 free skills for Instagram" | 21.6K comments |
+| 9.0 | duncanrogoff | /reel/DfUR5AcAvZG | 109K | Instructions · "you don't need another agent, you need better instructions" | — |
+| 9.3 | aistuff.muu | /reel/De4UEXjiPAQ | 47K | Idea testing · let AI roast your startup idea before you build | comment FISH |
+| 7.1 | ashutoshwithclaude | /reel/DfK… | 593K | Building · "your Netflix clone won't get you into Netflix" | — |
+| 5.8/5.1/3.7 | charles.unemployed | 3 Reels | 0.6–1M each | Design · "give this to your AI agent: these design rules" (accent trick, design laws) | comment ACCENT |
+| 5.1 | auraguy.ai | /reel/… | 679K | Idea testing · "Claude tests your business idea on 100 fake customers" | — |
+| 3.4 | ashutoshwithclaude | /reel/… | 283K | Money · stickman / faceless channel ($2,677/mo claim) | comment STICK |
+
+Keyword-search top posts (not ranked by outlier, but the biggest absolute): opusjake "make Claude spin up 100
+sub-agents" 2.6M · justyn.ai "EDIT" 2.4M / 165K comments · petergriffin.ai "5 free Claude Code plugins" 1.95M ·
+adilet.fndr "your vibe-coded app can get sued for $100K before its first sale, 6 traps" 1.7M · charles.unemployed
+design rules 870K · theromanknox "open-source sales agent on your Claude Code subscription" 668K.
+
+Reddit (week of 16-23 Nov): r/PromptEngineering's top post (30.9x the sub's median): **"What's the one line you
+now add to almost every prompt?"**, the OP's line: "If something important is missing, ask me before you guess"
+(= our method). Also: "Context rot: why your AI gets worse after 200 messages (5-line handoff)", "Tested 'give me
+3 options' vs 'one best answer' on 40 emails: one answer won 31/40", "Two rules: no contradictions, say what to
+do not what not to do". r/ClaudeAI: one-prompt creepy website 12.9x, "self-hosted Netflix in 17 MB with Claude
+Code". r/SaaS: "$17k from my SaaS, the free services I used", "Ramp's 'Compare using AI' button". r/Entrepreneur +
+r/ChatGPTPro: how to show up in ChatGPT answers; 8 in 10 sites now get some ChatGPT traffic.
+
+### The 6 topics winning right now (for our buyer)
+
+1. **Making videos/Reels with Claude Code** (the biggest by far: 5 accounts, 0.5–1.4M each, 20–55K comments). We
+   ARE this: every Reel of ours is Claude + Remotion + ElevenLabs. Our real system is the proof.
+2. **"Before you launch your vibe-coded app" checks**: security, legal, speed (breakingbreach ×3, murphmaxxing ×2,
+   adilet 1.7M). Fear + checklist + keyword.
+3. **Cheap setup: big model plans, small model builds** (murphmaxxing, okaashish, opusjake sub-agents). W-7 is
+   this exact shape.
+4. **"Give this to your AI": copy-paste rules/skills** (charles design rules 1M, auraguy skills, duncan "better
+   instructions", Reddit "one line in every prompt"). The prompt itself is the freebie.
+5. **Test the idea before you build it** (100 fake customers 679K, roast your idea, our NARROW).
+6. **Claude Code doing odd everyday jobs** (internet speed, TV, digital footprint, Instagram page): small accounts
+   hit 25–65x with these.
+
+Patterns: comment-keyword on nearly all (often 5–55K comments); "Give this to your AI" and "Comment X for the
+setup"; numbered traps/checks; result on screen first; 25–85 s (longer than our test, still winning).
+Off-topic outliers skipped: AI photo prompts, GTA 6, Google history, phone tricks.
+
+### New ideas (19-30): topic + our seed + freebie
+
+| # | Idea (our seed) | Topic | Remixed from | Freebie (Kit = new non-PDF) | Real run |
+| --- | --- | --- | --- | --- | --- |
+| 19 | **This Reel was made by Claude. Here's the brief.** Our real pipeline in 25 s: brief → voice → build → sound, frame 0 = a finished Reel of ours | 1 | mrcreates 115x, adilet 33x, justyn 29x | VIDEO (have it) | have it (our repo) |
+| 20 | **4 rules so your Claude-made video doesn't look like AI**: our never-list, before/after on one of our own scenes | 1 | okaashish 27.6x (batch 1) + topic 1 | VIDEO | have it |
+| 21 | **Built an app with AI? Ask it these 3 questions before anyone pays**: security, "what breaks if 100 people use it", what you promise legally. Real run on the W-7 calculator | 2 | breakingbreach 70x/53x/39x, adilet 1.7M | Kit: "LAUNCH" 3-prompt checklist | yes |
+| 22 | **The one line I add to every prompt**: "If something important is missing, ask me before you guess." Same request with and without it, side by side | 4 | Reddit 30.9x + duncan 9x | NARROW / Kit: the line + 2 more | yes (quick) |
+| 23 | **I asked for 3 options, then for 1 best answer, 10 times**: which one I'd actually send (count on screen) | 4 | Reddit "31/40" test | PLAIN | yes (10 emails) |
+| 24 | **ChatGPT plans, Claude builds** (W-7's shape as a setup Reel): which model does which job and why it's cheaper | 3 | murphmaxxing 15.7x, okaashish 13.7x | $17 pack (PROMPT) | have it (W-7 runs) |
+| 25 | **Your chat gets worse after 200 messages: the 5-line handoff** (goal, limits, decisions, ruled out, next step) | 4 | Reddit context rot | Kit: handoff prompt | yes |
+| 26 | **Before you build it, let 100 fake customers say no**: simulated buyers, then the one real check that matters (search the web for proof) | 5 | auraguy 679K, aistuff FISH 9.3x | NARROW | yes |
+| 27 | **Give this to your AI before it designs your page**: 5 rules so it doesn't look AI-made, before/after of a landing page | 4 | charles.unemployed 1M ×3, murph "AI slop site" | Kit: design never-list | yes |
+| 28 | **Claim your business in ChatGPT before a competitor does** (Business Hub beta, 10 Nov): what it is, the 4 ways to verify, what it doesn't do | news | Reddit r/Entrepreneur + news | Kit: AI-visibility checklist | partly (screens of the Hub) |
+| 29 | **Same task, 3 new models this week** (GPT-6.2 Sol vs Gemini 4 Neon vs Claude): one job, one winner, at what price | news + 3 | rubenhassid map 10x, news | The Exact Method | yes (= N-8 refresh) |
+| 30 | **Claude Code did a boring job for me** (series): one small real job per Reel (rename 300 files, clean a spreadsheet, check a contract) | 6 | ai.zygis 64x/25x, alextsoi 56x | Kit: the prompt | yes, per episode |
+
+Not taken: Ramp's "Compare using AI" button (B2B, risky trust angle), faceless-channel income claims (no
+true number of ours yet), privacy/internet tricks without a builder angle.
+
+### Priority after Batch 3
+
+1. **Now, no new runs:** 19 and 20 (topic 1 is the biggest and we own the proof). Freebie = VIDEO, works today.
+2. **This week:** 22 (quick run, strongest fit with our method), 24 (W-7 runs reused), then N-8 as 29.
+3. **After Kit + OpenReply are live:** 21, 25, 27, 30 (new non-PDF freebies).
+4. **Watch:** topic 2 (launch checks) has the highest outlier multiples of the batch, worth a short series.
