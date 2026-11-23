@@ -282,6 +282,30 @@ reach. Downloads per 1,000 reach is the number to compare Reels by.
 
 ---
 
+## 14. First 3 Reps: remix one outlier per video (day 5)
+
+The rule: stop preparing, make reps. Each of the next videos is a close remix of one proven outlier.
+
+1. **Pick:** 3 outliers at **5x+** the creator's normal views (stricter than the 3x mining floor), from accounts
+   1-2 stages ahead (10K-1M followers), in **3 different formats**. Choose the formats that are cheapest for us
+   to make (we're faceless: Sage, screenshots, screen recordings, animated lists).
+2. **Study:** the hook in all three layers (text, visual, spoken) and the script beat by beat. Get the transcript
+   (for us: a screen recording from the user + faster-whisper, or the outlier's caption if it carries the script).
+3. **Remix: hold 4 constant, change 1.** Keep format, hook structure, script flow and visual style; change the
+   idea (our angle, our real run, our examples). Ways to change it: a different/better set of items, fewer items,
+   the same items framed for our buyer, or the same items with better examples.
+4. **Script from the transcript as a fill-in template:** match it beat for beat (hook, setup, payoff, CTA), swap
+   in our topic and run, read it aloud, rewrite anything unnatural.
+5. **Production stays cheap:** match the outlier's pacing and look; captions on. The lead magnet and its delivery
+   must be live **before** posting (for us: the keyword is in the DM task / bot, the freebie link works).
+6. **The point is data:** the first 3 won't be great; they exist so the next audit (day 6) has something to read.
+
+How we apply it: in each Reel's audit, name the outlier it remixes (account, link, multiple), list the 4 bricks
+kept and the 1 changed. This sits on top of the viral-format match (F1-F5); remixing a specific 5x+ outlier
+comes first when one fits. Candidates from batch 3: mrcreates.ai 115.7x / adilet.fndr 33.6x (Reels made with
+Claude → ideas 19-20), murphmaxxing 15.7x (big model plans, cheap model builds → idea 24), techguyver's
+"I reverse engineered ManyChat" (→ our DM-bot build, once live).
+
 ## Source log
 
 | Email | Date received | What it added |
@@ -292,8 +316,9 @@ reach. Downloads per 1,000 reach is the number to compare Reels by.
 | Day 3: Hooks (text > visual > spoken, max alignment, clarity + contrast) + its 2 example Reels (14M vs 40K views) | 21 Nov 2026 | Section 12: hook time budget, muted viewing, the alignment check, the 2 things every hook needs, hook research, split-screen layout |
 | Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
 | Day 4: The Buyer Activation Flow (views → leads) | 22 Nov 2026 | Section 13: the funnel, conversions per view, 7 lead magnet types, lead magnet fit, the simple landing page |
+| Day 5: First 3 Reps (make your best 3 videos this week) | 23 Nov 2026 | Section 14: 5x+ outliers in 3 formats, hold 4 constant change 1, transcript as template, freebie live before posting |
 
-Coming: day 5 "First 3 Reps", day 6 "11-Point Video
+Coming: day 6 "11-Point Video
 Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend section 0's audit table.
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
