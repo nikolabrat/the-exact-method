@@ -121,7 +121,8 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    The result has `binary_data.url`: `curl -sS -o raw_<ID>.mp3 "<url>"` (link lasts 1 h).
    Then `bash ../../../../tools/voice/process.sh` (trim + atempo 1.07 → `f<ID>.wav`), copy
    `tools/voice/mix.py`, set IDS/GAP, run it → `mix_ig.wav`, `mix_tt.wav`, `timing_*.json`, `align_*.json`
-   (word timings from faster-whisper, within ~0.04 s of ElevenLabs alignment). Sound effects the same way:
+   (faster-whisper word timings can be up to 8 frames late: replace them with ElevenLabs forced alignment,
+   tool ELEVENLABS_ALIGN_AUDIO_AND_TRANSCRIPT on the mixed voice via the workbench, as done for W-7 in `workspace/reels/w7/el_align.json`). Sound effects the same way:
    POST `/v1/sound-generation` with `{"text": ..., "duration_seconds": ...}`.
 4. **Check speech = captions**: transcribe each line with faster_whisper `small.en`; decode audio with
    `ffmpeg -f f32le -ar 16000 -ac 1` (av.open fails). Re-record any line that differs from the text.
