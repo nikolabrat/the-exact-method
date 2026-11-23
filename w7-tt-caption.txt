@@ -1,0 +1,8 @@
+DM me PROMPT and I'll send you both prompts, word for word.
+
+Prompt 1 gets a build plan where every number is one task. Anything that hides two jobs gets split ("add ingredients" became 4 steps, 44 in total).
+Prompt 2 rewrites that plan as orders for a coding assistant: nothing merged, skipped or reordered.
+
+I pasted the orders into Claude. It built the pricing calculator, tested its own math and fixed a rounding bug itself. I didn't write any code.
+
+#claudeai #aiprompts #nocodetools
