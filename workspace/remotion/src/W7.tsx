@@ -40,7 +40,7 @@ const prep = (T: {lines: Line[]; end: number; total: number}) => {
     let cur: Wd[] = [];
     l.words.forEach((w, i) => {
       cur.push(w);
-      if (/[.:?,]["”]?$/.test(w.w) || i === l.words.length - 1) { segs.push(cur); cur = []; }
+      if (/[.:?,]["”]?$/.test(w.w) || /^[A-Z]{4,}$/.test(w.w) || i === l.words.length - 1) { segs.push(cur); cur = []; }
     });
     segs.forEach((seg) => {
       const k = Math.ceil(seg.length / 3);
@@ -378,7 +378,7 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
         {[[w(11, 3), 58.52, 'to make', C.mint], [w(11, 7), 83.59, 'to sell', C.gold]].map(([at, v, lab, col], i) => {
           const a = at as number;
           const p = r(f, a - 4, a + 4, BACK);
-          const n = (v as number) * r(f, a - 2, a + 16, OUT);
+          const n = (v as number) * lerp(0.4, 1, r(f, a - 2, a + 16, OUT));
           return (
             <div key={i} style={{flex: 1, background: col as string, border: `4px solid ${C.ink}`, borderRadius: 20, padding: '14px 24px', opacity: Math.min(1, p * 2), transform: `translateY(${(1 - p) * 40}px) rotate(${i ? 1.5 : -1.5}deg)`}}>
               <Mono size={26} color={C.ink}>{lab as string}</Mono>
@@ -411,7 +411,7 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
         )}
         {/* S1: 1st try */}
         {f >= stampAt - 8 && f < dealAt + 10 && (
-          <div style={{position: 'absolute', inset: 0, transform: 'translateY(-190px)', opacity: 1 - r(f, dealAt - 2, dealAt + 8)}}>
+          <div style={{position: 'absolute', inset: 0, transform: 'translateY(-300px)', opacity: 1 - r(f, dealAt - 2, dealAt + 8)}}>
             <Sequence from={stampAt - 7} layout="none">
               <ImpactShake backgroundColor="transparent" intensity={0.9} impact={7} seed={3} colors={{dust: '#B9B2A2', splitA: '#D9534A', splitB: '#2F7A52'}} foregroundColor={C.ink}>
                 <span style={{display: 'inline-block', fontFamily: 'Archivo', fontWeight: 900, fontSize: 120, color: C.red, border: `9px solid ${C.red}`, borderRadius: 22, padding: '6px 34px', background: 'rgba(252,251,247,0.94)', transform: 'rotate(-8deg)'}}>1st try</span>
@@ -468,17 +468,14 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
               <div style={{position: 'absolute', left: 148, top: 520, width: 560, height: 110, opacity: Math.min(1, ap * 2), transform: `scale(${lerp(1.3, 1, ap)}) rotate(-2deg)`}}>
                 {half(0)}{half(1)}
                 {f >= w(3, 9) && f < w(3, 9) + 14 && <div style={{position: 'absolute', left: 180, top: -100, width: 200, height: 300}}><Sequence from={w(3, 9)} layout="none"><TrimBurst x={0.5} y={0.5} count={9} innerRadius={50} reach={26} strokeLength={18} weight={5} color={C.red} seed={4} /></Sequence></div>}
-                {sp > 0.5 && <div style={{position: 'absolute', left: -40, top: 130, width: 640, display: 'flex', justifyContent: 'space-between', opacity: r(f, w(3, 9) + 4, w(3, 9) + 10)}}>
-                  <Sticker p={r(f, w(3, 9) + 4, w(3, 9) + 12)} rot={-5} bg={C.mint} size={34}>job 1 → step</Sticker>
-                  <Sticker p={r(f, w(3, 9) + 7, w(3, 9) + 15)} rot={4} bg={C.mint} size={34}>job 2 → step</Sticker>
-                </div>}
+                
               </div>
             );
           })()}
         </Card>
 
         {/* S4: "add ingredients" became four */}
-        <Card f={f} inAt={L[4] - 4} outAt={L[5] - 4} inFx="page" outFx="shrink" title="The real plan" tag={<Label text="rows 10-13 of 44" p={r(f, L[4] + 2, L[4] + 10)} />}>
+        <Card f={f} inAt={L[4] - 4} outAt={L[5] - 4} inFx="page" outFx="shrink" title="The real plan" tag={<Label text="rows 10-13 · real run" p={r(f, L[4] + 2, L[4] + 10)} />}>
           {(() => {
             const sp = r(f, splitAt - 2, splitAt + 8, IO);
             const ap = r(f, w(4, 1) - 3, w(4, 1) + 6, BACK);
@@ -492,8 +489,7 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
           <div style={{position: 'absolute', left: 0, top: 120, width: IW, height: 301, borderRadius: 16, overflow: 'hidden', border: `3px solid ${C.ink}`, opacity: r(f, L[4] + 2, L[4] + 10)}}>
             <Img src={staticFile('w7/rows10_13.png')} style={{width: IW, height: 301, display: 'block'}} />
             {stepAt.map((a, i) => <div key={i} style={{position: 'absolute', left: 8, top: ROWS_Y[i] - 22, height: 44, width: (IW - 16) * r(f, a - 3, a + 7, IO), background: C.mint, opacity: 0.32, borderRadius: 6}} />)}
-            <div style={{position: 'absolute', right: 10, bottom: 8}}><Label text="excerpt · real run · ChatGPT" p={1} bg="rgba(0,0,0,0.65)" /></div>
-          </div>
+                      </div>
           <div style={{position: 'absolute', left: 0, top: 448, width: IW, display: 'grid', gridTemplateColumns: '1fr 1fr', rowGap: 26, columnGap: 22}}>
             {STEPS.map((s, i) => {
               const slot = r(f, splitAt, splitAt + 6 + i * 2);
@@ -570,14 +566,14 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                   <Mono size={26} color={C.ink}>a real 30% margin</Mono>
                   <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 96, color: C.ink, letterSpacing: -2}}>÷ 0.70</div>
                   <Mono size={28} color={C.ink}>€10 cost → €14.29</Mono>
-                  {f >= w(6, 15) && <div style={{position: 'absolute', right: -20, top: -26}}><Stamp text="right" p={r(f, w(6, 15), w(6, 15) + 7, BACK)} color={C.green} rot={8} size={40} /></div>}
+                  {f >= w(6, 15) && <div style={{position: 'absolute', right: -34, bottom: -26}}><Stamp text="right" p={r(f, w(6, 15), w(6, 15) + 7, BACK)} color={C.green} rot={8} size={40} /></div>}
                 </div>
               );
             })()}
           </div>
           {f >= w(6, 13) && f < tossAt && (
             <div style={{position: 'absolute', left: 0, top: 0, width: IW, height: 640, pointerEvents: 'none'}}>
-              <Sequence from={w(6, 13)} layout="none"><InkArrow from={{x: 700, y: 250}} to={{x: 650, y: 380}} curvature={-0.4} color={C.ink} strokeWidth={6} drawDur={10} headSize={20} seed="w7arr" /></Sequence>
+              <Sequence from={w(6, 13)} layout="none"><InkArrow from={{x: 700, y: 250}} to={{x: 640, y: 306}} curvature={-0.4} color={C.ink} strokeWidth={6} drawDur={10} headSize={20} seed="w7arr" /></Sequence>
             </div>
           )}
         </Card>
@@ -599,13 +595,13 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
 
         {/* S8-S9: prompt 2, orders, check list */}
         <Card f={f} inAt={L[8] - 4} outAt={L[10] - 6} inFx="page" outFx="whip" title="Prompt 2 · ChatGPT" tag={<Label text="for a coding AI" p={r(f, w(8, 5) - 2, w(8, 5) + 6)} bg={C.gold} fg={C.ink} />}>
-          <Dark h={350}>
+          <Dark h={270}>
             {f >= L[8] - 4 && <Sequence from={L[8] - 4} layout="none"><OffthreadVideo src={staticFile('w7/writing.mp4')} muted style={{width: IW, height: IW * 886 / 1080, objectFit: 'cover'}} /></Sequence>}
             <div style={{position: 'absolute', left: 16, bottom: 14}}><Label text="real run · 22 Nov 2026" p={1} bg="rgba(0,0,0,0.6)" /></div>
           </Dark>
-          <div style={{marginTop: 22}}><Mono size={28} color={C.ink}>the orders forbid:</Mono></div>
-          <div style={{position: 'absolute', left: 10, top: 420, width: 760, height: 220}}>
-            {f >= clFrom && <Sequence from={clFrom} layout="none"><CheckList items={CL} width={700} fontSize={58} color={C.ink} boxColor={C.ink} tickColor={C.red} step={clStep} itemGap={clGap} closeGap={clClose} strokeWidth={4} seed="w7cl" /></Sequence>}
+          <div style={{marginTop: 18}}><Mono size={28} color={C.ink}>the orders forbid:</Mono></div>
+          <div style={{position: 'absolute', left: 10, top: 340, width: 760, height: 300}}>
+            {f >= clFrom && <Sequence from={clFrom} layout="none"><CheckList items={CL} width={720} fontSize={60} color={C.ink} boxColor={C.ink} tickColor={C.red} step={clStep} itemGap={clGap} closeGap={clClose} strokeWidth={4} seed="w7cl" /></Sequence>}
           </div>
         </Card>
 
@@ -613,7 +609,7 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
         {f < tearA && S10}
         {f >= tearA && f < tearA + tearLen && (
           <>
-            <TearP presentationDirection="entering" presentationProgress={tearP} passedProps={TEAR.props}><AbsoluteFill style={{background: C.paper}}>{S11}</AbsoluteFill></TearP>
+            {tearP >= 0.28 && <TearP presentationDirection="entering" presentationProgress={tearP} passedProps={TEAR.props}><AbsoluteFill style={{background: C.paper}}>{S11}</AbsoluteFill></TearP>}
             <TearP presentationDirection="exiting" presentationProgress={tearP} passedProps={TEAR.props}><AbsoluteFill style={{background: C.paper, backgroundImage: `repeating-linear-gradient(0deg, transparent 0 63px, ${C.rule} 63px 65px)`}}>{S10}</AbsoluteFill></TearP>
           </>
         )}
@@ -655,7 +651,19 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                     </div>
                   </div>
                 </div>
-                <div style={{position: 'absolute', right: 10, top: 470}}><Sticker p={r(f, wfw - 2, wfw + 8)} rot={-4} bg={C.gold} size={44}>word for word</Sticker></div>
+                <div style={{position: 'absolute', left: 0, top: 392, width: IW, display: 'flex', gap: 26}}>
+                  {[0, 1].map((i) => {
+                    const p = r(f, both + i * 6 - 2, both + i * 6 + 8, BACK);
+                    return (
+                      <div key={i} style={{flex: 1, height: 230, background: C.card, border: `4px solid ${C.ink}`, borderRadius: 20, padding: '18px 24px', boxSizing: 'border-box', opacity: Math.min(1, p * 2), transform: `translateY(${(1 - p) * 60}px) rotate(${i ? 2 : -2}deg)`, backgroundImage: 'repeating-linear-gradient(0deg, transparent 0 41px, #E4DFD2 41px 43px)', backgroundPositionY: 60}}>
+                        <Mono size={24} color={C.ink}>{i ? 'prompt 2 · orders' : 'prompt 1 · plan'}</Mono>
+                        <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 96, lineHeight: 1.05, marginTop: 8}}>#{i + 1}</div>
+                        <div style={{position: 'absolute', left: 70, top: -18, width: 110, height: 34, background: 'rgba(240,226,190,0.82)', border: '1px solid rgba(160,140,100,0.35)', transform: `rotate(${i ? 4 : -4}deg)`}} />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div style={{position: 'absolute', right: -6, top: 560}}><Sticker p={r(f, wfw - 2, wfw + 8)} rot={-5} bg={C.gold} size={46}>word for word</Sticker></div>
               </>
             );
           })()}
@@ -672,8 +680,8 @@ export const W7: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
       <SectionTag f={f} m={m} end={END} />
       <Sage f={f} m={m} mouth={(platform === 'ig' ? MIG : MTT) as number[]} end={END} />
       {/* 44: smash count over the pile */}
-      {f >= pileA && f < pileB + 26 && (
-        <div style={{position: 'absolute', inset: 0, opacity: 1 - r(f, pileB + 18, pileB + 26), pointerEvents: 'none'}}>
+      {f >= pileA && f < dotAt - 3 && (
+        <div style={{position: 'absolute', inset: 0, opacity: 1 - r(f, dotAt - 11, dotAt - 4), pointerEvents: 'none'}}>
           <div style={{position: 'absolute', inset: 0, transform: 'translate(0px, -470px) scale(0.62)'}}>
             <Sequence from={pileA} layout="none"><SmashCount from={1} value={44} cuts={6} firstGap={6} lastGap={3} label="" accent={C.red} ink={C.ink} background="transparent" fontFamily="Archivo" scale={1} /></Sequence>
           </div>
