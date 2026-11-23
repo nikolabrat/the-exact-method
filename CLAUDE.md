@@ -45,7 +45,7 @@ Composio's "instant account" for ElevenLabs (paid per use, stock voices only, no
 | --- | --- |
 | Site | theexactmethod.com, served from branch `main` (Cloudflare Worker "the-exact-method"). Change it through a PR into main, merged with `gh api` (GraphQL is blocked; branch deletion is blocked) |
 | Gumroad store | theexactmethod.gumroad.com (Composio toolkit `gumroad`, account thriftwellstudio) |
-| Instagram | @theexactmethod, IG user id `17841445152046754`, Composio toolkit `instagram` (account instagram_aspace-nabs). Reels post at 20:00 Sofia |
+| Instagram | @theexactmethod, IG user id `17841445152046754`, Composio toolkit `instagram` (account instagram_caner-afore, alias "The Exact Method 2"; reconnected 23 Nov after Meta reset the old session. If calls fail with OAuth code 190, reconnect via COMPOSIO_MANAGE_CONNECTIONS and update the DM task). Reels post at 20:00 Sofia |
 | Pinterest | theexactmethodhq, Composio connection `pinterest_codol-remend` |
 | TikTok | the user uploads by hand (DM-keyword version + AI-generated label) |
 | Reels schedule page | https://claude.ai/artifact/FJ7UGJZBNgN7mehAp4hE9Y (read and republish with the artifact tools) |
