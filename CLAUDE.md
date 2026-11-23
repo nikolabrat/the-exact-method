@@ -106,10 +106,9 @@ in git: to re-render an old Reel, copy its folder to `public/<id>v/` and run gen
    every ~3 s, first value by s 5-10; the end answers it, CTA after. Show the user results before building.
    **Viral-format match**: the script must match one of the formats in the project doc `claude/viral-formats.md`
    (F1-F5, from the ig-viral research). Name the format and its reference reel; if none fits, rewrite first.
-   **Short-Reel test (from 18 Nov, every Reel until the user ends it)**: 15-25 s total (about 45-65 spoken words
-   at Mike's pace), one idea, the payoff or result ON SCREEN by second 5, then the "how/why" for the rest, one thing
-   worth saving (the prompt, the list) on screen, CTA in the last ~3 s, loop. This replaces "keep the main answer
-   open past second 6": the open loop is now how it works, not what the answer is.
+   **Full audit (from 23 Nov):** fill every line of `scripts/reel-audit.md` (PASS/FAIL + evidence) and show it
+   with the script; any ⛔ FAIL = rewrite before building. **Length 45-90 s** (Kallaway; the 15-25 s test ended
+   20 Nov without beating it). Every Reel remixes a named 5x+ outlier (growth-system §14).
    **Frame-0 test (from 19 Nov, after V-2 lost most viewers at 0:01)**: (1) the full hook sentence as a big headline
    readable in under 1 s, spoken captions below it; (2) a real, recognisable result or face on frame 0, not a diagram
    of one; (3) the first words speak to a problem anyone in the buyer pool has (people who use AI to build,

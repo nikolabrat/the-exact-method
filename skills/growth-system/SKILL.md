@@ -200,15 +200,14 @@ Our default is **teasing proof**: the real run's result on screen by second 5.
 
 **Rehooks:** viewers have about 20-25 s of attention even when interested; one rehook between the
 blocks buys another stretch. Make it a real contrast ("…but that's not even the strange part"), never a
-corny filler line. In our 15-25 s Reels there is room for exactly one.
+corny filler line. At 45-90 s: one rehook between body 1 and 2, a second before body 3 if used.
 
 **Principles:** cut all fluff; as short as possible (don't add length unless needed); every sentence
 either continues the last one or clearly starts a new thread; tease the value as early as possible;
 simplest words; clarity over everything.
 
-**Length note:** his ideal is 45-90 s. We're running the short-Reel test (15-25 s) until our numbers say
-otherwise; the structure fits both. If a Reel needs 2 full body blocks + rehook, it may run past 25 s:
-decide per Reel and log it as that Reel's test.
+**Length: 45-90 s** (his ideal). Our 15-25 s test (18-20 Nov) didn't beat it, so from 23 Nov every Reel
+runs 45-90 s, with two body blocks and a rehook; 45 s is the floor, never padding.
 
 Example, P-6 mapped: hook "Never send ChatGPT's first draft. This one has nine giveaways." · lock-in
 (teasing proof) "This one has zero. Same request, same ChatGPT." · body 1: the nine marks · rehook
