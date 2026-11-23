@@ -147,3 +147,50 @@ first test group (~100-250). Next test: short Reels (15-25 s) with the payoff in
 - DM keyword task: NARROW + caption "what should i sell online first" → section 03, page 4.
 - 20:14 Instagram restricted @theexactmethod from sharing links until 19 Dec (reason: "may deceive others to take their money…"). No keyword DMs had gone out yet (only 1 test DM to the user's own account), so not a DM-volume issue. Likely trigger: an automated classifier on a 5-follower account that posted 20 Reels via API in a short time, with 'Comment X and I'll DM you a free guide' captions + 'free guides / instant PDF downloads' bio + external link. N-7 at 2 h: reach 23, 33 views, avg watch 8.0 s (best yet), skip 66.7%. Reach likely cut by the integrity flag that hit 14 min after posting (first test batch). Recheck at 24 h and check Account status → recommendations. User requested review; Instagram removed it at 20:24 ("our technology made a mistake"). DM task paused 20:15, re-enabled 20:24, back to normal.
 - New skill `skills/growth-system` (from the Short Form Growth System emails): Game 5, buyer-pool relevance gate, trust = minutes × relevance × usefulness, trust metrics in the results log (follows, keyword comments, free downloads added). Updated after each email the user sends.
+
+## TikTok keyword DMs (copy-paste by hand, until a Business account or 1,000 followers)
+
+Open TikTok DMs once a day. Reply to each "KEYWORD" DM with the matching text. For a Reel with a specific
+pointer (section/page), use the pointer line from the Instagram DM task instead of the general one.
+
+PROMPT (W-7):
+```
+Here are both prompts, word for word. Run them in order, in the same chat:
+
+1. "I want to build [what you want to build, in plain language]. Give me a numbered build plan where each number is a single, indivisible task. Anywhere a number would secretly cover two different jobs, break it into two separate numbers instead."
+
+2. "Rewrite the plan above as direct instructions for an AI coding assistant to carry out, one number at a time, in order. Keep the one-task-per-number structure exactly as it is: nothing merged, nothing skipped, nothing reordered."
+
+Then paste what prompt 2 gives you into a new chat or your coding tool.
+
+If you want more prompts like that, there are 10 in the pack: https://theexactmethod.gumroad.com/l/aoyxea
+
+Follow so you don't miss the next one.
+```
+
+NARROW:
+```
+Here's The Narrowing Method, free (enter $0 at checkout): https://theexactmethod.gumroad.com/l/bwydhs
+
+The three prompts from the video are in section 03, The Three-Prompt Template (page 4), ready to copy.
+
+I post AI workflows like this several times a week. Follow so you don't miss the next one.
+```
+
+PLAIN:
+```
+Here's Plain Voice, free (enter $0 at checkout): https://theexactmethod.gumroad.com/l/vxwyul
+
+The ready-to-paste rules for ChatGPT, Claude and Gemini are in sections 05 to 07 (pages 6 to 8), and where to paste each one is in section 04 (page 5).
+
+I post AI workflows like this several times a week. Follow so you don't miss the next one.
+```
+
+VIDEO:
+```
+Here's The Video Brief, free (enter $0 at checkout): https://theexactmethod.gumroad.com/l/atnqas
+
+The brief template is in section 07 (page 9), and the eight checks for every render are in section 10 (page 12).
+
+I post AI workflows like this several times a week. Follow so you don't miss the next one.
+```
