@@ -101,3 +101,12 @@ export function isEmail(s) {
 export function needsEmail(kw) {
   return !GUIDES[kw];
 }
+
+// Email-group delivery: each email keyword has a Kit form whose confirmation email holds the freebie.
+// The bot signs the person up to that form (like a real form signup), so Kit sends that email.
+export const KIT_FORMS = { PROMPT: "10238346" };
+export const EMAIL_SUBJECT = { PROMPT: "Your 2 prompts, word for word" };
+
+export function emailSentText(kw) {
+  return `Sent ✅ check your inbox for "${EMAIL_SUBJECT[kw]}" from The Exact Method.\n\nnot there in a minute? look in Promotions or spam`;
+}

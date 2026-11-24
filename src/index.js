@@ -2,7 +2,7 @@
 // Comment with a keyword on @theexactmethod -> instant private-reply DM with the guide + public "check your DMs".
 // Two paths feed the same handler: Meta webhooks (instant) and a 2-minute poll (backstop).
 
-import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN, needsEmail } from "./rules.js";
+import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN, needsEmail, KIT_FORMS, emailSentText } from "./rules.js";
 
 // Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
 // configuration, a never-expiring system-user token, and graph.facebook.com.
@@ -200,9 +200,13 @@ async function handleMessaging(env, ev) {
       return log(env, { kind: "bad-email", user: mask(st.user), ok: r.ok });
     }
     const email = m[0].toLowerCase();
-    await saveEmail(env, { email, kw: st.kw, user: st.user, igsid });
-    await saveState(env, igsid, { ...st, stage: "done", email });
-    return sendFinal(env, auth, igsid, st);
+    const viaEmail = await saveEmail(env, { email, kw: st.kw, user: st.user, igsid });
+    await saveState(env, igsid, { ...st, stage: "done", email, viaEmail });
+    if (viaEmail) {
+      r = await send(auth, igsid, { text: emailSentText(st.kw) });
+      return log(env, { kind: "step4-emailed", user: mask(st.user), kw: st.kw, ok: r.ok, err: r.error });
+    }
+    return sendFinal(env, auth, igsid, st); // fallback: deliver in the DM
   }
 }
 
@@ -230,17 +234,36 @@ async function saveEmail(env, e) {
   const list = raw ? JSON.parse(raw) : [];
   if (!list.some((x) => x.email === e.email && x.kw === e.kw)) list.push({ ...e, t: new Date().toISOString() });
   await env.BOT.put("emails", JSON.stringify(list));
-  if (env.KIT_API_KEY) await addToKit(env, e);
+  if (!env.KIT_API_KEY) return false;
+  return addToKit(env, e);
 }
 
 // Kit (v4): create/refresh the subscriber, then tag them with the keyword (tag "ig-PROMPT" etc.,
 // created on first use). Tags let a broadcast go to everyone who asked for one freebie.
 async function addToKit(env, e) {
   const H = { "Content-Type": "application/json", "X-Kit-Api-Key": env.KIT_API_KEY };
-  const sub = await fetch("https://api.kit.com/v4/subscribers", {
-    method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "active" }),
-  });
-  if (!sub.ok) return log(env, { kind: "kit-failed", step: "subscriber", status: sub.status });
+  let emailed = false;
+  const formId = KIT_FORMS[e.kw];
+  const look = await (await fetch(`https://api.kit.com/v4/subscribers?status=all&email_address=${encodeURIComponent(e.email)}`, { headers: H })).json();
+  const known = ((look && look.subscribers) || []).length > 0;
+  if (formId && !known) {
+    // Same request an embedded Kit form makes: creates the subscriber and sends the form's confirmation email.
+    const f = await fetch(`https://app.kit.com/forms/${formId}/subscriptions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
+      body: new URLSearchParams({ email_address: e.email }).toString(),
+    });
+    emailed = f.ok;
+    await log(env, { kind: "kit-form", ok: f.ok, status: f.status });
+    if (!f.ok) {
+      const g = await fetch(`https://api.kit.com/v4/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "inactive" }) });
+      const h = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email }) });
+      await log(env, { kind: "kit-form-api", sub: g.status, form: h.status });
+    }
+  } else if (!known) {
+    const sub = await fetch("https://api.kit.com/v4/subscribers", { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "active" }) });
+    if (!sub.ok) { await log(env, { kind: "kit-failed", step: "subscriber", status: sub.status }); return false; }
+  }
   const tagName = `ig-${e.kw}`;
   let tagId = await env.BOT.get(`kittag:${tagName}`);
   if (!tagId) {
@@ -253,9 +276,10 @@ async function addToKit(env, e) {
     }
     if (tagId) await env.BOT.put(`kittag:${tagName}`, tagId);
   }
-  if (!tagId) return log(env, { kind: "kit-failed", step: "tag" });
+  if (!tagId) { await log(env, { kind: "kit-failed", step: "tag" }); return emailed; }
   const t = await fetch(`https://api.kit.com/v4/tags/${tagId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email }) });
-  await log(env, { kind: "kit", ok: t.ok, tag: tagName });
+  await log(env, { kind: "kit", ok: t.ok, tag: tagName, known, emailed });
+  return emailed;
 }
 
 // Emails collected before KIT_API_KEY existed are sent to Kit once, on the first run after the key is added.
