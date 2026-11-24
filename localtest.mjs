@@ -2,12 +2,12 @@
 import worker from "./src/index.js";
 import crypto from "node:crypto";
 const store=new Map(); const KV={get:async k=>store.has(k)?store.get(k):null,put:async(k,v)=>{store.set(k,v)}};
-const env={BOT:KV,IG_APP_ID:"1",IG_APP_SECRET:"s3cret",VERIFY_TOKEN:"vt",EXPECTED_USERNAME:"theexactmethod"};
+const env={BOT:KV,META_APP_ID:"1",META_APP_SECRET:"s3cret",VERIFY_TOKEN:"vt",EXPECTED_USERNAME:"theexactmethod"};
 store.set("auth",JSON.stringify({token:"T",user_id:"1784",username:"theexactmethod",expires_at:Date.now()+50*864e5}));
-const calls=[]; globalThis.fetch=async(u,o={})=>{calls.push([o.method||"GET",String(u).replace(/^https:\/\/graph.instagram.com\/v23.0/,""),o.body]);
+const calls=[]; globalThis.fetch=async(u,o={})=>{calls.push([o.method||"GET",String(u).replace(/^https:\/\/graph.facebook.com\/v23.0/,""),o.body]);
   const path=String(u);
   if(path.includes("fields=caption")) return new Response(JSON.stringify({caption:"Which AI should I pay for?"}));
-  if(path.includes("/me/media")) return new Response(JSON.stringify({data:[{id:"m1",caption:"x",comments:{data:[
+  if(path.includes("/media?")) return new Response(JSON.stringify({data:[{id:"m1",caption:"x",comments:{data:[
     {id:"c9",text:"NARROW",timestamp:new Date().toISOString(),username:"old",replies:{data:[{username:"theexactmethod"}]}},
     {id:"c8",text:"plain",timestamp:new Date().toISOString(),username:"newbie"}]}}]}));
   return new Response(JSON.stringify({id:"ok",message_id:"mid"}));};

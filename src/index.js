@@ -4,8 +4,9 @@
 
 import { findKeyword, buildMessage, PUBLIC_REPLIES } from "./rules.js";
 
-const GRAPH = "https://graph.instagram.com/v23.0";
-const SCOPES = "instagram_business_basic,instagram_business_manage_messages,instagram_business_manage_comments";
+// Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
+// configuration, a never-expiring system-user token, and graph.facebook.com.
+const GRAPH = "https://graph.facebook.com/v23.0";
 const WEEK = 7 * 24 * 3600 * 1000;
 
 export default {
@@ -26,7 +27,7 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(Promise.all([poll(env), maybeRefresh(env)]));
+    ctx.waitUntil(poll(env));
   },
 };
 
@@ -42,7 +43,7 @@ function verifyWebhook(url, env) {
 async function receiveWebhook(req, env, ctx) {
   const raw = await req.text();
   const sig = req.headers.get("x-hub-signature-256") || "";
-  if (!env.IG_APP_SECRET || !(await validSignature(raw, sig, env.IG_APP_SECRET))) {
+  if (!env.META_APP_SECRET || !(await validSignature(raw, sig, env.META_APP_SECRET))) {
     await log(env, { kind: "webhook-rejected", reason: "bad signature" });
     return new Response("Bad signature", { status: 401 });
   }
@@ -117,7 +118,7 @@ async function poll(env) {
   const auth = await getAuth(env);
   if (!auth) return;
   const fields = "id,caption,timestamp,comments.limit(50){id,text,timestamp,username,from,replies{username}}";
-  const r = await ig(auth, `/me/media?fields=${encodeURIComponent(fields)}&limit=8`, "GET");
+  const r = await ig(auth, `/${auth.user_id}/media?fields=${encodeURIComponent(fields)}&limit=8`, "GET");
   if (!r.ok) {
     await log(env, { kind: "poll-failed", err: r.error });
     return;
@@ -138,71 +139,50 @@ async function poll(env) {
   }
 }
 
-// ---------- Instagram Login (OAuth) ----------
+// ---------- Unified login (Facebook Login for Business) ----------
 
 function connect(url, env) {
   const state = crypto.randomUUID();
-  const redirect = `${url.origin}/callback`;
-  const auth = new URL("https://www.instagram.com/oauth/authorize");
-  auth.searchParams.set("force_reauth", "true");
-  auth.searchParams.set("client_id", env.IG_APP_ID);
-  auth.searchParams.set("redirect_uri", redirect);
-  auth.searchParams.set("response_type", "code");
-  auth.searchParams.set("scope", SCOPES);
-  auth.searchParams.set("state", state);
+  const fb = new URL("https://www.facebook.com/dialog/oauth");
+  fb.searchParams.set("client_id", env.META_APP_ID);
+  fb.searchParams.set("redirect_uri", `${url.origin}/callback`);
+  fb.searchParams.set("config_id", env.LOGIN_CONFIG_ID);
+  fb.searchParams.set("response_type", "code");
+  fb.searchParams.set("override_default_response_type", "true");
+  fb.searchParams.set("state", state);
   return new Response(null, {
     status: 302,
-    headers: { Location: auth.toString(), "Set-Cookie": `st=${state}; Path=/callback; HttpOnly; Secure; SameSite=Lax; Max-Age=600` },
+    headers: { Location: fb.toString(), "Set-Cookie": `st=${state}; Path=/callback; HttpOnly; Secure; SameSite=Lax; Max-Age=600` },
   });
 }
 
 async function callback(url, env, req) {
   const cookie = (req.headers.get("cookie") || "").match(/(?:^|;\s*)st=([^;]+)/);
   if (!cookie || cookie[1] !== url.searchParams.get("state")) return page("Link expired. Open /connect again.");
-  const code = (url.searchParams.get("code") || "").replace(/#_$/, "");
-  if (!code) return page("No code from Instagram: " + (url.searchParams.get("error_description") || "cancelled"));
-  const form = new URLSearchParams({
-    client_id: env.IG_APP_ID, client_secret: env.IG_APP_SECRET, grant_type: "authorization_code",
-    redirect_uri: `${url.origin}/callback`, code,
-  });
-  const s = await fetch("https://api.instagram.com/oauth/access_token", { method: "POST", body: form });
-  const sj = await s.json();
-  const short = sj.access_token || (sj.data && sj.data[0] && sj.data[0].access_token);
-  if (!short) return page("Token exchange failed: " + safeErr(sj));
+  const code = url.searchParams.get("code");
+  if (!code) return page("No code from Meta: " + (url.searchParams.get("error_description") || "cancelled"));
 
-  const l = await fetch(`https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=${encodeURIComponent(env.IG_APP_SECRET)}&access_token=${encodeURIComponent(short)}`);
-  const lj = await l.json();
-  if (!lj.access_token) return page("Long-lived token failed: " + safeErr(lj));
+  const ex = new URL(`${GRAPH}/oauth/access_token`);
+  ex.searchParams.set("client_id", env.META_APP_ID);
+  ex.searchParams.set("client_secret", env.META_APP_SECRET);
+  ex.searchParams.set("redirect_uri", `${url.origin}/callback`);
+  ex.searchParams.set("code", code);
+  const tj = await (await fetch(ex.toString())).json();
+  if (!tj.access_token) return page("Token exchange failed: " + safeErr(tj));
+  const token = tj.access_token;
 
-  const me = await (await fetch(`${GRAPH}/me?fields=user_id,username&access_token=${encodeURIComponent(lj.access_token)}`)).json();
-  if (!me.username) return page("Could not read the account: " + safeErr(me));
-  if (env.EXPECTED_USERNAME && me.username !== env.EXPECTED_USERNAME) {
-    return page(`Logged in as @${me.username}, but this bot only runs for @${env.EXPECTED_USERNAME}. Nothing saved.`);
+  const aj = await (await fetch(`${GRAPH}/me/assigned_instagram_accounts?fields=id,username`, { headers: { Authorization: `Bearer ${token}` } })).json();
+  const acct = ((aj && aj.data) || []).find((a) => !env.EXPECTED_USERNAME || a.username === env.EXPECTED_USERNAME);
+  if (!acct) {
+    const names = ((aj && aj.data) || []).map((a) => "@" + a.username).join(", ") || "none";
+    return page(`@${env.EXPECTED_USERNAME} was not shared in the login (got: ${names}${aj.error ? "; " + safeErr(aj) : ""}). Open /connect again and tick the Instagram account. Nothing saved.`);
   }
-  const auth = { token: lj.access_token, user_id: me.user_id, username: me.username, expires_at: Date.now() + (lj.expires_in || 5184000) * 1000 };
+  const auth = { token, user_id: String(acct.id), username: acct.username, expires_at: Date.now() + 100 * 365 * 86400000 };
   await env.BOT.put("auth", JSON.stringify(auth));
 
-  const sub = await fetch(`${GRAPH}/me/subscribed_apps?subscribed_fields=comments,messages&access_token=${encodeURIComponent(auth.token)}`, { method: "POST" });
-  const subj = await sub.json();
-  await log(env, { kind: "connected", user: me.username, webhooks: subj.success ? "subscribed" : safeErr(subj) });
-  return page(`Connected @${me.username}. Webhooks: ${subj.success ? "subscribed" : "not subscribed (" + safeErr(subj) + ")"}. You can close this tab.`);
-}
-
-async function maybeRefresh(env) {
-  const auth = await getAuth(env);
-  if (!auth) return;
-  const daysLeft = (auth.expires_at - Date.now()) / 86400000;
-  if (daysLeft > 30) return;
-  const r = await fetch(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${encodeURIComponent(auth.token)}`);
-  const j = await r.json();
-  if (j.access_token) {
-    auth.token = j.access_token;
-    auth.expires_at = Date.now() + (j.expires_in || 5184000) * 1000;
-    await env.BOT.put("auth", JSON.stringify(auth));
-    await log(env, { kind: "token-refreshed", days: Math.round((j.expires_in || 0) / 86400) });
-  } else {
-    await log(env, { kind: "token-refresh-failed", err: safeErr(j) });
-  }
+  const sub = await ig(auth, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments"] });
+  await log(env, { kind: "connected", user: acct.username, webhooks: sub.ok ? "subscribed" : sub.error });
+  return page(`Connected @${acct.username}. Comment webhooks: ${sub.ok ? "subscribed" : "not subscribed (" + sub.error + "); the 2-minute check still runs"}. You can close this tab.`);
 }
 
 // ---------- helpers ----------
@@ -257,9 +237,7 @@ async function showLog(env) {
 
 async function health(env) {
   const auth = await getAuth(env);
-  const status = auth
-    ? { connected: auth.username, token_days_left: Math.round((auth.expires_at - Date.now()) / 86400000) }
-    : { connected: false };
+  const status = auth ? { connected: auth.username } : { connected: false };
   return new Response(JSON.stringify({ bot: "the-exact-method comment-to-DM", ...status }), { headers: { "Content-Type": "application/json" } });
 }
 

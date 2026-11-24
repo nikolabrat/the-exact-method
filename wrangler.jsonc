@@ -6,7 +6,8 @@
   "kv_namespaces": [{ "binding": "BOT" }],
   "triggers": { "crons": ["*/2 * * * *"] },
   "vars": {
-    "IG_APP_ID": "SET_AFTER_META_APP",
+    "META_APP_ID": "1400181691959713",
+    "LOGIN_CONFIG_ID": "SET_AFTER_CONFIG",
     "VERIFY_TOKEN": "exactmethod-dm-webhook",
     "EXPECTED_USERNAME": "theexactmethod"
   }
