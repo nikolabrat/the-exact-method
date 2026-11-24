@@ -1,0 +1,13 @@
+{
+  "name": "exact-dm",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "kv_namespaces": [{ "binding": "BOT" }],
+  "triggers": { "crons": ["*/2 * * * *"] },
+  "vars": {
+    "IG_APP_ID": "SET_AFTER_META_APP",
+    "VERIFY_TOKEN": "exactmethod-dm-webhook",
+    "EXPECTED_USERNAME": "theexactmethod"
+  }
+}
