@@ -7,6 +7,7 @@ import { findKeyword, buildMessage, PUBLIC_REPLIES } from "./rules.js";
 // Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
 // configuration, a never-expiring system-user token, and graph.facebook.com.
 const GRAPH = "https://graph.facebook.com/v23.0";
+const IG_GRAPH = "https://graph.instagram.com/v23.0";
 const WEEK = 7 * 24 * 3600 * 1000;
 
 export default {
@@ -27,7 +28,7 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(poll(env));
+    ctx.waitUntil(Promise.all([poll(env), maybeRefresh(env)]));
   },
 };
 
@@ -43,7 +44,10 @@ function verifyWebhook(url, env) {
 async function receiveWebhook(req, env, ctx) {
   const raw = await req.text();
   const sig = req.headers.get("x-hub-signature-256") || "";
-  if (!env.META_APP_SECRET || !(await validSignature(raw, sig, env.META_APP_SECRET))) {
+  const secrets = [env.META_APP_SECRET, env.IG_APP_SECRET].filter(Boolean);
+  let okSig = false;
+  for (const sec of secrets) if (await validSignature(raw, sig, sec)) okSig = true;
+  if (!okSig) {
     await log(env, { kind: "webhook-rejected", reason: "bad signature" });
     return new Response("Bad signature", { status: 401 });
   }
@@ -178,7 +182,7 @@ async function callback(url, env, req) {
     const names = ((aj && aj.data) || []).map((a) => "@" + a.username).join(", ") || "none";
     return page(`@${env.EXPECTED_USERNAME} was not shared in the login (got: ${names}${aj.error ? "; " + safeErr(aj) : ""}). Open /connect again and tick the Instagram account. Nothing saved.`);
   }
-  const auth = { token, user_id: String(acct.id), username: acct.username, expires_at: Date.now() + 100 * 365 * 86400000 };
+  const auth = { token, host: GRAPH, user_id: String(acct.id), username: acct.username, expires_at: Date.now() + 100 * 365 * 86400000 };
   await env.BOT.put("auth", JSON.stringify(auth));
 
   const sub = await ig(auth, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments"] });
@@ -188,9 +192,59 @@ async function callback(url, env, req) {
 
 // ---------- helpers ----------
 
+// Two ways in: (a) /connect login stores {token, host, ...} in KV; (b) a token generated in the
+// Meta dashboard ("Generate token") and pasted as the Cloudflare secret IG_TOKEN.
+// For (b) the host is detected once: Instagram-login token -> graph.instagram.com,
+// system-user token -> graph.facebook.com.
 async function getAuth(env) {
   const raw = await env.BOT.get("auth");
-  return raw ? JSON.parse(raw) : null;
+  const a = raw ? JSON.parse(raw) : null;
+  if (!env.IG_TOKEN) return a && a.token ? a : null;
+  const fp = env.IG_TOKEN.slice(-12);
+  if (a && a.fp === fp) return { ...a, token: a.refreshed || env.IG_TOKEN };
+  const det = await detectToken(env.IG_TOKEN, env.EXPECTED_USERNAME);
+  if (!det) { await log(env, { kind: "token-unusable" }); return a && a.token ? a : null; }
+  const auth = { ...det, fp, expires_at: det.host === IG_GRAPH ? Date.now() + 50 * 86400000 : Date.now() + 100 * 365 * 86400000 };
+  await env.BOT.put("auth", JSON.stringify(auth));
+  await log(env, { kind: "token-detected", user: auth.username, host: auth.host.includes("instagram") ? "instagram" : "facebook" });
+  if (auth.host === IG_GRAPH) {
+    const sub = await fetch(`${IG_GRAPH}/me/subscribed_apps?subscribed_fields=comments,messages`, { method: "POST", headers: { Authorization: `Bearer ${env.IG_TOKEN}` } });
+    await log(env, { kind: "subscribe", ok: sub.ok });
+  } else {
+    const sub = await ig({ ...auth, token: env.IG_TOKEN }, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments"] });
+    await log(env, { kind: "subscribe", ok: sub.ok, err: sub.error });
+  }
+  return { ...auth, token: env.IG_TOKEN };
+}
+
+async function detectToken(token, expected) {
+  const h = { Authorization: `Bearer ${token}` };
+  try {
+    const me = await (await fetch(`${IG_GRAPH}/me?fields=user_id,username`, { headers: h })).json();
+    if (me.username && (!expected || me.username === expected)) return { host: IG_GRAPH, user_id: String(me.user_id || me.id), username: me.username };
+  } catch {}
+  try {
+    const aj = await (await fetch(`${GRAPH}/me/assigned_instagram_accounts?fields=id,username`, { headers: h })).json();
+    const acct = ((aj && aj.data) || []).find((x) => !expected || x.username === expected);
+    if (acct) return { host: GRAPH, user_id: String(acct.id), username: acct.username };
+  } catch {}
+  return null;
+}
+
+async function maybeRefresh(env) {
+  const raw = await env.BOT.get("auth");
+  const a = raw ? JSON.parse(raw) : null;
+  if (!a || a.host !== IG_GRAPH) return; // system-user tokens never expire
+  if (Date.now() - (a.refreshed_at || 0) < WEEK) return;
+  const cur = a.refreshed || env.IG_TOKEN || a.token;
+  const r = await fetch(`${IG_GRAPH}/refresh_access_token?grant_type=ig_refresh_token&access_token=${encodeURIComponent(cur)}`);
+  const j = await r.json();
+  if (j.access_token) {
+    if (env.IG_TOKEN) a.refreshed = j.access_token; else a.token = j.access_token;
+    a.refreshed_at = Date.now();
+    await env.BOT.put("auth", JSON.stringify(a));
+    await log(env, { kind: "token-refreshed" });
+  } else await log(env, { kind: "token-refresh-failed", err: safeErr(j) });
 }
 
 async function getCaption(env, auth, mediaId) {
@@ -203,7 +257,7 @@ async function getCaption(env, auth, mediaId) {
 }
 
 async function ig(auth, path, method, body) {
-  const res = await fetch(GRAPH + path, {
+  const res = await fetch((auth.host || GRAPH) + path, {
     method,
     headers: { Authorization: `Bearer ${auth.token}`, ...(body ? { "Content-Type": "application/json" } : {}) },
     body: body ? JSON.stringify(body) : undefined,

@@ -1,0 +1,10 @@
+import worker from "./src/index.js";
+const store=new Map(); const KV={get:async k=>store.has(k)?store.get(k):null,put:async(k,v)=>{store.set(k,v)}};
+const env={BOT:KV,META_APP_SECRET:"s",VERIFY_TOKEN:"vt",EXPECTED_USERNAME:"theexactmethod",IG_TOKEN:"IGTOKEN123456789"};
+const calls=[]; globalThis.fetch=async(u,o={})=>{u=String(u);calls.push((o.method||"GET")+" "+u.replace(/access_token=[^&]+/,"access_token=X"));
+ if(u.startsWith("https://graph.instagram.com/v23.0/me?")) return new Response(JSON.stringify({user_id:"1784",username:"theexactmethod"}));
+ if(u.includes("/media?")) return new Response(JSON.stringify({data:[{id:"m1",caption:"which ai should i pay for",comments:{data:[{id:"c5",text:"narrow",timestamp:new Date().toISOString(),username:"bob"}]}}]}));
+ return new Response(JSON.stringify({success:true,message_id:"x"}));};
+let p=[]; await worker.scheduled({},env,{waitUntil:x=>p.push(x)}); await Promise.all(p);
+calls.forEach(c=>console.log(c.slice(0,110))); console.log(JSON.parse(store.get("log")).map(x=>x.kind).join(","));
+const a=JSON.parse(store.get("auth")); console.log("token in KV:", "token" in a, a.host);
