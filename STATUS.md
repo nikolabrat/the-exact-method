@@ -3,6 +3,8 @@
 Every chat that finishes or changes something updates this file and pushes it (branch `references`).
 Dates are Europe/Sofia. Last updated: 17 Nov 2026.
 
+- **Meta developer account (24 Nov, blocked):** sign-up says the phone must be added in Accounts Center first; re-adding via two-factor fails because Meta's SMS code never arrives. Tried for 2 days. Still to try: WhatsApp code option, carrier short-number blocking, another number, the Facebook app, then Meta's support form. User researching. Own ManyChat bot waits on this (everything but the Instagram connection can be built without it).
+
 ## Daily routine (every day)
 
 - 20:00 the day's Reel goes out (one-shot publish task). The user uploads the TikTok version by hand
