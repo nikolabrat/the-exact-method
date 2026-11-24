@@ -86,12 +86,27 @@ Commit as `git -c user.email=nblazarov07@gmail.com -c user.name=nikolabrat commi
 
 | Task | When | Notes |
 | --- | --- | --- |
-| Instagram comment keywords → DM the guide | `CRON_TZ=Europe/Sofia 48 0,8-22/2 * * *` | NARROW/PLAIN/VIDEO; DM + pointer line per Reel caption. Add a pointer rule when a new Reel's caption needs one. |
+| Instagram comment keywords → DM the guide | `CRON_TZ=Europe/Sofia 48 0,8-22/2 * * *` | Being replaced by the DM bot (below); switch off once the bot test passes. Until then: NARROW/PLAIN/VIDEO; DM + pointer line per Reel caption. |
 | Daily pins 16-30 Nov | 20:17 Sofia, 16-30 Nov | reads pin-media/b45/pins.json. Switch off after 30 Nov |
 | One-shot Reel publish | the Reel's day, 20:00 Sofia | only calls media_publish on a container made the day before or same day (valid 24 h) |
 
 Rules: never wake a long chat; create with `create_trigger`, then set model `claude-sonnet-5-5` with `update_trigger`.
 Use `list_triggers` before making a new one.
+
+## 3b. Comment-to-DM bot (own ManyChat, from 24 Nov)
+
+Cloudflare Worker `exact-dm` (https://exact-dm.theexactmethodhq.workers.dev), code on branch `bot`
+(clone separately; push = deploy). Meta app "Exact Method DM" 1400181691959713 (Unified login, Live).
+Secrets in Cloudflare (never in git, the user sets them): `IG_TOKEN`, `META_APP_SECRET`, `KIT_API_KEY`.
+Check `/` (connected?) and `/log` (events, usernames masked). Local tests: `node flow2.mjs`, `bugtest.mjs`, `kit2.mjs`.
+
+- Copy and rules: `src/rules.js` (keywords, guides, pointer lines per Reel caption, DM texts, `KIT_FORMS`).
+- **New Reel with a Gumroad keyword:** add its pointer line (caption match) to `POINTERS`.
+- **New email keyword (non-Gumroad freebie):** create a Kit form `IG <KEYWORD> (DM bot)` (inline, Clare template),
+  put the freebie in its confirmation email, redirect after confirm to theexactmethod.com; add the keyword to
+  `KEYWORDS`, `WHAT`, `KIT_FORMS`, `EMAIL_SUBJECT`. Test with a real comment + a new plus address before posting.
+- Commit with the identity read from the main clone (the privacy hook blocks the address in the command):
+  `E="$(git -C <main clone> config user.email)"; GIT_AUTHOR_EMAIL="$E" GIT_COMMITTER_EMAIL="$E" ... git commit`.
 
 ## 4. Building a Reel (built on its posting day)
 

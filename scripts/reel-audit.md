@@ -6,8 +6,8 @@ building. Show the user the whole filled table with the script.
 
 Sources merged here: memory preferences, CLAUDE.md §4, growth-system (all sections), ig-reel (hookscore,
 beats, on-screen rules), content-principles, ig-human, ig-caption, no-slop-motion, real-sfx, remocn, the
-Kallaway course (days 1-5 + Storytelling guide). Update this file with every new rule (day 6 "11-point video
-checklist" is due 24 Nov: merge it here).
+Kallaway course (days 1-6 + Storytelling guide). Update this file with every new rule. Day 6's 11-point
+checklist is section H: answer it first, as the honest overview, then fill A-G.
 
 Length: **45-90 s** (Kallaway's ideal; the 15-25 s test didn't beat it). Every sentence must earn its place;
 45 s is the floor, not a target to pad to.
@@ -83,11 +83,27 @@ Length: **45-90 s** (Kallaway's ideal; the 15-25 s test didn't beat it). Every s
 | # | Check | How to verify |
 | --- | --- | --- |
 | F1 ⛔ | The freebie delivers exactly what the Reel promised | |
-| F2 ⛔ | Keyword live **before** posting (DM task / bot rule added and tested), DM ≤ 1,000 bytes, says where in the guide, ends with the follow ask, no questions | DM task prompt |
+| F2 ⛔ | Keyword live **before** posting in the DM bot (`bot` branch, `src/rules.js`): Gumroad keyword → guide + pointer line (section and page); email keyword → its own Kit form whose email holds the freebie (`KIT_FORMS`). Tested with a real comment | bot `/log` |
 | F3 | Caption rules (8 standing rules): starts with the keyword CTA, process in one line, exact facts, 3 specific hashtags, no URL | memory |
 | F4 | TikTok version ("DM me KEYWORD") + its copy-paste DM in STATUS | |
 | F5 | Trial Reel or normal post? (Trial for risky new formats) | |
 | F6 | Engagement round planned 20 min before posting | schedule page |
+
+## H. The 11 questions (day 6; one per brick, answer honestly first)
+
+| # | Brick | Question (PASS / FAIL + one line why) |
+| --- | --- | --- |
+| H1 | Format | Most compelling frame for this information? |
+| H2 | Topic | Data says our buyer cares (not just us)? |
+| H3 | Seed | Non-obvious angle that challenges a belief usefully? |
+| H4 | Substance | They can do something right after watching? |
+| H5 | Visual hook | Frame 0 stops the scroll (contrast, movement, unexpected)? |
+| H6 | Text hook | Creates a need to know more, aligned with visual + spoken? |
+| H7 | Spoken hook | Subject 100% clear + curiosity loop in the first 3 s? |
+| H8 | Structure | Builds anticipation, not a list of facts? |
+| H9 | CTA | One clear next step (comment KEYWORD)? |
+| H10 | Layout | Plays to our strengths (faceless: Sage, real screens, lists)? |
+| H11 | Elements | Cuts, captions, sound match the pace; always clear what's happening? |
 
 ## G. After posting (24 h and 48 h)
 
@@ -98,3 +114,8 @@ keyword comments, guide downloads. Diagnose **by brick**, against the baseline a
 - watched but no likes/saves/comments → usefulness or relevance (A1, A4, D10)
 - comments but no keyword → CTA/funnel (D6, F1-F2)
 - low reach with OK retention → check Account Status, posting time, test-pool signals
+
+**Every 10 Reels (batch analysis, growth-system §15):** rank the 10 on views, follows and conversions (bot log,
+Gumroad, Kit); run H1-H11 on the 5x+ winners and the worst; write the pattern; pick ONE brick to change for
+the next 10. A Reel at 10x+ our average → make 3-5 more with the same format, hook structure and look,
+changing only seed or substance (triple down).

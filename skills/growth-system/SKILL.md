@@ -33,7 +33,8 @@ Every short video is a stack of **11 bricks in 5 categories**, decided in this o
 | Script | Story structure · CTA · retention | ig-reel beats, content-principles |
 | Edit | Visual style, layout, pacing, captions, signature elements | Remotion system, no-slop-motion, real-sfx |
 
-**In every audit:** write the 11 bricks out in one short table for the piece. When a Reel
+**In every audit:** write the 11 bricks out in one short table for the piece, and answer the 11 questions in
+section 15 (one per brick). When a Reel
 underperforms, diagnose by brick (which brick failed?), not by "the video was bad".
 
 **Hook order matters:** the on-screen text hook is judged first, then the visual hook, then the
@@ -47,7 +48,7 @@ same idea as the viral-format match, applied brick by brick.
 ## 0b. The 4 "cannot lose" conditions
 
 1. **Post consistently:** at least 3 a week, ideally 4-7. We post 4-5 a week. Keep it.
-2. **Get measurably better each rep:** every Reel carries one **improvement hypothesis** ("testing a
+2. **Get measurably better each rep:** every Reel carries one **improvement hypothesis** (from day 6: one hypothesis per batch of 10 Reels, see section 15) ("testing a
    text hook that names a number", "switching the layout to X"). Write it in the audit and in the
    STATUS results log (Test column), then read it against the numbers.
 3. **Funnel on-target traffic into an aligned offer:** the free guide must match what the Reel
@@ -305,6 +306,47 @@ comes first when one fits. Candidates from batch 3: mrcreates.ai 115.7x / adilet
 Claude → ideas 19-20), murphmaxxing 15.7x (big model plans, cheap model builds → idea 24), techguyver's
 "I reverse engineered ManyChat" (→ our DM-bot build, once live).
 
+## 15. The 11 questions, batch analysis, triple down (day 6)
+
+**The 11-question check (one per brick).** After every Reel (and before building, as part of the audit), answer each
+honestly. "Would I watch this?" If not, why would they.
+
+| # | Brick | The question |
+| --- | --- | --- |
+| 1 | Format | Is this format the most compelling frame for this information or story? |
+| 2 | Topic | Do we have data that our buyer cares about this (an outlier, comments, searches), or is it only interesting to us? |
+| 3 | Seed | Is the angle non-obvious to the buyer, and does it challenge something they believe in a useful way? |
+| 4 | Substance | Can they do something right after watching that moves them toward their result? Or is it only entertainment? |
+| 5 | Visual hook | Does frame 0 stop the scroll: visual contrast, movement, something unexpected? |
+| 6 | Text hook | Does the on-screen text make them need to know more, and does it match the visual and spoken hooks? |
+| 7 | Spoken hook | After the first 3 s, is the subject 100% clear AND is there a curiosity loop? |
+| 8 | Story structure | Does it build anticipation, or just list facts? |
+| 9 | CTA | Is there one clear next step for interested viewers (comment KEYWORD → DM → freebie)? |
+| 10 | Visual layout | Does the layout play to our strengths? (We're faceless: Sage, real screens, animated lists. Don't force formats that need a face.) |
+| 11 | Elements | Do cuts, captions, sound and effects match the pace the content needs (fast = fast cuts, animated captions; slow = longer holds, minimal captions), and is it always clear what's happening? |
+
+These are the same 11 bricks as section 0, phrased as pass/fail questions. In `scripts/reel-audit.md` they are
+section H; the detailed checks A-G stay underneath them.
+
+**Batch analysis: every 10 Reels, not per Reel.** Single-Reel numbers in the first day mislead (some Reels
+break out after days). Log every Reel's numbers in STATUS as usual, but only draw conclusions per batch of 10:
+1. **Pull data (5 min):** views, follows gained, and conversions (keyword comments → DMs → guide downloads /
+   emails, from the bot log `/log`, Gumroad and Kit) for all 10. Rank best to worst as a cohort.
+2. **Find outliers (15 min):** any Reel at 5x+ the batch average on views, follows or conversions. Run the 11
+   questions on each winner and the worst losers. What did winners have that losers didn't?
+3. **Write hypotheses (10 min):** e.g. "text hooks are weak: winners had a curiosity gap, losers didn't", "bottom 5
+   had topics without demand data", "layout inconsistent: we need one signature look".
+4. **Test ONE change for the next 10 Reels.** One brick only, held for all 10 reps, then measure again.
+
+Our batches: Reels are numbered in STATUS; batch 1 = the 10 Reels from W-7 on (23 Nov). The per-Reel improvement
+hypothesis (section 0b) becomes one hypothesis per batch.
+
+**Triple down.** When one of our own Reels hits 10x+ our average (views, follows or conversions), immediately
+make 3-5 more just like it: same format, hook structure and visual style; change only the seed or substance. If
+a second one also hits, that combination is a locked formula: run it until it stops working, then go back to
+experimenting. Goal: 2-3 locked formulas. Our own outliers are pipe 1 in section 10 and always beat competitor
+remixes.
+
 ## Source log
 
 | Email | Date received | What it added |
@@ -316,9 +358,9 @@ Claude → ideas 19-20), murphmaxxing 15.7x (big model plans, cheap model builds
 | Day 2: Ideas (6 Idea Pipes, Idea Mining) + its 4 linked tutorials (Sandcastles help pages: Channels, Videos, Ideas, deep dive) | 20 Nov 2026 | Section 10: idea = topic + seed + substance, the 6 pipes ranked, the 2-week mining process, outlier formula and thresholds, the 5-question idea analysis, the 8-10 / 1-3 remix rule |
 | Day 4: The Buyer Activation Flow (views → leads) | 22 Nov 2026 | Section 13: the funnel, conversions per view, 7 lead magnet types, lead magnet fit, the simple landing page |
 | Day 5: First 3 Reps (make your best 3 videos this week) | 23 Nov 2026 | Section 14: 5x+ outliers in 3 formats, hold 4 constant change 1, transcript as template, freebie live before posting |
+| Day 6: The 11-Point Video Improvement Checklist | 24 Nov 2026 | Section 15: the 11 questions (one per brick), batch analysis per 10 Reels with one hypothesis per batch, triple down on 10x+ own outliers; reel-audit.md section H |
 
-Coming: day 6 "11-Point Video
-Checklist" (audit), day 7 "0->100 Roadmap". Day 6 will likely replace or extend section 0's audit table.
+Coming: day 7 "0->100 Roadmap" (phases, what to expect, "two paths": expect the academy pitch).
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
 "1M business owners making $1M" mission, and the tool and academy he sells (Sandcastles, Short Form
