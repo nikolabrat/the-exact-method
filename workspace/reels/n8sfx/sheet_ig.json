@@ -1,0 +1,720 @@
+{
+"video": "/home/claude/the-exact-method/workspace/remotion/out/N8-ig-raw.mp4",
+"keep_audio": "yes",
+"cues": [
+{
+"t": 0.033,
+"label": "frame 0 on the desk",
+"file": "/root/sfx-library/elevenlabs/cardslap.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 0.1,
+"label": "price row 1 pulse",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -16
+},
+{
+"t": 0.267,
+"label": "price row 2 pulse",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 0.433,
+"label": "price row 3 pulse",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 3.567,
+"label": "camera push",
+"file": "/root/sfx-library/elevenlabs/push.wav",
+"role": "foley",
+"gain_db": -16
+},
+{
+"t": 3.633,
+"label": "$59.99 struck",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_scribbling-1-2-aif_4f0d6117.mp3",
+"role": "foley",
+"gain_db": -9,
+"slice": [
+0,
+0.3
+]
+},
+{
+"t": 4.067,
+"label": "rows collapse to one",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -12
+},
+{
+"t": 4.133,
+"label": "ChatGPT Plus row mint",
+"file": "/root/sfx-library/elevenlabs/pop.wav",
+"role": "ui",
+"gain_db": -12
+},
+{
+"t": 4.9,
+"label": "whip to two phones",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_swing-1-9_84da624a.mp3",
+"role": "foley",
+"gain_db": -10,
+"slice": [
+0,
+0.4
+]
+},
+{
+"t": 5.033,
+"label": "phone 12:27 slides up",
+"file": "/root/sfx-library/elevenlabs/phoneslide.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 5.233,
+"label": "phone 12:28 slides up",
+"file": "/root/sfx-library/elevenlabs/slide.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 5.433,
+"label": "one minute apart label",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/snap.mp3",
+"role": "ui",
+"gain_db": -16
+},
+{
+"t": 8.667,
+"label": "Claude Pro answer",
+"file": "/root/sfx-library/elevenlabs/chatblip.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 9.0,
+"label": "ChatGPT Plus answer",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/badge.mp3",
+"role": "foley",
+"gain_db": -15
+},
+{
+"t": 9.067,
+"label": "not-equal lands",
+"file": "/root/sfx-library/elevenlabs/numslam.wav",
+"role": "hit",
+"gain_db": -11,
+"highpass": 160
+},
+{
+"t": 10.167,
+"label": "phone takes the frame",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_digital-whoosh-soft-wav_70ebf580.mp3",
+"role": "foley",
+"gain_db": -12,
+"slice": [
+0,
+0.5
+]
+},
+{
+"t": 10.4,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 11.1,
+"label": "question typed",
+"file": "/root/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+"role": "ui",
+"gain_db": -14,
+"slice": [
+1.0,
+3.0
+]
+},
+{
+"t": 11.233,
+"label": "no jobs",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -15
+},
+{
+"t": 11.4,
+"label": "no budget",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 11.567,
+"label": "no plan",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/copy.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 12.567,
+"label": "searching 10 websites",
+"file": "/root/sfx-library/elevenlabs/scan.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 13.133,
+"label": "overlay card pops",
+"file": "/root/sfx-library/elevenlabs/impact.wav",
+"role": "hit",
+"gain_db": -10,
+"highpass": 160
+},
+{
+"t": 13.2,
+"label": "Claude Pro highlight",
+"file": "/root/sfx-library/elevenlabs/scratch.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 15.033,
+"label": "chips start falling",
+"file": "/root/sfx-library/elevenlabs/cardfly.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 15.5,
+"label": "chip 1 lands",
+"file": "/root/sfx-library/elevenlabs/tape.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 15.567,
+"label": "what it remembered sticker",
+"file": "/root/sfx-library/elevenlabs/receipt.wav",
+"role": "foley",
+"gain_db": -9
+},
+{
+"t": 15.667,
+"label": "chip 2 lands",
+"file": "/root/sfx-library/elevenlabs/stack.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 15.833,
+"label": "chip 3 lands",
+"file": "/root/sfx-library/elevenlabs/slap.wav",
+"role": "foley",
+"gain_db": -21
+},
+{
+"t": 16.0,
+"label": "chip 4 lands",
+"file": "/root/sfx-library/elevenlabs/bookthump.wav",
+"role": "foley",
+"gain_db": -13
+},
+{
+"t": 16.167,
+"label": "chip 5 lands",
+"file": "/root/sfx-library/elevenlabs/cardpile.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 16.333,
+"label": "chip 6 lands",
+"file": "/root/sfx-library/elevenlabs/flutter.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 18.733,
+"label": "pile implodes",
+"file": "/root/sfx-library/elevenlabs/zoomwhoosh.wav",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0,
+0.35
+]
+},
+{
+"t": 19.033,
+"label": "dot",
+"file": "/root/sfx-library/elevenlabs/focussnap.wav",
+"role": "foley",
+"gain_db": -9
+},
+{
+"t": 19.133,
+"label": "old chats card",
+"file": "/root/sfx-library/openverse-cc0/paper_flip/paper_flip_page-turn-04-wav_9837be9e.mp3",
+"role": "foley",
+"gain_db": -7,
+"slice": [
+0,
+0.5
+]
+},
+{
+"t": 19.733,
+"label": "my plan ?",
+"file": "/root/sfx-library/elevenlabs/emptythud.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 21.1,
+"label": "push through",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_a-simple-voice-saying-whoosh_2daf113b.mp3",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 21.333,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 21.733,
+"label": "1",
+"file": "/root/sfx-library/elevenlabs/coin.wav",
+"role": "hit",
+"gain_db": -16,
+"highpass": 160
+},
+{
+"t": 22.033,
+"label": "2",
+"file": "/root/sfx-library/elevenlabs/puff.wav",
+"role": "hit",
+"gain_db": -16,
+"highpass": 160
+},
+{
+"t": 22.333,
+"label": "3",
+"file": "/root/sfx-library/elevenlabs/crumple.wav",
+"role": "hit",
+"gain_db": -10,
+"highpass": 160
+},
+{
+"t": 22.567,
+"label": "smaller swash",
+"file": "/root/sfx-library/openverse-cc0/pen_tick/pen_tick_sharpie-marker-drawing-circle-01-wav_48169ecd.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0.3,
+0.7
+]
+},
+{
+"t": 22.633,
+"label": "card 1",
+"file": "/root/sfx-library/elevenlabs/tick.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 22.733,
+"label": "card 2",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_swing-1-5_2242127b.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0,
+0.4
+]
+},
+{
+"t": 22.833,
+"label": "card 3",
+"file": "/root/sfx-library/elevenlabs/clocktick.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 23.933,
+"label": "whip to prompt 1",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_wooden-stick-swing-1-3_4a28c24e.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0,
+0.4
+]
+},
+{
+"t": 24.0,
+"label": "card flips to phone",
+"file": "/root/sfx-library/openverse-cc0/paper_flip/paper_flip_page-turn-1_62466ac3.mp3",
+"role": "foley",
+"gain_db": -7,
+"slice": [
+0,
+0.5
+]
+},
+{
+"t": 24.133,
+"label": "prompt 1 typed",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/mechanical/typing.mp3",
+"role": "ui",
+"gain_db": -10
+},
+{
+"t": 24.167,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/expand.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 27.067,
+"label": "searching the web",
+"file": "/root/sfx-library/elevenlabs/airwhoosh.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 28.133,
+"label": "toggle card",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/snap.mp3",
+"role": "ui",
+"gain_db": -16
+},
+{
+"t": 28.333,
+"label": "web search on",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -9
+},
+{
+"t": 30.433,
+"label": "today's prices",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 31.367,
+"label": "receipt prints",
+"file": "/root/sfx-library/elevenlabs/click.wav",
+"role": "foley",
+"gain_db": -13
+},
+{
+"t": 31.633,
+"label": "price 1 rolls",
+"file": "/root/sfx-library/elevenlabs/matchstrike.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 31.833,
+"label": "price 2 rolls",
+"file": "/root/sfx-library/elevenlabs/riser.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 32.033,
+"label": "price 3 rolls",
+"file": "/root/sfx-library/elevenlabs/notif.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 33.7,
+"label": "a tie",
+"file": "/root/sfx-library/elevenlabs/stamp.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 35.433,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/toggle-on.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 35.467,
+"label": "plan rows",
+"file": "/root/sfx-library/openverse-cc0/paper_slide/paper_slide_paper-slide-wav_05745fd2.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0,
+0.3
+]
+},
+{
+"t": 36.833,
+"label": "limit chip 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/select.mp3",
+"role": "ui",
+"gain_db": -14
+},
+{
+"t": 38.133,
+"label": "limit chip 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 39.6,
+"label": "limit chip 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/copy.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 41.3,
+"label": "Gemini torn out",
+"file": "/root/sfx-library/elevenlabs/rip.wav",
+"role": "foley",
+"gain_db": -7
+},
+{
+"t": 41.4,
+"label": "Gemini cut stamp",
+"file": "/root/sfx-library/elevenlabs/pop.wav",
+"role": "hit",
+"gain_db": -12,
+"highpass": 160
+},
+{
+"t": 42.467,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/swipe.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 42.5,
+"label": "prompt 3 typed",
+"file": "/root/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+"role": "ui",
+"gain_db": -14,
+"slice": [
+1.0,
+3.0
+]
+},
+{
+"t": 45.167,
+"label": "ChatGPT Plus highlight",
+"file": "/root/sfx-library/elevenlabs/markersq.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 45.267,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/reaction.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 45.3,
+"label": "verdict lands",
+"file": "/root/sfx-library/elevenlabs/bigrip.wav",
+"role": "hit",
+"gain_db": -8,
+"highpass": 160
+},
+{
+"t": 47.267,
+"label": "line to Claude",
+"file": "/root/sfx-library/elevenlabs/markerstroke.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 47.467,
+"label": "line to Gemini",
+"file": "/root/sfx-library/elevenlabs/pencilcurve.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 48.167,
+"label": "Claude free",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/check.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 50.467,
+"label": "ChatGPT picked itself note",
+"file": "/root/sfx-library/elevenlabs/stickypress.wav",
+"role": "foley",
+"gain_db": -10
+},
+{
+"t": 52.233,
+"label": "dolly zoom",
+"file": "/root/sfx-library/elevenlabs/vertigo.wav",
+"role": "foley",
+"gain_db": -13
+},
+{
+"t": 53.167,
+"label": "12:27 Claude Pro returns",
+"file": "/root/sfx-library/elevenlabs/swoosh2.wav",
+"role": "foley",
+"gain_db": -12
+},
+{
+"t": 55.167,
+"label": "switch excerpt",
+"file": "/root/sfx-library/elevenlabs/cardfan.wav",
+"role": "foley",
+"gain_db": -11
+},
+{
+"t": 55.3,
+"label": "ink arrow",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0.6,
+1.0
+]
+},
+{
+"t": 55.567,
+"label": "when to switch",
+"file": "/root/sfx-library/openverse-cc0/pen_tick/pen_tick_pen-writing-on-paper-mp3_d3889b3e.mp3",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0.0,
+0.6
+]
+},
+{
+"t": 59.167,
+"label": "its pick stamp",
+"file": "/root/sfx-library/elevenlabs/stampthunk.wav",
+"role": "foley",
+"gain_db": -5
+},
+{
+"t": 59.733,
+"label": "my call box",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/snap.mp3",
+"role": "ui",
+"gain_db": -16
+},
+{
+"t": 60.5,
+"label": "cursor click",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -9
+},
+{
+"t": 60.567,
+"label": "tick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 61.5,
+"label": "section tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 61.667,
+"label": "comment box",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/progress-step.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 61.733,
+"label": "NARROW typed",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/mechanical/typing.mp3",
+"role": "ui",
+"gain_db": -10
+},
+{
+"t": 62.267,
+"label": "post",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -9
+},
+{
+"t": 62.567,
+"label": "free guide tag",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/toggle-on.mp3",
+"role": "ui",
+"gain_db": -17
+},
+{
+"t": 63.867,
+"label": "card 1 lights",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/select.mp3",
+"role": "ui",
+"gain_db": -14
+},
+{
+"t": 64.1,
+"label": "card 2 lights",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 64.333,
+"label": "card 3 lights",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/copy.mp3",
+"role": "ui",
+"gain_db": -13
+},
+{
+"t": 66.867,
+"label": "CTA out",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -12
+},
+{
+"t": 66.967,
+"label": "back to frame 0",
+"file": "/root/sfx-library/openverse-cc0/swish/swish_swish-5_45227812.mp3",
+"role": "foley",
+"gain_db": -11
+}
+]
+}

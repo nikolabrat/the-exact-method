@@ -83,3 +83,12 @@ visual style (results on top, presenter below). Changed 1: the idea.
 
 ## Result
 **Ready to build** once you OK the plan. Open, non-blocking: source transcript (needs a download OK). F2 is done at publish.
+
+## §14 step 2 · source beat map (okaashish DfuNtfIv3DH, 33 s, read from 12 frames 24 Nov)
+0-12 s: proof first, top half = 4 side-by-side pairs of the same game built two ways, **time + $ cost under each**
+(3:00 $2.20 vs 1:37 $0.42 … 21:03 $15.48 vs 11:19 $2.92), face below, one-word hand-drawn captions ("two videos.",
+"used", "model as an", "lesser") · 13-19 s: the setup screen (Claude Code, the BOSS/PLAN prompt) · 19-28 s: diagram,
+Fable → Qwen, then Fable → Haiku as the cheaper alternative · 31-33 s: "ANIMATE" comment bubble.
+Our match: frame-0 side by side + price under each (beats 1-3) · the real chat screens (4-13) · hub diagram with the
+alternative (14-16) · keyword bubble (18). Kept: proof grid stays on screen long, numbers under each side, diagram for
+the setup. Difference noted: his proof cycles 4 pairs; ours shows one pair, so beats 2-3 must move fast. Verdict: PASS.
