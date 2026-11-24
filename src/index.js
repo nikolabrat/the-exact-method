@@ -150,6 +150,7 @@ function connect(url, env) {
   fb.searchParams.set("response_type", "code");
   fb.searchParams.set("override_default_response_type", "true");
   fb.searchParams.set("state", state);
+  fb.searchParams.set("prompt", "login"); // lets you log in with Instagram
   return new Response(null, {
     status: 302,
     headers: { Location: fb.toString(), "Set-Cookie": `st=${state}; Path=/callback; HttpOnly; Secure; SameSite=Lax; Max-Age=600` },

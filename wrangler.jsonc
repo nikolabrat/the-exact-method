@@ -7,7 +7,7 @@
   "triggers": { "crons": ["*/2 * * * *"] },
   "vars": {
     "META_APP_ID": "1400181691959713",
-    "LOGIN_CONFIG_ID": "SET_AFTER_CONFIG",
+    "LOGIN_CONFIG_ID": "3178376512358834",
     "VERIFY_TOKEN": "exactmethod-dm-webhook",
     "EXPECTED_USERNAME": "theexactmethod"
   }
