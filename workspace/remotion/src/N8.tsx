@@ -10,7 +10,6 @@ import {Caret} from '@/components/remocn/caret';
 import {whipPan} from '@/components/remocn/whip-pan';
 import {pushThrough} from '@/components/remocn/push-through';
 import {lensZoom} from '@/components/remocn/lens-zoom';
-import {GravityPile} from '@/components/remocn/gravity-pile';
 import {StrikethroughReplace} from '@/components/remocn/strikethrough-replace';
 import {ImpactShake} from '@/components/remocn/impact-shake';
 import {InkArrow} from '@/components/remocn/ink-arrow';
@@ -74,7 +73,7 @@ const PAPER: React.CSSProperties = {background: C.paper, backgroundImage: `repea
 
 // ---------- captions (max 3 words, mint word highlight; ElevenLabs alignment) ----------
 const CAP_TOP = 1280;
-const ChunkView: React.FC<{f: number; ch: Chunk; o: number; loopIn: boolean}> = ({f, ch, o, loopIn}) => {
+const ChunkView: React.FC<{f: number; ch: Chunk; o: number; loopIn: boolean; dark?: boolean}> = ({f, ch, o, loopIn, dark}) => {
   const hlA = (i: number) => {
     if (loopIn) return i === 0 ? 1 : 0;
     const s0 = ch.words[i].s;
@@ -85,7 +84,7 @@ const ChunkView: React.FC<{f: number; ch: Chunk; o: number; loopIn: boolean}> = 
   return (
     <div style={{position: 'absolute', left: 66, top: CAP_TOP, width: 700, display: 'flex', flexWrap: 'wrap', columnGap: 14, rowGap: 4, opacity: o}}>
       {ch.words.map((w, i) => (
-        <span key={i} style={{position: 'relative', fontFamily: 'Archivo', fontWeight: 900, fontSize: 66, lineHeight: 1.12, letterSpacing: -1.5, color: C.ink, padding: '0 8px', margin: '0 -8px'}}>
+        <span key={i} style={{position: 'relative', fontFamily: 'Archivo', fontWeight: 900, fontSize: 66, lineHeight: 1.12, letterSpacing: -1.5, color: dark && hlA(i) < 0.5 ? C.paper : C.ink, padding: '0 8px', margin: '0 -8px'}}>
           <span style={{position: 'absolute', inset: 0, borderRadius: 10, background: C.mint, opacity: hlA(i)}} />
           <span style={{position: 'relative'}}>{w.w}</span>
         </span>
@@ -93,7 +92,7 @@ const ChunkView: React.FC<{f: number; ch: Chunk; o: number; loopIn: boolean}> = 
     </div>
   );
 };
-const Caption: React.FC<{f: number; z: ZT}> = ({f, z}) => {
+const Caption: React.FC<{f: number; z: ZT; dark?: boolean}> = ({f, z, dark}) => {
   if (f >= z.TOTAL - 10) {
     const seamOut = r(f, z.TOTAL - 10, z.TOTAL - 6, IO), seamIn = r(f, z.TOTAL - 6, z.TOTAL - 2, IO);
     let cj = 0;
@@ -112,8 +111,8 @@ const Caption: React.FC<{f: number; z: ZT}> = ({f, z}) => {
   const xi = ci === 0 ? 1 : r(f, from, from + 4);
   return (
     <>
-      {ci > 0 && xo < 1 && <ChunkView f={f} ch={z.CHUNKS[ci - 1]} o={1 - xo} loopIn={false} />}
-      <div style={{transform: `translateY(${(1 - xi) * 10}px)`}}><ChunkView f={f} ch={z.CHUNKS[ci]} o={xi} loopIn={false} /></div>
+      {ci > 0 && xo < 1 && <ChunkView f={f} ch={z.CHUNKS[ci - 1]} o={1 - xo} loopIn={false} dark={dark} />}
+      <div style={{transform: `translateY(${(1 - xi) * 10}px)`}}><ChunkView f={f} ch={z.CHUNKS[ci]} o={xi} loopIn={false} dark={dark} /></div>
     </>
   );
 };
@@ -247,8 +246,8 @@ const Phone: React.FC<{time: string; children?: React.ReactNode; w?: number; h?:
     </div>
   </div>
 );
-const Bubble: React.FC<{children: React.ReactNode; size?: number}> = ({children, size = 32}) => (
-  <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+const Bubble: React.FC<{children: React.ReactNode; size?: number; show?: boolean}> = ({children, size = 32, show = true}) => (
+  <div style={{display: 'flex', justifyContent: 'flex-end', opacity: show ? 1 : 0}}>
     <div style={{maxWidth: '86%', background: C.bubble, borderRadius: 30, padding: '16px 24px', fontFamily: 'Archivo', fontWeight: 500, fontSize: size, lineHeight: 1.25, color: C.gptText}}>{children}</div>
   </div>
 );
@@ -311,10 +310,10 @@ const PUSH = pushThrough({zoom: 2.6, blur: 14});
 const PushP = PUSH.component as React.FC<any>;
 const LENS = lensZoom({blurSamples: 4, lensSteps: 6});
 const LensP = LENS.component as React.FC<any>;
-type Fx = 'whip' | 'push' | 'lens' | 'fade' | 'none' | 'rise';
+type Fx = 'whip' | 'push' | 'lens' | 'fade' | 'none' | 'rise' | 'zoom';
 // one scene window with an entering and an exiting transition
 const Scene: React.FC<{f: number; a: number; b: number; inFx?: Fx; outFx?: Fx; dIn?: number; dOut?: number; children: React.ReactNode}> = ({f, a, b, inFx = 'fade', outFx = 'fade', dIn = 10, dOut = 10, children}) => {
-  if (f < a || f >= b + dOut) return null;
+  if (f < a || f >= b + (outFx === 'none' ? 0 : dOut)) return null;
   const pin = r(f, a, a + dIn, LIN), pout = r(f, b, b + dOut, LIN);
   const body = <AbsoluteFill>{children}</AbsoluteFill>;
   if (f >= b && outFx !== 'none') {
@@ -327,6 +326,7 @@ const Scene: React.FC<{f: number; a: number; b: number; inFx?: Fx; outFx?: Fx; d
     if (inFx === 'whip') return <WhipP presentationDirection="entering" presentationProgress={pin} passedProps={{direction: 'left', blur: 18}}>{body}</WhipP>;
     if (inFx === 'push') return <PushP presentationDirection="entering" presentationProgress={pin} passedProps={PUSH.props}>{body}</PushP>;
     if (inFx === 'lens') return <LensP presentationDirection="entering" presentationProgress={pin} passedProps={LENS.props}>{body}</LensP>;
+    if (inFx === 'zoom') return <AbsoluteFill style={{opacity: Math.min(1, pin * 2.5), transform: `scale(${lerp(1.5, 1, OUT(pin))})`, filter: `blur(${(1 - pin) * 16}px)`}}>{children}</AbsoluteFill>;
     if (inFx === 'rise') return <AbsoluteFill style={{opacity: Math.min(1, pin * 2), transform: `translateY(${(1 - OUT(pin)) * 120}px)`}}>{children}</AbsoluteFill>;
     return <AbsoluteFill style={{opacity: IO(pin)}}>{children}</AbsoluteFill>;
   }
@@ -364,6 +364,8 @@ const BigNum: React.FC<{f: number; at: number; n: string; bg: string; fg: string
 
 const PILE = ['coding projects', 'online products', 'business ideas', 'marketing strategies', 'Brick & Sage videos', 'Claude desktop app'];
 const PILE_BG = [C.note, C.mint, C.card, C.gold, C.note, C.card];
+// final resting spots (x, y, tilt): a stacked heap over the lower half of the phone
+const SLOTS: [number, number, number][] = [[90, 1060, -3], [500, 1070, 2], [130, 975, 3], [500, 980, -3], [70, 885, -2], [520, 890, 3]];
 
 export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
   const f = useCurrentFrame();
@@ -378,7 +380,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
   const twoA = L[2] - 4;                   // whip to two phones
   const r1A = L[3] - 6;                    // push into the 12:27 phone
   const pileA = w(5, 0) - 2, implodeA = w(5, 14) - 4, cardA = implodeA + 12;
-  const numsA = w(6, 2) - 4;               // 1 · 2 · 3 flashes
+  const numsA = w(6, 3) - 18;              // 1 · 2 · 3 flashes: the 3 lands on the word "three"
   const p1A = L[7] - 6;
   const toggleAt = w(8, 1), strikeA = w(8, 5) - 2;
   const tabA = L[9] - 6;
@@ -450,14 +452,14 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
             const zoomIn = r(f, r1A, r1A + 14, IO);
             const ans = r(f, L[4] - 4, L[4] + 8, OUT);
             const card = r(f, L[4] - 2, L[4] + 9, BACK);
-            const blur = card * 10 * (1 - r(f, implodeA, implodeA + 6));
+            const blur = card * 10;
             const imp = r(f, implodeA, implodeA + 10, IN);
             const phoneScale = lerp(1.02, 1.0, zoomIn) * (1 - imp * 0.98);
             return (
               <>
                 <div style={{position: 'absolute', left: lerp(305, 70, zoomIn), top: 230, transformOrigin: '235px 440px', transform: `scale(${phoneScale})`, filter: blur > 0.3 ? `blur(${blur}px)` : undefined, opacity: 1 - imp}}>
                   <Phone time="12:27">
-                    <Bubble><Typed f={f} at={w(3, 2) - 4} text="Which AI should I pay for?" size={32} cps={1.4} caretOff={w(3, 7) + 6} /></Bubble>
+                    <Bubble show={f >= w(3, 2) - 4}><Typed f={f} at={w(3, 2) - 4} text="Which AI should I pay for?" size={32} cps={1.4} caretOff={w(3, 7) + 6} /></Bubble>
                     <div style={{marginTop: 30}}>{f >= w(3, 7) && f < L[4] - 2 && <Searching f={f} at={w(3, 7)} text="Searching 10 websites" />}</div>
                     {ans > 0 && (
                       <div style={{fontFamily: 'Archivo', fontSize: 31, lineHeight: 1.34, color: C.gptText, opacity: ans, transform: `translateY(${(1 - ans) * 30}px)`}}>
@@ -488,25 +490,27 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                     </div>
                   </div>
                 )}
-                {/* chips pile up (remocn gravity-pile), then implode into one dot (PileUp) */}
+                {/* chips drop and stack upright (PileUp), then implode into one dot */}
                 {f >= pileA && f < implodeA + 12 && (
-                  <div style={{position: 'absolute', inset: 0, transform: `translateY(-610px) scale(${1 - imp})`, transformOrigin: '540px 1700px', opacity: 1 - r(f, implodeA + 6, implodeA + 11)}}>
-                    <Sequence from={pileA} layout="none">
-                      <GravityPile count={PILE.length} seed={5} gravity={1.15} backgroundColor="transparent" colors={{background: 'transparent', shapes: [C.note], accent: C.gold, floor: 'transparent'}}
-                        items={PILE.map((t, i) => (
-                          <div key={t} style={{width: '100%', height: '100%', borderRadius: '50%', background: PILE_BG[i], border: `4px solid ${C.ink}`, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', fontFamily: 'Archivo', fontWeight: 800, fontSize: 27, lineHeight: 1.1, color: C.ink, padding: 14, boxSizing: 'border-box'}}>{t}</div>
-                        ))} />
-                    </Sequence>
+                  <div style={{position: 'absolute', inset: 0, transform: `scale(${1 - imp})`, transformOrigin: '540px 860px', opacity: 1 - r(f, implodeA + 6, implodeA + 11)}}>
+                    {PILE.map((t, i) => {
+                      const at = pileA + 4 + i * 6;
+                      const p = r(f, at, at + 10, Easing.out(Easing.bounce));
+                      const [x, y, rot] = SLOTS[i];
+                      return f >= at ? (
+                        <div key={t} style={{position: 'absolute', left: x, top: lerp(-160, y, p), transform: `rotate(${rot}deg)`, fontFamily: 'Archivo', fontWeight: 800, fontSize: 40, color: C.ink, background: PILE_BG[i], border: `4px solid ${C.ink}`, borderRadius: 40, padding: '12px 26px', whiteSpace: 'nowrap', boxShadow: '0 6px 0 rgba(24,23,20,0.12)'}}>{t}</div>
+                      ) : null;
+                    })}
                   </div>
                 )}
                 {f >= w(5, 3) - 2 && f < implodeA + 4 && (
-                  <div style={{position: 'absolute', left: 66, top: 560, opacity: r(f, w(5, 3) - 2, w(5, 3) + 6) * (1 - r(f, implodeA - 2, implodeA + 4))}}><Sticker p={1} bg={C.card} size={40} rot={-3}>what it remembered</Sticker></div>
+                  <div style={{position: 'absolute', left: 66, top: 760, opacity: r(f, w(5, 3) - 2, w(5, 3) + 6) * (1 - r(f, implodeA - 2, implodeA + 4))}}><Sticker p={1} bg={C.card} size={40} rot={-3}>what it remembered</Sticker></div>
                 )}
                 {/* dot → card: old chats vs my plan */}
                 {f >= implodeA + 8 && (
                   <>
-                    {f < cardA + 6 && <div style={{position: 'absolute', left: 540 - 22, top: 700 - 22, width: 44, height: 44, borderRadius: 22, background: C.ink, transform: `scale(${1 + r(f, cardA - 2, cardA + 6, IN) * 4})`, opacity: 1 - r(f, cardA + 2, cardA + 6)}} />}
-                    {f >= cardA && (
+                    {f < cardA + 2 && <div style={{position: 'absolute', left: 540 - 22, top: 680 - 22, width: 44, height: 44, borderRadius: 22, background: C.ink, transform: `scale(${1 + r(f, cardA - 4, cardA + 2, IN) * 6})`, opacity: 1 - r(f, cardA - 1, cardA + 2)}} />}
+                    {f >= cardA + 1 && (
                       <div style={{position: 'absolute', left: 70, right: 70, top: 300, height: 760, display: 'flex', gap: 24, transform: `scale(${lerp(0.4, 1, r(f, cardA, cardA + 10, BACK))})`, opacity: r(f, cardA, cardA + 5), transformOrigin: '470px 400px'}}>
                         <div style={{flex: 1, background: C.card, border: `4px solid ${C.ink}`, borderRadius: 24, padding: 30, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 20}}>
                           <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 64, color: C.ink, textAlign: 'center', lineHeight: 1.05}}>old chats</div>
@@ -529,7 +533,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
 
         {/* S3 · rehook: push through the "?", 1 · 2 · 3 flash, three cards */}
         <Scene f={f} a={L[6] - 6} b={p1A} inFx="push" outFx="none" dIn={14}>
-          <div style={{position: 'absolute', left: 66, right: 66, top: 300, fontFamily: 'Archivo', fontWeight: 900, fontSize: 96, lineHeight: 1.02, letterSpacing: -3, color: C.ink, opacity: r(f, L[6] - 2, L[6] + 6)}}>
+          <div style={{position: 'absolute', left: 66, right: 66, top: 300, fontFamily: 'Archivo', fontWeight: 900, fontSize: 96, lineHeight: 1.02, letterSpacing: -3, color: C.ink, opacity: r(f, L[6] + 1, L[6] + 6)}}>
             So I asked 3 <Accent f={f} at={w(6, 4) - 2}>smaller</Accent> questions.
           </div>
           <div style={{position: 'absolute', left: 66, right: 66, top: 640, display: 'flex', gap: 26}}>
@@ -558,7 +562,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
               <>
                 <div style={{position: 'absolute', left: 70, top: 250, transform: `perspective(1800px) rotateY(${(1 - flip) * 70}deg)`, transformOrigin: 'left center'}}>
                   <Phone time="12:28" h={760}>
-                    <Bubble size={29}><Typed f={f} at={p1A + 6} text="Research what ChatGPT, Claude and Gemini are each best at right now, and what each paid plan costs per month today." size={29} cps={3.2} caretOff={L[8]} /></Bubble>
+                    <Bubble size={29} show={f >= p1A + 6}><Typed f={f} at={p1A + 6} text="Research what ChatGPT, Claude and Gemini are each best at right now, and what each paid plan costs per month today." size={29} cps={3.2} caretOff={L[8]} /></Bubble>
                     <div style={{marginTop: 26}}>{f >= w(7, 11) && <Searching f={f} at={w(7, 11)} text="Searching the web" />}</div>
                   </Phone>
                 </div>
@@ -592,40 +596,33 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
           })()}
         </Scene>
 
-        {/* S5 · the receipt: all three about $20 → a tie */}
+        {/* S5 · the receipt (real prices), then our note: a tie */}
         <Scene f={f} a={tabA} b={limA} inFx="whip" outFx="whip" dIn={9} dOut={9}>
-          <div style={{position: 'absolute', left: 90, right: 90, top: 260, background: C.card, border: `4px solid ${C.ink}`, borderRadius: 16, padding: '40px 46px 36px', transform: `rotate(${lerp(-4, -1.5, r(f, tabA, tabA + 30))}deg)`,
-            backgroundImage: 'radial-gradient(circle at 12px -4px, transparent 12px, transparent 0)', boxShadow: '0 18px 0 rgba(24,23,20,0.08)'}}>
+          <div style={{position: 'absolute', left: 70, right: 70, top: 280, background: C.card, border: `4px solid ${C.ink}`, borderRadius: 18, padding: '44px 48px 34px', transform: `rotate(${lerp(-4, -1.5, r(f, tabA, tabA + 30))}deg)`, boxShadow: '0 18px 0 rgba(24,23,20,0.08)'}}>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}>
-              <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 58, color: C.ink}}>Entry plans</div>
-              <Mono>per month · US</Mono>
+              <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 64, color: C.ink}}>Entry plans</div>
+              <Mono size={28}>per month · US</Mono>
             </div>
-            <div style={{borderTop: `3px dashed ${C.ink}`, margin: '20px 0 10px'}} />
+            <div style={{borderTop: `3px dashed ${C.ink}`, margin: '22px 0 14px'}} />
             {PRICES.map(([a, b], i) => {
               const at = w(9, 1) - 2 + i * 6;
               const p = r(f, at, at + 6);
               return (
-                <div key={a} style={{display: 'flex', alignItems: 'center', gap: 16, height: 120, opacity: p, transform: `translateX(${(1 - p) * -40}px)`}}>
-                  <div style={{fontFamily: 'Archivo', fontWeight: 700, fontSize: 52, color: C.ink, whiteSpace: 'nowrap'}}>{a}</div>
-                  <div style={{flex: 1, borderBottom: `4px dotted ${C.muted}`, transform: 'translateY(14px)'}} />
-                  <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 70, color: C.ink, minWidth: 240, textAlign: 'right'}}>
-                    {f >= at && <SlotRoll f={f} at={at} to={b} size={70} color={C.ink} />}
-                  </div>
+                <div key={a} style={{display: 'flex', alignItems: 'center', gap: 16, height: 150, opacity: p, transform: `translateX(${(1 - p) * -40}px)`}}>
+                  <div style={{fontFamily: 'Archivo', fontWeight: 700, fontSize: 58, color: C.ink, whiteSpace: 'nowrap'}}>{a}</div>
+                  <div style={{flex: 1, borderBottom: `4px dotted ${C.muted}`, transform: 'translateY(16px)'}} />
+                  <div style={{minWidth: 250, textAlign: 'right'}}>{f >= at && <SlotRoll f={f} at={at} to={b} size={84} color={C.ink} />}</div>
                 </div>
               );
             })}
             <div style={{borderTop: `4px solid ${C.ink}`, margin: '18px 0 16px'}} />
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-              <div style={{fontFamily: 'Archivo', fontWeight: 800, fontSize: 52, color: C.ink}}>Result</div>
-              <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 96, color: C.red, display: 'flex', gap: 22}}>
-                {['a', 'tie.'].map((t, i) => {
-                  const p = r(f, w(9, 5) - 2 + i * 5, w(9, 5) + 6 + i * 5, BACK);
-                  return <span key={t} style={{opacity: Math.min(1, p * 2), transform: `translateY(${(1 - p) * 40}px) scale(${lerp(1.4, 1, p)})`, display: 'inline-block'}}>{t}</span>;
-                })}
-              </div>
-            </div>
-            <div style={{marginTop: 18}}><Mono size={22}>{REAL} · 12:28</Mono></div>
+            <Mono size={24}>{REAL} · 12:28</Mono>
           </div>
+          {f >= w(9, 5) - 4 && (
+            <div style={{position: 'absolute', left: 120, top: 1000}}>
+              <Sticker p={r(f, w(9, 5) - 4, w(9, 5) + 6)} bg={C.card} rot={-4} size={60} style={{color: C.red, fontFamily: 'Newsreader', fontStyle: 'italic', fontWeight: 700}}>all ≈ $20 → a tie</Sticker>
+            </div>
+          )}
         </Scene>
 
         {/* S6 · your limits (prompt 2) → Gemini torn out */}
@@ -674,7 +671,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
         <Scene f={f} a={p3A + 8} b={verdictA} inFx="rise" outFx="none" dIn={8}>
           <div style={{position: 'absolute', left: 360, top: 250}}>
             <Phone time="12:29" h={820}>
-              <Bubble size={32}><Typed f={f} at={p3A + 10} text="Of these, which one specifically should I start with, and why?" size={32} cps={2.6} caretOff={verdictA} /></Bubble>
+              <Bubble size={32} show={f >= p3A + 10}><Typed f={f} at={p3A + 10} text="Of these, which one specifically should I start with, and why?" size={32} cps={2.6} caretOff={verdictA} /></Bubble>
               <div style={{marginTop: 30}}>{f >= w(12, 5) && <Searching f={f} at={w(12, 5)} text="Thinking" />}</div>
             </Phone>
           </div>
@@ -682,7 +679,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
         </Scene>
 
         {/* S8 · the verdict (lens-zoom), the hub, the objection, when to switch, my call */}
-        <Scene f={f} a={verdictA} b={ctaA} inFx="lens" outFx="none" dIn={16}>
+        <Scene f={f} a={verdictA} b={ctaA} inFx="zoom" outFx="none" dIn={12}>
           {(() => {
             const hub = r(f, hubA, hubA + 10, IO);
             const back = r(f, backAt, backAt + 10, BACK);
@@ -712,7 +709,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                     {['Claude', 'Gemini'].map((t, i) => {
                       const p = r(f, w(13, 8) - 2 + i * 6, w(13, 8) + 7 + i * 6, BACK);
                       return (
-                        <div key={t} style={{position: 'absolute', left: i === 0 ? 70 : 680, top: 270, width: 330, height: 120, background: C.card, visibility: f >= arrowAt + 2 ? 'hidden' : 'visible', border: `4px solid ${C.ink}`, borderRadius: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `scale(${lerp(0.5, 1, p)})`, opacity: Math.min(1, p * 2)}}>
+                        <div key={t} style={{position: 'absolute', left: i === 0 ? 80 : 670, top: 270, width: 320, height: 120, background: C.card, visibility: f >= arrowAt + 2 ? 'hidden' : 'visible', border: `4px solid ${C.ink}`, borderRadius: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `scale(${lerp(0.5, 1, p)})`, opacity: Math.min(1, p * 2)}}>
                           <span style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 46, color: C.ink}}>{t}</span>
                           <Mono size={24}>free · reviewer</Mono>
                         </div>
@@ -728,7 +725,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                 )}
                 {/* the 12:27 answer comes back */}
                 {f >= backAt && f < arrowAt + 4 && (
-                  <div style={{position: 'absolute', left: 620, top: 1100 - back * 520, transform: `rotate(${lerp(10, 4, back)}deg) scale(0.86)`, transformOrigin: 'top left', opacity: Math.min(1, back * 2) * (1 - r(f, arrowAt - 4, arrowAt + 4))}}>
+                  <div style={{position: 'absolute', left: 700, top: 1100 - back * 460, transform: `rotate(${lerp(10, 4, back)}deg) scale(0.7)`, transformOrigin: 'top left', opacity: Math.min(1, back * 2) * (1 - r(f, arrowAt - 4, arrowAt + 4))}}>
                     <div style={{background: C.gpt, border: `4px solid ${C.ink}`, borderRadius: 20, padding: '14px 22px', width: 410}}>
                       <Mono color="#9A9A9A" size={22}>12:27 · one line</Mono>
                       <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 60, color: C.ink, background: C.gold, borderRadius: 12, padding: '6px 14px', marginTop: 8, textAlign: 'center'}}>Claude Pro</div>
@@ -784,7 +781,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
               const sway = Math.sin((f - ctaA) / 14 + i * 1.7) * 1.6;
               const rot = (i - 1) * 9 * p + sway, x = 540 - 150 + (i - 1) * 230 * p, y = 40 + Math.abs(i - 1) * 30 * p - lit * 40;
               return (
-                <div key={t} style={{position: 'absolute', left: x, top: y, width: 300, height: 360, background: lit > 0.3 ? '#E9FBF1' : C.card, border: `${4 + lit * 3}px solid ${lit > 0.3 ? C.green : C.ink}`, borderRadius: 22, transform: `rotate(${rot}deg) translateY(${(1 - p) * 300}px) scale(${1 + lit * 0.08})`, opacity: Math.min(1, p * 2), padding: 26, boxSizing: 'border-box', zIndex: lit > 0.3 ? 5 : 1,
+                <div key={t} style={{position: 'absolute', left: x, top: y, width: 300, height: 360, background: lit > 0.3 ? '#E9FBF1' : C.card, border: `${4 + lit * 3}px solid ${lit > 0.3 ? C.green : C.ink}`, borderRadius: 22, transform: `rotate(${rot}deg) translateY(${(1 - p) * -260}px) scale(${1 + lit * 0.08})`, opacity: Math.min(1, p * 2), padding: 26, boxSizing: 'border-box', zIndex: lit > 0.3 ? 5 : 1,
                   backgroundImage: 'repeating-linear-gradient(0deg, transparent 0 41px, #E4DFD2 41px 43px)', backgroundPositionY: 110}}>
                   <div style={{width: 70, height: 70, borderRadius: 35, background: [C.mint, C.gold, C.ink][i], color: i === 2 ? C.paper : C.ink, fontFamily: 'Archivo', fontWeight: 900, fontSize: 44, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{i + 1}</div>
                   <div style={{fontFamily: 'Archivo', fontWeight: 900, fontSize: 44, color: C.ink, marginTop: 18, lineHeight: 1.05}}>{t}</div>
@@ -829,7 +826,7 @@ export const N8: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
 
       <SectionTag f={f} m={m} end={END} />
       <Sage f={f} m={m} mouth={(platform === 'ig' ? MIG : MTT) as number[]} end={END} />
-      <Caption f={f} z={z} />
+      <Caption f={f} z={z} dark={(f >= numsA + 18 && f < numsA + 27) || (f >= p3A && f < p3A + 8)} />
     </AbsoluteFill>
   );
 };

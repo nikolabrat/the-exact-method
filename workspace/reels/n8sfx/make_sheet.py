@@ -39,7 +39,7 @@ for p in ['ig','tt']:
     L=[l['words'][0]['s'] for l in T['lines']]
     def w(li,wi): ws=T['lines'][li]['words']; return ws[min(wi,len(ws)-1)]['s']
     ig=p=='ig'; TOTAL=T['total']; END=TOTAL-21; kwI=1 if ig else 2
-    twoA=L[2]-4; r1A=L[3]-6; pileA=w(5,0)-2; implodeA=w(5,14)-4; cardA=implodeA+12; numsA=w(6,2)-4; p1A=L[7]-6
+    twoA=L[2]-4; r1A=L[3]-6; pileA=w(5,0)-2; implodeA=w(5,14)-4; cardA=implodeA+12; numsA=w(6,3)-18; p1A=L[7]-6
     toggleAt=w(8,1); strikeA=w(8,5)-2; tabA=L[9]-6; limA=L[10]-6; chipAt=[w(10,5),w(10,9),w(10,13)]; tearAt=w(11,2)-2
     p3A=L[12]-8; verdictA=L[13]-8; hubA=w(13,2)-2; noteAt=w(14,1)-2; dollyA=w(14,4)-2; backAt=w(14,8)-4
     arrowAt=w(15,5)-2; stampAt=w(16,1)-2; clickAt=w(16,6)-2; ctaA=L[17]-8
@@ -63,7 +63,7 @@ for p in ['ig','tt']:
     c(L[4]-2,'impact','overlay card pops'); c(L[4],'hl1','Claude Pro highlight')
     # 6 pile
     c(pileA,'deal1','chips start falling')
-    for k in range(6): c(pileA+14+k*5,['stk1','stk2','slapS','chip2','stk1','stk2'][k],f'chip {k+1} lands')
+    for k in range(6): c(pileA+12+k*6,['stk1','stk2','slapS','chip2','stk1','stk2'][k],f'chip {k+1} lands')
     c(w(5,3),'sticker','what it remembered sticker'); c(implodeA,'fall','pile implodes'); c(implodeA+9,'cross','dot'); c(cardA,'page','old chats card'); c(w(5,19),'thud','my plan ?')
     # 7 rehook
     c(L[6]-6,'zoomIn','push through'); c(numsA,'slam','1'); c(numsA+9,'slam','2'); c(numsA+18,'impact','3')
@@ -74,7 +74,7 @@ for p in ['ig','tt']:
     # 10 receipt
     c(tabA,'whip','whip to receipt'); c(tabA+2,'receipt','receipt prints')
     for i in range(3): c(w(9,1)-2+i*6,['count1','count2','count1'][i],f'price {i+1} rolls')
-    c(w(9,5)-2,'stampG2','a tie')
+    c(w(9,5)-4,'stampG2','a tie sticker')
     # 11 limits
     c(limA,'whip2','whip to limits'); c(limA+8,'tileL','plan rows')
     for i,a in enumerate(chipAt): c(a-3,['t1','t2','t3'][i],f'limit chip {i+1}')
@@ -112,7 +112,7 @@ for p in ['ig','tt']:
         if path.startswith(OV):
             cat=os.path.basename(os.path.dirname(path)); return sorted(glob.glob(f'{OV}{cat}/*.mp3'))+sorted(glob.glob(f'{OV}{cat}/*.wav'))
         return [path]
-    KEY={'dolly zoom','line to Claude','line to Gemini','ChatGPT picked itself note','12:27 Claude Pro returns','switch excerpt','ink arrow','its pick stamp','ChatGPT Plus highlight','a tie','verdict lands','frame 0 on the desk','Gemini torn out'}
+    KEY={'dolly zoom','line to Claude','line to Gemini','ChatGPT picked itself note','12:27 Claude Pro returns','switch excerpt','ink arrow','its pick stamp','ChatGPT Plus highlight','a tie sticker','verdict lands','frame 0 on the desk','Gemini torn out'}
     used=set(d['file'] for d in C if d['label'] in KEY)
     for d in C:
         if d['role']=='ui' or d['label'] in KEY: continue
