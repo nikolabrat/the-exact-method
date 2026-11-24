@@ -58,3 +58,40 @@ export function buildMessage(kw, caption) {
   const p = POINTERS.find((r) => r.kw === kw && (!r.contains || cap.includes(r.contains)));
   return `Here's ${g.name}, free (enter $0 at checkout): ${g.link}\n\n${p.text}\n\nI post AI workflows like this several times a week. Follow so you don't miss the next one.`;
 }
+
+// ---------- DM sequence (ManyChat-style) ----------
+// 1 intro [Send it] -> 2 follow [I'm following] -> 3 email (typed) -> 4 on its way + guide.
+
+// What each keyword's guide holds, in a few words (used in message 1).
+export const WHAT = {
+  NARROW: "the three prompts from the video, word for word",
+  METHOD: "the three prompts from the video, word for word",
+  PLAIN: "ready-to-paste instructions for ChatGPT, Claude and Gemini",
+  VIDEO: "the brief, the prompts and the skills from the video",
+  PROMPT: "both prompts from the video, word for word",
+};
+
+export const BTN = { send: "Send it 📩", following: "I'm following ✅", followingAgain: "Done, following ✅", guide: "Get the guide" };
+
+export function introText(kw) {
+  const name = kw === "PROMPT" ? "The two prompts" : GUIDES[kw].name;
+  return `Hey 👋 thanks for commenting ${kw}!\n\n${name}: ${WHAT[kw]}. Free.\n\nTap below and I'll send it over.`;
+}
+
+export const FOLLOW_TEXT = "Before I send it: are you following @theexactmethod?\n\nI post AI workflows like this several times a week, so you won't miss the next one.";
+export const NOT_FOLLOWING_TEXT = "I can't see the follow yet 👀\n\nTap Follow on @theexactmethod, then tap the button again.";
+export const EMAIL_TEXT = "Last step: type your email below and the guide comes right after. 👇\n\nI'll also email you new AI workflows now and then. Unsubscribe anytime.";
+export const BAD_EMAIL_TEXT = "Hmm, that doesn't look like an email. Type it again? (like name@gmail.com)";
+
+// Message 4. Returns {text, url} for guides (url goes on a button), or {text} for PROMPT.
+export function finalMessage(kw, caption) {
+  if (kw === "PROMPT") return { text: "On its way 🚀\n\n" + PROMPT_TEXT };
+  const g = GUIDES[kw];
+  const cap = (caption || "").toLowerCase();
+  const p = POINTERS.find((r) => r.kw === kw && (!r.contains || cap.includes(r.contains)));
+  return { text: `On its way 🚀 Here's ${g.name}, free (enter $0 at checkout).\n\n${p.text}`, url: g.link };
+}
+
+export function isEmail(s) {
+  return /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test((s || "").trim());
+}

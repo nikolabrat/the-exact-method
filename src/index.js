@@ -2,7 +2,7 @@
 // Comment with a keyword on @theexactmethod -> instant private-reply DM with the guide + public "check your DMs".
 // Two paths feed the same handler: Meta webhooks (instant) and a 2-minute poll (backstop).
 
-import { findKeyword, buildMessage, PUBLIC_REPLIES } from "./rules.js";
+import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN } from "./rules.js";
 
 // Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
 // configuration, a never-expiring system-user token, and graph.facebook.com.
@@ -69,6 +69,12 @@ async function receiveWebhook(req, env, ctx) {
       }));
     }
   }
+  for (const entry of body.entry || []) {
+    for (const ev of entry.messaging || []) {
+      if (ev.message && ev.message.is_echo) continue; // our own sends
+      jobs.push(handleMessaging(env, ev));
+    }
+  }
   ctx.waitUntil(Promise.all(jobs));
   return new Response("EVENT_RECEIVED", { status: 200 });
 }
@@ -101,19 +107,117 @@ async function handleComment(env, c) {
   await env.BOT.put(key, "pending", { expirationTtl: 60 * 60 * 24 * 30 });
 
   const caption = c.mediaId ? await getCaption(env, auth, c.mediaId) : "";
-  const text = buildMessage(kw, caption);
-
-  const dm = await ig(auth, `/${auth.user_id}/messages`, "POST", { recipient: { comment_id: c.id }, message: { text } });
+  const dm = await ig(auth, `/${auth.user_id}/messages`, "POST", {
+    recipient: { comment_id: c.id },
+    message: buttons(introText(kw), [{ type: "postback", title: BTN.send, payload: "SEND" }]),
+  });
   if (!dm.ok) {
     await env.BOT.put(key, "dm-failed", { expirationTtl: 60 * 60 * 24 * 30 });
     await log(env, { kind: "dm-failed", user: mask(c.username), kw, src: c.source, err: dm.error });
     return;
+  }
+  if (dm.data && dm.data.recipient_id) {
+    await saveState(env, dm.data.recipient_id, { kw, caption, stage: "intro", tries: 0, user: c.username || "" });
   }
   const n = (parseInt((await env.BOT.get("replyIndex")) || "0", 10) + 1) % PUBLIC_REPLIES.length;
   await env.BOT.put("replyIndex", String(n));
   const pub = await ig(auth, `/${c.id}/replies`, "POST", { message: PUBLIC_REPLIES[n] });
   await env.BOT.put(key, pub.ok ? "done" : "dm-ok-reply-failed", { expirationTtl: 60 * 60 * 24 * 30 });
   await log(env, { kind: "sent", user: mask(c.username), kw, src: c.source, reply: pub.ok ? "ok" : pub.error });
+}
+
+// ---------- DM sequence: button taps and typed email ----------
+
+function buttons(text, btns) {
+  return { attachment: { type: "template", payload: { template_type: "button", text, buttons: btns } } };
+}
+
+async function saveState(env, igsid, st) {
+  await env.BOT.put(`s:${igsid}`, JSON.stringify({ ...st, ts: Date.now() }), { expirationTtl: 60 * 60 * 24 * 14 });
+}
+
+async function getState(env, igsid) {
+  const raw = await env.BOT.get(`s:${igsid}`);
+  return raw ? JSON.parse(raw) : null;
+}
+
+async function send(auth, igsid, message) {
+  return ig(auth, `/${auth.user_id}/messages`, "POST", { recipient: { id: igsid }, message });
+}
+
+async function isFollowing(auth, igsid) {
+  const r = await ig(auth, `/${igsid}?fields=is_user_follow_business`, "GET");
+  if (!r.ok || typeof r.data.is_user_follow_business !== "boolean") return null; // unknown
+  return r.data.is_user_follow_business;
+}
+
+async function handleMessaging(env, ev) {
+  const auth = await getAuth(env);
+  if (!auth) return;
+  const igsid = ev.sender && ev.sender.id;
+  if (!igsid || igsid === auth.user_id) return;
+  const st = await getState(env, igsid);
+  if (!st) return; // not in a keyword flow: leave the chat to a human
+
+  const payload = (ev.postback && ev.postback.payload) || (ev.message && ev.message.quick_reply && ev.message.quick_reply.payload) || "";
+  const text = (ev.message && ev.message.text) || "";
+  let r;
+
+  if (payload === "SEND") {
+    if (st.stage === "done") return sendFinal(env, auth, igsid, st);
+    r = await send(auth, igsid, buttons(FOLLOW_TEXT, [{ type: "postback", title: BTN.following, payload: "FOLLOWING" }]));
+    await saveState(env, igsid, { ...st, stage: "follow" });
+    return log(env, { kind: "step2-follow", user: mask(st.user), kw: st.kw, ok: r.ok, err: r.error });
+  }
+
+  if (payload === "FOLLOWING") {
+    if (st.stage === "email" || st.stage === "done") return;
+    const f = await isFollowing(auth, igsid);
+    if (f === false && st.tries < 2) {
+      r = await send(auth, igsid, buttons(NOT_FOLLOWING_TEXT, [{ type: "postback", title: BTN.followingAgain, payload: "FOLLOWING" }]));
+      await saveState(env, igsid, { ...st, tries: st.tries + 1 });
+      return log(env, { kind: "not-following", user: mask(st.user), try: st.tries + 1, ok: r.ok, err: r.error });
+    }
+    r = await send(auth, igsid, { text: EMAIL_TEXT });
+    await saveState(env, igsid, { ...st, stage: "email", tries: 0 });
+    return log(env, { kind: "step3-email", user: mask(st.user), following: f, ok: r.ok, err: r.error });
+  }
+
+  if (st.stage === "email" && text) {
+    const m = text.match(/[^\s@<>()]+@[^\s@<>()]+\.[a-z]{2,24}/i);
+    if (!m || !isEmail(m[0])) {
+      if (st.tries >= 3) return;
+      r = await send(auth, igsid, { text: BAD_EMAIL_TEXT });
+      await saveState(env, igsid, { ...st, tries: st.tries + 1 });
+      return log(env, { kind: "bad-email", user: mask(st.user), ok: r.ok });
+    }
+    const email = m[0].toLowerCase();
+    await saveEmail(env, { email, kw: st.kw, user: st.user, igsid });
+    await saveState(env, igsid, { ...st, stage: "done", email });
+    return sendFinal(env, auth, igsid, st);
+  }
+}
+
+async function sendFinal(env, auth, igsid, st) {
+  const f = finalMessage(st.kw, st.caption);
+  const r = await send(auth, igsid, f.url ? buttons(f.text, [{ type: "web_url", title: BTN.guide, url: f.url }]) : { text: f.text });
+  await log(env, { kind: "step4-delivered", user: mask(st.user), kw: st.kw, ok: r.ok, err: r.error });
+}
+
+// Emails: kept in KV (list "emails") and, once KIT_API_KEY is set, added to Kit.
+async function saveEmail(env, e) {
+  const raw = await env.BOT.get("emails");
+  const list = raw ? JSON.parse(raw) : [];
+  if (!list.some((x) => x.email === e.email && x.kw === e.kw)) list.push({ ...e, t: new Date().toISOString() });
+  await env.BOT.put("emails", JSON.stringify(list));
+  if (env.KIT_API_KEY) {
+    const k = await fetch("https://api.kit.com/v4/subscribers", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Kit-Api-Key": env.KIT_API_KEY },
+      body: JSON.stringify({ email_address: e.email, state: "active", fields: { source: `ig-${e.kw}` } }),
+    });
+    await log(env, { kind: "kit", ok: k.ok });
+  }
 }
 
 // ---------- poll backstop ----------
@@ -185,7 +289,7 @@ async function callback(url, env, req) {
   const auth = { token, host: GRAPH, user_id: String(acct.id), username: acct.username, expires_at: Date.now() + 100 * 365 * 86400000 };
   await env.BOT.put("auth", JSON.stringify(auth));
 
-  const sub = await ig(auth, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments"] });
+  const sub = await ig(auth, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments", "messages", "messaging_postbacks"] });
   await log(env, { kind: "connected", user: acct.username, webhooks: sub.ok ? "subscribed" : sub.error });
   return page(`Connected @${acct.username}. Comment webhooks: ${sub.ok ? "subscribed" : "not subscribed (" + sub.error + "); the 2-minute check still runs"}. You can close this tab.`);
 }
@@ -200,7 +304,7 @@ async function getAuth(env) {
   const raw = await env.BOT.get("auth");
   const a = raw ? JSON.parse(raw) : null;
   if (!env.IG_TOKEN) return a && a.token ? a : null;
-  const fp = env.IG_TOKEN.slice(-12);
+  const fp = env.IG_TOKEN.slice(-12) + ":v2"; // v2 = subscribe comments+messages+postbacks
   if (a && a.fp === fp) return { ...a, token: a.refreshed || env.IG_TOKEN };
   const det = await detectToken(env.IG_TOKEN, env.EXPECTED_USERNAME);
   if (!det) { await log(env, { kind: "token-unusable" }); return a && a.token ? a : null; }
@@ -208,10 +312,10 @@ async function getAuth(env) {
   await env.BOT.put("auth", JSON.stringify(auth));
   await log(env, { kind: "token-detected", user: auth.username, host: auth.host.includes("instagram") ? "instagram" : "facebook" });
   if (auth.host === IG_GRAPH) {
-    const sub = await fetch(`${IG_GRAPH}/me/subscribed_apps?subscribed_fields=comments,messages`, { method: "POST", headers: { Authorization: `Bearer ${env.IG_TOKEN}` } });
+    const sub = await fetch(`${IG_GRAPH}/me/subscribed_apps?subscribed_fields=comments,messages,messaging_postbacks`, { method: "POST", headers: { Authorization: `Bearer ${env.IG_TOKEN}` } });
     await log(env, { kind: "subscribe", ok: sub.ok });
   } else {
-    const sub = await ig({ ...auth, token: env.IG_TOKEN }, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments"] });
+    const sub = await ig({ ...auth, token: env.IG_TOKEN }, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments", "messages", "messaging_postbacks"] });
     await log(env, { kind: "subscribe", ok: sub.ok, err: sub.error });
   }
   return { ...auth, token: env.IG_TOKEN };
@@ -293,6 +397,7 @@ async function showLog(env) {
 async function health(env) {
   const auth = await getAuth(env);
   const status = auth ? { connected: auth.username } : { connected: false };
+  status.emails = JSON.parse((await env.BOT.get("emails")) || "[]").length;
   return new Response(JSON.stringify({ bot: "the-exact-method comment-to-DM", ...status }), { headers: { "Content-Type": "application/json" } });
 }
 
