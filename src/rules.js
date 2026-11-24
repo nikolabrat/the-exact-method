@@ -80,8 +80,8 @@ export function introText(kw) {
 
 export const FOLLOW_TEXT = "Before I send it: are you following @theexactmethod?\n\nI post AI workflows like this several times a week, so you won't miss the next one.";
 export const NOT_FOLLOWING_TEXT = "I can't see the follow yet 👀\n\nTap Follow on @theexactmethod, then tap the button again.";
-export const EMAIL_TEXT = "Last step: type your email below and the guide comes right after. 👇\n\nI'll also email you new AI workflows now and then. Unsubscribe anytime.";
-export const BAD_EMAIL_TEXT = "Hmm, that doesn't look like an email. Type it again? (like name@gmail.com)";
+export const EMAIL_TEXT = "lmk which email to send it to 👇\n\n(you'll also get my new AI workflows there sometimes, unsubscribe anytime)";
+export const BAD_EMAIL_TEXT = "hmm that doesn't look like an email, can you type it again?";
 
 // Message 4. Returns {text, url} for guides (url goes on a button), or {text} for PROMPT.
 export function finalMessage(kw, caption) {
