@@ -245,7 +245,7 @@ async function addToKit(env, e) {
   let emailed = false;
   const formId = KIT_FORMS[e.kw];
   const look = await (await fetch(`https://api.kit.com/v4/subscribers?status=all&email_address=${encodeURIComponent(e.email)}`, { headers: H })).json();
-  const known = ((look && look.subscribers) || []).length > 0;
+  const known = ((look && look.subscribers) || []).some((x) => (x.email_address || "").toLowerCase() === e.email); // match exactly, don't trust the filter
   if (formId && !known) {
     // Same request an embedded Kit form makes: creates the subscriber and sends the form's confirmation email.
     const f = await fetch(`https://app.kit.com/forms/${formId}/subscriptions`, {
