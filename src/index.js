@@ -255,6 +255,9 @@ async function addToKit(env, e) {
 async function kitBackfill(env) {
   if (!env.KIT_API_KEY || (await env.BOT.get("kitBackfill"))) return;
   await env.BOT.put("kitBackfill", "1");
+  const acc = await fetch("https://api.kit.com/v4/account", { headers: { "X-Kit-Api-Key": env.KIT_API_KEY } });
+  const aj = acc.ok ? await acc.json() : null;
+  await log(env, { kind: "kit-key", ok: acc.ok, status: acc.status, plan: aj && aj.account && aj.account.plan_type });
   for (const e of JSON.parse((await env.BOT.get("emails")) || "[]")) await addToKit(env, e);
 }
 
