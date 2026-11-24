@@ -81,10 +81,13 @@ const ChunkView: React.FC<{f: number; ch: Chunk; o: number; loopIn: boolean; dar
     const first = i === 0 ? 1 : r(f, s0 - 3, s0 - 1);
     return (i === 0 && f < s0 ? 1 : first) * (1 - r(f, next - 3, next - 1));
   };
+  // one line only: long chunks shrink to fit 760 px instead of wrapping into the section tag
+  const chars = ch.words.reduce((n, w) => n + w.w.length, 0) + ch.words.length - 1;
+  const fs = Math.min(66, Math.floor(760 / (chars * 0.6)));
   return (
-    <div style={{position: 'absolute', left: 66, top: CAP_TOP, width: 700, display: 'flex', flexWrap: 'wrap', columnGap: 14, rowGap: 4, opacity: o}}>
+    <div style={{position: 'absolute', left: 66, top: CAP_TOP, width: 780, display: 'flex', flexWrap: 'nowrap', whiteSpace: 'nowrap', columnGap: 14, opacity: o}}>
       {ch.words.map((w, i) => (
-        <span key={i} style={{position: 'relative', fontFamily: 'Archivo', fontWeight: 900, fontSize: 66, lineHeight: 1.12, letterSpacing: -1.5, color: dark && hlA(i) < 0.5 ? C.paper : C.ink, padding: '0 8px', margin: '0 -8px'}}>
+        <span key={i} style={{position: 'relative', fontFamily: 'Archivo', fontWeight: 900, fontSize: fs, lineHeight: 1.12, letterSpacing: -1.5, color: dark && hlA(i) < 0.5 ? C.paper : C.ink, padding: '0 8px', margin: '0 -8px'}}>
           <span style={{position: 'absolute', inset: 0, borderRadius: 10, background: C.mint, opacity: hlA(i)}} />
           <span style={{position: 'relative'}}>{w.w}</span>
         </span>

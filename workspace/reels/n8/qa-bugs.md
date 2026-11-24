@@ -15,3 +15,4 @@
 | 11 | 1360 "ChatGPT" | lens-zoom renders a black frame with smeared text (flash) | own push-in from 1.5x with blur, on paper |
 | 12 | 1600-1630 "it picked Claude" | The 12:27 Claude Pro card overlaps the "ChatGPT Plus · $20" tile | card higher and smaller |
 | 13 | 1840-1856 | CTA card 3 drops over the comment field while landing | cards land above the field (start position) |
+| 14 | 0:22, 0:50-0:53 | "3 smaller questions." and "ChatGPT picked itself." wrapped to 2 lines and the 2nd line covered the section tag | captions never wrap; long chunks shrink to fit one line |
