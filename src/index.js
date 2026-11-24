@@ -28,7 +28,7 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(Promise.all([poll(env), maybeRefresh(env)]));
+    ctx.waitUntil(Promise.all([poll(env), maybeRefresh(env), kitBackfill(env)]));
   },
 };
 
@@ -223,14 +223,39 @@ async function saveEmail(env, e) {
   const list = raw ? JSON.parse(raw) : [];
   if (!list.some((x) => x.email === e.email && x.kw === e.kw)) list.push({ ...e, t: new Date().toISOString() });
   await env.BOT.put("emails", JSON.stringify(list));
-  if (env.KIT_API_KEY) {
-    const k = await fetch("https://api.kit.com/v4/subscribers", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Kit-Api-Key": env.KIT_API_KEY },
-      body: JSON.stringify({ email_address: e.email, state: "active", fields: { source: `ig-${e.kw}` } }),
-    });
-    await log(env, { kind: "kit", ok: k.ok });
+  if (env.KIT_API_KEY) await addToKit(env, e);
+}
+
+// Kit (v4): create/refresh the subscriber, then tag them with the keyword (tag "ig-PROMPT" etc.,
+// created on first use). Tags let a broadcast go to everyone who asked for one freebie.
+async function addToKit(env, e) {
+  const H = { "Content-Type": "application/json", "X-Kit-Api-Key": env.KIT_API_KEY };
+  const sub = await fetch("https://api.kit.com/v4/subscribers", {
+    method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "active" }),
+  });
+  if (!sub.ok) return log(env, { kind: "kit-failed", step: "subscriber", status: sub.status });
+  const tagName = `ig-${e.kw}`;
+  let tagId = await env.BOT.get(`kittag:${tagName}`);
+  if (!tagId) {
+    const list = await (await fetch("https://api.kit.com/v4/tags?per_page=1000", { headers: H })).json();
+    const found = ((list && list.tags) || []).find((t) => t.name === tagName);
+    if (found) tagId = String(found.id);
+    else {
+      const c = await (await fetch("https://api.kit.com/v4/tags", { method: "POST", headers: H, body: JSON.stringify({ name: tagName }) })).json();
+      tagId = c && c.tag && c.tag.id ? String(c.tag.id) : null;
+    }
+    if (tagId) await env.BOT.put(`kittag:${tagName}`, tagId);
   }
+  if (!tagId) return log(env, { kind: "kit-failed", step: "tag" });
+  const t = await fetch(`https://api.kit.com/v4/tags/${tagId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email }) });
+  await log(env, { kind: "kit", ok: t.ok, tag: tagName });
+}
+
+// Emails collected before KIT_API_KEY existed are sent to Kit once, on the first run after the key is added.
+async function kitBackfill(env) {
+  if (!env.KIT_API_KEY || (await env.BOT.get("kitBackfill"))) return;
+  await env.BOT.put("kitBackfill", "1");
+  for (const e of JSON.parse((await env.BOT.get("emails")) || "[]")) await addToKit(env, e);
 }
 
 // ---------- poll backstop ----------

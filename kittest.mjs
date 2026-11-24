@@ -1,0 +1,11 @@
+import worker from "./src/index.js";
+const store=new Map([["emails",JSON.stringify([{email:"a@b.co",kw:"PROMPT",user:"t",igsid:"U"}])]]);
+const KV={get:async k=>store.has(k)?store.get(k):null,put:async(k,v)=>{store.set(k,v)}};
+const env={BOT:KV,KIT_API_KEY:"k",EXPECTED_USERNAME:"theexactmethod"};
+globalThis.fetch=async(u,o={})=>{u=String(u);console.log(o.method||"GET",u,o.body||"");
+ if(u.endsWith("/v4/tags")&&o.method==="POST") return new Response(JSON.stringify({tag:{id:77,name:"ig-PROMPT"}}),{status:201});
+ if(u.includes("/v4/tags?")) return new Response(JSON.stringify({tags:[]}));
+ return new Response("{}",{status:201});};
+const p=[]; await worker.scheduled({},env,{waitUntil:x=>p.push(x)}); await Promise.all(p);
+await worker.scheduled({},env,{waitUntil:x=>p.push(x)}); await Promise.all(p);
+console.log(store.get("log"));
