@@ -109,16 +109,15 @@ async function handleComment(env, c) {
   const caption = c.mediaId ? await getCaption(env, auth, c.mediaId) : "";
   const dm = await ig(auth, `/${auth.user_id}/messages`, "POST", {
     recipient: { comment_id: c.id },
-    message: buttons(introText(kw), [{ type: "postback", title: BTN.send, payload: "SEND" }]),
+    message: buttons(introText(kw), [{ type: "postback", title: BTN.send, payload: `SEND|${kw}|${c.mediaId || ""}` }]),
   });
   if (!dm.ok) {
     await env.BOT.put(key, "dm-failed", { expirationTtl: 60 * 60 * 24 * 30 });
     await log(env, { kind: "dm-failed", user: mask(c.username), kw, src: c.source, err: dm.error });
     return;
   }
-  if (dm.data && dm.data.recipient_id) {
-    await saveState(env, dm.data.recipient_id, { kw, caption, stage: "intro", tries: 0, user: c.username || "" });
-  }
+  const rid = (dm.data && dm.data.recipient_id) || c.fromId;
+  if (rid) await saveState(env, rid, { kw, media: c.mediaId || "", caption, stage: "intro", tries: 0, user: c.username || "" });
   const n = (parseInt((await env.BOT.get("replyIndex")) || "0", 10) + 1) % PUBLIC_REPLIES.length;
   await env.BOT.put("replyIndex", String(n));
   const pub = await ig(auth, `/${c.id}/replies`, "POST", { message: PUBLIC_REPLIES[n] });
@@ -156,28 +155,36 @@ async function handleMessaging(env, ev) {
   if (!auth) return;
   const igsid = ev.sender && ev.sender.id;
   if (!igsid || igsid === auth.user_id) return;
-  const st = await getState(env, igsid);
-  if (!st) return; // not in a keyword flow: leave the chat to a human
-
   const payload = (ev.postback && ev.postback.payload) || (ev.message && ev.message.quick_reply && ev.message.quick_reply.payload) || "";
   const text = (ev.message && ev.message.text) || "";
+  const [action, pkw, pmedia] = payload.split("|");
+  let st = await getState(env, igsid);
+  // Buttons carry their keyword, so a tap always follows the flow it belongs to,
+  // even if this person is in another flow or the stored state is missing.
+  const sameFlow = st && st.kw === pkw && (action !== "SEND" || (st.media || "") === (pmedia || ""));
+  if (pkw && !sameFlow) {
+    const caption = pmedia ? await getCaption(env, auth, pmedia) : "";
+    st = { kw: pkw, media: pmedia || "", caption, stage: action === "SEND" ? "intro" : "follow", tries: 0, user: (st && st.user) || "" };
+    await saveState(env, igsid, st);
+  }
+  if (!st) return; // not in a keyword flow: leave the chat to a human
   let r;
 
-  if (payload === "SEND") {
+  if (action === "SEND") {
     if (st.stage === "done") return sendFinal(env, auth, igsid, st);
     if (st.stage !== "intro") return;
     const f = await isFollowing(auth, igsid);
     if (f === true) return afterFollow(env, auth, igsid, st, "already-following"); // skip message 2
-    r = await send(auth, igsid, buttons(FOLLOW_TEXT, [{ type: "postback", title: BTN.following, payload: "FOLLOWING" }]));
+    r = await send(auth, igsid, buttons(FOLLOW_TEXT, [{ type: "postback", title: BTN.following, payload: `FOLLOWING|${st.kw}|` }]));
     await saveState(env, igsid, { ...st, stage: "follow" });
     return log(env, { kind: "step2-follow", user: mask(st.user), kw: st.kw, following: f, ok: r.ok, err: r.error });
   }
 
-  if (payload === "FOLLOWING") {
+  if (action === "FOLLOWING") {
     if (st.stage !== "follow") return;
     const f = await isFollowing(auth, igsid);
     if (f === false && st.tries < 2) {
-      r = await send(auth, igsid, buttons(NOT_FOLLOWING_TEXT, [{ type: "postback", title: BTN.followingAgain, payload: "FOLLOWING" }]));
+      r = await send(auth, igsid, buttons(NOT_FOLLOWING_TEXT, [{ type: "postback", title: BTN.followingAgain, payload: `FOLLOWING|${st.kw}|` }]));
       await saveState(env, igsid, { ...st, tries: st.tries + 1 });
       return log(env, { kind: "not-following", user: mask(st.user), try: st.tries + 1, ok: r.ok, err: r.error });
     }
@@ -423,16 +430,18 @@ function mask(u) {
   return u ? u.slice(0, 2) + "***" : "?";
 }
 
+// One KV key per entry (newest sorts first), so parallel writes never overwrite each other.
 async function log(env, item) {
-  const raw = await env.BOT.get("log");
-  const arr = raw ? JSON.parse(raw) : [];
-  arr.unshift({ t: new Date().toISOString(), ...item });
-  await env.BOT.put("log", JSON.stringify(arr.slice(0, 200)));
+  const now = Date.now();
+  const key = `log:${String(9999999999999 - now).padStart(13, "0")}:${Math.random().toString(36).slice(2, 6)}`;
+  await env.BOT.put(key, JSON.stringify({ t: new Date(now).toISOString(), ...item }), { expirationTtl: 60 * 60 * 24 * 30 });
 }
 
 async function showLog(env) {
-  const raw = (await env.BOT.get("log")) || "[]";
-  return new Response(JSON.stringify(JSON.parse(raw).slice(0, 40), null, 1), { headers: { "Content-Type": "application/json" } });
+  const keys = (await env.BOT.list({ prefix: "log:", limit: 40 })).keys;
+  const items = [];
+  for (const k of keys) { const v = await env.BOT.get(k.name); if (v) items.push(JSON.parse(v)); }
+  return new Response(JSON.stringify(items, null, 1), { headers: { "Content-Type": "application/json" } });
 }
 
 async function health(env) {
