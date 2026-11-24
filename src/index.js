@@ -2,7 +2,7 @@
 // Comment with a keyword on @theexactmethod -> instant private-reply DM with the guide + public "check your DMs".
 // Two paths feed the same handler: Meta webhooks (instant) and a 2-minute poll (backstop).
 
-import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN } from "./rules.js";
+import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN, needsEmail } from "./rules.js";
 
 // Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
 // configuration, a never-expiring system-user token, and graph.facebook.com.
@@ -165,22 +165,23 @@ async function handleMessaging(env, ev) {
 
   if (payload === "SEND") {
     if (st.stage === "done") return sendFinal(env, auth, igsid, st);
+    if (st.stage !== "intro") return;
+    const f = await isFollowing(auth, igsid);
+    if (f === true) return afterFollow(env, auth, igsid, st, "already-following"); // skip message 2
     r = await send(auth, igsid, buttons(FOLLOW_TEXT, [{ type: "postback", title: BTN.following, payload: "FOLLOWING" }]));
     await saveState(env, igsid, { ...st, stage: "follow" });
-    return log(env, { kind: "step2-follow", user: mask(st.user), kw: st.kw, ok: r.ok, err: r.error });
+    return log(env, { kind: "step2-follow", user: mask(st.user), kw: st.kw, following: f, ok: r.ok, err: r.error });
   }
 
   if (payload === "FOLLOWING") {
-    if (st.stage === "email" || st.stage === "done") return;
+    if (st.stage !== "follow") return;
     const f = await isFollowing(auth, igsid);
     if (f === false && st.tries < 2) {
       r = await send(auth, igsid, buttons(NOT_FOLLOWING_TEXT, [{ type: "postback", title: BTN.followingAgain, payload: "FOLLOWING" }]));
       await saveState(env, igsid, { ...st, tries: st.tries + 1 });
       return log(env, { kind: "not-following", user: mask(st.user), try: st.tries + 1, ok: r.ok, err: r.error });
     }
-    r = await send(auth, igsid, { text: EMAIL_TEXT });
-    await saveState(env, igsid, { ...st, stage: "email", tries: 0 });
-    return log(env, { kind: "step3-email", user: mask(st.user), following: f, ok: r.ok, err: r.error });
+    return afterFollow(env, auth, igsid, st, f === true ? "followed" : "let-through");
   }
 
   if (st.stage === "email" && text) {
@@ -196,6 +197,18 @@ async function handleMessaging(env, ev) {
     await saveState(env, igsid, { ...st, stage: "done", email });
     return sendFinal(env, auth, igsid, st);
   }
+}
+
+// After the follow step: Gumroad guides go straight to delivery, others ask for the email first.
+async function afterFollow(env, auth, igsid, st, why) {
+  if (!needsEmail(st.kw)) {
+    await saveState(env, igsid, { ...st, stage: "done" });
+    await log(env, { kind: "follow-ok", user: mask(st.user), why });
+    return sendFinal(env, auth, igsid, st);
+  }
+  const r = await send(auth, igsid, { text: EMAIL_TEXT });
+  await saveState(env, igsid, { ...st, stage: "email", tries: 0 });
+  return log(env, { kind: "step3-email", user: mask(st.user), why, ok: r.ok, err: r.error });
 }
 
 async function sendFinal(env, auth, igsid, st) {

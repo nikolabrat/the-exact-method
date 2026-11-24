@@ -95,3 +95,9 @@ export function finalMessage(kw, caption) {
 export function isEmail(s) {
   return /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test((s || "").trim());
 }
+
+// Gumroad guides (NARROW, METHOD, PLAIN, VIDEO) skip the email step: Gumroad collects the email at checkout.
+// Every other keyword (PROMPT and future non-Gumroad freebies) asks for the email before delivery.
+export function needsEmail(kw) {
+  return !GUIDES[kw];
+}
