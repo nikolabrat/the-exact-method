@@ -253,8 +253,8 @@ async function addToKit(env, e) {
 
 // Emails collected before KIT_API_KEY existed are sent to Kit once, on the first run after the key is added.
 async function kitBackfill(env) {
-  if (!env.KIT_API_KEY || (await env.BOT.get("kitBackfill"))) return;
-  await env.BOT.put("kitBackfill", "1");
+  if (!env.KIT_API_KEY || (await env.BOT.get("kitBackfill2"))) return;
+  await env.BOT.put("kitBackfill2", "1");
   const acc = await fetch("https://api.kit.com/v4/account", { headers: { "X-Kit-Api-Key": env.KIT_API_KEY } });
   const aj = acc.ok ? await acc.json() : null;
   await log(env, { kind: "kit-key", ok: acc.ok, status: acc.status, plan: aj && aj.account && aj.account.plan_type });
