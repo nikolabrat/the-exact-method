@@ -1,18 +1,19 @@
 Stop paying for 3 AI tools.
 3 prompts cut it to one.
-Same ChatGPT, same day, and the only difference between these two answers is how I asked.
-First, one line to ChatGPT: which AI should I pay for?
-It gave me a tool for every job.
-[ChatGPT] to write. [Claude] to code. [Gemini] to research.
-That's [60] euros a month.
-Nothing wrong with it. It just has no idea what I actually do all week, so it sells me everything.
+Same ChatGPT, one minute apart, and the one-line question picked a different AI.
+One line: which AI should I pay for?
+Claude Pro, it said.
+Based on the projects I've worked on, so it answered from my old chats and not from what I plan to build next.
 So I asked 3 smaller questions.
-One: what are ChatGPT, Claude and Gemini best at, at today's price?
+One: what is each one best at, and what does it cost today?
 Web search on, or it prices from memory.
-Two: which fit someone who [writes product pages and builds small tools], on [20] euros a month?
+All three: about 20 dollars. Price can't decide it.
+Two: which fit someone who writes product pages and builds small tools, on 20 euros?
+It cut Gemini.
 Three: which one first, and why?
-It dropped [two] and kept [Claude], because [both my jobs are writing and code].
+ChatGPT Plus. Keep the other two free, and use them as reviewers.
+Yes, ChatGPT picked itself. A minute earlier it picked Claude.
+And it said when to switch: if I mostly build software, Claude Pro.
 That's its pick. The call is mine.
-But now it's built on my week, not everyone's.
 Comment NARROW for the 3 prompts.
 Run them before you pay for 3 AI tools.
