@@ -64,7 +64,7 @@ visual style (results on top, presenter below). Changed 1: the idea.
 | # | Verdict | Plan |
 | --- | --- | --- |
 | E1 | PLAN | Source pace: a new element every ~2 s; ours ≤ 2.5 s |
-| E2 | PLAN | Banned list in plan §1; remocn: whipPan, paperTear, ImpactShake, CrumpleToss, RolodexFlip, InkArrow, SmashCount, CheckList, Caret, handwrite |
+| E2 | PLAN | Banned list in plan §1; motion grammar v2 (plan §1b): 1 camera + 1 element move + 1 transition per beat, 7 transitions never repeated back to back; remocn the-tab, gravity-pile, slot-machine-roll, strikethrough-replace, push-through, lens-zoom, dolly-zoom + whip-pan, paper-tear, ImpactShake, CrumpleToss, RolodexFlip, InkArrow; PileUp + PhoneFilm reference moves |
 | E3 | PLAN | Captions ≤ 3 words, ElevenLabs alignment |
 | E4 | PLAN | Zones in plan §1; frame-0 test clean; frame sheets every 12 frames in QA |
 | E5 | PLAN | Sound per element (plan §3), critique.py, −14 LUFS / TP < −1 |

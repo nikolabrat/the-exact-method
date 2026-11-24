@@ -1,4 +1,4 @@
-# N-8 · "Stop paying for 3 AI tools" · visual + sound plan v1 (24 Nov 2026)
+# N-8 · "Stop paying for 3 AI tools" · visual + sound plan v2 (24 Nov 2026, more dynamic)
 
 Built only after this plan and the audit pass. Times are estimates from beats.py; after voicing, every cue
 is recomputed from the **ElevenLabs forced alignment** (word starts), with the same formulas, like W-7.
@@ -31,32 +31,59 @@ Headline "Stop paying / for **3 AI tools.**" 148 px (y 250-560) · left: "3 tool
 360 px test: headline, both prices and "ChatGPT Plus" readable; nothing clipped; frame filled from y 250 to Sage.
 Motion on frame 0: the cards are already there (no fade from black); 3 prices pulse once in sequence (frames 0-12) so the frame moves from the first frame.
 
-## 3. Beat by beat
+## 1b. Motion grammar v2 (more dynamic, 24 Nov): what moves and why
 
-| # | Time (est.) | Spoken | Picture (what is new) | Motion / remocn | Sage | Sound (one per new thing) |
+Borrowed from our two reference films (`video/PileUp-reference.mp4`, `video/PhoneFilm-reference.mp4`) and remocn.
+Rule: **every beat has one camera move + one element move + one transition**, and no two neighbouring beats use the same transition.
+
+| Move | From | Used at |
+| --- | --- | --- |
+| Phone with the real chat, slow scroll, key line pops out as an overlay card over the blurred phone | PhoneFilm ref | beats 4-5, 8, 11, 14 |
+| Chips pile up physically, then **implode into a dot** that floods the frame in one colour | PileUp ref + remocn `gravity-pile` | beat 6 |
+| Giant full-bleed number card ("1" / "2" / "3"), background colour swaps per card, 8-10 frames each | PileUp ref ("GLOWS / POP-INS") | beats 7, 8, 11, 13 |
+| Limit chips with coloured dots that light up as each one is said, each cuts a row | PhoneFilm ref ("Your limits do the work") | beats 11-12 |
+| Hub: one tile in the middle, lines out to two tiles | PileUp ref ("Everything it checks") | beat 14 |
+| Cursor clicks a checkbox | PhoneFilm ref ("Start this week") | beat 17 |
+| Vertical stripe wipe | PileUp ref (end) | into the CTA, beat 18 |
+| Receipt builds line by line, total lands word by word | remocn `the-tab` | beat 10 |
+| Price strikes and is replaced underneath | remocn `strikethrough-replace` | beat 2 |
+| Prices roll in like a slot machine | remocn `slot-machine-roll` | beat 10 |
+| Dolly-zoom on the turning point | remocn `dolly-zoom` | beat 15 ("a minute earlier it picked Claude") |
+| Push-through into a deeper chapter | remocn `push-through` | beat 7 (rehook) |
+| Lens-zoom on the payoff | remocn `lens-zoom` | beat 14 (the verdict) |
+| Whip-pan between peers | remocn `whip-pan` (have) | prompt 1 → 2 → 3 |
+| Paper-tear / impact-shake | have | beat 12 (Gemini cut) |
+| Serif italic accent word with a mint swash under it | PhoneFilm ref ("*25 ideas*", "*do the work*") | section headlines: "a *different* AI", "3 *smaller* questions", "*my* call" |
+
+Install before building: `the-tab gravity-pile slot-machine-roll strikethrough-replace push-through lens-zoom dolly-zoom` (check each page's props first; fonts local only, no Google Fonts in the render browser).
+
+## 3. Beat by beat (v2)
+
+| # | Time (est.) | Spoken | Picture (what is new) | Camera · element · transition | Sage | Sound (one per new thing) |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 0.0-2.2 | Stop paying for 3 AI tools. | Frame 0 as above | 3 price rows pulse 0/4/8 f | present | f0: soft paper "slap" under the voice start (voice-safe) · 3 ticks on the pulses |
-| 2 | 2.2-4.4 | 3 prompts cut it to one. | Red strike draws across **$59.99** on "cut"; ChatGPT Plus / Claude Pro / Google AI Pro rows: Claude + Google fade to 35%, ChatGPT row gets the mint bar | scribble-strike (Squiggle/brush), punch-in 1.06 | point | marker "scratch" on the strike · "pop" on the mint bar |
-| 3 | 4.4-9.1 | Same ChatGPT, one minute apart, and the one-line question picked a different AI. | Whip to a split: two ChatGPT timestamp chips "12:27" and "12:28" (real) slam in; under 12:27 a dark card fills: "**Claude Pro**"; under 12:28 "**ChatGPT Plus**"; a red "≠" stamps between | whipPan in, Stamp for "≠", camera push | finger (tap) | whoosh (whip) · 2 "numslam" on the chips · "stamp" on ≠ |
-| 4 | 9.1-12.0 | One line: which AI should I pay for? | Real footage R1: the user bubble "Which AI should I pay for?" + "Searching 10 websites", cropped to the chat column in a rounded frame, 900 px wide | footage card slides up | think | "slide" on the card · soft "scan" under "Searching" |
-| 5 | 12.0-13.4 | Claude Pro, it said. | R1 excerpt re-typeset large: "…I'd choose **Claude Pro**…" mint wipe on Claude Pro | Hl wipe | check | "pop" on the highlight |
-| 6 | 13.4-21.8 | Based on the projects I've worked on, so it answered from my old chats… | (8 s, split in 3 visual steps) a) the words "Based on the projects you've worked on" get a gold underline (handwrite); b) 4 sticky notes from R1's own list fan out ("coding projects", "online products", "business ideas", "Brick & Sage videos"), label "what it remembered"; c) stamp "my old chats ≠ my plan" | handwrite underline · CardFan of 4 notes · Stamp | shrug → sigh | "markersq" on underline · 4 "cardfan" flicks · "stamp" |
-| 7 | 21.8-24.0 | So I asked 3 smaller questions. | **Rehook.** Everything crumples away; 3 numbered index cards drop in a row: 1 · 2 · 3 (empty) | CrumpleToss old scene, cards drop with spring | present | "crumple" · 3 "tape" drops |
-| 8 | 24.0-28.7 | One: what is each one best at, and what does it cost today? | Card 1 flips to the prompt 1 text (typed, 4 words at a time, never full typewriter); real footage R2 0:03-0:08 under it: "Searching the web" | rolodex-flip, caret | point | "flutter" on flip · soft keys under typing · "scan" |
-| 9 | 28.7-31.6 | Web search on, or it prices from memory. | A toggle "Web search ● on" switches on; a small crossed note "from memory" falls off | toggle snap, crumple of the note | finger | "click" toggle · "puff" note |
-| 10 | 31.6-34.9 | All three: about 20 dollars. Price can't decide it. | R2a table re-typeset, the three prices slam in one by one ($20, $20, $19.99) then all three turn the same grey and a "=" sign appears | SmashCount for each price | shrug | 3 "numslam" · "emptythud" on "=" |
-| 11 | 34.9-40.4 | Two: which fit someone who writes product pages and builds small tools, on 20 euros? | Card 2 flips to prompt 2; 3 chips pop in as they're said: "product pages" · "small tools" · "€20" | rolodex-flip, chips with BACK ease | think → point | "flutter" · 3 "pop"s |
-| 12 | 40.4-41.5 | It cut Gemini. | R2b: the Google AI Pro row is torn out of the list | paper-tear, impact-shake (small) | check | "rip" |
-| 13 | 41.5-43.6 | Three: which one first, and why? | Card 3 flips to prompt 3 | rolodex-flip | finger | "flutter" |
-| 14 | 43.6-48.0 | ChatGPT Plus. Keep the other two free, and use them as reviewers. | R2c quote card (same as frame 0, right) lands big; "ChatGPT Plus" mint wipe; two small cards "Claude · free · reviewer" and "Gemini · free · reviewer" slide under it | punch-in 1.06, Hl wipe, cards slide | present | "impact" on landing · "pop" · 2 "slide" |
-| 15 | 48.0-51.6 | Yes, ChatGPT picked itself. A minute earlier it picked Claude. | Objection beat: sticky note "ChatGPT picked itself?" in red handwriting; then the 12:27 "Claude Pro" chip from beat 3 slides back beside it | handwrite, chip return | shrug | "markersq" · "slide" |
-| 16 | 51.6-56.4 | And it said when to switch: if I mostly build software, Claude Pro. | R2c second excerpt: "If you eventually find yourself spending most of your time building software, Claude Pro becomes a strong candidate." An ink arrow from "ChatGPT Plus" to "Claude Pro" labelled "when to switch" | InkArrow draw | point | "scratch" on the arrow · "tick" on the label |
-| 17 | 56.4-58.9 | That's its pick. The call is mine. | Stamp "its pick" on the card, then a checkbox "my call" gets ticked by hand | Stamp + CheckList (1 item) | check | "stamp" · "tick" |
-| 18 | 58.9-61.1 | Comment NARROW for the 3 prompts. | CTA card: the 3 prompt cards fan out as a stack; comment bubble types "NARROW" (designed, never plain text); "Free guide · section 03 · the 3 prompts" | card fan, typed keyword | present | "cardfan" · keys on NARROW · "notif" on Post |
-| 19 | 61.1-64.4 | Run them before you pay for 3 AI tools. | Camera pulls back to frame 0's layout (headline returns; prices back unstruck) | whip/match cut into frame 0 | present | "riser" (short, quiet) into the seam |
+| 1 | 0.0-2.2 | Stop paying for 3 AI tools. | Frame 0 (tested). The 3 price rows pulse in sequence 0/4/8 f | slow push 1.00→1.02 · row pulses · none (cold open) | present | slap on f0 (voice-safe) · 3 soft ticks |
+| 2 | 2.2-4.4 | 3 prompts cut it to one. | `strikethrough-replace`: **$59.99** gets the red line and **$20** rises beneath it; the 3 left rows collapse into one mint row "ChatGPT Plus" | punch-in 1.06 on "one" · strike + collapse · none | point | marker scratch · "stack" thunk on collapse |
+| 3 | 4.4-9.1 | Same ChatGPT, one minute apart, and the one-line question picked a *different* AI. | Whip to two phones side by side (PhoneFilm style), status-bar clocks **12:27** and **12:28** (real). Each screen fills with its answer word: left "Claude Pro", right "ChatGPT Plus"; a red "≠" drops between and shakes | whip-pan in · phones slide up from below, staggered 6 f · ≠ with ImpactShake | finger | whoosh · 2 slides · numslam on ≠ |
+| 4 | 9.1-12.0 | One line: which AI should I pay for? | Left phone grows to centre, the other leaves frame. Real R1: the question bubble types in (3 words a tick), "Searching 10 websites" shimmer | push-through (phone becomes the frame) · bubble type · push-through | think | push · soft keys · scan |
+| 5 | 12.0-13.4 | Claude Pro, it said. | R1 answer scrolls in; the key line pops out as an overlay card over the blurred phone: "…I'd choose **Claude Pro**…" | card pops 1.0→1.04→1.0 · mint wipe · blur behind | check | pop · mint "swipe" |
+| 6 | 13.4-21.8 | Based on the projects I've worked on, so it answered from my old chats and not from what I plan to build next. | a) R1's own list falls as chips onto the phone and **piles up** (`gravity-pile`): "coding projects", "online products", "business ideas", "marketing strategies", "Brick & Sage videos", "Claude desktop app" (label "what it remembered"); b) the whole pile **implodes into one dot** (PileUp); c) the dot opens into a paper card: left half "old chats ✓", right half "my plan: ?" (empty, dashed) | slow drift down with the pile · pile → implode → card · implode is the transition | shrug → sigh | 6 "cardpile" drops (varied) · reverse whoosh on implode · emptythud on "my plan: ?" |
+| 7 | 21.8-24.0 | So I asked 3 *smaller* questions. | **Rehook.** Push-through the "?" into three giant full-bleed number cards flashing **1** (mint bg) · **2** (gold bg) · **3** (ink bg), 8 f each, then they shrink into a row of 3 index cards | push-through · giant numbers · scale-down into row | present | 3 hits on the cards (low-mid, rising) |
+| 8 | 24.0-28.7 | One: what is each one best at, and what does it cost today? | Card 1 flips (`rolodex-flip`) into a phone: prompt 1 types (4 words/tick), then "Searching the web" from the real recording | camera follows card 1 left→centre · flip · whip to phone | point | flutter · keys · scan |
+| 9 | 28.7-31.6 | Web search on, or it prices from memory. | A toggle "Web search" snaps **on** (mint); a sticky note "prices from memory" next to it crumples and is tossed | small punch on the toggle · toggle + `crumple-toss` · none | finger | click · crumple |
+| 10 | 31.6-34.9 | All three: about 20 dollars. Price can't decide it. | `the-tab` receipt builds: ChatGPT Plus ····· `slot-machine-roll` **$20**, Claude Pro ····· **$20**, Google AI Pro ····· **$19.99**; the total lands word by word: "**a tie.**" (accent red) | tilt the receipt 2° as it builds · rolls · none | shrug | 3 slot "ticks-rolls" · emptythud on "a tie." |
+| 11 | 34.9-40.4 | Two: which fit someone who writes product pages and builds small tools, on 20 euros? | Whip to card 2 → a "Your limits" panel (PhoneFilm): 3 chips land as they're spoken, each with a dot that lights: "product pages" ● "small tools" ● "€20 a month" ●; the 3 plan rows sit below | whip-pan · chips spring in on their word · whip | think → point | whoosh · 3 pops (rising pitch) |
+| 12 | 40.4-41.5 | It cut Gemini. | The Google AI Pro row is **torn out** of the list (`paper-tear` + small ImpactShake); label "cut · prompt 2" | shake 4 f · tear · tear is the transition | check | rip |
+| 13 | 41.5-43.6 | Three: which one first, and why? | Giant full-bleed **3** flash (ink bg, 8 f) → card 3 → phone, prompt 3 types | snap zoom · flash card · whip | finger | hit · keys |
+| 14 | 43.6-48.0 | ChatGPT Plus. Keep the other two free, and use them as reviewers. | `lens-zoom` into the real verdict card (R2c, same card as frame 0, bigger); "ChatGPT Plus" mint wipe; then the **hub**: ChatGPT Plus tile centre, lines draw out to "Claude · free · reviewer" and "Gemini · free · reviewer" | lens-zoom (the beat drop) · wipe + lines draw · none | present | impact (main hit) · mint swipe · 2 line "scratch"es + 2 pops |
+| 15 | 48.0-51.6 | Yes, ChatGPT picked itself. A minute earlier it picked Claude. | Red handwritten note "ChatGPT picked itself?" slaps onto the hub; on "a minute earlier" `dolly-zoom` while the **12:27 · Claude Pro** phone slides back in beside it | dolly-zoom (the turn) · note slap + phone return · none | shrug | slap · tape · low riser under the dolly (quiet) |
+| 16 | 51.6-56.4 | And it said when to switch: if I mostly build software, Claude Pro. | R2c excerpt card "If you eventually find yourself spending most of your time building software, Claude Pro becomes a strong candidate." `ink-arrow` draws from ChatGPT Plus to Claude Pro, label "when to switch" in serif italic | drift right along the arrow · arrow draw · none | point | scratch (arrow) · tick (label) |
+| 17 | 56.4-58.9 | That's its pick. The call is *mine*. | Stamp "its pick" thumps on the card; a cursor glides in and **clicks** a checkbox "my call" (PhoneFilm) | punch-in on the click · stamp + cursor · none | check | stamp · click |
+| 18 | 58.9-61.1 | Comment NARROW for the 3 prompts. | **Vertical stripe wipe** (PileUp end) to the CTA: the 3 prompt cards fan as a hand (`card-fan` style, our cards); a comment field types **NARROW** letter by letter and posts; tag "Free guide · section 03 · page 4" | stripe wipe · fan + typing · stripe wipe | present | stripe whooshes (×1, swept) · cardfan · keys · notif on post |
+| 19 | 61.1-64.4 | Run them before you pay for 3 AI tools. | The cards fly back to frame 0's positions: headline drops in word by word, the two price blocks slide back (unstruck) | pull-out to 1.00 · match-cut into frame 0 · seam | present | short riser into the seam, cut clean on the loop frame |
 
 Loop: the last 10 frames are frame 0 exactly; spoken "…pay for 3 AI tools" → "Stop paying for 3 AI tools".
-Something new on screen at least every ~2.5 s (longest still stretch: beat 6, split into 3 steps).
+Longest stretch without a new element: ≤ 2.0 s (was 2.5 s in v1). 7 different transitions, none repeated back to back.
+Real screens shown only as our phone mock with re-typeset real text, plus the real "Searching…" shimmer: never the sidebar, tabs or the 0:37-0:46 part of R2.
 
 ## 4. Sound rules (real-sfx)
 
