@@ -15,6 +15,7 @@ import {N7, N7_TOTAL, N7Cover} from './N7';
 import {P6, P6_TOTAL, P6Cover} from './P6';
 import {W7, W7_TOTAL, W7Cover} from './W7';
 import {N8F0} from './N8F0';
+import {V3F0} from './V3F0';
 import {N8, N8_TOTAL, N8Cover} from './N8';
 
 // Demo content = V-5. The 13 labels are the 13 "Banned by default" bullets in
@@ -157,6 +158,7 @@ const Root: React.FC = () => (
   <Composition id="N8tt" component={N8 as any} durationInFrames={N8_TOTAL.tt} fps={30} width={1080} height={1920} defaultProps={{platform: 'tt'}} />
   <Composition id="N8Cover" component={N8Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="N8F0" component={N8F0} durationInFrames={1} fps={30} width={1080} height={1920} />
+  <Composition id="V3F0" component={V3F0} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="W7Cover" component={W7Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="P6Cover" component={P6Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="A1Cover" component={A1Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
