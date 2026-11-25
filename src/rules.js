@@ -60,7 +60,7 @@ export function buildMessage(kw, caption) {
 }
 
 // ---------- DM sequence (ManyChat-style) ----------
-// 1 intro [Send it] -> 2 follow [I'm following] -> 3 email (typed) -> 4 on its way + guide.
+// 1 intro [Send it] -> 2 follow [I'm following] -> 3 email (typed, non-Gumroad only) -> 4 guide link / "sent to your email".
 
 // What each keyword's guide holds, in a few words (used in message 1).
 export const WHAT = {
@@ -85,11 +85,11 @@ export const BAD_EMAIL_TEXT = "hmm that doesn't look like an email, can you type
 
 // Message 4. Returns {text, url} for guides (url goes on a button), or {text} for PROMPT.
 export function finalMessage(kw, caption) {
-  if (kw === "PROMPT") return { text: "On its way 🚀\n\n" + PROMPT_TEXT };
+  if (kw === "PROMPT") return { text: PROMPT_TEXT };
   const g = GUIDES[kw];
   const cap = (caption || "").toLowerCase();
   const p = POINTERS.find((r) => r.kw === kw && (!r.contains || cap.includes(r.contains)));
-  return { text: `On its way 🚀 Here's ${g.name}, free (enter $0 at checkout).\n\n${p.text}`, url: g.link };
+  return { text: `Here's ${g.name} 👇 it's free, just enter $0 at checkout.\n\n${p.text}`, url: g.link };
 }
 
 export function isEmail(s) {

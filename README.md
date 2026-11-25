@@ -1,7 +1,7 @@
 # exact-dm: comment-to-DM bot for @theexactmethod
 
 Cloudflare Worker. Comment a keyword (NARROW, PLAIN, VIDEO, METHOD, PROMPT) → ManyChat-style DM sequence + public "check your DMs" reply:
-1. intro (private reply) [Send it 📩] → 2. follow ask [I'm following ✅] (checks is_user_follow_business, 2 nudges max, then lets through) → 3. asks for email (typed) → 4. "On its way 🚀" + pointer line + [Get the guide] button (PROMPT: the prompt text).
+1. intro (private reply) [Send it 📩] → 2. follow ask [I'm following ✅], skipped for followers → 3. Gumroad keywords: "Here's <guide> 👇" + pointer line + [Get the guide]; email keywords: "lmk which email" → Kit form email → "Sent ✅ check your inbox" (existing subscribers get the freebie in the DM).
 Emails are kept in KV `emails` and sent to Kit when secret `KIT_API_KEY` is set. Copy lives in `src/rules.js`.
 
 - `src/rules.js`: keywords, guide links, pointer lines per Reel caption, PROMPT text. Edit and push to `bot` to change replies.
