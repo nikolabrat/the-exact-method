@@ -104,7 +104,7 @@ async function handleComment(env, c) {
   if (!kw) return;
 
   const key = `c:${c.id}`;
-  if (await env.BOT.get(key)) return; // handled before the Durable Object existed
+  if (await kvGet(env, key)) return; // handled before the Durable Object existed
   if (!(await store(env).claim(key))) return; // webhook and poll can't both send
 
   const caption = c.mediaId ? await getCaption(env, auth, c.mediaId) : "";
@@ -113,16 +113,16 @@ async function handleComment(env, c) {
     message: buttons(introText(kw), [{ type: "postback", title: BTN.send, payload: `SEND|${kw}|${c.mediaId || ""}` }]),
   });
   if (!dm.ok) {
-    await env.BOT.put(key, "dm-failed", { expirationTtl: 60 * 60 * 24 * 30 });
+    await kvPut(env, key, "dm-failed", { expirationTtl: 60 * 60 * 24 * 30 });
     await log(env, { kind: "dm-failed", user: mask(c.username), kw, src: c.source, err: dm.error });
     return;
   }
   const rid = (dm.data && dm.data.recipient_id) || c.fromId;
   if (rid) await saveState(env, rid, { kw, media: c.mediaId || "", caption, stage: "intro", tries: 0, user: c.username || "" });
-  const n = (parseInt((await env.BOT.get("replyIndex")) || "0", 10) + 1) % PUBLIC_REPLIES.length;
-  await env.BOT.put("replyIndex", String(n));
+  const n = (parseInt((await kvGet(env, "replyIndex")) || "0", 10) + 1) % PUBLIC_REPLIES.length;
+  await kvPut(env, "replyIndex", String(n));
   const pub = await ig(auth, `/${c.id}/replies`, "POST", { message: PUBLIC_REPLIES[n] });
-  await env.BOT.put(key, pub.ok ? "done" : "dm-ok-reply-failed", { expirationTtl: 60 * 60 * 24 * 30 });
+  await kvPut(env, key, pub.ok ? "done" : "dm-ok-reply-failed", { expirationTtl: 60 * 60 * 24 * 30 });
   await log(env, { kind: "sent", user: mask(c.username), kw, src: c.source, reply: pub.ok ? "ok" : pub.error });
 }
 
@@ -148,6 +148,18 @@ export class Store extends DurableObject {
     await this.ctx.storage.put("log", arr.slice(0, 300));
   }
   async readLog(n) { return ((await this.ctx.storage.get("log")) || []).slice(0, n); }
+}
+
+// Workers KV allows only 1000 writes a day on the free plan (the 2-minute poll used them all up by
+// the afternoon of 25 Nov, so new comments and emails failed). All writes now go to the Durable
+// Object; KV is only read as a fallback for keys written before this change.
+async function kvGet(env, k) {
+  const v = await store(env).get("kv:" + k);
+  if (v !== null && v !== undefined) return v;
+  try { return await env.BOT.get(k); } catch { return null; }
+}
+async function kvPut(env, k, v) {
+  await store(env).put("kv:" + k, v);
 }
 
 function store(env) {
@@ -254,10 +266,10 @@ async function sendFinal(env, auth, igsid, st) {
 
 // Emails: kept in KV (list "emails") and, once KIT_API_KEY is set, added to Kit.
 async function saveEmail(env, e) {
-  const raw = await env.BOT.get("emails");
+  const raw = await kvGet(env, "emails");
   const list = raw ? JSON.parse(raw) : [];
   if (!list.some((x) => x.email === e.email && x.kw === e.kw)) list.push({ ...e, t: new Date().toISOString() });
-  await env.BOT.put("emails", JSON.stringify(list));
+  await kvPut(env, "emails", JSON.stringify(list));
   if (!env.KIT_API_KEY) return false;
   return addToKit(env, e);
 }
@@ -291,7 +303,7 @@ async function addToKit(env, e) {
     if (!sub.ok) { await log(env, { kind: "kit-failed", step: "subscriber", status: sub.status }); return false; }
   }
   const tagName = `ig-${e.kw}`;
-  let tagId = await env.BOT.get(`kittag:${tagName}`);
+  let tagId = await kvGet(env, `kittag:${tagName}`);
   if (!tagId) {
     const list = await (await fetch("https://api.kit.com/v4/tags?per_page=1000", { headers: H })).json();
     const found = ((list && list.tags) || []).find((t) => t.name === tagName);
@@ -300,7 +312,7 @@ async function addToKit(env, e) {
       const c = await (await fetch("https://api.kit.com/v4/tags", { method: "POST", headers: H, body: JSON.stringify({ name: tagName }) })).json();
       tagId = c && c.tag && c.tag.id ? String(c.tag.id) : null;
     }
-    if (tagId) await env.BOT.put(`kittag:${tagName}`, tagId);
+    if (tagId) await kvPut(env, `kittag:${tagName}`, tagId);
   }
   if (!tagId) { await log(env, { kind: "kit-failed", step: "tag" }); return emailed; }
   const t = await fetch(`https://api.kit.com/v4/tags/${tagId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email }) });
@@ -310,12 +322,12 @@ async function addToKit(env, e) {
 
 // Emails collected before KIT_API_KEY existed are sent to Kit once, on the first run after the key is added.
 async function kitBackfill(env) {
-  if (!env.KIT_API_KEY || (await env.BOT.get("kitBackfill2"))) return;
-  await env.BOT.put("kitBackfill2", "1");
+  if (!env.KIT_API_KEY || (await kvGet(env, "kitBackfill2"))) return;
+  await kvPut(env, "kitBackfill2", "1");
   const acc = await fetch("https://api.kit.com/v4/account", { headers: { "X-Kit-Api-Key": env.KIT_API_KEY } });
   const aj = acc.ok ? await acc.json() : null;
   await log(env, { kind: "kit-key", ok: acc.ok, status: acc.status, plan: aj && aj.account && aj.account.plan_type });
-  for (const e of JSON.parse((await env.BOT.get("emails")) || "[]")) await addToKit(env, e);
+  for (const e of JSON.parse((await kvGet(env, "emails")) || "[]")) await addToKit(env, e);
 }
 
 // ---------- poll backstop ----------
@@ -330,7 +342,7 @@ async function poll(env) {
     return;
   }
   for (const m of r.data.data || []) {
-    if (m.caption !== undefined) await env.BOT.put(`cap:${m.id}`, m.caption || "", { expirationTtl: 3600 });
+    if (m.caption !== undefined && (await kvGet(env, `cap:${m.id}`)) !== (m.caption || "")) await kvPut(env, `cap:${m.id}`, m.caption || "");
     for (const cm of (m.comments && m.comments.data) || []) {
       const ts = Date.parse(cm.timestamp);
       if (Date.now() - ts > WEEK) continue;
@@ -385,7 +397,7 @@ async function callback(url, env, req) {
     return page(`@${env.EXPECTED_USERNAME} was not shared in the login (got: ${names}${aj.error ? "; " + safeErr(aj) : ""}). Open /connect again and tick the Instagram account. Nothing saved.`);
   }
   const auth = { token, host: GRAPH, user_id: String(acct.id), username: acct.username, expires_at: Date.now() + 100 * 365 * 86400000 };
-  await env.BOT.put("auth", JSON.stringify(auth));
+  await kvPut(env, "auth", JSON.stringify(auth));
 
   const sub = await ig(auth, `/${auth.user_id}/subscribed_apps`, "POST", { subscribed_fields: ["comments", "messages", "messaging_postbacks"] });
   await log(env, { kind: "connected", user: acct.username, webhooks: sub.ok ? "subscribed" : sub.error });
@@ -399,7 +411,7 @@ async function callback(url, env, req) {
 // For (b) the host is detected once: Instagram-login token -> graph.instagram.com,
 // system-user token -> graph.facebook.com.
 async function getAuth(env) {
-  const raw = await env.BOT.get("auth");
+  const raw = await kvGet(env, "auth");
   const a = raw ? JSON.parse(raw) : null;
   if (!env.IG_TOKEN) return a && a.token ? a : null;
   const fp = env.IG_TOKEN.slice(-12) + ":v2"; // v2 = subscribe comments+messages+postbacks
@@ -407,7 +419,7 @@ async function getAuth(env) {
   const det = await detectToken(env.IG_TOKEN, env.EXPECTED_USERNAME);
   if (!det) { await log(env, { kind: "token-unusable" }); return a && a.token ? a : null; }
   const auth = { ...det, fp, expires_at: det.host === IG_GRAPH ? Date.now() + 50 * 86400000 : Date.now() + 100 * 365 * 86400000 };
-  await env.BOT.put("auth", JSON.stringify(auth));
+  await kvPut(env, "auth", JSON.stringify(auth));
   await log(env, { kind: "token-detected", user: auth.username, host: auth.host.includes("instagram") ? "instagram" : "facebook" });
   if (auth.host === IG_GRAPH) {
     const sub = await fetch(`${IG_GRAPH}/me/subscribed_apps?subscribed_fields=comments,messages,messaging_postbacks`, { method: "POST", headers: { Authorization: `Bearer ${env.IG_TOKEN}` } });
@@ -434,7 +446,7 @@ async function detectToken(token, expected) {
 }
 
 async function maybeRefresh(env) {
-  const raw = await env.BOT.get("auth");
+  const raw = await kvGet(env, "auth");
   const a = raw ? JSON.parse(raw) : null;
   if (!a || a.host !== IG_GRAPH) return; // system-user tokens never expire
   if (Date.now() - (a.refreshed_at || 0) < WEEK) return;
@@ -444,17 +456,17 @@ async function maybeRefresh(env) {
   if (j.access_token) {
     if (env.IG_TOKEN) a.refreshed = j.access_token; else a.token = j.access_token;
     a.refreshed_at = Date.now();
-    await env.BOT.put("auth", JSON.stringify(a));
+    await kvPut(env, "auth", JSON.stringify(a));
     await log(env, { kind: "token-refreshed" });
   } else await log(env, { kind: "token-refresh-failed", err: safeErr(j) });
 }
 
 async function getCaption(env, auth, mediaId) {
-  const cached = await env.BOT.get(`cap:${mediaId}`);
+  const cached = await kvGet(env, `cap:${mediaId}`);
   if (cached !== null) return cached;
   const r = await ig(auth, `/${mediaId}?fields=caption`, "GET");
   const cap = r.ok ? r.data.caption || "" : "";
-  await env.BOT.put(`cap:${mediaId}`, cap, { expirationTtl: 3600 });
+  await kvPut(env, `cap:${mediaId}`, cap, { expirationTtl: 3600 });
   return cap;
 }
 
@@ -493,7 +505,7 @@ async function showLog(env) {
 async function health(env) {
   const auth = await getAuth(env);
   const status = auth ? { connected: auth.username } : { connected: false };
-  status.emails = JSON.parse((await env.BOT.get("emails")) || "[]").length;
+  status.emails = JSON.parse((await kvGet(env, "emails")) || "[]").length;
   return new Response(JSON.stringify({ bot: "the-exact-method comment-to-DM", ...status }), { headers: { "Content-Type": "application/json" } });
 }
 
