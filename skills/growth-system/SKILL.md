@@ -347,6 +347,30 @@ a second one also hits, that combination is a locked formula: run it until it st
 experimenting. Goal: 2-3 locked formulas. Our own outliers are pipe 1 in section 10 and always beat competitor
 remixes.
 
+## 16. The road from first video to lead engine (day 7)
+
+Expectations, so we don't quit early (quitting comes from expecting results the phase can't give):
+
+| Phase | Reps (at 4-5 a week) | Goal | Target per Reel |
+| --- | --- | --- | --- |
+| 1. Skill development | months 1-3, ~50 Reels | close the skill gaps, get clean data | 5-10K **qualified** views by rep 50; any outlier is a bonus |
+| 2. Systems | months 4-6, ~50 more | lock 2-3 winning formulas, test in batches | 10-20K qualified views |
+| 3. Compounding | months 7-12, ~100 more | scale output, refine the funnel | 25-50K+ qualified views |
+
+- **Volume is the clock, not time.** 3 a week turns 6 months into 10; 2 a week into 16. Keep 5 a week (Mon-Fri).
+- **The danger zone is around rep 25**, right before the curve starts. Don't change the plan there because of flat
+  numbers; read the batch (section 15) and fix one brick.
+- **Feedback speed is the real advantage.** The 11 questions tell us what to look at; to learn which brick to fix
+  on OUR video, compare each batch against our own baseline and against the outliers we remixed, and say which
+  brick lost (topic, hook execution at 0:00-0:04, format...). Our stand-in for a coach: the batch analysis plus an
+  outside review (fresh-eyes audit) of the weakest Reel each batch.
+- Ideas and Hooks were the only two bricks this course covered in depth; Format, Story Structure, Visual Layout and
+  CTA get the 11-question check only.
+- Where we stand (25 Nov): about 25-30 Reels in, Phase 1. Measure "qualified views" = views from people who use AI
+  to build, sell or create (not raw reach).
+
+The rest of the email is the Short Form Academy pitch ($1,297 a month, 2 feedback calls a week); not adopted.
+
 ## Source log
 
 | Email | Date received | What it added |
@@ -360,7 +384,9 @@ remixes.
 | Day 5: First 3 Reps (make your best 3 videos this week) | 23 Nov 2026 | Section 14: 5x+ outliers in 3 formats, hold 4 constant change 1, transcript as template, freebie live before posting |
 | Day 6: The 11-Point Video Improvement Checklist | 24 Nov 2026 | Section 15: the 11 questions (one per brick), batch analysis per 10 Reels with one hypothesis per batch, triple down on 10x+ own outliers; reel-audit.md section H |
 
-Coming: day 7 "0->100 Roadmap" (phases, what to expect, "two paths": expect the academy pitch).
+| Day 7: Your roadmap from first video to lead engine | 25 Nov 2026 | Section 16: the 3 phases with view targets, volume is the clock, rep-25 danger zone, feedback speed; academy pitch left out |
+
+The 7-day course is complete (Email 0 + Days 1-7 + the writing guide).
 
 Left out on purpose: his credentials and income claims (1B views, $1M profit, 150+ clients), the
 "1M business owners making $1M" mission, and the tool and academy he sells (Sandcastles, Short Form
