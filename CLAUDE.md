@@ -86,14 +86,14 @@ Commit as `git -c user.email=nblazarov07@gmail.com -c user.name=nikolabrat commi
 
 | Task | When | Notes |
 | --- | --- | --- |
-| Instagram comment keywords → DM the guide | `CRON_TZ=Europe/Sofia 48 0,8-22/2 * * *` | Being replaced by the DM bot (below); switch off once the bot test passes. Until then: NARROW/PLAIN/VIDEO; DM + pointer line per Reel caption. |
+| ~~Instagram comment keywords → DM the guide~~ | switched off 25 Nov | Replaced by the DM bot (3b), which is the official keyword delivery. Kept disabled (trig_01TXEiDaG5Eg9imrwsLbhUd3) as a fallback only. |
 | Daily pins 16-30 Nov | 20:17 Sofia, 16-30 Nov | reads pin-media/b45/pins.json. Switch off after 30 Nov |
 | One-shot Reel publish | the Reel's day, 20:00 Sofia | only calls media_publish on a container made the day before or same day (valid 24 h) |
 
 Rules: never wake a long chat; create with `create_trigger`, then set model `claude-sonnet-5-5` with `update_trigger`.
 Use `list_triggers` before making a new one.
 
-## 3b. Comment-to-DM bot (own ManyChat, from 24 Nov)
+## 3b. Comment-to-DM bot (own ManyChat): the official keyword delivery since 25 Nov
 
 Cloudflare Worker `exact-dm` (https://exact-dm.theexactmethodhq.workers.dev), code on branch `bot`
 (clone separately; push = deploy). Meta app "Exact Method DM" 1400181691959713 (Unified login, Live).
