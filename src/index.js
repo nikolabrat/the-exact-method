@@ -285,19 +285,14 @@ async function addToKit(env, e) {
   await log(env, { kind: "kit-lookup", status: lr.status, n: ((look && look.subscribers) || []).length });
   const known = ((look && look.subscribers) || []).some((x) => (x.email_address || "").toLowerCase() === e.email); // match exactly, don't trust the filter
   if (formId && !known) {
-    // Same request an embedded Kit form makes: creates the subscriber and sends the form's confirmation email.
-    const f = await fetch(`https://app.kit.com/forms/${formId}/subscriptions`, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
-      body: new URLSearchParams({ email_address: e.email }).toString(),
-    });
-    emailed = f.ok;
-    await log(env, { kind: "kit-form", ok: f.ok, status: f.status });
-    if (!f.ok) {
-      const g = await fetch(`https://api.kit.com/v4/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "inactive" }) });
-      const h = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email }) });
-      await log(env, { kind: "kit-form-api", sub: g.status, form: h.status });
-    }
+    // Kit's documented route: create the subscriber as inactive, then add them to the double opt-in
+    // form; that sends the form's incentive email (which carries the freebie). The public form
+    // endpoint answered 200 but created nobody (25 Nov), so it is no longer used.
+    const g = await fetch(`https://api.kit.com/v4/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "inactive" }) });
+    const h = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, referrer: "https://www.instagram.com/theexactmethod/" }) });
+    const hj = await h.json().catch(() => null);
+    emailed = g.ok && h.ok;
+    await log(env, { kind: "kit-form-api", sub: g.status, form: h.status, state: hj && hj.subscriber && hj.subscriber.state });
   } else if (!known) {
     const sub = await fetch("https://api.kit.com/v4/subscribers", { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "active" }) });
     if (!sub.ok) { await log(env, { kind: "kit-failed", step: "subscriber", status: sub.status }); return false; }
