@@ -97,14 +97,16 @@ Use `list_triggers` before making a new one.
 
 Cloudflare Worker `exact-dm` (https://exact-dm.theexactmethodhq.workers.dev), code on branch `bot`
 (clone separately; push = deploy). Meta app "Exact Method DM" 1400181691959713 (Unified login, Live).
-Secrets in Cloudflare (never in git, the user sets them): `IG_TOKEN`, `META_APP_SECRET`, `KIT_API_KEY`.
-Check `/` (connected?) and `/log` (events, usernames masked). Local tests: `node flow2.mjs`, `bugtest.mjs`, `kit2.mjs`.
+Secrets in Cloudflare (never in git, the user sets them): `IG_TOKEN`, `META_APP_SECRET` (`KIT_API_KEY` is unused since 25 Nov).
+Check `/` (connected?) and `/log` (events, usernames masked). Local tests: `node --import ./test/register.mjs test/e2e.mjs`.
+Flow (every keyword): intro [Send it] → follow ask [I'm following] (skipped for followers) → delivery in the DM.
+No email capture in the bot (Kit removed 25 Nov): every freebie is a Gumroad product, Gumroad collects the email.
+All state lives in the Durable Object (KV free plan allows only 1000 writes/day; never write to KV).
 
-- Copy and rules: `src/rules.js` (keywords, guides, pointer lines per Reel caption, DM texts, `KIT_FORMS`).
+- Copy and rules: `src/rules.js` (keywords, guides, pointer lines per Reel caption, DM texts).
 - **New Reel with a Gumroad keyword:** add its pointer line (caption match) to `POINTERS`.
-- **New email keyword (non-Gumroad freebie):** create a Kit form `IG <KEYWORD> (DM bot)` (inline, Clare template),
-  put the freebie in its confirmation email, redirect after confirm to theexactmethod.com; add the keyword to
-  `KEYWORDS`, `WHAT`, `KIT_FORMS`, `EMAIL_SUBJECT`. Test with a real comment + a new plus address before posting.
+- **New freebie keyword:** list the freebie as a $0+ product on Gumroad first (ask the user: it is public), then add
+  the keyword to `KEYWORDS`, `WHAT`, `GUIDES` (name + link) and its pointer line. Test with a real comment before posting.
 - Commit with the identity read from the main clone (the privacy hook blocks the address in the command):
   `E="$(git -C <main clone> config user.email)"; GIT_AUTHOR_EMAIL="$E" GIT_COMMITTER_EMAIL="$E" ... git commit`.
 
