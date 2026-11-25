@@ -32,6 +32,8 @@ When the user asks what's up (today, tomorrow, this week), answer from live data
 4. Instagram: yesterday's Reel stats (log them in STATUS.md); new comments on recent Reels that are not
    keyword comments (questions, possible buyers) to reply to by hand.
 5. Gumroad sales since the last check (`/v2/sales`).
+6. DM bot health: `curl https://exact-dm.theexactmethodhq.workers.dev/` (connected?) and `/log` since the last
+   check. Flag any `error`, `dm-failed`, `poll-failed` or `token-*` entry, and keyword comments with no `sent`.
 Reply with a short ordered list: what you will do today, what the user does (with exact files/prompts),
 and what runs on its own. Then wait for the go-ahead.
 
