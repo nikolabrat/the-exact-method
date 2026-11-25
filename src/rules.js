@@ -15,6 +15,7 @@ export const GUIDES = {
 // `contains` is matched case-insensitively against the Reel caption; omit it for the keyword's default.
 export const POINTERS = [
   { kw: "METHOD", text: "Habit one from the video, narrowing the question, is this whole guide: the three prompts are written out word for word, ready to copy." },
+  { kw: "VIDEO", contains: "6-block brief", text: "The 6-block brief from the video is in section 07, The Brief (page 9), ready to fill in. The prompts that turn it into a video are in sections 08 and 09 (pages 10 and 11), and the 8 phone checks are in section 10 (page 12)." },
   { kw: "VIDEO", contains: "no-slop-motion", text: "The skill from the video, no-slop-motion, is in section 13, The Anti-Slop Toolkit (page 15), with its GitHub link and the full banned list in plain words." },
   { kw: "VIDEO", contains: "never-list", text: "The never-list is part of the brief in section 07, The Brief (page 9), and the 8 checks for every render are in section 10 (page 12)." },
   { kw: "VIDEO", contains: "video editor", text: "The full workflow starts in section 02 (page 3), and the prompts are written out in sections 08 and 09 (pages 10 and 11)." },
