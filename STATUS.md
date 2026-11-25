@@ -93,6 +93,17 @@ Goal: learn how buyers describe their AI problems; no selling in first messages.
 | V-2 | 18 Nov | 28.1 s | 125 | 72% | 6.0 s | 1 | 0 |  |  |  |  |
 | N-7 | 19 Nov | 30.0 s | 95 | 58.9% | 7.3 s | 1 | 0 | 0 (5 total) | 0 |  | first Reel with the frame-0 headline + real run on frame 0 (vs V-2 skip 72%). 2 h: reach 23 (flag); 48 h: 95, lowest skip of the 3 |
 | P-6 | 20 Nov | 24.1 s | 22 | 64.0% | 6.5 s | 1 | 0 | 0 | 0 |  | two real answers side by side on frame 0 + giveaway counter; first talking-bust Sage. 24 h: reach 22 only (N-7 was 95 at 48 h): distribution problem, not the video (skip and watch in line) |
+| W-7 | 23 Nov | 59.6 s | 106 | 73.5% | 6.6 s | 1 | 0 |  | 2 (user tests) |  | (stats 25 Nov 22:00) |
+| N-8 | 24 Nov | 67.7 s | 58 | 93.8% | 5.1 s | 1 | 0 |  | 1 (user test) |  | (stats 25 Nov 22:00) |
+| V-3 | 25 Nov | 76.8 s | 85 | 93.5% | 5.3 s | 1 | 0 |  | 1 (user test) |  | 2 h only; recheck at 24 h |
+
+Finding (25 Nov): skip rate has climbed Reel after Reel since the talking-bust layout came in: N-7 58.9% (full-body
+Sage, real ChatGPT chat as the main picture) → P-6 64% (first bust) → W-7 73.5% → N-8 93.8% → V-3 93.5%. The last
+three open on a designed poster (big headline + dense card + big Sage bust) that looks the same every day, and two
+in a row opened with "Stop ...". V-3's hook speaks to Reel creators, not the buyer pool. Samples are tiny (58-106
+reach), so treat this as a hypothesis. Test for the next batch (one change): frame 0 = a real, recognisable AI
+chat (the W-5/A-1/N-7 look, skip 52-60%) with the hook as the question in it; buyer-pool problem in the first words;
+no "Stop" opener.
 
 Earlier Reels (reach / avg watch): 9 Nov 344 / 12.1 s (best), 10 Nov 225 / 7.9 s, 1 Nov 186 / 9.6 s,
 14 Nov 109 / 3.8 s. Account median reach about 130. Followers: 5 (16 Nov).
