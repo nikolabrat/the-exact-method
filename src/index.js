@@ -3,7 +3,7 @@
 // Two paths feed the same handler: Meta webhooks (instant) and a 2-minute poll (backstop).
 
 import { DurableObject } from "cloudflare:workers";
-import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN, needsEmail, KIT_FORMS, emailSentText } from "./rules.js";
+import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, finalMessage, BTN } from "./rules.js";
 
 // Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
 // configuration, a never-expiring system-user token, and graph.facebook.com.
@@ -29,7 +29,7 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(Promise.all([poll(env), maybeRefresh(env), kitBackfill(env)]));
+    ctx.waitUntil(Promise.all([poll(env), maybeRefresh(env)]));
   },
 };
 
@@ -126,7 +126,7 @@ async function handleComment(env, c) {
   await log(env, { kind: "sent", user: mask(c.username), kw, src: c.source, reply: pub.ok ? "ok" : pub.error });
 }
 
-// ---------- DM sequence: button taps and typed email ----------
+// ---------- DM sequence: button taps ----------
 
 function buttons(text, btns) {
   return { attachment: { type: "template", payload: { template_type: "button", text, buttons: btns } } };
@@ -227,102 +227,24 @@ async function handleMessaging(env, ev) {
     return afterFollow(env, auth, igsid, st, f === true ? "followed" : "let-through");
   }
 
+  // Chats left waiting for an email from the old Kit flow (removed 25 Nov): deliver on their next message.
   if (st.stage === "email" && text) {
-    const m = text.match(/[^\s@<>()]+@[^\s@<>()]+\.[a-z]{2,24}/i);
-    if (!m || !isEmail(m[0])) {
-      if (st.tries >= 3) return;
-      r = await send(auth, igsid, { text: BAD_EMAIL_TEXT });
-      await saveState(env, igsid, { ...st, tries: st.tries + 1 });
-      return log(env, { kind: "bad-email", user: mask(st.user), ok: r.ok });
-    }
-    const email = m[0].toLowerCase();
-    const viaEmail = await saveEmail(env, { email, kw: st.kw, user: st.user, igsid });
-    await saveState(env, igsid, { ...st, stage: "done", email, viaEmail });
-    if (viaEmail) {
-      r = await send(auth, igsid, { text: emailSentText(st.kw) });
-      return log(env, { kind: "step4-emailed", user: mask(st.user), kw: st.kw, ok: r.ok, err: r.error });
-    }
-    return sendFinal(env, auth, igsid, st); // fallback: deliver in the DM
+    await saveState(env, igsid, { ...st, stage: "done" });
+    return sendFinal(env, auth, igsid, st);
   }
 }
 
-// After the follow step: Gumroad guides go straight to delivery, others ask for the email first.
+// After the follow step: straight to delivery (Gumroad link, or the PROMPT text in the DM).
 async function afterFollow(env, auth, igsid, st, why) {
-  if (!needsEmail(st.kw)) {
-    await saveState(env, igsid, { ...st, stage: "done" });
-    await log(env, { kind: "follow-ok", user: mask(st.user), why });
-    return sendFinal(env, auth, igsid, st);
-  }
-  const r = await send(auth, igsid, { text: EMAIL_TEXT });
-  await saveState(env, igsid, { ...st, stage: "email", tries: 0 });
-  return log(env, { kind: "step3-email", user: mask(st.user), why, ok: r.ok, err: r.error });
+  await saveState(env, igsid, { ...st, stage: "done" });
+  await log(env, { kind: "follow-ok", user: mask(st.user), why });
+  return sendFinal(env, auth, igsid, st);
 }
 
 async function sendFinal(env, auth, igsid, st) {
   const f = finalMessage(st.kw, st.caption);
   const r = await send(auth, igsid, f.url ? buttons(f.text, [{ type: "web_url", title: BTN.guide, url: f.url }]) : { text: f.text });
   await log(env, { kind: "step4-delivered", user: mask(st.user), kw: st.kw, ok: r.ok, err: r.error });
-}
-
-// Emails: kept in KV (list "emails") and, once KIT_API_KEY is set, added to Kit.
-async function saveEmail(env, e) {
-  const raw = await kvGet(env, "emails");
-  const list = raw ? JSON.parse(raw) : [];
-  if (!list.some((x) => x.email === e.email && x.kw === e.kw)) list.push({ ...e, t: new Date().toISOString() });
-  await kvPut(env, "emails", JSON.stringify(list));
-  if (!env.KIT_API_KEY) return false;
-  return addToKit(env, e);
-}
-
-// Kit (v4): create/refresh the subscriber, then tag them with the keyword (tag "ig-PROMPT" etc.,
-// created on first use). Tags let a broadcast go to everyone who asked for one freebie.
-async function addToKit(env, e) {
-  const H = { "Content-Type": "application/json", "X-Kit-Api-Key": env.KIT_API_KEY };
-  let emailed = false;
-  const formId = KIT_FORMS[e.kw];
-  const lr = await fetch(`https://api.kit.com/v4/subscribers?status=all&email_address=${encodeURIComponent(e.email)}`, { headers: H });
-  const look = await lr.json().catch(() => null);
-  await log(env, { kind: "kit-lookup", status: lr.status, n: ((look && look.subscribers) || []).length });
-  const known = ((look && look.subscribers) || []).some((x) => (x.email_address || "").toLowerCase() === e.email); // match exactly, don't trust the filter
-  if (formId && !known) {
-    // Kit's documented route: create the subscriber as inactive, then add them to the double opt-in
-    // form; that sends the form's incentive email (which carries the freebie). The public form
-    // endpoint answered 200 but created nobody (25 Nov), so it is no longer used.
-    const g = await fetch(`https://api.kit.com/v4/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "inactive" }) });
-    const h = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, referrer: "https://www.instagram.com/theexactmethod/" }) });
-    const hj = await h.json().catch(() => null);
-    emailed = g.ok && h.ok;
-    await log(env, { kind: "kit-form-api", sub: g.status, form: h.status, state: hj && hj.subscriber && hj.subscriber.state });
-  } else if (!known) {
-    const sub = await fetch("https://api.kit.com/v4/subscribers", { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email, state: "active" }) });
-    if (!sub.ok) { await log(env, { kind: "kit-failed", step: "subscriber", status: sub.status }); return false; }
-  }
-  const tagName = `ig-${e.kw}`;
-  let tagId = await kvGet(env, `kittag:${tagName}`);
-  if (!tagId) {
-    const list = await (await fetch("https://api.kit.com/v4/tags?per_page=1000", { headers: H })).json();
-    const found = ((list && list.tags) || []).find((t) => t.name === tagName);
-    if (found) tagId = String(found.id);
-    else {
-      const c = await (await fetch("https://api.kit.com/v4/tags", { method: "POST", headers: H, body: JSON.stringify({ name: tagName }) })).json();
-      tagId = c && c.tag && c.tag.id ? String(c.tag.id) : null;
-    }
-    if (tagId) await kvPut(env, `kittag:${tagName}`, tagId);
-  }
-  if (!tagId) { await log(env, { kind: "kit-failed", step: "tag" }); return emailed; }
-  const t = await fetch(`https://api.kit.com/v4/tags/${tagId}/subscribers`, { method: "POST", headers: H, body: JSON.stringify({ email_address: e.email }) });
-  await log(env, { kind: "kit", ok: t.ok, tag: tagName, known, emailed });
-  return emailed;
-}
-
-// Emails collected before KIT_API_KEY existed are sent to Kit once, on the first run after the key is added.
-async function kitBackfill(env) {
-  if (!env.KIT_API_KEY || (await kvGet(env, "kitBackfill2"))) return;
-  await kvPut(env, "kitBackfill2", "1");
-  const acc = await fetch("https://api.kit.com/v4/account", { headers: { "X-Kit-Api-Key": env.KIT_API_KEY } });
-  const aj = acc.ok ? await acc.json() : null;
-  await log(env, { kind: "kit-key", ok: acc.ok, status: acc.status, plan: aj && aj.account && aj.account.plan_type });
-  for (const e of JSON.parse((await kvGet(env, "emails")) || "[]")) await addToKit(env, e);
 }
 
 // ---------- poll backstop ----------
@@ -500,7 +422,6 @@ async function showLog(env) {
 async function health(env) {
   const auth = await getAuth(env);
   const status = auth ? { connected: auth.username } : { connected: false };
-  status.emails = JSON.parse((await kvGet(env, "emails")) || "[]").length;
   return new Response(JSON.stringify({ bot: "the-exact-method comment-to-DM", ...status }), { headers: { "Content-Type": "application/json" } });
 }
 

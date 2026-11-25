@@ -61,7 +61,7 @@ export function buildMessage(kw, caption) {
 }
 
 // ---------- DM sequence (ManyChat-style) ----------
-// 1 intro [Send it] -> 2 follow [I'm following] -> 3 email (typed, non-Gumroad only) -> 4 guide link / "sent to your email".
+// 1 intro [Send it] -> 2 follow [I'm following] (skipped for followers) -> 3 Gumroad link (or the PROMPT text) in the DM.
 
 // What each keyword's guide holds, in a few words (used in message 1).
 export const WHAT = {
@@ -81,9 +81,6 @@ export function introText(kw) {
 
 export const FOLLOW_TEXT = "Before I send it: are you following @theexactmethod?\n\nI post AI workflows like this several times a week, so you won't miss the next one.";
 export const NOT_FOLLOWING_TEXT = "I can't see the follow yet 👀\n\nTap Follow on @theexactmethod, then tap the button again.";
-export const EMAIL_TEXT = "lmk which email to send it to 👇\n\n(you'll also get my new AI workflows there sometimes, unsubscribe anytime)";
-export const BAD_EMAIL_TEXT = "hmm that doesn't look like an email, can you type it again?";
-
 // Message 4. Returns {text, url} for guides (url goes on a button), or {text} for PROMPT.
 export function finalMessage(kw, caption) {
   if (kw === "PROMPT") return { text: PROMPT_TEXT };
@@ -91,23 +88,4 @@ export function finalMessage(kw, caption) {
   const cap = (caption || "").toLowerCase();
   const p = POINTERS.find((r) => r.kw === kw && (!r.contains || cap.includes(r.contains)));
   return { text: `Here's ${g.name} 👇 it's free, just enter $0 at checkout.\n\n${p.text}`, url: g.link };
-}
-
-export function isEmail(s) {
-  return /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test((s || "").trim());
-}
-
-// Gumroad guides (NARROW, METHOD, PLAIN, VIDEO) skip the email step: Gumroad collects the email at checkout.
-// Every other keyword (PROMPT and future non-Gumroad freebies) asks for the email before delivery.
-export function needsEmail(kw) {
-  return !GUIDES[kw];
-}
-
-// Email-group delivery: each email keyword has a Kit form whose confirmation email holds the freebie.
-// The bot signs the person up to that form (like a real form signup), so Kit sends that email.
-export const KIT_FORMS = { PROMPT: "10238346" };
-export const EMAIL_SUBJECT = { PROMPT: "Your 2 prompts, word for word" };
-
-export function emailSentText(kw) {
-  return `Sent ✅ check your inbox for "${EMAIL_SUBJECT[kw]}" from The Exact Method.\n\nnot there in a minute? look in Promotions or spam`;
 }
