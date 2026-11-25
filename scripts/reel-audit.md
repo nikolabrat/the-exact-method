@@ -50,6 +50,10 @@ Length: **45-90 s** (Kallaway's ideal; the 15-25 s test didn't beat it). Every s
 | C8 | Spoken hook: hookscore ≥ 90 (last check, not the main one); first word spoken by frame ~3 | `hookscore.py` |
 | C9 | Motion in the first frame; screen filled, no big empty areas | |
 | C10 | Loop: last frame = frame 0, ends on a word from the hook | |
+| C11 ⛔ | **Batch 2 test (from 26 Nov):** frame 0 = a real, recognisable AI chat (ChatGPT/Claude look) as the main picture, the hook typed in it as the user's question, Sage small below it (split screen: result on top, presenter below, one caption line at the seam). No designed poster as the main picture | STATUS finding 25 Nov |
+| C12 ⛔ | First words = a problem everyone in the buyer pool has (uses AI to build, sell or create); no niche-only hook (e.g. Reel makers) in the first 3 s | frame-0 test (3) |
+| C13 ⛔ | No "Stop …" opener, and frame 0 must look clearly different from the last 2 Reels' frame 0 (put the 3 frame-0 stills side by side) | |
+| C14 | Hook structure remixed from a named outlier's text/visual/spoken hook (growth-system §10, §12); 30-40% of the build time goes to the hook | |
 
 ## D. Script
 
