@@ -1,0 +1,900 @@
+{
+"video": "/home/claude/the-exact-method/workspace/remotion/out/V3-tt-voice.mov",
+"keep_audio": "yes",
+"cues": [
+{
+"t": 2.267,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/slap.wav",
+"role": "foley",
+"gain_db": -20,
+"anchor": "arrive"
+},
+{
+"t": 3.233,
+"label": "6 blocks spins",
+"file": "/root/sfx-library/elevenlabs/clocktick.wav",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 3.667,
+"label": "brief card nudges up",
+"file": "/root/sfx-library/elevenlabs/slide.wav",
+"role": "foley",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 5.0,
+"label": "push into the phone",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_digital-whoosh-soft-wav_70ebf580.mp3",
+"role": "foley",
+"gain_db": -12,
+"slice": [
+0,
+0.5
+],
+"anchor": "arrive"
+},
+{
+"t": 5.133,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/phoneslide.wav",
+"role": "foley",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 6.867,
+"label": "editing app card",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/snap.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 6.933,
+"label": "never opened stamp",
+"file": "/root/sfx-library/elevenlabs/stampthunk.wav",
+"role": "hit",
+"gain_db": -8,
+"highpass": 160,
+"anchor": "arrive"
+},
+{
+"t": 7.767,
+"label": "editing app crossed",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_scribbling-1-2-aif_4f0d6117.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0.3,
+0.7
+],
+"anchor": "arrive"
+},
+{
+"t": 7.933,
+"label": "second cross",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 8.867,
+"label": "phone out, card in",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_swing-1-9_84da624a.mp3",
+"role": "foley",
+"gain_db": -10,
+"slice": [
+0,
+0.4
+],
+"anchor": "arrive"
+},
+{
+"t": 8.933,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/flutter.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 9.067,
+"label": "card lands centre",
+"file": "/root/sfx-library/elevenlabs/stickypress.wav",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 10.5,
+"label": "block 1 flick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -24,
+"anchor": "arrive"
+},
+{
+"t": 10.7,
+"label": "block 2 flick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -24,
+"anchor": "arrive"
+},
+{
+"t": 10.9,
+"label": "block 3 flick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/expand.mp3",
+"role": "ui",
+"gain_db": -24,
+"anchor": "arrive"
+},
+{
+"t": 11.1,
+"label": "block 4 flick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/toggle-on.mp3",
+"role": "ui",
+"gain_db": -24,
+"anchor": "arrive"
+},
+{
+"t": 11.3,
+"label": "block 5 flick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/swipe.mp3",
+"role": "ui",
+"gain_db": -24,
+"anchor": "arrive"
+},
+{
+"t": 11.5,
+"label": "block 6 flick",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/reaction.mp3",
+"role": "ui",
+"gain_db": -24,
+"anchor": "arrive"
+},
+{
+"t": 11.733,
+"label": "copy-paste ready stamp",
+"file": "/root/sfx-library/elevenlabs/bookthump.wav",
+"role": "foley",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 13.867,
+"label": "rail dot 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/check.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 13.967,
+"label": "block 1 opens",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 14.0,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/cardslap.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 15.533,
+"label": "mine sticker",
+"file": "/root/sfx-library/elevenlabs/tape.wav",
+"role": "foley",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 16.067,
+"label": "people who build",
+"file": "/root/sfx-library/openverse-cc0/pen_tick/pen_tick_pen-writing-on-paper-mp3_d3889b3e.mp3",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0.0,
+0.6
+],
+"anchor": "arrive"
+},
+{
+"t": 16.633,
+"label": "build highlight",
+"file": "/root/sfx-library/elevenlabs/markersq.wav",
+"role": "foley",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 18.133,
+"label": "rail dot 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 18.233,
+"label": "block 2 opens",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 18.267,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/stack.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 19.067,
+"label": "voice file row 1",
+"file": "/root/sfx-library/openverse-cc0/paper_slide/paper_slide_paper-slide-wav_05745fd2.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0,
+0.3
+],
+"anchor": "arrive"
+},
+{
+"t": 19.9,
+"label": "voice file row 2",
+"file": "/root/sfx-library/elevenlabs/receipt.wav",
+"role": "foley",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 20.4,
+"label": "voice file row 3",
+"file": "/root/sfx-library/elevenlabs/cardfly.wav",
+"role": "foley",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 21.367,
+"label": "rail dot 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/select.mp3",
+"role": "ui",
+"gain_db": -14,
+"anchor": "arrive"
+},
+{
+"t": 21.467,
+"label": "block 3 opens",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 21.5,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/puff.wav",
+"role": "foley",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 22.867,
+"label": "swatch 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 23.033,
+"label": "swatch 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 23.2,
+"label": "swatch 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 23.367,
+"label": "swatch 4",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/expand.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 24.3,
+"label": "font chip 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -15,
+"anchor": "arrive"
+},
+{
+"t": 24.5,
+"label": "font chip 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/toggle-on.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 24.7,
+"label": "font chip 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/swipe.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 25.533,
+"label": "Archivo specimen",
+"file": "/root/sfx-library/openverse-cc0/paper_flip/paper_flip_page-turn-04-wav_9837be9e.mp3",
+"role": "foley",
+"gain_db": -7,
+"slice": [
+0,
+0.5
+],
+"anchor": "arrive"
+},
+{
+"t": 25.533,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/cardfan.wav",
+"role": "foley",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 26.867,
+"label": "font flip 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 27.0,
+"label": "font flip 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 28.067,
+"label": "mint wipe",
+"file": "/root/sfx-library/elevenlabs/riser.wav",
+"role": "foley",
+"gain_db": -14
+},
+{
+"t": 29.167,
+"label": "rail dot 4",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 29.267,
+"label": "block 4 opens",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 29.3,
+"label": "waveform strip slides in",
+"file": "/root/sfx-library/elevenlabs/click.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive"
+},
+{
+"t": 29.3,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/push.wav",
+"role": "foley",
+"gain_db": -23,
+"anchor": "arrive"
+},
+{
+"t": 30.8,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/crumple.wav",
+"role": "foley",
+"gain_db": -18,
+"anchor": "arrive"
+},
+{
+"t": 31.1,
+"label": "cue chip every cue",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/snap.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 32.2,
+"label": "cue chip real voice",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 34.9,
+"label": "cue chip word",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 35.4,
+"label": "late guess lands",
+"file": "/root/sfx-library/elevenlabs/emptythud.wav",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 37.467,
+"label": "rail dot 5",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/check.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 37.467,
+"label": "rehook punch",
+"file": "/root/sfx-library/elevenlabs/impact.wav",
+"role": "hit",
+"gain_db": -14,
+"highpass": 160,
+"anchor": "arrive"
+},
+{
+"t": 37.567,
+"label": "block 5 opens",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 37.6,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/numslam.wav",
+"role": "foley",
+"gain_db": -20,
+"anchor": "arrive"
+},
+{
+"t": 39.367,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/rip.wav",
+"role": "foley",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 39.6,
+"label": "NEVER stamp",
+"file": "/root/sfx-library/elevenlabs/stamp.wav",
+"role": "hit",
+"gain_db": -12,
+"highpass": 160,
+"anchor": "arrive"
+},
+{
+"t": 40.767,
+"label": "default sample in",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_swing-1-5_2242127b.mp3",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0,
+0.4
+],
+"anchor": "arrive"
+},
+{
+"t": 40.833,
+"label": "never item 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/blocked.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 41.9,
+"label": "never item 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/blocked.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 43.3,
+"label": "never item 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/blocked.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 45.1,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/focussnap.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 45.5,
+"label": "defaults pile up",
+"file": "/root/sfx-library/elevenlabs/cardpile.wav",
+"role": "foley",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 46.833,
+"label": "everyones default sticker",
+"file": "/root/sfx-library/elevenlabs/coin.wav",
+"role": "foley",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 48.233,
+"label": "rail dot 6",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/copy.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 48.333,
+"label": "block 6 opens",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/collapse.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 48.367,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/markerstroke.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 49.8,
+"label": "1080 spins",
+"file": "/root/sfx-library/elevenlabs/pencilcurve.wav",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 50.633,
+"label": "1920 spins",
+"file": "/root/sfx-library/elevenlabs/scratch.wav",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 51.733,
+"label": "loudness meter",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/progress-step.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 52.533,
+"label": "needle settles -14",
+"file": "/root/sfx-library/openverse-cc0/stamp/stamp_thump-mp3_f65de1b6.mp3",
+"role": "hit",
+"gain_db": -16,
+"slice": [
+0,
+0.3
+],
+"highpass": 160,
+"anchor": "arrive"
+},
+{
+"t": 53.733,
+"label": "card slides left",
+"file": "/root/sfx-library/elevenlabs/swoosh2.wav",
+"role": "foley",
+"gain_db": -12,
+"anchor": "arrive"
+},
+{
+"t": 53.867,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/tick.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 54.433,
+"label": "code lines",
+"file": "/root/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+"role": "foley",
+"gain_db": -16,
+"slice": [
+1.0,
+3.0
+],
+"anchor": "arrive"
+},
+{
+"t": 56.6,
+"label": "still 1",
+"file": "/root/sfx-library/elevenlabs/matchstrike.wav",
+"role": "foley",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 56.8,
+"label": "still 2",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_a-simple-voice-saying-whoosh_2daf113b.mp3",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 57.0,
+"label": "still 3",
+"file": "/root/sfx-library/elevenlabs/airwhoosh.wav",
+"role": "foley",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 57.267,
+"label": "still check 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/check.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 57.733,
+"label": "still check 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 58.133,
+"label": "still check 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 59.867,
+"label": "phone returns",
+"file": "/root/sfx-library/elevenlabs/zoomwhoosh.wav",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 60.0,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/vertigo.wav",
+"role": "foley",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 60.567,
+"label": "x2 badge",
+"file": "/root/sfx-library/elevenlabs/scan.wav",
+"role": "foley",
+"gain_db": -12,
+"anchor": "arrive"
+},
+{
+"t": 61.833,
+"label": "speaker on",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/open.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 63.1,
+"label": "muted",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 64.6,
+"label": "check 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/select.mp3",
+"role": "ui",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 64.683,
+"label": "check 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -18,
+"anchor": "arrive"
+},
+{
+"t": 64.767,
+"label": "check 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/copy.mp3",
+"role": "ui",
+"gain_db": -18,
+"anchor": "arrive"
+},
+{
+"t": 64.85,
+"label": "check 4",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -21,
+"anchor": "arrive"
+},
+{
+"t": 64.933,
+"label": "check 5",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/check.mp3",
+"role": "ui",
+"gain_db": -18,
+"anchor": "arrive"
+},
+{
+"t": 65.017,
+"label": "check 6",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -18,
+"anchor": "arrive"
+},
+{
+"t": 65.1,
+"label": "check 7",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 65.183,
+"label": "check 8",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 65.767,
+"label": "full brief returns",
+"file": "/root/sfx-library/elevenlabs/chatblip.wav",
+"role": "foley",
+"gain_db": -12,
+"anchor": "arrive"
+},
+{
+"t": 65.9,
+"label": "headline swap",
+"file": "/root/sfx-library/elevenlabs/pop.wav",
+"role": "foley",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 67.833,
+"label": "writing the brief (the one chime)",
+"file": "/root/sfx-library/openverse-cc0/notification/notification_ui-sound-approval-high-pitched-bell-synt_a0bcc4b8.mp3",
+"role": "foley",
+"gain_db": -16,
+"slice": [
+0,
+0.8
+]
+},
+{
+"t": 69.267,
+"label": "comment bar in",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_wooden-stick-swing-1-3_4a28c24e.mp3",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 69.833,
+"label": "VIDEO typed",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/mechanical/typing.mp3",
+"role": "ui",
+"gain_db": -10,
+"anchor": "arrive"
+},
+{
+"t": 70.4,
+"label": "send",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -9,
+"anchor": "arrive"
+},
+{
+"t": 70.567,
+"label": "our DM arrives",
+"file": "/root/sfx-library/elevenlabs/notif.wav",
+"role": "foley",
+"gain_db": -11,
+"slice": [
+0,
+0.3
+],
+"anchor": "arrive"
+},
+{
+"t": 72.9,
+"label": "back to the phone",
+"file": "/root/sfx-library/openverse-cc0/swish/swish_swish-5_45227812.mp3",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+},
+{
+"t": 73.167,
+"label": "card back under the phone",
+"file": "/root/sfx-library/openverse-cc0/paper_slide/paper_slide_archive-cabinet-slide-open-close-wav_0eb94d99.mp3",
+"role": "foley",
+"gain_db": -11,
+"anchor": "arrive"
+}
+]
+}
