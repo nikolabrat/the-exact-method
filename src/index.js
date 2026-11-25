@@ -2,6 +2,7 @@
 // Comment with a keyword on @theexactmethod -> instant private-reply DM with the guide + public "check your DMs".
 // Two paths feed the same handler: Meta webhooks (instant) and a 2-minute poll (backstop).
 
+import { DurableObject } from "cloudflare:workers";
 import { findKeyword, PUBLIC_REPLIES, introText, FOLLOW_TEXT, NOT_FOLLOWING_TEXT, EMAIL_TEXT, BAD_EMAIL_TEXT, finalMessage, isEmail, BTN, needsEmail, KIT_FORMS, emailSentText } from "./rules.js";
 
 // Unified login (every Meta app made since late Oct 2026): Facebook Login for Business with a
@@ -103,8 +104,8 @@ async function handleComment(env, c) {
   if (!kw) return;
 
   const key = `c:${c.id}`;
-  if (await env.BOT.get(key)) return; // already handled
-  await env.BOT.put(key, "pending", { expirationTtl: 60 * 60 * 24 * 30 });
+  if (await env.BOT.get(key)) return; // handled before the Durable Object existed
+  if (!(await store(env).claim(key))) return; // webhook and poll can't both send
 
   const caption = c.mediaId ? await getCaption(env, auth, c.mediaId) : "";
   const dm = await ig(auth, `/${auth.user_id}/messages`, "POST", {
@@ -131,13 +132,36 @@ function buttons(text, btns) {
   return { attachment: { type: "template", payload: { template_type: "button", text, buttons: btns } } };
 }
 
+// Conversation state, comment claims and the log live in one Durable Object: strongly consistent,
+// so a step written a second ago is always read back (KV can serve a stale copy for ~60 s).
+export class Store extends DurableObject {
+  async get(k) { return (await this.ctx.storage.get(k)) ?? null; }
+  async put(k, v) { await this.ctx.storage.put(k, v); }
+  async claim(k) { // true only for the first caller
+    if (await this.ctx.storage.get(k)) return false;
+    await this.ctx.storage.put(k, Date.now());
+    return true;
+  }
+  async log(item) {
+    const arr = (await this.ctx.storage.get("log")) || [];
+    arr.unshift(item);
+    await this.ctx.storage.put("log", arr.slice(0, 300));
+  }
+  async readLog(n) { return ((await this.ctx.storage.get("log")) || []).slice(0, n); }
+}
+
+function store(env) {
+  return env.STORE.get(env.STORE.idFromName("main"));
+}
+
 async function saveState(env, igsid, st) {
-  await env.BOT.put(`s:${igsid}`, JSON.stringify({ ...st, ts: Date.now() }), { expirationTtl: 60 * 60 * 24 * 14 });
+  await store(env).put(`s:${igsid}`, { ...st, ts: Date.now() });
 }
 
 async function getState(env, igsid) {
-  const raw = await env.BOT.get(`s:${igsid}`);
-  return raw ? JSON.parse(raw) : null;
+  const st = await store(env).get(`s:${igsid}`);
+  if (!st || Date.now() - (st.ts || 0) > 14 * 86400000) return null;
+  return st;
 }
 
 async function send(auth, igsid, message) {
@@ -458,15 +482,11 @@ function mask(u) {
 
 // One KV key per entry (newest sorts first), so parallel writes never overwrite each other.
 async function log(env, item) {
-  const now = Date.now();
-  const key = `log:${String(9999999999999 - now).padStart(13, "0")}:${Math.random().toString(36).slice(2, 6)}`;
-  await env.BOT.put(key, JSON.stringify({ t: new Date(now).toISOString(), ...item }), { expirationTtl: 60 * 60 * 24 * 30 });
+  await store(env).log({ t: new Date().toISOString(), ...item });
 }
 
 async function showLog(env) {
-  const keys = (await env.BOT.list({ prefix: "log:", limit: 40 })).keys;
-  const items = [];
-  for (const k of keys) { const v = await env.BOT.get(k.name); if (v) items.push(JSON.parse(v)); }
+  const items = await store(env).readLog(60);
   return new Response(JSON.stringify(items, null, 1), { headers: { "Content-Type": "application/json" } });
 }
 

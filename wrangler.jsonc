@@ -5,6 +5,8 @@
   "workers_dev": true,
   "observability": { "enabled": true },
   "kv_namespaces": [{ "binding": "BOT" }],
+  "durable_objects": { "bindings": [{ "name": "STORE", "class_name": "Store" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Store"] }],
   "triggers": { "crons": ["*/2 * * * *"] },
   "vars": {
     "META_APP_ID": "1400181691959713",
