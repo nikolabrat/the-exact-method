@@ -3,6 +3,7 @@
   "main": "src/index.js",
   "compatibility_date": "2026-11-01",
   "workers_dev": true,
+  "observability": { "enabled": true },
   "kv_namespaces": [{ "binding": "BOT" }],
   "triggers": { "crons": ["*/2 * * * *"] },
   "vars": {

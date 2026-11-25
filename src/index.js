@@ -72,10 +72,10 @@ async function receiveWebhook(req, env, ctx) {
   for (const entry of body.entry || []) {
     for (const ev of entry.messaging || []) {
       if (ev.message && ev.message.is_echo) continue; // our own sends
-      jobs.push(handleMessaging(env, ev));
+      jobs.push(handleMessaging(env, ev).catch((e) => log(env, { kind: "error", where: "messaging", msg: String((e && e.stack) || e).slice(0, 500) })));
     }
   }
-  ctx.waitUntil(Promise.all(jobs));
+  ctx.waitUntil(Promise.all(jobs.map((j) => j.catch((e) => log(env, { kind: "error", where: "webhook-job", msg: String((e && e.stack) || e).slice(0, 500) })))));
   return new Response("EVENT_RECEIVED", { status: 200 });
 }
 
@@ -244,7 +244,9 @@ async function addToKit(env, e) {
   const H = { "Content-Type": "application/json", "X-Kit-Api-Key": env.KIT_API_KEY };
   let emailed = false;
   const formId = KIT_FORMS[e.kw];
-  const look = await (await fetch(`https://api.kit.com/v4/subscribers?status=all&email_address=${encodeURIComponent(e.email)}`, { headers: H })).json();
+  const lr = await fetch(`https://api.kit.com/v4/subscribers?status=all&email_address=${encodeURIComponent(e.email)}`, { headers: H });
+  const look = await lr.json().catch(() => null);
+  await log(env, { kind: "kit-lookup", status: lr.status, n: ((look && look.subscribers) || []).length });
   const known = ((look && look.subscribers) || []).some((x) => (x.email_address || "").toLowerCase() === e.email); // match exactly, don't trust the filter
   if (formId && !known) {
     // Same request an embedded Kit form makes: creates the subscriber and sends the form's confirmation email.
