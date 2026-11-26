@@ -1,0 +1,11 @@
+Comment PLAIN and I'll send you the free Plain Voice lists: one ready-to-paste list each for ChatGPT, Claude and Gemini.
+
+Same request in both tools (real runs, 26 Nov): a short email announcing 20% off everything in a handmade soap shop this weekend.
+
+ChatGPT: 4 exclamation marks, a bold line, a long dash and "Don't miss out."
+Claude: 3 emoji, a list of 3 and "It truly means the world."
+Both wrote "the perfect time."
+
+Then I pasted each tool's list into its settings once and sent the same request again. Claude: 0 emoji and the real dates. ChatGPT dropped the bold and the dash but kept the 4 exclamation marks, so read its emails once before you send.
+
+#chatgpttips #claudeai #emailmarketing
