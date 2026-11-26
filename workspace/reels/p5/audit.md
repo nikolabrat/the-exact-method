@@ -66,7 +66,7 @@ PENDING (needs today's real runs). ⛔ = hard line: a FAIL means rewrite before 
 | --- | --- | --- |
 | D1 | PASS | Hook · lock-in (**contrast**: "One shouts, one decorates." by 0:07) · body 1 (ChatGPT tells, Claude tells, shared "the perfect time") · rehook ~0:21 ("one rule can't fix ChatGPT and Claude. 2 tools, 2 different mistakes.") · body 2 (list per tool, after-results incl. what ChatGPT kept) · CTA · loop |
 | D2 ⛔ | PASS (plan) | By 0:04 the three real replies are on screen with a count under each |
-| D3 | PASS | Point 1: each tool signs differently (real tells). Point 2: one list per tool fixes most of it; honest leftover (ChatGPT kept 3 "!") |
+| D3 | PASS | Point 1: each tool signs differently (real tells). Point 2: one list per tool fixes most of it; honest leftover (ChatGPT kept 4 "!") |
 | D4 | PASS | Rehook at ~0:21, contrast with block 1 |
 | D5 | PASS | v2: one sentence per beat, none over 4 s; a new on-screen element per beat (count, circle, zoom, list line) |
 | D6 | PASS | The answer (the 3 lists work, counts drop) comes before the CTA; one ask |

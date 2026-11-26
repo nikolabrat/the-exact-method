@@ -1,0 +1,807 @@
+{
+"video": "/home/claude/the-exact-method/workspace/remotion/out/P5-tt-raw.mp4",
+"keep_audio": "yes",
+"cues": [
+{
+"t": 3.767,
+"label": "2 AIs pill pulses",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/badge.mp3",
+"role": "ui",
+"gain_db": -20,
+"anchor": "arrive"
+},
+{
+"t": 3.833,
+"label": "push into the email",
+"file": "/root/sfx-library/elevenlabs/push.wav",
+"role": "foley",
+"gain_db": -23,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 4.5,
+"label": "2 signatures pill pulses",
+"file": "/root/sfx-library/elevenlabs/coin.wav",
+"role": "foley",
+"gain_db": -17,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 5.5,
+"label": "whip to two-up",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_swing-1-9_84da624a.mp3",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0,
+0.4
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 5.633,
+"label": "same email headline",
+"file": "/root/sfx-library/elevenlabs/slap.wav",
+"role": "foley",
+"gain_db": -21,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 5.7,
+"label": "Claude card slides in",
+"file": "/root/sfx-library/elevenlabs/cardfly.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 5.767,
+"label": "tool labels",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/snap.mp3",
+"role": "ui",
+"gain_db": -21,
+"anchor": "arrive"
+},
+{
+"t": 8.033,
+"label": "Claude reply lands",
+"file": "/root/sfx-library/elevenlabs/chatblip.wav",
+"role": "foley",
+"gain_db": -15,
+"anchor": "peak",
+"highpass": 140
+},
+{
+"t": 9.333,
+"label": "Shouts stamp",
+"file": "/root/sfx-library/elevenlabs/stampthunk.wav",
+"role": "hit",
+"gain_db": -8,
+"highpass": 220,
+"anchor": "peak"
+},
+{
+"t": 10.5,
+"label": "Decorates stamp",
+"file": "/root/sfx-library/elevenlabs/stamp.wav",
+"role": "hit",
+"gain_db": -12,
+"highpass": 220,
+"anchor": "peak"
+},
+{
+"t": 11.367,
+"label": "zoom into ChatGPT",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_digital-whoosh-soft-wav_70ebf580.mp3",
+"role": "foley",
+"gain_db": -15,
+"slice": [
+0,
+0.5
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 11.5,
+"label": "evidence header",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 12.967,
+"label": "ring ! 1",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_scribbling-1-2-aif_4f0d6117.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0.3,
+0.7
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 13.0,
+"label": "chip ! ! ! !",
+"file": "/root/sfx-library/elevenlabs/bookthump.wav",
+"role": "foley",
+"gain_db": -20,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 13.1,
+"label": "ring ! 2",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 13.233,
+"label": "ring ! 3",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0.2,
+0.6
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 13.367,
+"label": "ring ! 4",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -16,
+"slice": [
+0.6,
+1.0
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 14.167,
+"label": "bold marker",
+"file": "/root/sfx-library/elevenlabs/markerstroke.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 14.233,
+"label": "chip bold",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/focus.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 15.5,
+"label": "dash ring",
+"file": "/root/sfx-library/elevenlabs/scratch.wav",
+"role": "foley",
+"gain_db": -15,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 15.567,
+"label": "chip dash",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/expand.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 16.967,
+"label": "dont miss out marker",
+"file": "/root/sfx-library/elevenlabs/markersq.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 17.033,
+"label": "chip dont miss out",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/toggle-on.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 18.1,
+"label": "whip to Claude",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_wooden-stick-swing-1-3_4a28c24e.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0,
+0.4
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 18.233,
+"label": "Claude header",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/progress-step.mp3",
+"role": "ui",
+"gain_db": -20,
+"anchor": "arrive"
+},
+{
+"t": 19.033,
+"label": "emoji ring 1",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/select.mp3",
+"role": "ui",
+"gain_db": -17,
+"anchor": "arrive"
+},
+{
+"t": 19.067,
+"label": "chip emoji",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -20,
+"anchor": "arrive"
+},
+{
+"t": 19.2,
+"label": "emoji ring 2",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/copy.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 19.367,
+"label": "emoji ring 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/select.mp3",
+"role": "ui",
+"gain_db": -19,
+"anchor": "arrive"
+},
+{
+"t": 20.233,
+"label": "list squiggle",
+"file": "/root/sfx-library/elevenlabs/pencilcurve.wav",
+"role": "foley",
+"gain_db": -15,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 20.3,
+"label": "chip list of 3",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/swipe.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 22.167,
+"label": "means the world marker",
+"file": "/root/sfx-library/elevenlabs/tick.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 22.233,
+"label": "chip means the world",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/reaction.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 23.833,
+"label": "back to two-up",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_swing-1-5_2242127b.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0,
+0.4
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 25.633,
+"label": "perfect time marked in both",
+"file": "/root/sfx-library/elevenlabs/clocktick.wav",
+"role": "foley",
+"gain_db": -12,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 25.767,
+"label": "both chip",
+"file": "/root/sfx-library/elevenlabs/tape.wav",
+"role": "foley",
+"gain_db": -15,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 25.833,
+"label": "same phrase banner",
+"file": "/root/sfx-library/elevenlabs/numslam.wav",
+"role": "hit",
+"gain_db": -18,
+"highpass": 220,
+"anchor": "arrive"
+},
+{
+"t": 26.833,
+"label": "instructions box in",
+"file": "/root/sfx-library/openverse-cc0/paper_flip/paper_flip_page-turn-04-wav_9837be9e.mp3",
+"role": "foley",
+"gain_db": -10,
+"slice": [
+0,
+0.5
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 27.1,
+"label": "typing write like a human",
+"file": "/root/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0.0,
+0.8
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 29.033,
+"label": "rule struck",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_scribbling-1-2-aif_4f0d6117.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+1.3,
+1.6
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 31.367,
+"label": "2 tools slam (the one big hit)",
+"file": "/root/sfx-library/elevenlabs/impact.wav",
+"role": "hit",
+"gain_db": -10,
+"highpass": 220,
+"anchor": "arrive"
+},
+{
+"t": 32.4,
+"label": "2 mistakes slam",
+"file": "/root/sfx-library/elevenlabs/emptythud.wav",
+"role": "hit",
+"gain_db": -14,
+"highpass": 220,
+"anchor": "arrive"
+},
+{
+"t": 34.333,
+"label": "rule swapped to 1 list per tool",
+"file": "/root/sfx-library/openverse-cc0/paper_flip/paper_flip_page-turn-1_62466ac3.mp3",
+"role": "foley",
+"gain_db": -10,
+"slice": [
+0,
+0.5
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 34.333,
+"label": "1 list per tool headline",
+"file": "/root/sfx-library/elevenlabs/focussnap.wav",
+"role": "foley",
+"gain_db": -22,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 35.533,
+"label": "ChatGPT list card rim draws",
+"file": "/root/sfx-library/elevenlabs/scan.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 35.7,
+"label": "Claude list card rim draws",
+"file": "/root/sfx-library/elevenlabs/cardslap.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 36.8,
+"label": "settings frames appear",
+"file": "/root/sfx-library/openverse-cc0/paper_slide/paper_slide_paper-slide-wav_05745fd2.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0,
+0.3
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 37.867,
+"label": "cards drop into settings",
+"file": "/root/sfx-library/elevenlabs/stickypress.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 38.333,
+"label": "saved ticks",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/check.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 38.367,
+"label": "pasted once chip",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/soft/check.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 39.233,
+"label": "prompt box in",
+"file": "/root/sfx-library/elevenlabs/slide.wav",
+"role": "foley",
+"gain_db": -12,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 39.3,
+"label": "prompt typed",
+"file": "/root/sfx-library/openverse-cc0/keyboard/keyboard_keyboard-typing-001-wav_4e2f59d9.mp3",
+"role": "foley",
+"gain_db": -19,
+"slice": [
+1.0,
+3.0
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 40.1,
+"label": "send pressed",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -12,
+"anchor": "arrive"
+},
+{
+"t": 40.167,
+"label": "dive through send",
+"file": "/root/sfx-library/elevenlabs/vertigo.wav",
+"role": "foley",
+"gain_db": -16,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 40.567,
+"label": "Claude reply with list arrives",
+"file": "/root/sfx-library/elevenlabs/airwhoosh.wav",
+"role": "foley",
+"gain_db": -19,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 40.633,
+"label": "after header",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/badge.mp3",
+"role": "ui",
+"gain_db": -18,
+"anchor": "arrive"
+},
+{
+"t": 41.733,
+"label": "emoji counts to 0",
+"file": "/root/sfx-library/elevenlabs/click.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 42.133,
+"label": "emoji 0 lands",
+"file": "/root/sfx-library/elevenlabs/phoneslide.wav",
+"role": "foley",
+"gain_db": -15,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 42.867,
+"label": "perfect time counts to 0",
+"file": "/root/sfx-library/elevenlabs/matchstrike.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 44.567,
+"label": "real dates marked",
+"file": "/root/sfx-library/elevenlabs/receipt.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 44.6,
+"label": "real dates chip",
+"file": "/root/sfx-library/openverse-cc0/stamp/stamp_thump-mp3_f65de1b6.mp3",
+"role": "hit",
+"gain_db": -15,
+"slice": [
+0,
+0.3
+],
+"highpass": 220,
+"anchor": "arrive"
+},
+{
+"t": 45.6,
+"label": "whip to ChatGPT with list",
+"file": "/root/sfx-library/elevenlabs/swoosh2.wav",
+"role": "foley",
+"gain_db": -15,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 47.167,
+"label": "bold gone chip",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/organic/check.mp3",
+"role": "ui",
+"gain_db": -16,
+"anchor": "arrive"
+},
+{
+"t": 47.833,
+"label": "dash gone chip",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/minimal/select.mp3",
+"role": "ui",
+"gain_db": -22,
+"anchor": "arrive"
+},
+{
+"t": 48.367,
+"label": "bold and dash struck",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -13,
+"slice": [
+0,
+0.35
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 50.233,
+"label": "amber ring 1",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_scribbling-1-2-aif_4f0d6117.mp3",
+"role": "foley",
+"gain_db": -15,
+"slice": [
+0.3,
+0.7
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 50.267,
+"label": "kept chip",
+"file": "/root/sfx-library/elevenlabs/stack.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 50.367,
+"label": "amber ring 2",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_scribbling-1-2-aif_4f0d6117.mp3",
+"role": "foley",
+"gain_db": -15,
+"slice": [
+0.8,
+1.2
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 50.5,
+"label": "amber ring 3",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0.2,
+0.6
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 50.633,
+"label": "amber ring 4",
+"file": "/root/sfx-library/openverse-cc0/pencil_scratch/pencil_scratch_pen-signature-signing-2-wav_97e433f8.mp3",
+"role": "foley",
+"gain_db": -17,
+"slice": [
+0.6,
+1.0
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 50.967,
+"label": "dont miss out amber",
+"file": "/root/sfx-library/openverse-cc0/pen_tick/pen_tick_sharpie-marker-drawing-circle-01-wav_48169ecd.mp3",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0.3,
+0.7
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 51.167,
+"label": "perfect time amber",
+"file": "/root/sfx-library/openverse-cc0/pen_tick/pen_tick_pen-writing-on-paper-mp3_d3889b3e.mp3",
+"role": "foley",
+"gain_db": -20,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 51.733,
+"label": "read it once headline",
+"file": "/root/sfx-library/elevenlabs/cardpile.wav",
+"role": "foley",
+"gain_db": -21,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 51.933,
+"label": "scan line",
+"file": "/root/sfx-library/elevenlabs/zoomwhoosh.wav",
+"role": "foley",
+"gain_db": -13,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 55.633,
+"label": "comment bar in",
+"file": "/root/sfx-library/openverse-cc0/whoosh/whoosh_a-simple-voice-saying-whoosh_2daf113b.mp3",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 56.167,
+"label": "PLAIN typed",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/mechanical/typing.mp3",
+"role": "ui",
+"gain_db": -13,
+"anchor": "arrive"
+},
+{
+"t": 56.733,
+"label": "send",
+"file": "/root/.claude/skills/real-sfx/vendor/node_modules/uisfx/sounds/glass/press.mp3",
+"role": "ui",
+"gain_db": -12,
+"anchor": "arrive"
+},
+{
+"t": 57.867,
+"label": "lists arrive",
+"file": "/root/sfx-library/elevenlabs/notif.wav",
+"role": "foley",
+"gain_db": -14,
+"slice": [
+0,
+0.3
+],
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 57.933,
+"label": "three lists fan out",
+"file": "/root/sfx-library/elevenlabs/cardfan.wav",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 59.4,
+"label": "back to the frame-0 chat",
+"file": "/root/sfx-library/openverse-cc0/swish/swish_swish-5_45227812.mp3",
+"role": "foley",
+"gain_db": -14,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 59.733,
+"label": "hook headline back",
+"file": "/root/sfx-library/elevenlabs/flutter.wav",
+"role": "foley",
+"gain_db": -16,
+"anchor": "arrive",
+"highpass": 140
+},
+{
+"t": 59.8,
+"label": "rings redraw",
+"file": "/root/sfx-library/elevenlabs/puff.wav",
+"role": "foley",
+"gain_db": -20,
+"anchor": "arrive",
+"highpass": 140
+}
+]
+}

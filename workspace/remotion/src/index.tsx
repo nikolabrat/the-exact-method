@@ -17,6 +17,7 @@ import {W7, W7_TOTAL, W7Cover} from './W7';
 import {N8F0} from './N8F0';
 import {V3F0} from './V3F0';
 import {P5F0} from './P5F0';
+import {P5, P5_TOTAL} from './P5';
 import {V3, V3_TOTAL} from './V3';
 import {N8, N8_TOTAL, N8Cover} from './N8';
 
@@ -162,6 +163,8 @@ const Root: React.FC = () => (
   <Composition id="N8F0" component={N8F0} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="V3F0" component={V3F0} durationInFrames={1} fps={30} width={1080} height={1920} />
   <Composition id="P5F0" component={P5F0} durationInFrames={1} fps={30} width={1080} height={1920} />
+  <Composition id="P5ig" component={P5 as any} durationInFrames={P5_TOTAL.ig} fps={30} width={1080} height={1920} defaultProps={{platform: 'ig'}} />
+  <Composition id="P5tt" component={P5 as any} durationInFrames={P5_TOTAL.tt} fps={30} width={1080} height={1920} defaultProps={{platform: 'tt'}} />
   <Composition id="V3ig" component={V3 as any} durationInFrames={V3_TOTAL.ig} fps={30} width={1080} height={1920} defaultProps={{platform: 'ig'}} />
   <Composition id="V3tt" component={V3 as any} durationInFrames={V3_TOTAL.tt} fps={30} width={1080} height={1920} defaultProps={{platform: 'tt'}} />
   <Composition id="W7Cover" component={W7Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
