@@ -11,7 +11,7 @@ PENDING (needs today's real runs). ⛔ = hard line: a FAIL means rewrite before 
 | H2 | Topic | PASS | "Sounds like AI" costs sellers trust; PLAIN downloads exist; ChatGPT/Claude/Gemini named in the top outliers (viral-formats) |
 | H3 | Seed | PASS | Challenges "one 'write like a human' rule fixes AI writing": the tells differ per tool |
 | H4 | Substance | PASS | They can paste one list per tool today (Plain Voice has a version for each) |
-| H5 | Visual hook | PASS | Real ChatGPT default reply has visible tells (3 "!", bold line, em dash): circle them on frame 0 |
+| H5 | Visual hook | PASS | Real ChatGPT default reply has visible tells (4 "!", bold line, em dash): circle them on frame 0 |
 | H6 | Text hook | PASS | Pill "2 AIs. 2 signatures." + the typed question; aligned with the spoken hook |
 | H7 | Spoken hook | PASS | "Lose sales with your AI email? Customers still spot 2 AI signatures." hookscore 93.8 |
 | H8 | Structure | PASS | Each tool's tell is a small answer that raises "what about mine?"; the after-numbers are held to the end |
@@ -47,7 +47,7 @@ PENDING (needs today's real runs). ⛔ = hard line: a FAIL means rewrite before 
 | --- | --- | --- |
 | C1 ⛔ | PASS | Pill "2 AIs. 2 signatures." (4 words) + the typed question "Why does my AI email lose sales?" (7 words) |
 | C2 ⛔ | PENDING | 360 px feed test on the frame-0 still once the real screenshot is in |
-| C3 ⛔ | PASS | Real ChatGPT default reply (runs/chatgpt_default.jpg): 3 "!", a bold line, an em dash, "Don't miss out" to circle |
+| C3 ⛔ | PASS | Real ChatGPT default reply (runs/chatgpt_default.jpg): 4 "!", a bold line, an em dash, "Don't miss out" to circle |
 | C4 ⛔ | PASS | Text: typed question + pill · visual: real ChatGPT email with tells circled · spoken: "Lose sales with your AI email? Customers still spot 2 AI signatures." One idea, clear on mute |
 | C5 | PASS | Subject (your AI email) and stake (sales) in sentence 1; simple words; no product names in the hook |
 | C6 ⛔ | PASS | Belief: "AI writing all sounds the same; 'write like a human' fixes it" → reality: "each tool has its own tell; one rule misses two of them" |
@@ -71,7 +71,7 @@ PENDING (needs today's real runs). ⛔ = hard line: a FAIL means rewrite before 
 | D5 | PASS | v2: one sentence per beat, none over 4 s; a new on-screen element per beat (count, circle, zoom, list line) |
 | D6 | PASS | The answer (the 3 lists work, counts drop) comes before the CTA; one ask |
 | D7 | PASS | 140 words, beats.py ≈ 51 s: inside 45-90 |
-| D8 | PASS | Checked line by line against runs/*.txt: ChatGPT default 3 "!" (subject, "special!", "only!"), 1 bold, 1 em dash, "Don't miss out"; Claude default 3 emoji (🧼 🗓 💸), "every bar, every scent, every gift set", "It truly means the world"; both "the perfect time"; Claude with list: 0 emoji, no "perfect time", dates "November 28 and 29"; ChatGPT with list: no bold, no dash, 3 "!" kept. No claim about what ChatGPT's other leftovers ("perfect time", "don't miss out") did: the script doesn't say they went |
+| D8 | PASS | Checked line by line against runs/*.txt: ChatGPT default 4 "!" (subject, "special!", "only!", "Happy shopping!"), 1 bold, 1 em dash, "Don't miss out"; Claude default 3 emoji (🧼 🗓 💸), "every bar, every scent, every gift set", "It truly means the world"; both "the perfect time"; Claude with list: 0 emoji, no "perfect time", dates "November 28 and 29"; ChatGPT with list: no bold, no dash, 4 "!" kept. No claim about what ChatGPT's other leftovers ("perfect time", "don't miss out") did: the script doesn't say they went |
 | D9 | PASS | Read aloud: no em dashes, no "not just X", contractions; human score at final |
 | D10 | PASS | Saveable: the three short lists on screen, one per tool |
 

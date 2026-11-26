@@ -6,7 +6,7 @@ CTA tt: DM me PLAIN and I'll send you all 3 lists, free.
 
 On screen
   Frame 0 (split screen): top = real ChatGPT chat, user message "Why does my AI email lose sales?",
-    below it ChatGPT's real default email (runs/chatgpt_default.jpg) with 3 "!", bold line, dash circled red.
+    below it ChatGPT's real default email (runs/chatgpt_default.jpg) with 4 "!", bold line, dash circled red.
     Bottom = Sage small, talking. Pill at the seam: "2 AIs. 2 signatures."
   0:04  Claude's real default email slides in beside it (runs/claude_default.jpg): 2 replies side by side.
   0:07  "One shouts, one decorates": label under each.
@@ -15,5 +15,5 @@ On screen
   Rehook: "write like a human" typed, struck; both replies still red.
   Body 2: the two settings screens, a short list pasted into each; "Same request again" → the after replies
         (runs/claude_list.jpg, runs/chatgpt_list.jpg). Claude: counters to 0, dates highlighted green.
-        ChatGPT: bold + dash struck out green, the 3 "!" stay circled amber.
+        ChatGPT: bold + dash struck out green, the 4 "!" stay circled amber.
   CTA: comment bar "PLAIN"; loop to frame 0.

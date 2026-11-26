@@ -16,11 +16,11 @@ Times are from beats.py (rough); the real ones come from the ElevenLabs alignmen
 ## Beats
 | t | Line | Picture | remocn | Sound |
 | --- | --- | --- | --- | --- |
-| 0.0 | Lose sales with your AI email? | Frame 0: ChatGPT chat, the user's message "Why does my AI email lose sales?" already typed, its real email below, 3 "!" + bold + dash already marked red. Pill "2 AIs. 2 signatures." at the seam | marker-highlight (red), drift on the screen | soft keyboard tail + send whoosh (frame 0-6) |
+| 0.0 | Lose sales with your AI email? | Frame 0: ChatGPT chat, the user's message "Why does my AI email lose sales?" already typed, its real email below, 4 "!" + bold + dash already marked red. Pill "2 AIs. 2 signatures." at the seam | marker-highlight (red), drift on the screen | soft keyboard tail + send whoosh (frame 0-6) |
 | 2.0 | Customers still spot 2 AI signatures. | Pill pulses; camera pushes into the email | zoom-blur (push) | zoomwhoosh |
 | 4.4 | Same sale email, ChatGPT and Claude. | Pan right: Claude's real email slides in beside it, both visible (split) | whip-pan | swoosh2 + chatblip as Claude's reply lands |
 | 6.6 | One shouts, one decorates. | "Shouts." stamps under ChatGPT, "Decorates." under Claude | impact-shake (low intensity, 0.4) per word | stampthunk ×2 (different pitch) |
-| 8.0 | ChatGPT: 3 exclamation marks, a bold line, a long dash. | Push into ChatGPT email; each tell gets a red marker as it is named, with a short burst | marker-highlight + trim-burst | markerstroke ×3 (varied), click on the dash |
+| 8.0 | ChatGPT: 3 exclamation marks, a bold line, a long dash. | Push into ChatGPT email; each tell gets a red marker as it is named, with a short burst | marker-highlight + trim-burst | markerstroke ×4 (varied), click on the dash |
 | 11.6 | Then "Don't miss out." | The phrase marked red, quote card lifts off the email | marker-highlight | markersq |
 | 13.1 | Claude: 3 emoji and a list of 3. | Whip to Claude; 🧼🗓💸 circled one by one, the list of 3 bracketed | scribble-circle ×3 (bubble pop), squiggle under the list | pop ×3 (pitch steps), pencilcurve |
 | 16.0 | Then "It truly means the world." | Phrase marked red | marker-highlight | markersq (other take) |
@@ -32,7 +32,7 @@ Times are from beats.py (rough); the real ones come from the ElevenLabs alignmen
 | 29.8 | Same request again. | Prompt box: the same request, press send, dive into the new replies | press-warp-dive | keyboard + push + airwhoosh |
 | 31.3 | Claude: 0 emoji, 0 perfect time, real dates instead. | Claude's new email (runs/claude_list); counters roll to 0; "November 28 and 29" marked mint | slim-count ×2 (3→0, 1→0), marker-highlight (mint) | clocktick on the count, coin when it lands on 0 |
 | 34.5 | ChatGPT: the bold and the dash are gone. | ChatGPT's new email; ghost red marks where bold and dash were, struck mint | strikethrough-replace (small) | rip soft ×2 |
-| 37.5 | But it kept the 3 exclamation marks. | The 3 "!" marked amber; "don't miss out" and "perfect time" also amber (they stayed too, honest) | marker-highlight (amber) | emptythud (a "hm" note), tick ×3 |
+| 37.5 | But it kept the 3 exclamation marks. | The 4 "!" marked amber; "don't miss out" and "perfect time" also amber (they stayed too, honest) | marker-highlight (amber) | emptythud (a "hm" note), tick ×4 |
 | 40.7 | So read every ChatGPT email once before you send. | Small checkmark pass over the ChatGPT email | check-list feel (one line) | pencilcurve |
 | 43.6 | Comment PLAIN and I'll send you all 3 lists, free. | Instagram comment bar types "PLAIN", send; three list cards fan out (ChatGPT, Claude, Gemini) | card-fan + trim-burst | keyboard, notif, cardfan |
 | 46.9 | Then customers only see your email. | Pull back to the ChatGPT chat of frame 0 (loop: last frame = frame 0) | zoom-blur (reverse) | soft airwhoosh, fades into the frame-0 sound |
