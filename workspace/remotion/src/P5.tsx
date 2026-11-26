@@ -215,7 +215,7 @@ export const P5: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
 
   // ---------- stage poses ----------
   const F0: P = {x: 40, y: 316, s: 1, o: 1};
-  const TWO_L: Partial<P> = {x: 4, y: 300, s: 0.56, o: 1}, TWO_R: Partial<P> = {x: 516, y: 330, s: 0.56, o: 1};
+  const TWO_L: Partial<P> = {x: 14, y: 310, s: 0.52, o: 1}, TWO_R: Partial<P> = {x: 546, y: 310, s: 0.52, o: 1};
   const gpt = track(f, F0, [
     [c.side, c.side + 14, TWO_L],
     [c.gptZoom, c.gptZoom + 14, {x: 40, y: 180, s: 1}],
@@ -226,7 +226,7 @@ export const P5: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
     [c.loop, c.loop + 24, F0],
   ]);
   const gptBlur = whipBlur(f, c.claudeZoom, c.claudeZoom + 10) + whipBlur(f, c.both, c.both + 14, 8);
-  const claude = track(f, {x: 1130, y: 330, s: 0.56, o: 1}, [
+  const claude = track(f, {x: 1130, y: 310, s: 0.52, o: 1}, [
     [c.side + 4, c.side + 18, TWO_R],
     [c.gptZoom, c.gptZoom + 12, {x: 1130}],
     [c.claudeZoom, c.claudeZoom + 10, {x: 40, y: 150, s: 1}],
@@ -319,10 +319,10 @@ export const P5: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
             if (o <= 0.01) return null;
             return (
               <>
-                <div style={{position: 'absolute', left: 26, top: 214, opacity: o, fontFamily: UI_FONT, fontWeight: 700, fontSize: 40, color: '#fff'}}>ChatGPT</div>
-                <div style={{position: 'absolute', left: 520, top: 214, opacity: o, fontFamily: UI_FONT, fontWeight: 700, fontSize: 40, color: '#fff'}}>Claude</div>
-                <div style={{position: 'absolute', left: 26, top: 266, opacity: o}}><Mono size={18} color="#8a8a8a">REAL RUN · 26 NOV · DEFAULT</Mono></div>
-                <div style={{position: 'absolute', left: 520, top: 266, opacity: o}}><Mono size={18} color="#8a8a8a">REAL RUN · 26 NOV · DEFAULT</Mono></div>
+                <div style={{position: 'absolute', left: 18, top: 214, opacity: o, fontFamily: UI_FONT, fontWeight: 700, fontSize: 40, color: '#fff'}}>ChatGPT</div>
+                <div style={{position: 'absolute', left: 550, top: 214, opacity: o, fontFamily: UI_FONT, fontWeight: 700, fontSize: 40, color: '#fff'}}>Claude</div>
+                <div style={{position: 'absolute', left: 18, top: 266, opacity: o}}><Mono size={18} color="#8a8a8a">REAL RUN · 26 NOV · DEFAULT</Mono></div>
+                <div style={{position: 'absolute', left: 550, top: 266, opacity: o}}><Mono size={18} color="#8a8a8a">REAL RUN · 26 NOV · DEFAULT</Mono></div>
               </>
             );
           })()}
@@ -351,7 +351,7 @@ export const P5: React.FC<{platform: 'ig' | 'tt'}> = ({platform}) => {
                   fontFamily: 'Archivo', fontWeight: 900, fontSize: 76, color: C.red, border: `6px solid ${C.red}`, borderRadius: 16, padding: '2px 26px', background: '#0b0b0b'}}>{text}</div>
               );
             };
-            return (<>{st(c.shouts, 70, 'Shouts.', -5)}{st(c.decor, 560, 'Decorates.', 4)}</>);
+            return (<>{st(c.shouts, 70, 'Shouts.', -5)}{st(c.decor, 580, 'Decorates.', 4)}</>);
           })()}
           {/* both wrote the same phrase */}
           {(() => {
