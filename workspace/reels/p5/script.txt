@@ -1,31 +1,19 @@
-P-5 · "3 AIs, 3 signatures" (PLAIN) · draft v2, 26 Nov · numbers in [brackets] come from today's real runs
+P-5 · "2 AIs, 2 signatures" (PLAIN) · script v3, 26 Nov · every tell/number from runs/ (real, 26 Nov)
 
-[HOOK]      Lose sales with your AI email? / Your customers still see 3 signatures.        (hookscore 93.8)
-[LOCK-IN]   (teasing proof) Same sales email, three AIs. / [Eleven] giveaways. With one short list each, [zero].
-[BODY 1]    Each AI gives itself away differently.
-            ChatGPT dresses it up. / [Bold, bullet points, three exclamation marks.]
-            Claude's tell is punctuation. / [Four long dashes, and it opens by agreeing with you.]
-            Gemini announces itself. / ["Here is a draft", then options you never asked for.]
-[REHOOK]    (~0:25) So one "sound human" rule can't fix all three. / They don't make the same mistake.
-[BODY 2]    The fix is one short list per tool. / Pasted into its settings once.
-            ChatGPT gets no bold and no lists. / Claude gets no long dashes and no agreeing. /
-            Gemini gets no intro and one version only. / Same request again. [Zero, zero, zero.]
-[CTA ig]    Comment PLAIN and I'll send you all three lists, free.
-[CTA tt]    DM me PLAIN and I'll send you all three lists, free.
-[LOOP]      Then your customers only see your email.
-
-[brackets] = replaced word for word by what the real runs show (tells, counts). If a tool shows other tells,
-the line names those instead. 142 words, ~50 s at Mike's pace, one sentence per beat (beats.py clean).
+Spoken: script_v3_spoken.txt (140 words, ~51 s). Hook 93.8.
+CTA ig: Comment PLAIN and I'll send you all 3 lists, free.
+CTA tt: DM me PLAIN and I'll send you all 3 lists, free.
 
 On screen
-  Frame 0 (split screen): top = a real ChatGPT chat, the user's message typed in it:
-    "Why does my AI email lose sales?" and below it ChatGPT's real default sales email with its tells
-    circled in red (bold, bullets, "!!!"). Bottom = Sage small, talking. Headline at the seam (yellow-free,
-    mint pill): "3 AIs. 3 signatures."
-  0:04  the same email request in Claude and Gemini slides in: three real replies side by side (H2 shape),
-        a red count under each.
-  Body 1: zoom into each reply, its tell circled as it is named.
-  Rehook: "write like a human" typed, then struck; two replies still glowing red.
-  Body 2: the three settings pages (real screens), one short list pasted into each; the counts roll to the
-        after-numbers.
-  CTA: comment bar "PLAIN"; loop back to the ChatGPT chat on frame 0.
+  Frame 0 (split screen): top = real ChatGPT chat, user message "Why does my AI email lose sales?",
+    below it ChatGPT's real default email (runs/chatgpt_default.jpg) with 3 "!", bold line, dash circled red.
+    Bottom = Sage small, talking. Pill at the seam: "2 AIs. 2 signatures."
+  0:04  Claude's real default email slides in beside it (runs/claude_default.jpg): 2 replies side by side.
+  0:07  "One shouts, one decorates": label under each.
+  Body 1: zoom ChatGPT (circle "!" x3, bold, dash, "Don't miss out"), then Claude (circle 🧼🗓💸,
+        the list of 3, "It truly means the world"), then highlight "the perfect time" in both.
+  Rehook: "write like a human" typed, struck; both replies still red.
+  Body 2: the two settings screens, a short list pasted into each; "Same request again" → the after replies
+        (runs/claude_list.jpg, runs/chatgpt_list.jpg). Claude: counters to 0, dates highlighted green.
+        ChatGPT: bold + dash struck out green, the 3 "!" stay circled amber.
+  CTA: comment bar "PLAIN"; loop to frame 0.

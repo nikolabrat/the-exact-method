@@ -1,0 +1,15 @@
+Claude Opus 5.5 (claude.ai, incognito chat, Medium), 26 Nov 2026 ~17:00 Sofia. Same prompt. (Account-level instructions could not be checked: Claude in Chrome can't open claude.ai settings. Incognito = no memory.)
+Reply (email widget, "A Warm & simple"):
+Subject: 20% off everything this weekend 🧼
+Hi [First name],
+This weekend only, everything in the shop is 20% off: every bar, every scent, every gift set.
+It's the perfect time to restock your favorites, try something new, or tuck away a few handmade gifts for the holidays.
+🗓 Saturday, November 28 – Sunday, November 29
+💸 20% off everything, no code needed [or: use code WEEKEND20 at checkout]
+[Shop the sale →]
+Each bar is made by hand in small batches, so popular scents can sell out quickly. If you've had your eye on something, now's the time.
+Thank you for supporting a small, handmade business. It truly means the world.
+Warmly,
+[Your name]
+[Shop name]
+Note after: "I've drafted the email above. Fill in the bracketed parts and choose whether the discount needs a code. Since this weekend is also Black Friday weekend, you could mention that in the subject line..."
