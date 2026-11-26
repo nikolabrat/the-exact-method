@@ -1,0 +1,31 @@
+P-5 · "3 AIs, 3 signatures" (PLAIN) · draft v2, 26 Nov · numbers in [brackets] come from today's real runs
+
+[HOOK]      Lose sales with your AI email? / Your customers still see 3 signatures.        (hookscore 93.8)
+[LOCK-IN]   (teasing proof) Same sales email, three AIs. / [Eleven] giveaways. With one short list each, [zero].
+[BODY 1]    Each AI gives itself away differently.
+            ChatGPT dresses it up. / [Bold, bullet points, three exclamation marks.]
+            Claude's tell is punctuation. / [Four long dashes, and it opens by agreeing with you.]
+            Gemini announces itself. / ["Here is a draft", then options you never asked for.]
+[REHOOK]    (~0:25) So one "sound human" rule can't fix all three. / They don't make the same mistake.
+[BODY 2]    The fix is one short list per tool. / Pasted into its settings once.
+            ChatGPT gets no bold and no lists. / Claude gets no long dashes and no agreeing. /
+            Gemini gets no intro and one version only. / Same request again. [Zero, zero, zero.]
+[CTA ig]    Comment PLAIN and I'll send you all three lists, free.
+[CTA tt]    DM me PLAIN and I'll send you all three lists, free.
+[LOOP]      Then your customers only see your email.
+
+[brackets] = replaced word for word by what the real runs show (tells, counts). If a tool shows other tells,
+the line names those instead. 142 words, ~50 s at Mike's pace, one sentence per beat (beats.py clean).
+
+On screen
+  Frame 0 (split screen): top = a real ChatGPT chat, the user's message typed in it:
+    "Why does my AI email lose sales?" and below it ChatGPT's real default sales email with its tells
+    circled in red (bold, bullets, "!!!"). Bottom = Sage small, talking. Headline at the seam (yellow-free,
+    mint pill): "3 AIs. 3 signatures."
+  0:04  the same email request in Claude and Gemini slides in: three real replies side by side (H2 shape),
+        a red count under each.
+  Body 1: zoom into each reply, its tell circled as it is named.
+  Rehook: "write like a human" typed, then struck; two replies still glowing red.
+  Body 2: the three settings pages (real screens), one short list pasted into each; the counts roll to the
+        after-numbers.
+  CTA: comment bar "PLAIN"; loop back to the ChatGPT chat on frame 0.
