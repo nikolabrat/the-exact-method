@@ -1,0 +1,32 @@
+N-9 · "6 places vs 1" (NARROW → The Narrowing Method, section 03, page 4) · script v1, 27 Nov
+Every fact from runs/ (ChatGPT Free, 27 Nov ~13:30, temporary chat, unpersonalized). Run 2 had web search on, as the guide's section 03 tells you.
+Spoken: script_spoken.txt (210 words, ~70 s at Mike's pace). Hook 93.8. ig-human 76.5 PASS.
+CTA ig: Comment NARROW and I'll send you the 3 prompts, free.
+CTA tt: DM me NARROW and I'll send you the 3 prompts, free.
+
+Parts (growth-system §11)
+  Hook      First 100 visitors? ChatGPT still lists 6 places. You need 1.
+  Lock-in   (teasing proof) I built a cake pricing calculator ... asked twice ... Here's where it ended up.
+            → on screen by ~5 s: the 3-step answer card with its first line blurred ("Start with ████ groups.")
+  Body 1    The 1-line answer: 6 channels, 7-day plan, 20 creators, chart 35/20/15, small print "not a guaranteed forecast". A guess.
+  Rehook    With 1 hour a day, you can't do 6. So, 3 steps.  (~22-25 s, contrast)
+  Body 2    Step 1 → 8 + 3 existing calculators · Step 2 → 3 left (+363 subreddit fact) · Step 3 → "Start with Facebook groups. Not Instagram. Not Reddit. Not TikTok." · why · 3-day start · goal 10 users
+  CTA       Comment NARROW ...
+  Loop      Then your first 100 visitors start in 1 place.  (→ frame 0 "First 100 visitors?")
+
+On screen (plan; F1 "result first" + H2 side by side with a number under each)
+  Frame 0 (split): top = ChatGPT dark UI, the real prompt bubble "How do I get the first 100 visitors to a cake
+    pricing calculator I built for home bakers?" spanning the top; under it 2 answer cards side by side:
+    left = the real "100 visitors" chart (6 rows: Facebook 35, Pinterest 20, Reddit 15, Instagram/TikTok 15,
+    Direct outreach 10, Other 5) with a big red "6" under it; right = the 3-step final answer, first line
+    blurred, big mint "1" under it. Bottom paper panel: headline "First 100 visitors?" + "6 places. You need 1."
+    Sage small right, caption line at the seam.
+  Long beats get a change inside: L3 (calculator card pops in at "home bakers", then "asked twice" tag),
+    L7 (four chips land on the words: 6 channels / 7-day plan / 20 creators / chart), L15 (the 3 constraints
+    type in one by one), L21 (followers counter "0" → "bakers already here" group card).
+  Body 1: zoom into the chart; numbers count up; the grey small print gets circled + "A guess." stamp.
+  Step 1: 8 cards fan out + 3 competitor name chips (PriceMyBakes, Confita, The Cake Price).
+  Step 2: 5 cards drop away, 3 stay; Reddit card gets the "363" badge.
+  Step 3: the blur lifts: "Start with Facebook groups." then Not Instagram / Not Reddit / Not TikTok strike in.
+  3-day plan as 3 day tiles; goal "10 users" counter.
+  CTA: comment bar types NARROW; the 3 prompt cards (section 03 p4) fan out.

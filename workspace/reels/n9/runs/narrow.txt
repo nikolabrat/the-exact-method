@@ -1,0 +1,19 @@
+ChatGPT Free, temporary chat, Unpersonalized ("will ignore memory, plugins, and custom instructions"), Web search ON, 27 Nov 2026 ~13:35. The 3 prompts from The Narrowing Method section 03 (page 4), filled in.
+
+P1: Research realistic ways to get the first 100 visitors to a cake pricing calculator I built for home bakers. Give me a shortlist, with a short explanation of each.
+-> 8 methods: 1 Facebook groups, 2 Reddit, 3 Instagram Reels, 4 TikTok, 5 Pinterest, 6 Direct outreach (30-50 home bakers), 7 small baking influencers, 8 SEO article.
+-> Found 3 existing competitors: "PriceMyBakes", "Confita", "The Cake Price" ("There is already competition in this category").
+-> "I wouldn't try all eight methods simultaneously." 14-day experiment chart (illustrative): Facebook 30, Direct outreach 20, Reels 20, Reddit 10, Pinterest 10, influencers 10.
+
+P2: Research each of these in more depth, and tell me which two or three are the most realistic for someone with about an hour a day, no budget for ads, and zero followers anywhere.
+-> (Worked for 14s) "I'd narrow the original eight strategies down to:" Facebook home-baking groups, Personal outreach to home bakers on Instagram, Reddit discussions.
+-> Reels "Later", TikTok "Later", Pinterest "Secondary", Influencers "Later", SEO "Long-term".
+-> Reddit datum (cited Nichory): "A recent analysis of 363 subreddit policies found that most communities either prohibit or restrict self-promotion."
+-> One hour split: Facebook groups 25 min, Instagram outreach 20 min, Reddit 10 min, Tracking 5 min.
+
+P3: Of these, which one specifically should I start with, and why, based on everything you just found?
+-> "Start with Facebook groups. Specifically, home bakery business groups."
+-> "Not Instagram. Not Reddit. Not TikTok."
+-> Why: "You don't need an audience." / product solves a recurring problem / no money / quick feedback / "You can do it within an hour a day."
+-> Day 1 join five groups, Day 2 read pricing discussions + 3-5 helpful comments, Day 3 share post where permitted.
+-> "My goal for you: Get your first 10 actual calculator users from Facebook before investing time in any other marketing channel."

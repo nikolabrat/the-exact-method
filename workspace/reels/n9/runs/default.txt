@@ -1,0 +1,12 @@
+ChatGPT Free, temporary chat (personalization toggle set to Unpersonalized, label did not change), 27 Nov 2026 ~13:30, web search not turned on
+Prompt: How do I get the first 100 visitors to a cake pricing calculator I built for home bakers?
+
+Key facts (verbatim excerpts):
+- "The fastest way to get your first 100 visitors is not to run ads."
+- Chart "100 visitors · A target distribution, not a guaranteed forecast": Facebook baking groups 35, Pinterest 20, Reddit communities 15, Instagram / TikTok 15, Direct outreach 10, Other / referrals 5  (6 channels)
+- 5 numbered channel sections: 1 Facebook groups ("Join 10–15 relevant groups"), 2 Reddit (r/AskBaking, r/Baking, r/smallbusiness, r/Entrepreneur), 3 Pinterest ("Create five simple graphics using Canva"), 4 Instagram/TikTok (3 video ideas), 5 "Reach out to 20 small baking creators"
+- Two ready-made texts: a Facebook group post (starts "🎂 Home bakers: are you actually making a profit on your cakes?") and a creator DM
+- "Your 7-day launch schedule": Day 1 prepare, Day 2 Facebook, Day 3 Reddit, Day 4 Pinterest, Day 5 Instagram and TikTok, Day 6 Creator outreach, Day 7 Improve and repeat
+- "Three things I'd prioritize": Facebook groups Very high, Reddit High, Pinterest High
+- Ends asking 4 questions: calculator URL, who are you targeting, what does it do, current stage
+Counts: 6 channels in the chart, 5 channel sections, 7-day plan, 20 creators to DM, 4 questions at the end. No source of where the 35/20/15... split comes from ("A target distribution, not a guaranteed forecast"). One citation (downloads.ctfassets.net, Pinterest tip).
