@@ -94,3 +94,8 @@ first 100 visitors come from. Guide: The Narrowing Method, section 03 (page 4), 
 No ⛔ FAIL. Open before building: C1/C2/C13 on the frame-0 still, then E, F2-F4, H5/H11 after the build.
 Weak spot to watch: A2 (topic demand rests on forum threads, not an Instagram outlier). If skip is fine but reach
 or saves are low, the topic is the suspect.
+
+
+## Build notes 27 Nov
+- Final length 80.7 s voice / 81.6 s video (two lines cut: "Here's where it ended up." and the 363-subreddits line), so D7/D8/A4 refer to the cut version.
+- Mono caps labels swapped for bold sentence-case labels after user feedback.
