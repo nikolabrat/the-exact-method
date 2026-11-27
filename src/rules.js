@@ -25,6 +25,7 @@ export const POINTERS = [
   { kw: "PLAIN", text: "The ready-to-paste prompts for ChatGPT, Claude and Gemini are in sections 05 to 07 (pages 6 to 8), and where to paste each one is in section 04 (page 5)." },
   { kw: "NARROW", contains: "what should i sell online first", text: "The three prompts from the video are in section 03, The Three-Prompt Template (page 4), ready to copy. Fill in your own limits in prompt two." },
   { kw: "NARROW", contains: "which ai should i pay for", text: "The three prompts from the video are in section 03, The Three-Prompt Template (page 4), ready to copy. Put your own jobs and budget into prompt two, and turn web search on first so it prices from today, not from memory." },
+  { kw: "NARROW", contains: "first 100 visitors", text: "The three prompts from the video are in section 03, The Three-Prompt Template (page 4), ready to copy. Put your own limits (time a day, budget, followers) into prompt two, and turn web search on before you start." },
   { kw: "NARROW", text: "The three prompts from the video are written out word for word, ready to copy." },
 ];
 
